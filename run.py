@@ -7,11 +7,11 @@ import time
 
 health = 5
 weapons = ["fists"]
-comms = False
-locator = False
-transporter = False
-key = False
-batteries = False
+comms = True
+locator = True
+transporter = True
+key = True
+batteries = True
 
 
 def PlayGame():
@@ -610,25 +610,73 @@ def RoomNNW():
 #Ending room
 def RoomESETransporterRoom():
     #From here we can go to... 1_1E and 1_2SE"
-    #We can also die here if we don't have the correct equipment"
+    #We can also die here if we don't have the correct equipment"  
+    print("You are in ESE Transporter Room!")
+    BeamOut = input("Would you like to try and beam out of the ship? (Y/N) \n")
+    if BeamOut == "Y" or BeamOut == "y" or BeamOut == "Yes" or BeamOut == "YES" or BeamOut == "yes":
+        print("Initialising beam...")
+        time.sleep(1)
+        print("Beaming down to planet surface in...")
+        time.sleep(1)
+        print("3...")
+        time.sleep(1)
+        print("2...")
+        time.sleep(1)
+        print("1...")
+        time.sleep(1)
+        if comms == True and locator == True and transporter == True and key == True and batteries == True:
+            print('''Congratulations! You beamed safely down to Nova VII and excaped the time loop, 
+            you look up to the sky just in time to see The Enterprise lose the last of its structural 
+            integrity and scatter accross the heavens, some small pieces break through the atmosphere
+            of Nova VII giving the planet a final farewell in a symbolic meteor shower.''')
+            PlayAgain = input("Would you like to play again? (Y/N) \n")
+            if PlayAgain == "Y" or PlayAgain == "y" or PlayAgain == "Yes" or PlayAgain == "YES" or PlayAgain == "yes":
+                print("Press PLAY GAME to initialise time loop.")
+            elif PlayAgain == "N" or PlayAgain == "n" or PlayAgain == "No" or PlayAgain == "NO" or PlayAgain == "no":
+                print(f"Live long and prosper {name}") 
+            else:
+                print("That option does not compute, please try again.")     
+                  
+        else:
+            print("You did not have all the required equipment and items to successfully beam down to Nova VII") 
+            time.sleep(0.5)
+            print("You beamed half way down to the planet's surface but appeared in space before you could reach your desination.")
+            time.sleep(1)
+            print("Game Over!")
+            time.sleep(1)
+            print("Resetting time loop in...")
+            time.sleep(1)
+            print("3...")
+            time.sleep(1)
+            print("2...")
+            time.sleep(1)
+            print("1...")
+            time.sleep(1)
+            print("Press PLAY GAME to initialise time loop.")       
+    elif BeamOut == "N" or BeamOut == "n" or BeamOut == "No" or BeamOut == "NO" or BeamOut == "no":
+        print("You continue on your journey...")
+        RoomESE_Options = ["1", "2"]
+        UserChoice = ""
+        while UserChoice not in RoomESE_Options:
+            print('''Room text here, with potential options.
+                1. Option 1 (1_1E)
+                2. Option 2 (1_2SE - Captain's Quarters)
 
-    RoomESE_Options = ["1", "2"]
-    UserChoice = ""
-    while UserChoice not in RoomESE_Options:
-        print("You are in ESE Transporter Room!")
-        print('''Room text here, with potential options.
-        1. Option 1 (1_1E)
-        2. Option 2 (1_2SE - Captain's Quarters)
-
-        Where would you like to go?'''
-        )
-        UserChoice = str(input("Enter option number: \n"))
-    if UserChoice == RoomESE_Options[0]:
-        Room1_1E()
-    elif UserChoice == RoomESE_Options[1]:
-        Room1_2SE()
+                Where would you like to go?'''
+                )
+            UserChoice = str(input("Enter option number: \n"))
+            if UserChoice == RoomESE_Options[0]:
+                Room1_1E()
+            elif UserChoice == RoomESE_Options[1]:
+                Room1_2SE()
+            else:
+                print("That it not a valid option, please chose 1 or 2")
     else:
-        print("That it not a valid option, please chose 1 or 2")
+            print("That option does not compute, please try again.")
+            RoomESETransporterRoom()                
+
+
+        
     
 
 def EndGame():
