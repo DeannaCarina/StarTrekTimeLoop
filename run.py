@@ -9,6 +9,8 @@ name = None
 comms = False
 locator = False
 transporter = False
+key = False
+batteries = False
 
 def PlayGame():
     print("Testing from within PlayGame")
