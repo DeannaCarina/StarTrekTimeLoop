@@ -4,13 +4,6 @@
 #-- Program Name: "Star Trek: Time Loop"
 
 import time
-import os
-
-def clearConsole():
-    command = 'clear'
-    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
-        command = 'cls'
-    os.system(command)
 
 health = 5
 weapons = ["fists"]
@@ -292,8 +285,7 @@ def Room1_2N():
     time.sleep(1)
     print("1...")
     time.sleep(1)
-    clearConsole()
-    PlayGame()
+    print("Press PLAY GAME to initialise time loop.")
 
 def Room1_2E():
     #Health -1 unless phaser (-0) in weapons
@@ -366,7 +358,6 @@ def Room1_2W():
         RoomEngineBay()
     else:
         print("That it not a valid option, please chose 1, 2 or 3")
-    
 
 def Room1_2NE():
     #Kill Room
@@ -384,8 +375,7 @@ def Room1_2NE():
     time.sleep(1)
     print("1...")
     time.sleep(1)
-    clearConsole()
-    PlayGame()
+    print("Press PLAY GAME to initialise time loop.")
 
 def Room1_2SE():
     #Health +3
@@ -557,8 +547,7 @@ def RoomWSW():
     time.sleep(1)
     print("1...")
     time.sleep(1)
-    clearConsole()
-    PlayGame()
+    print("Press PLAY GAME to initialise time loop.")
 
 def RoomWNW():
     #Phaser Weapon location
