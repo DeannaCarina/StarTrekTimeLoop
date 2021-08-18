@@ -20,7 +20,7 @@ batteries = False
 
 def PlayGame():
     cls()
-    WantToPlay = input("Would you like to play? (Y/N): ")
+    WantToPlay = input("Would you like to play? (Y/N): \n")
     if WantToPlay == "Y":
         print("Comencing time loop in...")
         time.sleep(1)
@@ -53,7 +53,7 @@ def RoomEngineBay():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == EngineBayOptions[0]:
         Room1_1N()
     elif UserChoice == EngineBayOptions[1]:
@@ -83,7 +83,7 @@ def Room1_1N():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_1N_Options[0]:
         Room1_1NW()
     elif UserChoice == Room1_1N_Options[1]:
@@ -110,7 +110,7 @@ def Room1_1E():
         
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_1E_Options[0]:
         RoomEngineBay()
     elif UserChoice == Room1_1E_Options[1]:
@@ -136,7 +136,7 @@ def Room1_1S():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_1S_Options[0]:
         Room1_1W()
     elif UserChoice == Room1_1S_Options[1]:
@@ -163,7 +163,7 @@ def Room1_1W():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_1W_Options[0]:
         RoomEngineBay()
     elif UserChoice == Room1_1W_Options[1]:
@@ -188,7 +188,7 @@ def Room1_1NE():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_1NE_Options[0]:
         Room1_1N()
     elif UserChoice == Room1_1NE_Options[1]:
@@ -213,7 +213,7 @@ def Room1_1SE():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_1SE_Options[0]:
         Room1_1E()
     elif UserChoice == Room1_1SE_Options[1]:
@@ -238,7 +238,7 @@ def Room1_1SW():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_1SW_Options[0]:
         Room1_1S()
     elif UserChoice == Room1_1SW_Options[1]:
@@ -263,7 +263,7 @@ def Room1_1NW():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_1NW_Options[0]:
         Room1_1W()
     elif UserChoice == Room1_1NW_Options[1]:
@@ -307,7 +307,7 @@ def Room1_2E():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_2E_Options[0]:
         RoomEngineBay()
     elif UserChoice == Room1_2E_Options[1]:
@@ -331,7 +331,7 @@ def Room1_2S():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_2S_Options[0]:
         Room1_2SE()
     elif UserChoice == Room1_2S_Options[1]:
@@ -354,7 +354,7 @@ def Room1_2W():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_2W_Options[0]:
         Room1_2SW()
     elif UserChoice == Room1_2W_Options[1]:
@@ -397,7 +397,7 @@ def Room1_2SE():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_2SE_Options[0]:
         Room1_2E()
     elif UserChoice == Room1_2SE_Options[1]:
@@ -419,7 +419,7 @@ def Room1_2SW():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_2SW_Options[0]:
         Room1_2S()
     elif UserChoice == Room1_2SW_Options[1]:
@@ -441,7 +441,7 @@ def Room1_2NW():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == Room1_NW_Options[0]:
         RoomNNW()
     elif UserChoice == Room1_NW_Options[1]:
@@ -463,7 +463,7 @@ def RoomNNE():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == RoomNNE_Options[0]:
         Room1_2NE()
     elif UserChoice == RoomNNE_Options[1]:
@@ -485,7 +485,7 @@ def RoomENE():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == RoomENE_Options[0]:
         RoomNNE()
     elif UserChoice == RoomENE_Options[1]:
@@ -507,7 +507,7 @@ def RoomSSE():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == RoomSSE_Options[0]:
         Room1_1SE()
     elif UserChoice == RoomSSE_Options[1]:
@@ -529,7 +529,7 @@ def RoomSSW():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == RoomSSW_Options[0]:
         Room1_1SW()
     elif UserChoice == RoomSSW_Options[1]:
@@ -569,7 +569,7 @@ def RoomWNW():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == RoomWNW_Options[0]:
         Room1_2NW()
     elif UserChoice == RoomWNW_Options[1]:
@@ -591,7 +591,7 @@ def RoomNNW():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == RoomNNW_Options[0]:
         Room1_1NW()
     elif UserChoice == RoomNNW_Options[1]:
@@ -616,7 +616,7 @@ def RoomESETransporterRoom():
 
         Where would you like to go?'''
         )
-        UserChoice = str(input("Enter option number: "))
+        UserChoice = str(input("Enter option number: \n"))
     if UserChoice == RoomESE_Options[0]:
         Room1_1E()
     elif UserChoice == RoomESE_Options[1]:
