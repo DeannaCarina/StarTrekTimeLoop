@@ -19,7 +19,6 @@ key = False
 batteries = False
 
 def PlayGame():
-    cls()
     WantToPlay = input("Would you like to play? (Y/N): \n")
     if WantToPlay == "Y":
         print("Comencing time loop in...")
@@ -290,6 +289,7 @@ def Room1_2N():
     time.sleep(1)
     print("1...")
     time.sleep(1)
+    cls()
     PlayGame()
 
 def Room1_2E():
@@ -381,6 +381,7 @@ def Room1_2NE():
     time.sleep(1)
     print("1...")
     time.sleep(1)
+    cls()
     PlayGame()
 
 def Room1_2SE():
@@ -553,6 +554,7 @@ def RoomWSW():
     time.sleep(1)
     print("1...")
     time.sleep(1)
+    cls()
     PlayGame()
 
 def RoomWNW():
