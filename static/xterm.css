@@ -36,7 +36,7 @@
  */
 
 body {
-    background-image: url(../assets/images/spaceland.png) no-repeat center center;
+    background-image: url(/assets/images/spaceland.png) no-repeat center center;
     background-attachment: fixed;
 }
 
@@ -196,6 +196,6 @@ button:hover {
 
 @media screen and (max-width: 800px) {
     body {
-        background-image: url(../assets/images/spaceport.png) no-repeat center center;
+        background-image: url(/assets/images/spaceport.png) no-repeat center center;
     }
 }
