@@ -7,14 +7,24 @@ import time
 
 health = 5
 weapons = ["fists"]
-name = None
 comms = False
 locator = False
 transporter = False
 key = False
 batteries = False
- 
+
+
 def PlayGame():
+    print('''
+    ___ ___ ___ ___   ___ ___ ___ _ __
+    / __|_ _| . | . \ |_ _| . | __| / /
+    \__ \| ||   |   /  | ||   | _>|  \ 
+    <___/_____|_|_|_\  __||_|_\___|_|_|
+    |_ _| |  \  | __> | | | . | . | . |
+     | || |     | _>  | |_| | | | |  _/
+     |_||_|_|_|_|___> |___`___`___|_| 
+
+    ''')
     WantToPlay = input("Would you like to play? (Y/N): \n")
     if WantToPlay == "Y" or WantToPlay == "y" or WantToPlay == "Yes" or WantToPlay == "YES" or WantToPlay == "yes":
         print("Comencing time loop in...")
@@ -25,6 +35,8 @@ def PlayGame():
         time.sleep(1)
         print("1...")
         time.sleep(1)
+        name = input("What is your name? \n") 
+        print(f"Hello {name}... welcome aboard the USS Enterprise III in Star Date 3167")
         RoomEngineBay()
     elif WantToPlay == "N" or WantToPlay == "n" or WantToPlay == "No" or WantToPlay == "NO" or WantToPlay == "no":
         print("*Beaming you out*")
