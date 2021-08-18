@@ -16,7 +16,7 @@ batteries = False
 
 def PlayGame():
     WantToPlay = input("Would you like to play? (Y/N): \n")
-    if WantToPlay == "Y":
+    if WantToPlay == "Y" or WantToPlay == "y" or WantToPlay == "Yes" or WantToPlay == "YES" or WantToPlay == "yes":
         print("Comencing time loop in...")
         time.sleep(1)
         print("3...")
@@ -26,7 +26,7 @@ def PlayGame():
         print("1...")
         time.sleep(1)
         RoomEngineBay()
-    elif WantToPlay == "N":
+    elif WantToPlay == "N" or WantToPlay == "n" or WantToPlay == "No" or WantToPlay == "NO" or WantToPlay == "no":
         print("*Beaming you out*")
         EndGame()
     else:
