@@ -13,7 +13,7 @@ locator = False
 transporter = False
 key = False
 batteries = False
-
+ 
 def PlayGame():
     WantToPlay = input("Would you like to play? (Y/N): \n")
     if WantToPlay == "Y" or WantToPlay == "y" or WantToPlay == "Yes" or WantToPlay == "YES" or WantToPlay == "yes":
