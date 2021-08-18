@@ -6,8 +6,11 @@
 import time
 import os
 
-def cls():
-    os.system('cls' if os.name=='nt' else 'clear')
+def clearConsole():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        command = 'cls'
+    os.system(command)
 
 health = 5
 weapons = ["fists"]
@@ -289,7 +292,7 @@ def Room1_2N():
     time.sleep(1)
     print("1...")
     time.sleep(1)
-    cls()
+    clearConsole()
     PlayGame()
 
 def Room1_2E():
@@ -381,7 +384,7 @@ def Room1_2NE():
     time.sleep(1)
     print("1...")
     time.sleep(1)
-    cls()
+    clearConsole()
     PlayGame()
 
 def Room1_2SE():
@@ -554,7 +557,7 @@ def RoomWSW():
     time.sleep(1)
     print("1...")
     time.sleep(1)
-    cls()
+    clearConsole()
     PlayGame()
 
 def RoomWNW():
