@@ -41,14 +41,14 @@ def PlayGame():
         time.sleep(1)
         global name
         name = input("What is your name? \n")
-        print(f"Hello {name}... welcome aboard the USS Enterprise III")
-        time.sleep(2)
-        print("in Star Date 3167. You are the second engineer on")
-        time.sleep(2)
-        print("board and work the night shift. You joined")
-        time.sleep(2)
-        print("the ship on her maiden voyage of her 15 year mission to...")
+        print(f"Hello {name}... welcome aboard the USS Enterprise III.")
+        time.sleep(2.5)
+        print("It is Star Date 3167. You are the second engineer on")
         time.sleep(3)
+        print("board and work the night shift. You joined")
+        time.sleep(3)
+        print("the ship on her maiden voyage of her 15 year mission to...")
+        time.sleep(4.5)
         print('''
                   BOLDLY GO WHERE NONE HAVE GONE BEFORE...
 
