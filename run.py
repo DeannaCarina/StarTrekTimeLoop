@@ -38,6 +38,36 @@ def PlayGame():
         global name
         name = input("What is your name? \n") 
         print(f"Hello {name}... welcome aboard the USS Enterprise III in Star Date 3167")
+        print("You are the second engineer on board and work the night shift. You joined")
+        print("the ship on her maiden voyage of her 15 year mission to")
+        print('''
+               TO BOLDLY GO WHERE NONE HAVE GONE BEFORE...       
+                                                           
+          o               .        ___---___                    .    
+                 .              .--\        --.     .     .         .
+                              ./.;_.\     __/~ \.                    
+                             /;  / `-'  __\    . \                   
+           .        .       / ,--'     / .   .;   \        |         
+                           | .|       /       __   |      -O-       .
+                          |__/    __ |  . ;   \ | . |      |         
+                          |      /  \\_    . ;| \___|                
+             .    o       |      \  .~\\___,--'     |           .    
+                           |     | . ; ~~~~\_    __|                 
+              |             \    \   .  .  ; \  /_/   .              
+             -O-        .    \   /         . |  ~/                  .
+              |    .          ~\ \   .      /  /~          o         
+            .                   ~--___ ; ___--~                      
+                           .          ---         .              -JT
+        ''')
+        print("You have been on the ship for 6 years now, and have steadily worked your")
+        print("way up the ranks to where you are now.")
+        print("Due to an asteroid colliding with the ship's port side, the Enterprise")
+        print("lost control of crucial guide and flight instruments, this made it")
+        print("impossible to steer away from the nearing Black Hole, and unfortunately")
+        print("the ship passed through the Black Hole causing massive loss of life and")
+        print("ship damage. You wake up in the Engine Bay after suffering from concussion.")
+        print("It seems that due to being close to the Warp Core of the ship, you were")
+        print("protected from the initial space-time anomalies.")
         RoomEngineBay()
     elif WantToPlay == "N" or WantToPlay == "n" or WantToPlay == "No" or WantToPlay == "NO" or WantToPlay == "no":
         print("*Beaming you out*")
