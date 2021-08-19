@@ -44,7 +44,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 600px;
 }
 
 .xterm {
@@ -53,7 +52,6 @@ body {
     user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
-    height: 600px;
 }
 
 .xterm.focus,
