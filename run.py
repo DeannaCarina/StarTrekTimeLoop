@@ -15,15 +15,29 @@ batteries = True
 
 
 def PlayGame():
-    print('''
-     ___ ___ ___ ___   ___ ___ ___ _ __
-    / __|_ _| . | . \ |_ _| . | __| / /
-    \__ \| ||   |   /  | ||   | _>|  \ 
-    <___/_____|_|_|_\  __||_|_\___|_|_|
-    |_ _| |  \  | __> | | | . | . | . |
-     | || |     | _>  | |_| | | | |  _/
-     |_||_|_|_|_|___> |___`___`___|_| 
+    # print('''
+    #  ___ ___ ___ ___   ___ ___ ___ _ __
+    # / __|_ _| . | . \ |_ _| . | __| / /
+    # \__ \| ||   |   /  | ||   | _>|  \ 
+    # <___/_____|_|_|_\  __||_|_\___|_|_|
+    # |_ _| |  \  | __> | | | . | . | . |
+    #  | || |     | _>  | |_| | | | |  _/
+    #  |_||_|_|_|_|___> |___`___`___|_| 
 
+    # ''')
+    print('''
+       ____ _______       _____    _______ _____  ______ _  __
+     / ____|__   __|/\   |  __ \  |__   __|  __ \|  ____| |/ /
+    | (___    | |  /  \  | |__) |    | |  | |__) | |__  | ' / 
+     \___ \   | | / /\ \ |  _  /     | |  |  _  /|  __| |  <  
+     ____) |  | |/ ____ \| | \ \     | |  | | \ \| |____| . \ 
+    |_____/_ _|_/_/__  \_\_|__\_\  _ |_|  |_|_ \_\______|_|\_|
+    |__   __|_   _|  \/  |  ____| | |    / __ \ / __ \|  __ \ 
+       | |    | | | \  / | |__    | |   | |  | | |  | | |__) |
+       | |    | | | |\/| |  __|   | |   | |  | | |  | |  ___/ 
+       | |   _| |_| |  | | |____  | |___| |__| | |__| | |     
+       |_|  |_____|_|  |_|______| |______\____/ \____/|_|     
+                                        
     ''')
     WantToPlay = input("Would you like to play? (Y/N): \n")
     if WantToPlay == "Y" or WantToPlay == "y" or WantToPlay == "Yes" or WantToPlay == "YES" or WantToPlay == "yes":
@@ -62,52 +76,82 @@ def PlayGame():
             .                   ~--___ ; ___--~                      
                            .          ---         .              -JT
         ''')
-        time.sleep(4)
-        print("You have been on the ship for 6 years now, and have steadily worked your")
-        time.sleep(3)
-        print("way up the ranks to where you are.")
-        time.sleep(2.5)
-        print("")
-        time.sleep(2)
-        print("Due to an asteroid colliding with the ship's port side, the Enterprise")
-        time.sleep(2.5)
-        print("lost control of crucial guide and flight instruments, this made it")
-        time.sleep(2.5)
-        print("impossible to steer away from the nearing Black Hole, and unfortunately")
-        time.sleep(2.5)
-        print("the ship passed through the Black Hole causing massive loss of life and")
-        time.sleep(2.5)
-        print("ship damage. You wake up in the Engine Bay after suffering from concussion.")
-        time.sleep(3)
-        print("It seems that due to being close to the Warp Core of the ship, you were")
-        time.sleep(3)
-        print("protected from the initial space-time anomalies.")
-        time.sleep(2.5)
-        print("")
-        print("In the aftermath of the asteroid and passage through the Black Hole, you")
-        time.sleep(2.5)
-        print("have broken your comms device and lost your locator device. Things don't")
-        time.sleep(2.5)
-        print("seem as they should with the ship - walls are rippling with life, and even")
-        time.sleep(2.5)
-        print("as you watch, things around you are dissapearing into nothingness and")
-        time.sleep(2.5)
-        print("imploding in on themselves. There is a nearby planet which should be within")
-        time.sleep(2.5)
-        print("beam distance, but without your comms and locator devices the chances of")
-        time.sleep(2.5)
-        print("getting there safely are slim.")
-        print("")
-        time.sleep(3)
-        print("You must search the ship for all the necessary equipment before you can")
-        time.sleep(2.5)
-        print(f"safely leave via the transporter room. Good luck {name}, live long...")
-        time.sleep(1.5)
-        print("and prosper.")
-        time.sleep(1.5)
-        print("")
-        time.sleep(3)
-        RoomEngineBay()
+        SkipIntro = input("Do you want to skip the intro to Star Trek - Time Loop? (Y/N): \n")
+        if SkipIntro == "N" or SkipIntro == "n" or SkipIntro == "No" or SkipIntro == "NO" or SkipIntro == "no":
+            time.sleep(2)
+            print("")
+            print("You have been on the ship for 6 years now, and have steadily worked your")
+            time.sleep(3)
+            print("way up the ranks to where you are.")
+            time.sleep(2.5)
+            print("")
+            time.sleep(2)
+            print("Due to an asteroid colliding with the ship's port side, the Enterprise")
+            time.sleep(2.5)
+            print("lost control of crucial guide and flight instruments, this made it")
+            time.sleep(2.5)
+            print("impossible to steer away from the nearing Black Hole, and unfortunately")
+            time.sleep(2.5)
+            print("the ship passed through the Black Hole causing massive loss of life and")
+            time.sleep(2.5)
+            print("ship damage. You wake up in the Engine Bay after suffering from concussion.")
+            time.sleep(3)
+            print("It seems that due to being close to the Warp Core of the ship, you were")
+            time.sleep(3)
+            print("protected from the initial space-time anomalies.")
+            time.sleep(2.5)
+            print("")
+            print("In the aftermath of the asteroid and passage through the Black Hole, you")
+            time.sleep(2.5)
+            print("have broken your comms device and lost your locator device. Things don't")
+            time.sleep(2.5)
+            print("seem as they should with the ship - walls are rippling with life, and even")
+            time.sleep(2.5)
+            print("as you watch, things around you are dissapearing into nothingness and")
+            time.sleep(2.5)
+            print("imploding in on themselves. There is a nearby planet which should be within")
+            time.sleep(2.5)
+            print("beam distance, but without your comms and locator devices the chances of")
+            time.sleep(2.5)
+            print("getting there safely are slim.")
+            print("")
+            time.sleep(3)
+            print("You must search the ship for all the necessary equipment before you can")
+            time.sleep(2.5)
+            print("safely leave via the transporter room.")
+            time.sleep(1.5)
+            print("")
+            print("You will need the following items to safely beam down to Nova VII:")
+            time.sleep(3)
+            print('''
+                1. Locator Device
+                2. Communication (Comms) Device
+                3. Batteries for Items 1 & 2
+                4. Power-on key for the transporter device
+            ''')
+            print("")
+            time.sleep(5)
+            print("On your exploration of the ship, you might also find weapons and items")
+            time.sleep(2.5)
+            print("that will help you with healing, energy levels and defending yourself.")
+            time.sleep(3)
+            print("")
+            print(f"Good luck {name}, live long... and prosper.")
+            time.sleep(1.5)
+            print("")
+            print("----------------------------------------------------------------------")
+            print("")
+            time.sleep(3)
+            RoomEngineBay()
+        elif SkipIntro == "Y" or SkipIntro == "y" or SkipIntro == "Yes" or SkipIntro == "YES" or SkipIntro == "yes":
+            print("")
+            print("----------------------------------------------------------------------")
+            print("")
+            time.sleep(2)
+            RoomEngineBay()
+        else:
+            print("That option does not compute, please try again.")
+            PlayGame()
     elif WantToPlay == "N" or WantToPlay == "n" or WantToPlay == "No" or WantToPlay == "NO" or WantToPlay == "no":
         print("*Beaming you out*")
         time.sleep(1)
