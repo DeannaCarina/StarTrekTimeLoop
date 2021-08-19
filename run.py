@@ -41,7 +41,17 @@ def PlayGame():
         RoomEngineBay()
     elif WantToPlay == "N" or WantToPlay == "n" or WantToPlay == "No" or WantToPlay == "NO" or WantToPlay == "no":
         print("*Beaming you out*")
-        EndGame()
+        time.sleep(1)
+        print("Initialising shut down...")
+        time.sleep(1)
+        print('''
+                ___ _ _ ___   ___ _ _ ___ 
+               |_ _| | | __> | __| \ | . |
+                | ||   | _>  | _>|   | | |
+                |_||_|_|___> |___|_\_|___/                    
+
+            ''') 
+        exit()
     else:
         print("That option does not compute, please try again.")
         PlayGame()    
@@ -305,6 +315,8 @@ def Room1_2N():
     print("1...")
     time.sleep(1)
     print("Press PLAY GAME to initialise time loop.")
+    time.sleep(1)
+    exit()
 
 def Room1_2E():
     #Health -1 unless phaser (-0) in weapons
@@ -401,6 +413,8 @@ def Room1_2NE():
     print("1...")
     time.sleep(1)
     print("Press PLAY GAME to initialise time loop.")
+    time.sleep(1)
+    exit()
 
 def Room1_2SE():
     #Health +3
@@ -579,6 +593,8 @@ def RoomWSW():
     print("1...")
     time.sleep(1)
     print("Press PLAY GAME to initialise time loop.")
+    time.sleep(1)
+    exit()
 
 def RoomWNW():
     #Phaser Weapon location
@@ -625,7 +641,6 @@ def RoomNNW():
         print("That it not a valid option, please chose 1 or 2")
     
 
-
 #Ending room
 def RoomESETransporterRoom():
     #From here we can go to... 1_1E and 1_2SE"
@@ -644,10 +659,7 @@ def RoomESETransporterRoom():
         print("1...")
         time.sleep(1)
         if comms == True and locator == True and transporter == True and key == True and batteries == True:
-            print('''Congratulations! You beamed safely down to Nova VII and excaped the time loop, 
-            you look up to the sky just in time to see The Enterprise lose the last of its structural 
-            integrity and scatter accross the heavens, some small pieces break through the atmosphere
-            of Nova VII giving the planet a final farewell in a symbolic meteor shower.''')
+            print("Congratulations! You beamed safely down to Nova VII and excaped the time loop, you look up to the sky just in time to see The Enterprise lose the last of its structural integrity and scatter accross the heavens, some small pieces break through the atmosphere of Nova VII giving the planet a final farewell in a symbolic meteor shower.")
             PlayAgain = input("Would you like to play again? (Y/N) \n")
             if PlayAgain == "Y" or PlayAgain == "y" or PlayAgain == "Yes" or PlayAgain == "YES" or PlayAgain == "yes":
                 print("Press PLAY GAME to initialise time loop.")
@@ -662,10 +674,8 @@ def RoomESETransporterRoom():
                     | ||   | _>  | _>|   | | |
                     |_||_|_|___> |___|_\_|___/                    
 
-                    ''')
-            
-
-                  
+                    ''')     
+                exit()                
         else:
             print("You did not have all the required equipment and items to successfully beam down to Nova VII") 
             time.sleep(0.5)
@@ -687,7 +697,9 @@ def RoomESETransporterRoom():
             time.sleep(1)
             print("1...")
             time.sleep(1)
-            print("Press PLAY GAME to initialise time loop.")       
+            print("Press PLAY GAME to initialise time loop.")   
+            time.sleep(1)
+            exit()    
     elif BeamOut == "N" or BeamOut == "n" or BeamOut == "No" or BeamOut == "NO" or BeamOut == "no":
         print("You continue on your journey...")
         RoomESE_Options = ["1", "2"]
@@ -708,14 +720,7 @@ def RoomESETransporterRoom():
                 print("That it not a valid option, please chose 1 or 2")
     else:
             print("That option does not compute, please try again.")
-            RoomESETransporterRoom()                
-
-
-        
-    
-
-def EndGame():
-    exit()
+            RoomESETransporterRoom()                    
 
 #Calling Functions
 PlayGame()
