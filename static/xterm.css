@@ -34,9 +34,12 @@
 /**
  *  Default styles for xterm.js
  */
+body {
+    background-image: url(spaceland.png);
+    margin: 0px
+}
 
 #terminal {
-    background-image: url(spaceland.png);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,7 +200,7 @@ button:hover {
 }
 
 @media screen and (max-width: 800px) {
-    #terminal {
+    body {
         background-image: url(spaceport.png);
     }
 }
