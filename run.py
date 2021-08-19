@@ -44,9 +44,9 @@ def PlayGame():
         print(f"Hello {name}... welcome aboard the USS Enterprise III in Star Date 3167")
         time.sleep(2.5)
         print("You are the second engineer on board and work the night shift. You joined")
-        time.sleep(2.5)
+        time.sleep(3)
         print("the ship on her maiden voyage of her 15 year mission to...")
-        time.sleep(2.5)
+        time.sleep(3)
         print('''
                   BOLDLY GO WHERE NONE HAVE GONE BEFORE...       
                                                            
@@ -66,6 +66,7 @@ def PlayGame():
             .                   ~--___ ; ___--~                      
                            .          ---         .              -JT
         ''')
+        time.sleep(2)
         SkipIntro = input("Do you want to skip the intro to Star Trek - Time Loop? (Y/N): \n")
         if SkipIntro == "N" or SkipIntro == "n" or SkipIntro == "No" or SkipIntro == "NO" or SkipIntro == "no":
             time.sleep(2)
