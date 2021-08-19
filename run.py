@@ -659,7 +659,11 @@ def RoomESETransporterRoom():
         print("1...")
         time.sleep(1)
         if comms == True and locator == True and transporter == True and key == True and batteries == True:
-            print("Congratulations! You beamed safely down to Nova VII and excaped the time loop, you look up to the sky just in time to see The Enterprise lose the last of its structural integrity and scatter accross the heavens, some small pieces break through the atmosphere of Nova VII giving the planet a final farewell in a symbolic meteor shower.")
+            print("Congratulations! You beamed safely down to Nova VII and excaped the")
+            print("time loop, you look up to the sky just in time to see The Enterprise")
+            print("lose the last of its structural integrity and scatter accross the")
+            print("heavens, some small pieces break through the atmosphere of Nova VII")
+            print("giving the planet a final farewell in a symbolic meteor shower.")
             PlayAgain = input("Would you like to play again? (Y/N) \n")
             if PlayAgain == "Y" or PlayAgain == "y" or PlayAgain == "Yes" or PlayAgain == "YES" or PlayAgain == "yes":
                 print("Press PLAY GAME to initialise time loop.")
