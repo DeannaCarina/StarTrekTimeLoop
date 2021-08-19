@@ -833,15 +833,30 @@ def RoomESETransporterRoom():
                                         
                 ''')
                 time.sleep(2)
-                print("Developer: Deanna Sale")
+                print('''
+                            Developer
+                           DEANNA SALE
+                ''')
                 time.sleep(1)
-                print("Theme: Gene Roddenberry (Star Trek Creator)")
+                print('''
+                              Theme
+                 GENE RODDENBERRY (Star Trek Creator)
+                ''')
                 time.sleep(1)  
-                print("ASCII Text: https://patorjk.com/software/taag/")
+                print('''
+                            ASCII Text 
+                 https://patorjk.com/software/taag/
+                ''')
                 time.sleep(1)  
-                print("ASCII Images: http://www.asciiartfarts.com/star_trek.html")
+                print('''
+                           ASCII Images
+              http://www.asciiartfarts.com/star_trek.html
+                ''')
                 time.sleep(1)  
-                print("Story Line: Deanna Sale")
+                print('''
+                            Story Line
+                           DEANNA SALE
+                ''')
                 time.sleep(3)   
                 exit()                
         else:
