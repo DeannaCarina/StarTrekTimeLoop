@@ -36,7 +36,8 @@
  */
 body {
     background-image: url(spaceland.png);
-    margin: 0px
+    margin: 0px;
+    text-align: center;
 }
 
 #terminal {
@@ -189,7 +190,8 @@ button {
     border: 1px solid grey;
     color: white;
     text-transform: uppercase;
-    margin: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 8px;
 }
 
