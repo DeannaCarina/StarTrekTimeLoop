@@ -16,7 +16,7 @@ batteries = True
 
 def PlayGame():
     print('''
-    ___ ___ ___ ___   ___ ___ ___ _ __
+     ___ ___ ___ ___   ___ ___ ___ _ __
     / __|_ _| . | . \ |_ _| . | __| / /
     \__ \| ||   |   /  | ||   | _>|  \ 
     <___/_____|_|_|_\  __||_|_\___|_|_|
@@ -288,7 +288,13 @@ def Room1_2N():
     print("You are in 1_2N! The Shuttle Bay.")
     print("You died!")
     time.sleep(1)
-    print("Game Over!")
+    print('''             
+         ___  ___ __ __ ___   ___ _ _ ___ ___ 
+        /  _>| . |  \  | __> | . | | | __| . |
+        | <_/|   |     | _>  | | | ' | _>|   /
+        `____|_|_|_|_|_|___> `___|__/|___|_\_|
+                                    
+        ''')
     time.sleep(1)
     print("Resetting time loop in...")
     time.sleep(1)
@@ -378,7 +384,13 @@ def Room1_2NE():
     print("You are in 1_2NE! (Store Room [Kill Room]")
     print("You died!")
     time.sleep(1)
-    print("Game Over!")
+    print('''             
+         ___  ___ __ __ ___   ___ _ _ ___ ___ 
+        /  _>| . |  \  | __> | . | | | __| . |
+        | <_/|   |     | _>  | | | ' | _>|   /
+        `____|_|_|_|_|_|___> `___|__/|___|_\_|
+                                    
+        ''')
     time.sleep(1)
     print("Resetting time loop in...")
     time.sleep(1)
@@ -550,7 +562,13 @@ def RoomWSW():
     print("You are in WSW!")
     print("You died!")
     time.sleep(1)
-    print("Game Over!")
+    print('''             
+         ___  ___ __ __ ___   ___ _ _ ___ ___ 
+        /  _>| . |  \  | __> | . | | | __| . |
+        | <_/|   |     | _>  | | | ' | _>|   /
+        `____|_|_|_|_|_|___> `___|__/|___|_\_|
+                                    
+        ''')
     time.sleep(1)
     print("Resetting time loop in...")
     time.sleep(1)
@@ -634,16 +652,32 @@ def RoomESETransporterRoom():
             if PlayAgain == "Y" or PlayAgain == "y" or PlayAgain == "Yes" or PlayAgain == "YES" or PlayAgain == "yes":
                 print("Press PLAY GAME to initialise time loop.")
             elif PlayAgain == "N" or PlayAgain == "n" or PlayAgain == "No" or PlayAgain == "NO" or PlayAgain == "no":
-                print(f"Live long and prosper {name}") 
-            else:
-                print("That option does not compute, please try again.")     
+                print(f"Live long and prosper {name}")
+                time.sleep(1)
+                print("Initialising shut down...")
+                time.sleep(1)    
+                print('''
+                    ___ _ _ ___   ___ _ _ ___ 
+                   |_ _| | | __> | __| \ | . |
+                    | ||   | _>  | _>|   | | |
+                    |_||_|_|___> |___|_\_|___/                    
+
+                    ''')
+            
+
                   
         else:
             print("You did not have all the required equipment and items to successfully beam down to Nova VII") 
             time.sleep(0.5)
             print("You beamed half way down to the planet's surface but appeared in space before you could reach your desination.")
             time.sleep(1)
-            print("Game Over!")
+            print('''             
+                     ___  ___ __ __ ___   ___ _ _ ___ ___ 
+                    /  _>| . |  \  | __> | . | | | __| . |
+                    | <_/|   |     | _>  | | | ' | _>|   /
+                    `____|_|_|_|_|_|___> `___|__/|___|_\_|
+                                    
+                ''')
             time.sleep(1)
             print("Resetting time loop in...")
             time.sleep(1)
