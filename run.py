@@ -35,6 +35,7 @@ def PlayGame():
         time.sleep(1)
         print("1...")
         time.sleep(1)
+        global name
         name = input("What is your name? \n") 
         print(f"Hello {name}... welcome aboard the USS Enterprise III in Star Date 3167")
         RoomEngineBay()
