@@ -255,7 +255,13 @@ button:hover {
     cursor: pointer;
 }
 
-
+#copy {
+    color: white;
+    font-size: larger;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
 
 
 @media screen and (max-width: 800px) {
