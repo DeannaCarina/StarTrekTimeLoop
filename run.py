@@ -27,7 +27,7 @@ def PlayGame():
     ''')
     WantToPlay = input("Would you like to play? (Y/N): \n")
     if WantToPlay == "Y" or WantToPlay == "y" or WantToPlay == "Yes" or WantToPlay == "YES" or WantToPlay == "yes":
-        print("Comencing time loop in...")
+        print("Commencing time loop in...")
         time.sleep(1)
         print("3...")
         time.sleep(1)
