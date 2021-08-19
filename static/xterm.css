@@ -36,7 +36,7 @@
  */
 
 #terminal {
-    background-image: url(spaceland.png) no-repeat center center;
+    background-image: url(spaceland.png);
     background-attachment: fixed;
 }
 
@@ -196,6 +196,6 @@ button:hover {
 
 @media screen and (max-width: 800px) {
     #terminal {
-        background-image: url(spaceport.png) no-repeat center center;
+        background-image: url(spaceport.png);
     }
 }
