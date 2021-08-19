@@ -38,10 +38,13 @@ def PlayGame():
         global name
         name = input("What is your name? \n") 
         print(f"Hello {name}... welcome aboard the USS Enterprise III in Star Date 3167")
+        time.sleep(2.5)
         print("You are the second engineer on board and work the night shift. You joined")
-        print("the ship on her maiden voyage of her 15 year mission to")
+        time.sleep(2.5)
+        print("the ship on her maiden voyage of her 15 year mission to...")
+        time.sleep(2.5)
         print('''
-               TO BOLDLY GO WHERE NONE HAVE GONE BEFORE...       
+                  BOLDLY GO WHERE NONE HAVE GONE BEFORE...       
                                                            
           o               .        ___---___                    .    
                  .              .--\        --.     .     .         .
@@ -59,15 +62,31 @@ def PlayGame():
             .                   ~--___ ; ___--~                      
                            .          ---         .              -JT
         ''')
+        time.sleep(4)
         print("You have been on the ship for 6 years now, and have steadily worked your")
+        time.sleep(3)
         print("way up the ranks to where you are now.")
+        time.sleep(2.5)
+        print("")
+        time.sleep(2)
         print("Due to an asteroid colliding with the ship's port side, the Enterprise")
+        time.sleep(2.5)
         print("lost control of crucial guide and flight instruments, this made it")
+        time.sleep(2.5)
         print("impossible to steer away from the nearing Black Hole, and unfortunately")
+        time.sleep(2.5)
         print("the ship passed through the Black Hole causing massive loss of life and")
+        time.sleep(2.5)
         print("ship damage. You wake up in the Engine Bay after suffering from concussion.")
+        time.sleep(3)
         print("It seems that due to being close to the Warp Core of the ship, you were")
+        time.sleep(3)
         print("protected from the initial space-time anomalies.")
+        time.sleep(2.5)
+        print("")
+        time.sleep(1.5)
+        print("")
+        time.sleep(3)
         RoomEngineBay()
     elif WantToPlay == "N" or WantToPlay == "n" or WantToPlay == "No" or WantToPlay == "NO" or WantToPlay == "no":
         print("*Beaming you out*")
@@ -93,6 +112,17 @@ def RoomEngineBay():
     UserChoice = ""
     while UserChoice not in EngineBayOptions:
         print("You are in the Engine Bay!")
+        print('''
+        ___________________          _-_             _      _-_      _  
+        \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                    \_ \    \----._________.----/  \----._________.----/
+                      \ \   /  /    `-_-'              `.  `]-['  ,'    
+                  __,--`█`-'..'-_                        `.' █ `.'      
+                 /____          ||                        | (_) |       
+                      `--.____,-'                          `___'  
+        
+        █ = You are here.
+        ''')
         print('''Room text here, with potential options.
         1. Option 1 (1_1N)
         2. Option 2 (1_1E)
@@ -122,6 +152,7 @@ def Room1_1N():
     Room1_1N_Options = ["1", "2", "3", "4"]
     UserChoice = ""
     while UserChoice not in Room1_1N_Options:
+        print("")
         print("You are in 1_1N!")
         print('''Room text here, with potential options.
         1. Option 1 (1_1NW - Observation Deck)
@@ -150,6 +181,7 @@ def Room1_1E():
     Room1_1E_Options = ["1", "2", "3"]
     UserChoice = ""
     while UserChoice not in Room1_1E_Options:
+        print("")
         print("You are in 1_1E!")
         print('''Room text here, with potential options.
         1. Option 1 (Engine Bay)
@@ -175,6 +207,7 @@ def Room1_1S():
     Room1_1S_Options = ["1", "2", "3", "4"]
     UserChoice = ""
     while UserChoice not in Room1_1S_Options:
+        print("")
         print("You are in 1_1S!")
         print('''Room text here, with potential options.
         1. Option 1 (1_1W)
@@ -203,6 +236,7 @@ def Room1_1W():
     Room1_1W_Options = ["1", "2", "3"]
     UserChoice = ""
     while UserChoice not in Room1_1W_Options:
+        print("")
         print("You are in 1_1W!")
         print('''Room text here, with potential options.
         1. Option 1 (Engine Bay)
@@ -228,6 +262,7 @@ def Room1_1NE():
     Room1_1NE_Options = ["1", "2", "3"]
     UserChoice = ""
     while UserChoice not in Room1_1NE_Options:
+        print("")
         print("You are in 1_1NE! (Holodeck")
         print('''Room text here, with potential options.
         1. Option 1 (1_1N)
@@ -253,6 +288,7 @@ def Room1_1SE():
     Room1_1SE_Options = ["1", "2", "3"]
     UserChoice = ""
     while UserChoice not in Room1_1SE_Options:
+        print("")
         print("You are in 1_1SE! (Sickbay)")
         print('''Room text here, with potential options.
         1. Option 1 (1_1E)
@@ -278,6 +314,7 @@ def Room1_1SW():
     Room1_1SW_Options = ["1", "2", "3"]
     UserChoice = ""
     while UserChoice not in Room1_1SW_Options:
+        print("")
         print("You are in 1_1SW! (Crew Quarters)")
         print('''Room text here, with potential options.
         1. Option 1 (1_1S)
@@ -303,6 +340,7 @@ def Room1_1NW():
     Room1_1NW_Options = ["1", "2", "3"]
     UserChoice = ""
     while UserChoice not in Room1_1NW_Options:
+        print("")
         print("You are in 1_1NW! (Observation Deck")
         print('''Room text here, with potential options.
         1. Option 1 (1_1W)
@@ -325,6 +363,7 @@ def Room1_1NW():
 def Room1_2N():
     #kill room
     #From here we can't go anywhere - we die!"
+    print("")
     print("You are in 1_2N! The Shuttle Bay.")
     print("You died!")
     time.sleep(1)
@@ -355,6 +394,7 @@ def Room1_2E():
     Room1_2E_Options = ["1", "2", "3"]
     UserChoice = ""
     while UserChoice not in Room1_2E_Options:
+        print("")
         print("You are in 1_2E!")
         print('''Room text here, with potential options.
         1. Option 1 (Engine Bay)
@@ -380,6 +420,7 @@ def Room1_2S():
     Room1_2S_Options = ["1", "2"]
     UserChoice = ""
     while UserChoice not in Room1_2S_Options:
+        print("")
         print("You are in 1_2S!")
         print('''Room text here, with potential options.
         1. Option 1 (1_2SE - Captain's Quarters)
@@ -402,6 +443,7 @@ def Room1_2W():
     Room1_2W_Options = ["1", "2", "3"]
     UserChoice = ""
     while UserChoice not in Room1_2W_Options:
+        print("")
         print("You are in 1_2W!")
         print('''Room text here, with potential options.
         1. Option 1 (1_2SW - Mess Hall)
@@ -423,6 +465,7 @@ def Room1_2W():
 def Room1_2NE():
     #Kill Room
     #From here we can't go anywhere - we die!"
+    print("")
     print("You are in 1_2NE! (Store Room [Kill Room]")
     print("You died!")
     time.sleep(1)
@@ -453,6 +496,7 @@ def Room1_2SE():
     Room1_2SE_Options = ["1", "2"]
     UserChoice = ""
     while UserChoice not in Room1_2SE_Options:
+        print("")
         print("You are in 1_2SE! (Captain's Quarters)")
         print('''Room text here, with potential options.
         1. Option 1 (1_2E)
@@ -475,6 +519,7 @@ def Room1_2SW():
     Room1_2SW_Options = ["1", "2"]
     UserChoice = ""
     while UserChoice not in Room1_2SW_Options:
+        print("")
         print("You are in 1_2SW! (Mess Hall)")
         print('''Room text here, with potential options.
         1. Option 1 (1_2S)
@@ -497,6 +542,7 @@ def Room1_2NW():
     Room1_2NW_Options = ["1", "2"]
     UserChoice = ""
     while UserChoice not in Room1_2NW_Options:
+        print("")
         print("You are in 1_2NW")
         print('''Room text here, with potential options.
         1. Option 1 (NNW - The Bridge)
@@ -519,6 +565,7 @@ def RoomNNE():
     RoomNNE_Options = ["1", "2"]
     UserChoice = ""
     while UserChoice not in RoomNNE_Options:
+        print("")
         print("You are in NNE!")
         print('''Room text here, with potential options.
         1. Option 1 (1_2NE - Store room [Kill Room])
@@ -541,6 +588,7 @@ def RoomENE():
     RoomENE_Options = ["1", "2"]
     UserChoice = ""
     while UserChoice not in RoomENE_Options:
+        print("")
         print("You are in ENE!")
         print('''Room text here, with potential options.
         1. Option 1 (NNE)
@@ -563,6 +611,7 @@ def RoomSSE():
     RoomSSE_Options = ["1", "2"]
     UserChoice = ""
     while UserChoice not in RoomSSE_Options:
+        print("")
         print("You are in SSE!")
         print('''Room text here, with potential options.
         1. Option 1 (1_1SE - Sickbay)
@@ -585,6 +634,7 @@ def RoomSSW():
     RoomSSW_Options = ["1", "2"]
     UserChoice = ""
     while UserChoice not in RoomSSW_Options:
+        print("")
         print("You are in SSW!")
         print('''Room text here, with potential options.
         1. Option 1 (1_1SW - Crew Quarters)
@@ -603,6 +653,7 @@ def RoomSSW():
 def RoomWSW():
     #kill room
     #From here we can't go anywhere - we die!"
+    print("")
     print("You are in WSW!")
     print("You died!")
     time.sleep(1)
@@ -633,6 +684,7 @@ def RoomWNW():
     RoomWNW_Options = ["1", "2"]
     UserChoice = ""
     while UserChoice not in RoomWNW_Options:
+        print("")
         print("You are in WNW! (Conference Lounge)")
         print('''Room text here, with potential options.
         1. Option 1 (1_2NW)
@@ -655,6 +707,7 @@ def RoomNNW():
     RoomNNW_Options = ["1", "2"]
     UserChoice = ""
     while UserChoice not in RoomNNW_Options:
+        print("")
         print("You are in NNW! (The Bridge)")
         print('''Room text here, with potential options.
         1. Option 1 (1_1NW - Observation Deck)
@@ -675,9 +728,11 @@ def RoomNNW():
 def RoomESETransporterRoom():
     #From here we can go to... 1_1E and 1_2SE"
     #We can also die here if we don't have the correct equipment"  
+    print("")
     print("You are in ESE Transporter Room!")
     BeamOut = input("Would you like to try and beam out of the ship? (Y/N) \n")
     if BeamOut == "Y" or BeamOut == "y" or BeamOut == "Yes" or BeamOut == "YES" or BeamOut == "yes":
+        print("")
         print("Initialising beam...")
         time.sleep(1)
         print("Beaming down to planet surface in...")
@@ -689,6 +744,7 @@ def RoomESETransporterRoom():
         print("1...")
         time.sleep(1)
         if comms == True and locator == True and transporter == True and key == True and batteries == True:
+            print("")
             print("Congratulations! You beamed safely down to Nova VII and excaped the")
             print("time loop, you look up to the sky just in time to see The Enterprise")
             print("lose the last of its structural integrity and scatter accross the")
@@ -711,6 +767,7 @@ def RoomESETransporterRoom():
                     ''')     
                 exit()                
         else:
+            print("")
             print("You did not have all the required equipment and items to successfully beam down to Nova VII") 
             time.sleep(0.5)
             print("You beamed half way down to the planet's surface but appeared in space before you could reach your desination.")
@@ -735,10 +792,12 @@ def RoomESETransporterRoom():
             time.sleep(1)
             exit()    
     elif BeamOut == "N" or BeamOut == "n" or BeamOut == "No" or BeamOut == "NO" or BeamOut == "no":
+        print("")
         print("You continue on your journey...")
         RoomESE_Options = ["1", "2"]
         UserChoice = ""
         while UserChoice not in RoomESE_Options:
+            print("")
             print('''Room text here, with potential options.
                 1. Option 1 (1_1E)
                 2. Option 2 (1_2SE - Captain's Quarters)
