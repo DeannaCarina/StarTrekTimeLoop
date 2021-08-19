@@ -114,7 +114,7 @@ def PlayGame():
             time.sleep(2)
             print("which should be within beam distance, but without your")
             time.sleep(2)
-            print("comms and locator devices the chances ofgetting there")
+            print("comms and locator devices the chances of getting there")
             time.sleep(2)
             print("safely are slim.")
             print("")
@@ -128,7 +128,8 @@ def PlayGame():
             time.sleep(2)
             print("Nova VII:")
             time.sleep(2)
-            print('''1. Locator Device
+            print('''
+                     1. Locator Device
                      2. Communication (Comms) Device
                      3. Batteries for Items 1 & 2
                      4. Power-on key for the transporter device''')
@@ -802,7 +803,7 @@ def RoomESETransporterRoom():
             time.sleep(2)
             print("and escaped the time loop, you look up to the sky just")
             time.sleep(2)
-            print(" in time to see The Enterprise lose the last of its")
+            print("in time to see The Enterprise lose the last of its")
             time.sleep(2)
             print("structural integrity and scatter accross the heavens,")
             time.sleep(2)
