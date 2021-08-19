@@ -799,7 +799,7 @@ def RoomESETransporterRoom():
         time.sleep(1)
         if comms == True and locator == True and transporter == True and key == True and batteries == True:
             print("")
-            print("Congratulations! You beamed safely down to Nova VII and excaped the")
+            print("Congratulations! You beamed safely down to Nova VII and escaped the")
             print("time loop, you look up to the sky just in time to see The Enterprise")
             print("lose the last of its structural integrity and scatter accross the")
             print("heavens, some small pieces break through the atmosphere of Nova VII")
@@ -818,7 +818,31 @@ def RoomESETransporterRoom():
                     | ||   | _>  | _>|   | | |
                     |_||_|_|___> |___|_\_|___/                    
 
-                    ''')     
+                    ''')
+                time.sleep(2)
+                print("")
+                print("")
+                print("")
+                print('''
+            _____ _____  ______ _____ _____ _______ _____ 
+           / ____|  __ \|  ____|  __ \_   _|__   __/ ____|
+          | |    | |__) | |__  | |  | || |    | | | (___  
+          | |    |  _  /|  __| | |  | || |    | |  \___ \ 
+          | |____| | \ \| |____| |__| || |_   | |  ____) |
+           \_____|_|  \_\______|_____/_____|  |_| |_____/ 
+                                        
+                ''')
+                time.sleep(2)
+                print("Developer: Deanna Sale")
+                time.sleep(1)
+                print("Theme: Gene Roddenberry (Star Trek Creator)")
+                time.sleep(1)  
+                print("ASCII Text: https://patorjk.com/software/taag/")
+                time.sleep(1)  
+                print("ASCII Images: http://www.asciiartfarts.com/star_trek.html")
+                time.sleep(1)  
+                print("Story Line: Deanna Sale")
+                time.sleep(3)   
                 exit()                
         else:
             print("")
