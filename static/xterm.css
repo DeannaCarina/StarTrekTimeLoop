@@ -224,7 +224,7 @@ button:hover {
     padding: 20px;
     border: 1px solid #888;
     width: 450px;
-    height: 500px;
+    height: 550px;
 }
 
 #modalHeading {
@@ -259,5 +259,15 @@ button:hover {
 @media screen and (max-width: 800px) {
     body {
         background-image: url(spaceport.png);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .modal-content {
+        width: 230px;
+        height: 550px;
+        padding-right: 10px;
+        padding-left: 0px;
+        font-size: 70%;
     }
 }
