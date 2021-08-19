@@ -229,6 +229,8 @@ button:hover {
 
 #modalHeading {
     line-height: 50px;
+    font-weight: 700;
+    font-size: large;
 }
 
 #instructionList {
