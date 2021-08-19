@@ -1,32 +1,35 @@
 <h1 id="top"><a href="https://startrek-timeloop.herokuapp.com/">Star Trek: Time Loop</a></h1>
 
 ## Contents
-<li>
-    <ul>
-        <a href="#Introcuction"><h4>Introduction</h4></a>
-    </ul>
-    <ul>
-        <a href="#UX"><h4>UX</h4></a>
-    </ul>
-    <ul>
-        <a href="#Technologies"><h4>Technologies</h4></a>
-    </ul>
-    <ul>
-        <a href="#Features"><h4>Features</h4></a>
-    </ul>
-    <ul>
-        <a href="#Testing"><h4>Testing</h4></a>
-    </ul>
-    <ul>
-        <a href="#Deployment"><h4>Deployment</h4></a>
-    </ul>
-    <ul>
-        <a href="#Credits"><h4>Credits</h4></a>
-    </ul>
-    <ul>
-        <a href="#References"><h4>References</h4></a>
-    </ul>
-</li>
+<ul>
+    <li>
+        <a href="#Introduction"><strong>Introduction</strong></a>
+    </li>
+    <li>
+        <a href="#UX"><strong>UX</strong></a>               
+    </li>
+    <li>
+        <a href="#Technologies"><strong>Technologies</strong></a>
+    </li>
+    <li>
+        <a href="#Features"><strong>Features</strong></a>
+    </li>
+    <li>
+        <a href="#Testing"><strong>Testing</strong></a>   
+    </li>
+    <li>
+        <a href="#Deployment"><strong>Deployment</strong></a>
+    </li>
+    <li>
+       <a href="#Credits"><strong>Credits</strong></a> 
+    </li>
+    <li>
+        <a href="#Screenshots"><strong>Screenshots</strong></a>
+    </li>
+    <li>
+        <a href="#References"><strong>References</strong></a>
+    </li>
+</ul>
 <hr>
 
 # Introduction
@@ -96,6 +99,8 @@ I have found the use of the five planes model to be highly useful in the develop
 ### Content
 #### Images
 ### Acknowledgements
+
+# Screenshots
 
 # References
 
