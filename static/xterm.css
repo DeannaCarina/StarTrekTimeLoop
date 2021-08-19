@@ -37,7 +37,9 @@
 
 #terminal {
     background-image: url(spaceland.png);
-    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .xterm {
