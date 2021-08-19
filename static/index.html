@@ -8,12 +8,30 @@
         integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ=="
         crossorigin="anonymous"></script>
     <script src="xterm.js"></script>
+    <script src="index.js"></script>
     <title>Star Trek - Time Loop</title>
 </head>
 
 <body>
     <button onclick="window.location.reload()">PLAY GAME</button>
-    <button onclick="window.location.reload()">HOW TO PLAY</button>
+    <button id="myBtn">HOW TO PLAY</button>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <span id="modalHeading">How to play.</span>
+            <ol id="instructionList">
+                <li>Choose the Harry Potter book from the main page that you want to be quizzed on.</li><br>
+                <li>Select your answers on the quiz page that you think are correct, there are 20 questions per quiz.
+                </li><br>
+                <li>Once you have selected your answers, click on 'get results' to reveal your score and show which
+                    answers you answered correctly or incorrectly.</li><br>
+                <li>If you want to see the correct answers to the questions then click on 'reveal answers'.</li><br>
+                <li>You have the option to come back to the main page using the home button or to try again using the
+                    'retry' button</li><br>
+                <li>See how you do on the quiz and challenge your friends to see who's the biggest Potter nerd!</li>
+            </ol>
+        </div>
+    </div>
     <div id="terminal"></div>
     <script>
         var socket = null;
