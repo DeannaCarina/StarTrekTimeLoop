@@ -63,8 +63,9 @@ o               .         ___---___                    .
    .                   ~--___ ; ___--~
                   .          ---         .
                 ''', 3.5)
-        SkipIntro = input("Do you want to skip the intro? (Y/N): \n")
-        if SkipIntro.lower() == "n" or SkipIntro.lower() == "no":
+        print("Do you want to see the introduction?")        
+        SkipIntro = input("(recommended for beginners) (Y/N): \n")
+        if SkipIntro.lower() == "y" or SkipIntro.lower() == "yes":
             time.sleep(2)
             P_S("\nYou have been on the ship for 6 years now, and have", 2)
             P_S("steadily worked your way up the ranks to where you", 2)
@@ -104,7 +105,7 @@ o               .         ___---___                    .
             P_S("encounter situations that will reduce your health.\n", 2)
             P_S(f"Good luck {name}, live long... and prosper.", 2)
             RoomEngineBay()
-        elif SkipIntro.lower() == "y" or SkipIntro.lower() == "yes":
+        elif SkipIntro.lower() == "n" or SkipIntro.lower() == "no":
             RoomEngineBay()
         else:
             print("That option does not compute, please try again.")
