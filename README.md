@@ -111,7 +111,7 @@ I have found the use of the five planes model to be highly useful in the develop
 # Screenshots
 <a href="#top">Back to the top.</a>
 <img src="assets/images/readme-images/sttlscreen.png"><br>
-<img src="assets/images/readme-images/sttlscreen1.png">
+<img src="assets/images/readme-images/sttlscreen2.png">
 
 # References
 <a href="#top">Back to the top.</a>
