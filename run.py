@@ -12,7 +12,7 @@ UserStats = {
     "health": 5,
     "weapons": ["fists"],
     "comms": True,
-    "locator": True,
+    "locator": False,
     "key": True,
     "batteries": True
 }
@@ -129,17 +129,19 @@ def RoomEngineBay():
     # # 1_1E(2), 1_1S(3) and 1_1W(4)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Engine Bay!")
-    print('''
-           ___________________          _-_             _      _-_      _
-           \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
-                       \_ \    \----._________.----/  \----._________.----/
-                        \ \   /  /    `-_-'              `.  `]-['  ,'
-                    __,--`█`-'..'-_                        `.' █ `.
-                   /____          ||                        | (_) |
-                        `--.____,-'                          `___'
-                    \n
-                    █ = You are here.
-        ''')
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     FourRoomChoice("Room1_1N", "Room1_1E", "Room1_1S", "Room1_1W",
                    Room1_1N, Room1_1E, Room1_1S, Room1_1W)
     FourRoomSecondChance(Room1_1N, Room1_1E, Room1_1S, Room1_1W)
@@ -151,6 +153,19 @@ def Room1_1N():
     # From here we can go to... 1_1NW, NNW, 1_2N and NNE
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1N\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]-3
     P_S("You got hurt! You lost 3 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -167,6 +182,19 @@ def Room1_1E():
     # From here we can go to... RoomEngineBay, 1_1NE and 1_2E"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1E\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]-2
     P_S("You got hurt! You lost 2 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -183,6 +211,19 @@ def Room1_1S():
     # From here we can go to... 1_1W, 1_1E, 1_1SE and 1_2S"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1S\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]-1
     P_S("You got hurt! You lost 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -199,6 +240,19 @@ def Room1_1W():
     # From here we can go to... RoomEngineBay, 1_1SW and 1_2W"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1W\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]-2
     P_S("You got hurt! You lost 2 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -215,6 +269,19 @@ def Room1_1NE():
     # From here we can go to... 1_1N, NNE and ENE"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1NE\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]+1
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -228,6 +295,19 @@ def Room1_1SE():
     # From here we can go to... 1_1E, ESETransporterRoom and SSE"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1SE\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]+1
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -241,6 +321,19 @@ def Room1_1SW():
     # From here we can go to... 1_1S, SSW and WSW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1SW\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]+1
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -254,6 +347,19 @@ def Room1_1NW():
     # From here we can go to... 1_1W, WNW and NNW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1NW\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]+1
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -267,6 +373,19 @@ def Room1_2N():
     # kill room
     # From here we can't go anywhere - we die!"
     P_S("You are in 1_2N! The Shuttle Bay.\n", 2)
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     P_S("You died!\n", 1.5)
     P_S('''
          ___  ___ __ __ ___   ___ _ _ ___ ___
@@ -288,6 +407,19 @@ def Room1_2E():
     # ESETransporterRoom"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2E\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]-1
     P_S("You got hurt! You lost 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -304,6 +436,19 @@ def Room1_2S():
     # From here we can go to... 1_2SE and SSW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2S\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]-3
     P_S("You got hurt! You lost 3 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -320,6 +465,19 @@ def Room1_2W():
     # From here we can go to... 1_2SW, WNW and RoomEngineBay"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2W\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]-1
     P_S("You got hurt! You lost 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -335,6 +493,19 @@ def Room1_2NE():
     # Kill Room
     # From here we can't go anywhere - we die!"
     P_S("You are in 1_2NE!\n", 2)
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     P_S("You died!\n", 1.5)
     P_S('''
          ___  ___ __ __ ___   ___ _ _ ___ ___
@@ -355,6 +526,19 @@ def Room1_2SE():
     # From here we can go to... 1_2E and SSE"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2SE\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]+3
     P_S("You found food! You gained 3 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -368,6 +552,19 @@ def Room1_2SW():
     # From here we can go to... 1_2S and WSW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2SW\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]+2
     P_S("You found food! You gained 2 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -381,6 +578,19 @@ def Room1_2NW():
     # From here we can go to... NNW and 1_2W"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2NW\n")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     UserStats["health"] = UserStats["health"]+2
     P_S("You found food! You gained 2 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
@@ -394,6 +604,19 @@ def RoomNNE():
     # From here we can go to... 1_2NE and 1_1NE"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in RoomNNE")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     TwoRoomChoice("Room1_2NE", "Room1_1NE",
                   Room1_2NE, Room1_1NE)
     TwoRoomSecondChance(Room1_2NE, Room1_1NE)
@@ -404,6 +627,19 @@ def RoomENE():
     # From here we can go to... NNE and 1_2E"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in RoomENE")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     TwoRoomChoice("RoomNNE", "Room1_2E",
                   RoomNNE, Room1_2E)
     TwoRoomSecondChance(RoomNNE, Room1_2E)
@@ -414,6 +650,19 @@ def RoomSSE():
     # From here we can go to... 1_1SE and 1_2S"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in RoomSSE")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     TwoRoomChoice("Room1_1SE", "Room1_2S",
                   Room1_1SE, Room1_2S)
     TwoRoomSecondChance(Room1_1SE, Room1_2S)
@@ -424,6 +673,19 @@ def RoomSSW():
     # From here we can go to... 1_1SW and 1_2SW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in RoomSSW")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     TwoRoomChoice("Room1_1SW", "Room1_2SW",
                   Room1_1SW, Room1_2SW)
     TwoRoomSecondChance(Room1_1SW, Room1_2SW)
@@ -433,6 +695,19 @@ def RoomWSW():
     # kill room
     # From here we can't go anywhere - we die!"
     P_S("You are in WSW!\n", 2)
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     P_S("You died!\n", 1.5)
     P_S('''
          ___  ___ __ __ ___   ___ _ _ ___ ___
@@ -453,6 +728,19 @@ def RoomWNW():
     # From here we can go to... 1_2NW and NNW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in RoomWNW")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     TwoRoomChoice("Room1_2NW", "RoomNNW",
                   Room1_2NW, RoomNNW)
     TwoRoomSecondChance(Room1_2NW, RoomNNW)
@@ -463,6 +751,19 @@ def RoomNNW():
     # From here we can go to... 1_1NW and 1_2N"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in RoomNNW")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     TwoRoomChoice("Room1_1NW", "Room1_2N",
                   Room1_1NW, Room1_2N)
     TwoRoomSecondChance(Room1_1NW, Room1_2N)
@@ -474,6 +775,19 @@ def RoomESETransporterRoom():
     # We can also die here if we don't have the correct equipment"
     P_S("\n-------------------------------------------\n", 3)
     print("\nYou are in ESE Transporter Room!")
+    while UserStats["locator"]:
+        P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--`█`-'..'-_                        `.' █ `.
+             /____          ||                        | (_) |
+                  `--.____,-'                          `___'
+            \n
+            █ = You are here.
+        ''', 2)
+        break
     BeamOut = input("Would you like to beam out of the ship? (Y/N) \n")
     if BeamOut.lower() == "y" or BeamOut.lower() == "yes":
         P_S("\nInitialising beam...", 1)
