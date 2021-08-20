@@ -193,6 +193,7 @@ button {
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 button:hover {
