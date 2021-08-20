@@ -35,7 +35,7 @@
  *  Default styles for xterm.js
  */
 body {
-    background-image: url(spaceland.png);
+    background-image: url(land2.png);
     margin: 0px;
     text-align: center;
 }
@@ -52,6 +52,7 @@ body {
     user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
+    border: 5px solid rgb(134, 134, 134);
 }
 
 .xterm.focus,
@@ -117,6 +118,7 @@ body {
 
 .xterm .xterm-screen {
     position: relative;
+    border: 5px solid rgb(134, 134, 134);
 }
 
 .xterm .xterm-screen canvas {
@@ -194,6 +196,7 @@ button {
     margin-bottom: 50px;
     border-radius: 8px;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
 }
 
 button:hover {
