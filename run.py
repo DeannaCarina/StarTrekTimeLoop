@@ -40,10 +40,10 @@ def PlayGame():
         P_S("1...", 1)
         global name
         name = input("What is your name? \n")
-        P_S(f"Hello {name}... welcome aboard the USS Enterprise:", 1.5)
-        P_S("NCC-1703. It is Star Date 3167. You are the second", 2)
-        P_S("engineer on board and work the night shift. You joined", 2)
-        P_S("the ship on her maiden voyage of her 15 year mission to:", 2)
+        P_S(f"Hello {name}... welcome aboard the USS Enterprise:", 2)
+        P_S("NCC-1703. It is Star Date 3167. You are the second", 3)
+        P_S("engineer on board and work the night shift. You joined", 2.5)
+        P_S("the ship on her maiden voyage of her 15 year mission to:", 3.5)
         P_S('''
         BOLDLY GO WHERE NO ONE HAS GONE BEFORE...
 
