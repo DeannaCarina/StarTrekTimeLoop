@@ -263,7 +263,7 @@ def Room1_1W():
     if UserStats["health"] <= 0:
         NoHealth()
     else:
-        ThreeRoomChoice("Engine Bay", "1_1SW - Holodeck", "1_2W",
+        ThreeRoomChoice("Engine Bay", "1_1SW", "1_2W",
                         RoomEngineBay, Room1_1SW, Room1_2W)
         ThreeRoomSecondChance(RoomEngineBay, Room1_1SW, Room1_2W)
 
@@ -376,6 +376,7 @@ def Room1_1NW():
 def Room1_2N():
     # kill room
     # From here we can't go anywhere - we die!"
+    P_S("\n-------------------------------------------\n", 3)
     P_S("You are in room code: 1.2N (The Shuttle Bay).\n", 2)
     while UserStats["locator"]:
         P_S('''
@@ -499,6 +500,7 @@ def Room1_2W():
 def Room1_2NE():
     # Kill Room
     # From here we can't go anywhere - we die!"
+    P_S("\n-------------------------------------------\n", 3)
     P_S("You are in room code: 1.2NE (Storeroom). \n", 2)
     while UserStats["locator"]:
         P_S('''
@@ -701,6 +703,7 @@ def RoomSSW():
 def RoomWSW():
     # kill room
     # From here we can't go anywhere - we die!"
+    P_S("\n-------------------------------------------\n", 3)
     P_S("You are in WSW! + Window blow out\n", 2)
     while UserStats["locator"]:
         P_S('''
