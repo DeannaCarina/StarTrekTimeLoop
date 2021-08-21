@@ -225,10 +225,10 @@ button:hover {
     background-color: #fefefe;
     margin-top: 400px;
     margin: auto;
-    padding: 20px;
+    padding: 40px;
     border: 1px solid #888;
-    width: 450px;
-    height: 600px;
+    width: 410px;
+    height: 560px;
 }
 
 #modalHeading {
@@ -237,9 +237,10 @@ button:hover {
     font-size: large;
 }
 
-#instructionList {
-    text-align: left;
-    padding-right: 20px;
+#modal-text {
+    text-align: justify;
+    line-height: 15px;
+    font-size: small;
 }
 
 .close {
