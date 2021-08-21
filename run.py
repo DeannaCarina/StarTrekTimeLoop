@@ -13,8 +13,8 @@ UserStats = {
     "fists": True,
     "knife": False,
     "phaser": False,
-    "comms": False,
-    "locator": False,
+    "comms": True,
+    "locator": True,
     "key": False,
     "batteries": False
 }
@@ -602,7 +602,6 @@ def Room1_2NW():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]+2
     P_S("You found food! You gained 2 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
     TwoRoomChoice("RoomNNW", "Room1_2W",
@@ -628,7 +627,14 @@ def RoomNNE():
             █ = You are here.
         ''', 2)
         break
-    UserStats["knife"] = True
+    if UserStats["knife"] is False:
+        print("You found a knife! You hook it into your belt.")
+        UserStats["knife"] = True
+    elif UserStats["knife"] is True:
+        print("This is where you found the knife.")
+    else:
+        print("An error occured, please restart your game!")
+        exit()
     TwoRoomChoice("Room1_2NE", "Room1_1NE",
                   Room1_2NE, Room1_1NE)
     TwoRoomSecondChance(Room1_2NE, Room1_1NE)
@@ -652,7 +658,43 @@ def RoomENE():
             █ = You are here.
         ''', 2)
         break
-    UserStats["locator"] = True
+    if UserStats["locator"] is False:
+        P_S("You found a locator device!", 2)
+        UserStats["locator"] = True
+        if UserStats["batteries"] is True:
+            P_S("\nThe Locator device springs into life once you", 2)
+            P_S("put the batteries inside and shows you a", 2)
+            P_S("small graphic of where you are in the ship...", 2)
+            P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--` `-'..'-_                        `.'   `.
+             /____          ||                        | (_) |
+                  `--.____,█'                          `___█
+            \n
+            █ = You are here.
+        ''', 2)
+            P_S("You will now get a visual representation of where you", 2)
+            P_S("are in the Enterprise each time you enter a room.", 2)
+            if UserStats["comms"] is True and UserStats["batteries"] is True:
+                print("")
+                P_S("A voice comes out of your comms device:", 2)
+                P_S(f'"{name}! We can see you! Just make sure you have the', 2)
+                P_S('transporter override key and we should be able to', 2)
+                P_S(f'safely beam you down to Nova VII. Good look {name}', 2)
+                P_S('"hopefully we will see each other very soon."', 2)
+        elif UserStats["batteries"] is False:
+            P_S('The locator device is completely out of batteries, "There', 2)
+            P_S('should be some batteries on this ship somewhere!", you', 2)
+            P_S("think to yourself.", 2)
+    elif UserStats["locator"] is True:
+        print("This is where you found the Locator device.")
+    else:
+        print("An error occured, please restart your game!")
+        exit()
+    P_S("\nROOM INFO AND PATH INFO HERE", 2)    
     TwoRoomChoice("RoomNNE", "Room1_2E",
                   RoomNNE, Room1_2E)
     TwoRoomSecondChance(RoomNNE, Room1_2E)
@@ -676,7 +718,117 @@ def RoomSSE():
             █ = You are here.
         ''', 2)
         break
-    UserStats["batteries"] = True
+    if UserStats["batteries"] is False:
+        P_S("You found some batteries!", 2)
+        UserStats["batteries"] = True
+        
+        if UserStats["locator"] is False and UserStats["comms"] is False:
+            P_S("\nYou put the batteries into your pocket for safekeeping.", 2)
+        elif UserStats["comms"] is True and UserStats["locator"] is False:
+            P_S("\nYou put two batteries inside of the comms device,", 2)
+            P_S("and store the other two in your pocket for safekeeping.", 2)
+            P_S("\nA voice comes out of your comms device:", 2)
+            P_S('"He... Hello? Can anyone hear me? Simister Clancy here', 2)
+            P_S('of Starfleet outpost 3-1-Victor-2-Foxtrott, on Nova VII', 2)
+            P_S('do you read me? Please respond."', 2)
+            P_S("You can't believe it... You fumble with the comms device", 2)
+            P_S("almost dropping it in your hurry to respond...", 2)
+            P_S(f'"Hello Mr Clancy", {name} here, Second Engineer of the', 2)
+            P_S("USS Enterprise NCC-1703, it's so good to hear your voice!", 2)
+            P_S("things are a bit crazy up here, we were struck by an", 2)
+            P_S("asteroid and lost control of the ship, we ended up", 2)
+            P_S("passing though a Black Hole. I must have been thrown", 2)
+            P_S("about in the comotion as I woke up on the floor and", 2)
+            P_S('things were all over the place!', 2)
+            P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
+            P_S('"Yes, I heard all about it! I managed to get some of your', 2)
+            P_S("crew to safety down here on Nova VII before your shipwide", 2)
+            P_S("comms and transporter went offline. I can help you get", 2)
+            P_S("out, but you'll need to find a locator device on board so", 2)
+            P_S("I can pinpoint your location. You'll also need the", 2)
+            P_S("Transporter override key so I can access it remotely.", 2)
+            P_S("Let me know as soon as you have the locator device and", 2)
+            P_S("are ready in the Transporter room with the override key.", 2)
+            P_S("I have a feeling you don't have much time, your ship", 2)
+            P_S(f'is highly compromised. Hurry {name}, hurry... "', 2)
+            print("")
+            P_S("You stow the comms device into your pocket and continue", 2)
+            P_S("on your way - filled with new hope.", 2)
+        elif UserStats["locator"] is True and UserStats["comms"] is False:
+            P_S("\nYou put two batteries inside of the locator device,", 2)
+            P_S("and store the other two in your pocket for safekeeping.", 2)
+            P_S("\nThe Locator device springs into life once you", 2)
+            P_S("put the batteries inside and shows you a", 2)
+            P_S("small graphic of where you are in the ship...", 2)
+            P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--` `-'..'-_                        `.'   `.
+             /____          ||                        | (_) |
+                  `--.____,█'                          `___█
+            \n
+            █ = You are here.
+        ''', 2)
+            P_S("You will now get a visual representation of where you", 2)
+            P_S("are in the Enterprise each time you enter a room.", 2)
+        elif UserStats["locator"] is True and UserStats["comms"] is True:
+            P_S("\nYou put two batteries inside of the comms device.", 2)
+            P_S("\nA voice comes out of your comms device:", 2)
+            P_S('"He... Hello? Can anyone hear me? Simister Clancy here', 2)
+            P_S('of Starfleet outpost 3-1-Victor-2-Foxtrott, on Nova VII', 2)
+            P_S('do you read me? Please respond."', 2)
+            P_S("You can't believe it... You fumble with the comms device", 2)
+            P_S("almost dropping it in your hurry to respond...", 2)
+            P_S(f'"Hello Mr Clancy", {name} here, Second Engineer of the', 2)
+            P_S("USS Enterprise NCC-1703, it's so good to hear your voice!", 2)
+            P_S("things are a bit crazy up here, we were struck by an", 2)
+            P_S("asteroid and lost control of the ship, we ended up", 2)
+            P_S("passing though a Black Hole. I must have been thrown", 2)
+            P_S("about in the comotion as I woke up on the floor and", 2)
+            P_S('things were all over the place!', 2)
+            P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
+            P_S('"Yes, I heard all about it! I managed to get some of your', 2)
+            P_S("crew to safety down here on Nova VII before your shipwide", 2)
+            P_S("comms and transporter went offline. I can help you get", 2)
+            P_S("out, but you'll need to find a locator device on board so", 2)
+            P_S("I can pinpoint your location. You'll also need the", 2)
+            P_S("Transporter override key so I can access it remotely.", 2)
+            P_S("Let me know as soon as you have the locator device and", 2)
+            P_S("are ready in the Transporter room with the override key.", 2)
+            P_S("I have a feeling you don't have much time, your ship", 2)
+            P_S(f'is highly compromised. Hurry {name}, hurry... "', 2)
+            print("")
+            P_S("\nYou put the other batteries inside the locator device.", 2)
+            P_S("\nThe Locator device springs into life once you", 2)
+            P_S("put the batteries inside and shows you a", 2)
+            P_S("small graphic of where you are in the ship...", 2)
+            P_S('''
+    ___________________          _-_             _      _-_      _
+    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                \_ \    \----._________.----/  \----._________.----/
+                  \ \   /  /    `-_-'              `.  `]-['  ,'
+              __,--` `-'..'-_                        `.'   `.
+             /____          ||                        | (_) |
+                  `--.____,█'                          `___█
+            \n
+            █ = You are here.
+        ''', 2)
+            P_S("You will now get a visual representation of where you", 2)
+            P_S("are in the Enterprise each time you enter a room.", 2)
+            P_S("You stow the comms device into your pocket and continue", 2)
+            P_S("on your way, holding the locator device out in front of", 2)
+            P_S("you - filled with new hope.", 2)
+        else:
+            print("An error occured, please restart your game!")   
+            exit() 
+    elif UserStats["batteries"] is True:
+        print("This is where you found the batteries.")
+    else:
+        print("An error occured, please restart your game!")
+        exit()
+    print("ROOM AND PATH INFO HERE")    
     TwoRoomChoice("Room1_1SE", "Room1_2S",
                   Room1_1SE, Room1_2S)
     TwoRoomSecondChance(Room1_1SE, Room1_2S)
@@ -700,7 +852,14 @@ def RoomSSW():
             █ = You are here.
         ''', 2)
         break
-    UserStats["key"] = True
+    if UserStats["key"] is False:
+        print("")
+        UserStats["key"] = True
+    elif UserStats["key"] is True:
+        print("This is where you found the override key for the Transporter.")
+    else:
+        print("An error occured, please restart your game!")
+        exit()
     TwoRoomChoice("Room1_1SW", "Room1_2SW",
                   Room1_1SW, Room1_2SW)
     TwoRoomSecondChance(Room1_1SW, Room1_2SW)
@@ -757,7 +916,14 @@ def RoomWNW():
             █ = You are here.
         ''', 2)
         break
-    UserStats["phaser"] = True
+    if UserStats["phaser"] is False:
+        print("")
+        UserStats["phaser"] = True
+    elif UserStats["phaser"] is True:
+        print("This is where you found the phaser.")
+    else:
+        print("An error occured, please restart your game!")
+        exit()
     TwoRoomChoice("Room1_2NW", "RoomNNW",
                   Room1_2NW, RoomNNW)
     TwoRoomSecondChance(Room1_2NW, RoomNNW)
@@ -781,7 +947,13 @@ def RoomNNW():
             █ = You are here.
         ''', 2)
         break
-    UserStats["comms"] = True
+    if UserStats["comms"] is False:
+        print("")
+        UserStats["comms"] = True
+    elif UserStats["comms"] is True:
+        print("This is where you found the comms device.")
+    else:
+        print("An error occured, please restart your game!")
     TwoRoomChoice("Room1_1NW", "Room1_2N",
                   Room1_1NW, Room1_2N)
     TwoRoomSecondChance(Room1_1NW, Room1_2N)
