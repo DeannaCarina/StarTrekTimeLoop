@@ -10,11 +10,13 @@ import time
 
 UserStats = {
     "health": 5,
-    "weapons": ["fists"],
-    "comms": True,
+    "fists": True,
+    "knife": False,
+    "phaser": False,
+    "comms": False,
     "locator": False,
-    "key": True,
-    "batteries": True
+    "key": False,
+    "batteries": False
 }
 
 
@@ -130,7 +132,7 @@ def RoomEngineBay():
     # # 1_1E(2), 1_1S(3) and 1_1W(4)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Engine Bay!")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -154,7 +156,7 @@ def Room1_1N():
     # From here we can go to... 1_1NW, NNW, 1_2N and NNE
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1N\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -184,7 +186,7 @@ def Room1_1E():
     # From here we can go to... RoomEngineBay, 1_1NE and 1_2E"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1E\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -213,7 +215,7 @@ def Room1_1S():
     # From here we can go to... 1_1W, 1_1E, 1_1SE and 1_2S"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1S\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -243,7 +245,7 @@ def Room1_1W():
     # From here we can go to... RoomEngineBay, 1_1SW and 1_2W"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_1W\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -273,7 +275,7 @@ def Room1_1NE():
     # From here we can go to... 1_1N, NNE and ENE"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in room code: 1.1NE (Holodeck).\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -299,7 +301,7 @@ def Room1_1SE():
     # From here we can go to... 1_1E, ESETransporterRoom and SSE"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in room code: 1.1SE (Sickbay).\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -325,7 +327,7 @@ def Room1_1SW():
     # From here we can go to... 1_1S, SSW and WSW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in room code: 1.1SW (Crew Quarters + Tribble).\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -351,7 +353,7 @@ def Room1_1NW():
     # From here we can go to... 1_1W, WNW and NNW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in room code: 1.1NW (Observation Deck).\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -378,7 +380,7 @@ def Room1_2N():
     # From here we can't go anywhere - we die!"
     P_S("\n-------------------------------------------\n", 3)
     P_S("You are in room code: 1.2N (The Shuttle Bay).\n", 2)
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -412,7 +414,7 @@ def Room1_2E():
     # ESETransporterRoom"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2E\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -442,7 +444,7 @@ def Room1_2S():
     # From here we can go to... 1_2SE and SSW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2S\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -472,7 +474,7 @@ def Room1_2W():
     # From here we can go to... 1_2SW, WNW and RoomEngineBay"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2W\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -502,7 +504,7 @@ def Room1_2NE():
     # From here we can't go anywhere - we die!"
     P_S("\n-------------------------------------------\n", 3)
     P_S("You are in room code: 1.2NE (Storeroom). \n", 2)
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -535,7 +537,7 @@ def Room1_2SE():
     # From here we can go to... 1_2E and SSE"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in room code: 1.2SE (Your personal quarters).\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -561,7 +563,7 @@ def Room1_2SW():
     # From here we can go to... 1_2S and WSW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in room code: 1.2SW (Mess Hall).\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -587,7 +589,7 @@ def Room1_2NW():
     # From here we can go to... NNW and 1_2W"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2NW\n")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -613,7 +615,7 @@ def RoomNNE():
     # From here we can go to... 1_2NE and 1_1NE"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room code: NNE (Captain's Quarters + Knife)")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -636,7 +638,7 @@ def RoomENE():
     # From here we can go to... NNE and 1_2E"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in RoomENE + Locator")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -659,7 +661,7 @@ def RoomSSE():
     # From here we can go to... 1_1SE and 1_2S"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in RoomSSE + Batteries")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -682,7 +684,7 @@ def RoomSSW():
     # From here we can go to... 1_1SW and 1_2SW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in RoomSSW + Key")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -705,7 +707,7 @@ def RoomWSW():
     # From here we can't go anywhere - we die!"
     P_S("\n-------------------------------------------\n", 3)
     P_S("You are in WSW! + Window blow out\n", 2)
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -738,7 +740,7 @@ def RoomWNW():
     # From here we can go to... 1_2NW and NNW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in room code: WNW (Conference Lounge) + Phaser.")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -761,7 +763,7 @@ def RoomNNW():
     # From here we can go to... 1_1NW and 1_2N"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in room code: NNW (The Bridge) + Comms.")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _█_             _      _█_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -785,7 +787,7 @@ def RoomESETransporterRoom():
     # We can also die here if we don't have the correct equipment"
     P_S("\n-------------------------------------------\n", 3)
     print("\nYou are in room code: ESE (Transporter Room).")
-    while UserStats["locator"]:
+    while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
