@@ -628,6 +628,7 @@ def RoomNNE():
             █ = You are here.
         ''', 2)
         break
+    UserStats["knife"] = True
     TwoRoomChoice("Room1_2NE", "Room1_1NE",
                   Room1_2NE, Room1_1NE)
     TwoRoomSecondChance(Room1_2NE, Room1_1NE)
@@ -651,6 +652,7 @@ def RoomENE():
             █ = You are here.
         ''', 2)
         break
+    UserStats["locator"] = True
     TwoRoomChoice("RoomNNE", "Room1_2E",
                   RoomNNE, Room1_2E)
     TwoRoomSecondChance(RoomNNE, Room1_2E)
@@ -674,6 +676,7 @@ def RoomSSE():
             █ = You are here.
         ''', 2)
         break
+    UserStats["batteries"] = True
     TwoRoomChoice("Room1_1SE", "Room1_2S",
                   Room1_1SE, Room1_2S)
     TwoRoomSecondChance(Room1_1SE, Room1_2S)
@@ -697,6 +700,7 @@ def RoomSSW():
             █ = You are here.
         ''', 2)
         break
+    UserStats["key"] = True
     TwoRoomChoice("Room1_1SW", "Room1_2SW",
                   Room1_1SW, Room1_2SW)
     TwoRoomSecondChance(Room1_1SW, Room1_2SW)
@@ -753,6 +757,7 @@ def RoomWNW():
             █ = You are here.
         ''', 2)
         break
+    UserStats["phaser"] = True
     TwoRoomChoice("Room1_2NW", "RoomNNW",
                   Room1_2NW, RoomNNW)
     TwoRoomSecondChance(Room1_2NW, RoomNNW)
@@ -776,6 +781,7 @@ def RoomNNW():
             █ = You are here.
         ''', 2)
         break
+    UserStats["comms"] = True
     TwoRoomChoice("Room1_1NW", "Room1_2N",
                   Room1_1NW, Room1_2N)
     TwoRoomSecondChance(Room1_1NW, Room1_2N)
