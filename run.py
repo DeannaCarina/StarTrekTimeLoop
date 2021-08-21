@@ -13,8 +13,8 @@ UserStats = {
     "fists": True,
     "knife": False,
     "phaser": False,
-    "comms": True,
-    "locator": True,
+    "comms": False,
+    "locator": False,
     "key": False,
     "batteries": False
 }
@@ -145,6 +145,7 @@ def RoomEngineBay():
             █ = You are here.
         ''', 2)
         break
+    print("ROOM AND PATH INFO HERE")
     FourRoomChoice("Room1_1N", "Room1_1E", "Room1_1S", "Room1_1W",
                    Room1_1N, Room1_1E, Room1_1S, Room1_1W)
     FourRoomSecondChance(Room1_1N, Room1_1E, Room1_1S, Room1_1W)
@@ -176,6 +177,7 @@ def Room1_1N():
     if UserStats["health"] <= 0:
         NoHealth()
     else:
+        print("ROOM AND PATH INFO HERE")
         FourRoomChoice("1_1NW - Observation Deck", "RoomNNW", "Room1_2N",
                        "RoomNNE", Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
         FourRoomSecondChance(Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
@@ -205,6 +207,7 @@ def Room1_1E():
     if UserStats["health"] <= 0:
         NoHealth()
     else:
+        print("ROOM AND PATH INFO HERE")
         ThreeRoomChoice("Engine Bay", "1_1NE - Holodeck", "1_2E",
                         RoomEngineBay, Room1_1NE, Room1_2E)
         ThreeRoomSecondChance(RoomEngineBay, Room1_1NE, Room1_2E)
@@ -235,6 +238,7 @@ def Room1_1S():
     if UserStats["health"] <= 0:
         NoHealth()
     else:
+        print("ROOM AND PATH INFO HERE")
         FourRoomChoice("Room1_1W", "Room1_1E", "Room1_1SE", "Room1_2S",
                        Room1_1W, Room1_1E, Room1_1SE, Room1_2S)
         FourRoomSecondChance(Room1_1W, Room1_1E, Room1_1SE, Room1_2S)
@@ -265,6 +269,7 @@ def Room1_1W():
     if UserStats["health"] <= 0:
         NoHealth()
     else:
+        print("ROOM AND PATH INFO HERE")
         ThreeRoomChoice("Engine Bay", "1_1SW", "1_2W",
                         RoomEngineBay, Room1_1SW, Room1_2W)
         ThreeRoomSecondChance(RoomEngineBay, Room1_1SW, Room1_2W)
@@ -291,6 +296,7 @@ def Room1_1NE():
     UserStats["health"] = UserStats["health"]+1
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
+    print("ROOM AND PATH INFO HERE")
     ThreeRoomChoice("Room1_1N", "RoomNNE", "RoomENE",
                     Room1_1N, RoomNNE, RoomENE)
     ThreeRoomSecondChance(Room1_1N, RoomNNE, RoomENE)
@@ -317,6 +323,7 @@ def Room1_1SE():
     UserStats["health"] = UserStats["health"]+1
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
+    print("ROOM AND PATH INFO HERE")
     ThreeRoomChoice("Room1_1E", "RoomESETransporterRoom", "RoomSSE",
                     Room1_1E, RoomESETransporterRoom, RoomSSE)
     ThreeRoomSecondChance(Room1_1E, RoomESETransporterRoom, RoomSSE)
@@ -343,6 +350,7 @@ def Room1_1SW():
     UserStats["health"] = UserStats["health"]+1
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
+    print("ROOM AND PATH INFO HERE")
     ThreeRoomChoice("Room1_1S", "RoomSSW", "RoomWSW",
                     Room1_1S, RoomSSW, RoomWSW)
     ThreeRoomSecondChance(Room1_1S, RoomSSW, RoomWSW)
@@ -369,6 +377,7 @@ def Room1_1NW():
     UserStats["health"] = UserStats["health"]+1
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
+    print("ROOM AND PATH INFO HERE")
     ThreeRoomChoice("Room1_1W", "RoomWNW", "RoomNNW",
                     Room1_1W, RoomWNW, RoomNNW)
     ThreeRoomSecondChance(Room1_1W, RoomWNW, RoomNNW)
@@ -434,13 +443,14 @@ def Room1_2E():
     if UserStats["health"] <= 0:
         NoHealth()
     else:
+        print("ROOM AND PATH INFO HERE")
         ThreeRoomChoice("RoomEngineBay", "Room1_2NE", "RoomESETransporterRoom",
                         RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
         ThreeRoomSecondChance(RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
 
 
 def Room1_2S():
-    # Health -3 unless phaser (-2) in weapons
+    # Health -2 unless phaser (-1) in weapons
     # From here we can go to... 1_2SE and SSW"
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Room1_2S\n")
@@ -457,13 +467,14 @@ def Room1_2S():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]-3
+    UserStats["health"] = UserStats["health"]-2
     P_S("You got hurt (Dikironium Cloud)! You lost 3 health. Your new", 2)
     P_S("health is:", 2)
     P_S(UserStats["health"], 2)
     if UserStats["health"] <= 0:
         NoHealth()
     else:
+        print("ROOM AND PATH INFO HERE")
         TwoRoomChoice("Room1_2SE", "RoomSSW",
                       Room1_2SE, RoomSSW)
         TwoRoomSecondChance(Room1_2SE, RoomSSW)
@@ -494,6 +505,7 @@ def Room1_2W():
     if UserStats["health"] <= 0:
         NoHealth()
     else:
+        print("ROOM AND PATH INFO HERE")
         ThreeRoomChoice("Room1_2SW", "RoomWNW", "RoomEngineBay",
                         Room1_2SW, RoomWNW, RoomEngineBay)
         ThreeRoomSecondChance(Room1_2SW, RoomWNW, RoomEngineBay)
@@ -553,6 +565,7 @@ def Room1_2SE():
     UserStats["health"] = UserStats["health"]+3
     P_S("You found food! You gained 3 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
+    print("ROOM AND PATH INFO HERE")
     TwoRoomChoice("Room1_2E", "RoomSSE",
                   Room1_2E, RoomSSE)
     TwoRoomSecondChance(Room1_2E, RoomSSE)
@@ -579,6 +592,7 @@ def Room1_2SW():
     UserStats["health"] = UserStats["health"]+2
     P_S("You found food! You gained 2 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
+    print("ROOM AND PATH INFO HERE")
     TwoRoomChoice("Room1_2S", "RoomWSW",
                   Room1_2S, RoomWSW)
     TwoRoomSecondChance(Room1_2S, RoomWSW)
@@ -602,8 +616,10 @@ def Room1_2NW():
             █ = You are here.
         ''', 2)
         break
+    UserStats["health"] = UserStats["health"]+2
     P_S("You found food! You gained 2 health. Your new health is:", 2)
     P_S(UserStats["health"], 2)
+    print("ROOM AND PATH INFO HERE")
     TwoRoomChoice("RoomNNW", "Room1_2W",
                   RoomNNW, Room1_2W)
     TwoRoomSecondChance(RoomNNW, Room1_2W)
@@ -635,6 +651,7 @@ def RoomNNE():
     else:
         print("An error occured, please restart your game!")
         exit()
+    print("ROOM AND PATH INFO HERE")
     TwoRoomChoice("Room1_2NE", "Room1_1NE",
                   Room1_2NE, Room1_1NE)
     TwoRoomSecondChance(Room1_2NE, Room1_1NE)
@@ -694,7 +711,7 @@ def RoomENE():
     else:
         print("An error occured, please restart your game!")
         exit()
-    P_S("\nROOM INFO AND PATH INFO HERE", 2)    
+    print("ROOM AND PATH INFO HERE")
     TwoRoomChoice("RoomNNE", "Room1_2E",
                   RoomNNE, Room1_2E)
     TwoRoomSecondChance(RoomNNE, Room1_2E)
@@ -721,7 +738,6 @@ def RoomSSE():
     if UserStats["batteries"] is False:
         P_S("You found some batteries!", 2)
         UserStats["batteries"] = True
-        
         if UserStats["locator"] is False and UserStats["comms"] is False:
             P_S("\nYou put the batteries into your pocket for safekeeping.", 2)
         elif UserStats["comms"] is True and UserStats["locator"] is False:
@@ -828,7 +844,7 @@ def RoomSSE():
     else:
         print("An error occured, please restart your game!")
         exit()
-    print("ROOM AND PATH INFO HERE")    
+    print("ROOM AND PATH INFO HERE")
     TwoRoomChoice("Room1_1SE", "Room1_2S",
                   Room1_1SE, Room1_2S)
     TwoRoomSecondChance(Room1_1SE, Room1_2S)
@@ -853,13 +869,21 @@ def RoomSSW():
         ''', 2)
         break
     if UserStats["key"] is False:
-        print("")
+        P_S("You found a key! On close inspection its branded with the", 2)
+        P_S("Starfleet logo. During the six years you have worked on", 2)
+        P_S("The Enterprise, you have only seen this key a handfull of", 2)
+        P_S("times, when the residents of a planet want to be in control", 2)
+        P_S("of who beams down to the surface and when - it allows them", 2)
+        P_S("full control over the ship's external beam capabilities -", 2)
+        P_S("very helpful when they aren't very trusting!\n", 2)
+        P_S("You put the key in your pocket for safekeeping.", 2)
         UserStats["key"] = True
     elif UserStats["key"] is True:
         print("This is where you found the override key for the Transporter.")
     else:
         print("An error occured, please restart your game!")
         exit()
+    print("ROOM AND PATH INFO HERE")    
     TwoRoomChoice("Room1_1SW", "Room1_2SW",
                   Room1_1SW, Room1_2SW)
     TwoRoomSecondChance(Room1_1SW, Room1_2SW)
@@ -917,13 +941,16 @@ def RoomWNW():
         ''', 2)
         break
     if UserStats["phaser"] is False:
-        print("")
+        P_S("You found a phaser! This will help against corporeal threats", 2)
+        P_S("and reduce if not eliminate any potential damage these", 2)
+        P_S("threats inflict upon you.", 2)
         UserStats["phaser"] = True
     elif UserStats["phaser"] is True:
         print("This is where you found the phaser.")
     else:
         print("An error occured, please restart your game!")
         exit()
+    print("ROOM AND PATH INFO HERE")    
     TwoRoomChoice("Room1_2NW", "RoomNNW",
                   Room1_2NW, RoomNNW)
     TwoRoomSecondChance(Room1_2NW, RoomNNW)
@@ -948,8 +975,49 @@ def RoomNNW():
         ''', 2)
         break
     if UserStats["comms"] is False:
-        print("")
+        P_S("You found a comms device!", 2)
         UserStats["comms"] = True
+        if UserStats["batteries"] is True:
+            P_S("\nYou put two of the batteries you found inside of the,", 2)
+            P_S("comms device...", 2)
+            P_S("\nA voice comes out of your comms device:", 2)
+            P_S('"He... Hello? Can anyone hear me? Simister Clancy here', 2)
+            P_S('of Starfleet outpost 3-1-Victor-2-Foxtrott, on Nova VII', 2)
+            P_S('do you read me? Please respond."', 2)
+            P_S("You can't believe it... You fumble with the comms device", 2)
+            P_S("almost dropping it in your hurry to respond...", 2)
+            P_S(f'"Hello Mr Clancy", {name} here, Second Engineer of the', 2)
+            P_S("USS Enterprise NCC-1703, it's so good to hear your voice!", 2)
+            P_S("things are a bit crazy up here, we were struck by an", 2)
+            P_S("asteroid and lost control of the ship, we ended up", 2)
+            P_S("passing though a Black Hole. I must have been thrown", 2)
+            P_S("about in the comotion as I woke up on the floor and", 2)
+            P_S('things were all over the place!', 2)
+            P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
+            P_S('"Yes, I heard all about it! I managed to get some of your', 2)
+            P_S("crew to safety down here on Nova VII before your shipwide", 2)
+            P_S("comms and transporter went offline. I can help you get", 2)
+            P_S("out, but you'll need need the Transporter override key so", 2)
+            P_S("I can access it remotely.", 2)
+            if UserStats["key"] is True and UserStats["locator"] is True:
+                P_S('\n"I already have the key!" you shout down the comms', 2)
+                P_S("device excitedly.\n", 2)
+                P_S('"Fantastic!" replies Clancy. "I can also see your', 2)
+                P_S("location from your comms device, so I'll be able to", 2)
+                P_S('pinpoint your position for safe beam transportation."')
+            elif UserStats["key"] is False and UserStats["locator"] is False:
+                P_S('"You will also need to find a locator device so I can', 2)
+                P_S('pinpoint your exact location once you are in the', 2)
+                P_S('beam transportation room."')
+            P_S("I have a feeling you don't have much time, your ship", 2)
+            P_S(f'is highly compromised. Hurry {name}, hurry... "', 2)
+            print("")
+            P_S("You stow the comms device into your pocket and continue", 2)
+            P_S("on your way - filled with new hope.", 2)
+        elif UserStats["batteries"] is False:
+            P_S('The comms device is completely out of batteries, "There', 2)
+            P_S('should be some batteries on this ship somewhere!", you', 2)
+            P_S("think to yourself.", 2)
     elif UserStats["comms"] is True:
         print("This is where you found the comms device.")
     else:
@@ -985,9 +1053,9 @@ def RoomESETransporterRoom():
         P_S("3...", 1)
         P_S("2...", 1)
         P_S("1...", 1)
-        if ((UserStats["health"]) is True and (UserStats["health"]) is
-                True and (UserStats["health"]) is True and
-                (UserStats["health"]) is True):
+        if ((UserStats["key"]) is True and (UserStats["comms"]) is
+                True and (UserStats["locator"]) is True and
+                (UserStats["batteries"]) is True):
             P_S("Congratulations! You beamed safely down to Nova VII", 2)
             P_S("and escaped the time loop, you look up to the sky", 2)
             P_S("just in time to see The Enterprise lose the last of", 2)
