@@ -173,6 +173,33 @@ def RoomEngineBay():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["EngineBay"] is True:
+        P_S("You tentatively feel your head, checking for any bumps or", 2)
+        P_S("cuts and look at your hand for any traces of blood. You", 2)
+        P_S('must have really hit your head hard as the room seems to be', 2)
+        P_S("spinning. You slowly get to your feet pushing yourself up", 2)
+        P_S("on the nearby Warp Core control systems - this is what you", 2)
+        P_S("must have hit your head on as you notice a small clump of", 2)
+        P_S("your hair caught on the corner.", 2)
+        P_S("You head over to the nearby window and see a few pieces of", 2)
+        P_S("the Enterprise's hull floating away into space. The nearby", 2)
+        P_S("planet comes into view as the Enterprise rotates around. You", 2)
+        P_S("have no idea where you are, but the planet does look", 2)
+        P_S("familiar.", 2)
+        P_S("A nearby control panel for the Core Cooling Systems starts", 2)
+        P_S("to distort and ripple. After a few seconds it starts to", 2)
+        P_S("shrink into itself until there is nothing there. You stare", 2)
+        P_S("at the place the control panel once stood - transfixed.", 2)
+        P_S("What on Earth is going on? Does this have something to do", 2)
+        P_S("with the Black Hole?", 2)
+        FirstVisits["EngineBay"] = False
+    else:
+        P_S("You enter the room... you've been here before! It's the", 2)
+        P_S("Engine Bay! You subconciously look over to where the control", 2)
+        P_S("panel once stood for the cooling systems and are startled", 2)
+        P_S("to see that it is standing there as if nothing had happened!", 2)
+        P_S("You walk slowly towards it and as you do, it once again", 2)
+        P_S("shrinks and implodes, trapped in a perpetual time-loop.", 2)
     print("ROOM AND PATH INFO HERE")
     FourRoomChoice("Room1_1N", "Room1_1E", "Room1_1S", "Room1_1W",
                    Room1_1N, Room1_1E, Room1_1S, Room1_1W)
