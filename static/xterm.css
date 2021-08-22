@@ -270,6 +270,10 @@ button:hover {
     font-family: 'Courier New', Courier, monospace;
 }
 
+#fancy {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
 
 @media screen and (max-width: 800px) {
     body {
