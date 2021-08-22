@@ -19,6 +19,34 @@ UserStats = {
     "batteries": False
 }
 
+FirstVisits = {
+    "EngineBay": True,
+    "1_1N": True,
+    "1_1E": True,
+    "1_1S": True,
+    "1_1W": True,
+    "1_1NE": True,
+    "1_1SE": True,
+    "1_1SW": True,
+    "1_1NW": True,
+    "1_2N": True,
+    "1_2E": True,
+    "1_2S": True,
+    "1_2W": True,
+    "1_2NE": True,
+    "1_2SE": True,
+    "1_2SW": True,
+    "1_2NW": True,
+    "NNE": True,
+    "ENE": True,
+    "TransporterRoom": True,
+    "SSE": True,
+    "SSW": True,
+    "WSW": True,
+    "WNW": True,
+    "NNW": True
+}
+
 
 def PlayGame():
     print('''
@@ -45,9 +73,9 @@ def PlayGame():
         P_S(f"Hello {name}... welcome aboard the USS Enterprise:", 2)
         P_S("NCC-1703. It is Star Date 3167. You are the second", 3)
         P_S("engineer on board and work the night shift. You joined", 2.5)
-        P_S("the ship on her maiden voyage of her 15 year mission to:", 3.5)
+        P_S("the ship on her maiden voyage of her 5 year mission:", 3.5)
         P_S('''
-        BOLDLY GO WHERE NO ONE HAS GONE BEFORE...
+        TO BOLDLY GO WHERE NO MAN HAS GONE BEFORE...
 
 o               .         ___---___                    .
         .              .--\        --.     .     .         .
@@ -69,7 +97,7 @@ o               .         ___---___                    .
         SkipIntro = input("(recommended for beginners) (Y/N): \n")
         if SkipIntro.lower() == "y" or SkipIntro.lower() == "yes":
             time.sleep(2)
-            P_S("\nYou have been on the ship for 6 years now, and have", 2)
+            P_S("\nYou have been on the ship for 3 years now, and have", 2)
             P_S("steadily worked your way up the ranks to where you", 2)
             P_S("are currently.\n ", 2)
             P_S("Due to an asteroid colliding with the ship's port", 2)
@@ -156,7 +184,7 @@ def Room1_1N():
     # Health -3 cannot be changed by weapons
     # From here we can go to... 1_1NW, NNW, 1_2N and NNE
     P_S("\n-------------------------------------------\n", 3)
-    print("You are in Room1_1N\n")
+    print("You are in room code 1.1N\n")
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -187,7 +215,7 @@ def Room1_1E():
     # Health -2 unless knife (-1) or phaser (-0) in weapons
     # From here we can go to... RoomEngineBay, 1_1NE and 1_2E"
     P_S("\n-------------------------------------------\n", 3)
-    print("You are in Room1_1E\n")
+    print("You are in room code 1.1E\n")
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -201,9 +229,42 @@ def Room1_1E():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]-2
-    P_S("You got hurt (RedJac)! You lost 2 health. Your new health is:", 2)
-    P_S(UserStats["health"], 2)
+    if FirstVisits["1_1E"] is True:
+        P_S("You enter the room cautiously, there is a crew member in", 2)
+        P_S("here! He is facing the wall and not moving. You move slowly", 2)
+        P_S('towards him. "Hello?" you say. He turns... his face looks', 2)
+        P_S("full of terror as he stumbles towards you while raising his", 2)
+        P_S("combat knife in offence. He is going to attack you!", 2)
+        FirstVisits["1_1E"] = False
+    else:
+        P_S("You enter the room cautiously... You've been in here before!", 2)
+        P_S("This is where you were attacked by the Crew Member. He's", 2)
+        P_S("back! Almost as if he never left or never encountered you", 2)
+        P_S("before, he turns to you with the same look of terror as", 2)
+        P_S("before and stumbles towards you with his knife raised...", 2)
+    if UserStats["phaser"] is True:
+        P_S("\nThankfully as you have aquired the phaser, you managed to", 2)
+        P_S("stun the crew member and knock him out without causing him", 2)
+        P_S("harm. You recieved no damage. (You would have lost 2 if you", 2)
+        P_S("were undefended).", 2)
+    elif UserStats["knife"] is True:
+        P_S("\nAs you have aquired the knife, you managed to defend", 2)
+        P_S("from the oncoming attack, but not without the RedJac first", 2)
+        P_S("catching you with his knife. The possessed crew member runs", 2)
+        P_S("out of the door clutching his arm where you caught him", 2)
+        P_S("with the KaBar Combat Knife. You lost 1 health (you would", 2)
+        P_S("have lost 2 if you were undefended).", 2)
+        UserStats["health"] = UserStats["health"]-1
+        P_S("Your new health is:", 2)
+        P_S(UserStats["health"], 2)
+    elif UserStats["fists"] is True:
+        P_S("\nYou try your best to defend yourself from the possessed", 2)
+        P_S("crew member. You punch and kick with all your might whenever", 2)
+        P_S("he comes close. Eventually he runs away not wanting to face", 2)
+        P_S("you any longer. You lost 2 health.", 2)
+        UserStats["health"] = UserStats["health"]-2
+        P_S("Your new health is:", 2)
+        P_S(UserStats["health"], 2)
     if UserStats["health"] <= 0:
         NoHealth()
     else:
@@ -838,7 +899,7 @@ def RoomSSE():
             P_S("you - filled with new hope.", 2)
         else:
             print("An error occured, please restart your game!")   
-            exit() 
+            exit()
     elif UserStats["batteries"] is True:
         print("This is where you found the batteries.")
     else:
@@ -870,7 +931,7 @@ def RoomSSW():
         break
     if UserStats["key"] is False:
         P_S("You found a key! On close inspection its branded with the", 2)
-        P_S("Starfleet logo. During the six years you have worked on", 2)
+        P_S("Starfleet logo. During the three years you have worked on", 2)
         P_S("The Enterprise, you have only seen this key a handfull of", 2)
         P_S("times, when the residents of a planet want to be in control", 2)
         P_S("of who beams down to the surface and when - it allows them", 2)
