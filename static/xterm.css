@@ -199,6 +199,11 @@ button {
     font-weight: 900;
 }
 
+#myMusicBtn {
+    width: 270px;
+    margin-top: 20px;
+}
+
 button:hover {
     background-color: #9b9b9b;
     border: 1px solid rgb(255, 255, 255);
@@ -208,7 +213,8 @@ button:hover {
 /* Following code from https://www.w3schools.com/howto/howto_css_modals.asp edited for use on the Star Trek time loop webapp*/
 
 /* The Modal transparent background filling whole screen */
-.modal {
+.modal,
+.musicModal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -221,14 +227,21 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-content {
+.modal-content,
+.modal-music-content {
     background-color: #fefefe;
     margin-top: 400px;
     margin: auto;
     padding: 40px;
     border: 1px solid #888;
     width: 410px;
-    height: 560px;
+    height: 540px;
+}
+
+.modal-music-content {
+    margin-top: 400px;
+    height: 250px;
+    width: 250px;
 }
 
 #modalHeading {
@@ -243,7 +256,12 @@ button:hover {
     font-size: small;
 }
 
-.close {
+iframe {
+    margin: auto;
+}
+
+.close,
+.musicClose {
     color: #666666;
     float: right;
     font-size: 300%;
@@ -253,8 +271,14 @@ button:hover {
     line-height: 10px;
 }
 
+.musicClose {
+    padding: 10px;
+}
+
 .close:hover,
-.close:focus {
+.musicClose:hover,
+.close:focus,
+.musicClose:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -282,7 +306,9 @@ button:hover {
 }
 
 @media screen and (max-width: 500px) {
-    .modal-content {
+
+    .modal-content,
+    .modal-music-content {
         width: 230px;
         height: 550px;
         padding-right: 10px;

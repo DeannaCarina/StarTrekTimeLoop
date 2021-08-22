@@ -105,8 +105,7 @@ I have found the use of the five planes model to be highly useful in the develop
 ### Code
 ### Content
 #### Images
-#### Audio
-<img src="assets/images/readme-images/purchaseproof.png"><br>
+#### Audio/Video
 
 ### Acknowledgements
 <a href="#top">Back to the top.</a>
