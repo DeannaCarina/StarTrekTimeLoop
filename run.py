@@ -94,52 +94,53 @@ o               .         ___---___                    .
                   .          ---         .
                 ''', 3.5)
         print("Do you want to see the introduction?")        
-        SkipIntro = input("(recommended for beginners) (Y/N): \n")
-        if SkipIntro.lower() == "y" or SkipIntro.lower() == "yes":
-            time.sleep(2)
-            P_S("\nYou have been on the ship for 3 years now, and have", 2)
-            P_S("steadily worked your way up the ranks to where you", 2)
-            P_S("are currently.\n ", 2)
-            P_S("Due to an asteroid colliding with the ship's port", 2)
-            P_S("side, The Enterprise lost control of crucial guide", 2)
-            P_S("and flight instruments, this made it impossible to", 2)
-            P_S("steer away from the nearing Black Hole, and", 2)
-            P_S("unfortunately the ship passed through the Black Hole", 2)
-            P_S("causing massive loss of life and ship damage. You", 2)
-            P_S("wake up in the Engine Bay after suffering from", 2)
-            P_S("concussion. It seems that due to being close to the", 2)
-            P_S("Warp Core of the ship, you were protected from the", 2)
-            P_S("initial space-time anomalies.\n", 2)
-            P_S("In the aftermath of the asteroid and passage through", 2)
-            P_S("the Black Hole, you have broken your comms device and", 2)
-            P_S("lost your locator device.\n", 2)
-            P_S("Things don't seem as they should with the ship -", 2)
-            P_S("walls are rippling with life, and even as you watch,", 2)
-            P_S("things around you are dissapearing into nothingness", 2)
-            P_S("and imploding in on themselves.\n", 2)
-            P_S("There is a nearby planet which should be within beam", 2)
-            P_S("distance, but without your comms and locator devices", 2)
-            P_S("the chances of getting there safely are slim.\n", 2)
-            P_S("You must search the ship for all the necessary", 2)
-            P_S("equipment before you can safely leave via the", 2)
-            P_S("transporter room. \n", 2)
-            P_S("You will need the following items to safely beam ", 2)
-            P_S("down to Nova VII:", 2)
-            print("     1. Locator Device")
-            print("     2. Communication (Comms) Device")
-            print("     3. Batteries for Items 1 & 2")
-            P_S("     4. Power key for the transporter device\n", 4)
-            P_S("On your exploration of the ship, you might also find", 2)
-            P_S("weapons and items that will help you with healing,", 2)
-            P_S("energy levels and defending yourself. As well as", 2)
-            P_S("encounter situations that will reduce your health.\n", 2)
-            P_S(f"Good luck {name}, live long... and prosper.", 2)
-            RoomEngineBay()
-        elif SkipIntro.lower() == "n" or SkipIntro.lower() == "no":
-            RoomEngineBay()
-        else:
-            print("That option does not compute, please try again.")
-            PlayGame()
+        SeeIntro = input("(recommended for beginners) (Y/N): \n")
+        while (SeeIntro != "y" or SeeIntro != "yes"
+               or SeeIntro != "no" or SeeIntro != "n"):
+            print("That option does not compute, please try again - ")
+            SeeIntro = input("do you want to see the introduction?. (Y/N)\n")
+            if SeeIntro.lower() == "y" or SeeIntro.lower() == "yes":
+                time.sleep(2)
+                P_S("\nYou have been on the ship for 3 years now, and have", 2)
+                P_S("steadily worked your way up the ranks to where you", 2)
+                P_S("are currently.\n ", 2)
+                P_S("Due to an asteroid colliding with the ship's port", 2)
+                P_S("side, The Enterprise lost control of crucial guide", 2)
+                P_S("and flight instruments, this made it impossible to", 2)
+                P_S("steer away from the nearing Black Hole, and", 2)
+                P_S("unfortunately the ship passed through the Black Hole", 2)
+                P_S("causing massive loss of life and ship damage. You", 2)
+                P_S("wake up in the Engine Bay after suffering from", 2)
+                P_S("concussion. It seems that due to being close to the", 2)
+                P_S("Warp Core of the ship, you were protected from the", 2)
+                P_S("initial space-time anomalies.\n", 2)
+                P_S("In the aftermath of the asteroid and passage through", 2)
+                P_S("the Black Hole, you have broken your comms device and", 2)
+                P_S("lost your locator device.\n", 2)
+                P_S("Things don't seem as they should with the ship -", 2)
+                P_S("walls are rippling with life, and even as you watch,", 2)
+                P_S("things around you are dissapearing into nothingness", 2)
+                P_S("and imploding in on themselves.\n", 2)
+                P_S("There is a nearby planet which should be within beam", 2)
+                P_S("distance, but without your comms and locator devices", 2)
+                P_S("the chances of getting there safely are slim.\n", 2)
+                P_S("You must search the ship for all the necessary", 2)
+                P_S("equipment before you can safely leave via the", 2)
+                P_S("transporter room. \n", 2)
+                P_S("You will need the following items to safely beam ", 2)
+                P_S("down to Nova VII:", 2)
+                print("     1. Locator Device")
+                print("     2. Communication (Comms) Device")
+                print("     3. Batteries for Items 1 & 2")
+                P_S("     4. Power key for the transporter device\n", 4)
+                P_S("On your exploration of the ship, you might also find", 2)
+                P_S("weapons and items that will help you with healing,", 2)
+                P_S("energy levels and defending yourself. As well as", 2)
+                P_S("encounter situations that will reduce your health.\n", 2)
+                P_S(f"Good luck {name}, live long... and prosper.", 2)
+                RoomEngineBay()
+            elif SeeIntro.lower() == "n" or SeeIntro.lower() == "no":
+                RoomEngineBay()
     elif WantToPlay.lower() == "n" or WantToPlay.lower() == "no":
         P_S("*Beaming you out*", 1)
         P_S("Initialising shut down...", 1)
@@ -550,41 +551,46 @@ def Room1_2N():
     UserStats["health"] = UserStats["health"]+1
     P_S("Your new health is:", 2)
     P_S(UserStats["health"], 2)
-    print("Do you want to carry on looking around the Shuttle Bay? (Y/N)\n")
-    KeepLooking = input()
-    if KeepLooking.lower() == "y" or KeepLooking.lower() == "yes":
-        P_S("You head deeper into the Shuttle Bay and rumage through some", 2)
-        P_S("nearby sacks. You don't notice that on the opposite side of", 2)
-        P_S("sack there is a Hazardous Waste warning! You peer into the", 2)
-        P_S("bag and can't believe your eyes! It's Trilithium Resin! You", 2)
-        P_S("quickly turn and run from the bag and head towards the door", 2)
-        P_S("you came through...", 2)
-        P_S("The door starts to open, but just as it does you hear a", 2)
-        P_S("massive commotion behind you, the Trilithium Resin must have", 2)
-        P_S("exploded on the pressure change of the room when the door", 2)
-        P_S("opened. You feel your body break under the force of the", 2)
-        P_S("blast and you get slammed into the wall. You close your eyes", 2)
-        P_S("and lose conciousness.", 2)
-        P_S('''
-            ___  ___ __ __ ___   ___ _ _ ___ ___
-            /  _>| . |  \  | __> | . | | | __| . |
-            | <_/|   |     | _>  | | | ' | _>|   /
-            `____|_|_|_|_|_|___> `___|__/|___|_\_|
+    print("\nDo you want to carry on looking around the shuttle bay?")
+    KeepLooking = input("(Y/N): \n")
+    while (KeepLooking != "y" or KeepLooking != "yes"
+           or KeepLooking != "no" or KeepLooking != "n"):
+        print("That option does not compute,")
+        KeepLooking = input("please try again. (Y/N)\n")
+        if KeepLooking.lower() == "y" or KeepLooking.lower() == "yes":
+            P_S("You head deeper into the Shuttle Bay and rumage through", 2)
+            P_S("some nearby sacks. You don't notice that on the opposite", 2)
+            P_S("side of sack there is a Hazardous Waste warning! You peer", 2)
+            P_S("into the bag and can't believe your eyes! It's Trilithium", 2)
+            P_S("Resin! You quickly turn and run from the bag and head ", 2)
+            P_S("towards the door you came through...", 2)
+            P_S("The door starts to open, but just as it does you hear a", 2)
+            P_S("massive commotion behind you, the Trilithium Resin must", 2)
+            P_S("have exploded on the pressure change of the room when the", 2)
+            P_S("door opened. You feel your body break under the force of", 2)
+            P_S("the blast and you get slammed into the wall. You close", 2)
+            P_S("your eyes and lose conciousness.", 2)
+            P_S('''
+         ___  ___ __ __ ___   ___ _ _ ___ ___
+        /  _>| . |  \  | __> | . | | | __| . |
+        | <_/|   |     | _>  | | | ' | _>|   /
+        `____|_|_|_|_|_|___> `___|__/|___|_\_|
             \n''', 2)
-        P_S("Resetting time loop in...", 1)
-        P_S("3...", 1)
-        P_S("2...", 1)
-        P_S("1...", 1)
-        print("Press PLAY GAME to re-initialise time loop.")
-        exit()
-    if KeepLooking.lower() == "n" or KeepLooking.lower() == "no":
-        P_S("You head back to the other side of the meeting room to the", 2)
-        P_S("corridor you were in before. Where would you like to go?", 2)
-        ThreeRoomChoice("The Observation deck",
-                        "To the Port Bow",
-                        "To the Starboard Bow",
-                        Room1_1NW, RoomNNW, RoomNNE)
-        ThreeRoomSecondChance(Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
+            P_S("Resetting time loop in...", 1)
+            P_S("3...", 1)
+            P_S("2...", 1)
+            P_S("1...", 1)
+            print("Press PLAY GAME to re-initialise time loop.")
+            exit()
+        elif KeepLooking.lower() == "n" or KeepLooking.lower() == "no":
+            P_S("You head back to the other side of the meeting room to ", 2)
+            P_S("the corridor you were in before. Where would you like", 2)
+            P_S("to go?", 2)
+            ThreeRoomChoice("The Observation deck",
+                            "To the Port Bow",
+                            "To the Starboard Bow",
+                            Room1_1NW, RoomNNW, RoomNNE)
+            ThreeRoomSecondChance(Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
 
 
 def Room1_2E():
