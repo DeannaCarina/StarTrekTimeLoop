@@ -316,7 +316,7 @@ def Room1_1S():
     # Health -1 cannot be changed by weapons
     # From here we can go to... 1_1W, 1_1E, 1_1SE and 1_2S"
     P_S("\n-------------------------------------------\n", 3)
-    print("You are in Room1_1S\n")
+    print("You are in the Thrusters Control Room!")
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -331,7 +331,7 @@ def Room1_1S():
         ''', 2)
         break
     UserStats["health"] = UserStats["health"]-1
-    P_S("You got hurt (Cobalt Diselenide)! You lost 1 health. Your new", 2)
+    P_S("You got hurt (Neurocine Gas)! You lost 1 health. Your new", 2)
     P_S("health is:", 2)
     P_S(UserStats["health"], 2)
     if UserStats["health"] <= 0:
