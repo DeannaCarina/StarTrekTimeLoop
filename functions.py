@@ -13,9 +13,8 @@ def FourRoomChoice(option1, option2, option3, option4, Room1, Room2, Room3,
     print(f"2. {option2}")
     print(f"3. {option3}")
     print(f"4. {option4}")
-    print("\nWhere would you like to go?")
     UserChoice = ""
-    UserChoice = str(input("Enter option number: \n"))
+    UserChoice = str(input("\nEnter option number: \n"))
     if UserChoice == str(1):
         Room1()
     elif UserChoice == str(2):
@@ -50,9 +49,8 @@ def ThreeRoomChoice(option1, option2, option3, Room1, Room2, Room3):
     print(f"1. {option1}")
     print(f"2. {option2}")
     print(f"3. {option3}")
-    print("\nWhere would you like to go?")
     UserChoice = ""
-    UserChoice = str(input("Enter option number: \n"))
+    UserChoice = str(input("\nEnter option number: \n"))
     if UserChoice == str(1):
         Room1()
     elif UserChoice == str(2):
@@ -82,9 +80,8 @@ def TwoRoomChoice(option1, option2, Room1, Room2):
     print("")
     print(f"1. {option1}")
     print(f"2. {option2}")
-    print("\nWhere would you like to go?")
     UserChoice = ""
-    UserChoice = str(input("Enter option number: \n"))
+    UserChoice = str(input("\nEnter option number: \n"))
     if UserChoice == str(1):
         Room1()
     elif UserChoice == str(2):

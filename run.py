@@ -181,12 +181,12 @@ def RoomEngineBay():
         P_S("on the nearby Warp Core control systems - this is what you", 2)
         P_S("must have hit your head on as you notice a small clump of", 2)
         P_S("your hair caught on the corner.", 2)
-        P_S("You head over to the nearby window and see a few pieces of", 2)
+        P_S("   You head over to the nearby window and see a few pieces of", 2)
         P_S("the Enterprise's hull floating away into space. The nearby", 2)
         P_S("planet comes into view as the Enterprise rotates around. You", 2)
         P_S("have no idea where you are, but the planet does look", 2)
         P_S("familiar.", 2)
-        P_S("A nearby control panel for the Core Cooling Systems starts", 2)
+        P_S("   A nearby control panel for the Core Cooling Systems starts", 2)
         P_S("to distort and ripple. After a few seconds it starts to", 2)
         P_S("shrink into itself until there is nothing there. You stare", 2)
         P_S("at the place the control panel once stood - transfixed.", 2)
@@ -200,8 +200,14 @@ def RoomEngineBay():
         P_S("to see that it is standing there as if nothing had happened!", 2)
         P_S("You walk slowly towards it and as you do, it once again", 2)
         P_S("shrinks and implodes, trapped in a perpetual time-loop.", 2)
-    print("ROOM AND PATH INFO HERE")
-    FourRoomChoice("Room1_1N", "Room1_1E", "Room1_1S", "Room1_1W",
+    P_S("   There are four potential exits from this room, each one on", 2)
+    P_S("one of the four walls. The one straight ahead of you will head", 2)
+    P_S("to the bow of the ship, the one behind - to the stern, the left", 2)
+    P_S("- to port, and right - to starboard. Where would you like to go?", 2)
+    FourRoomChoice("Towards the bow",
+                   "Towards the starboard",
+                   "Towards the stern",
+                   "Towards the port",
                    Room1_1N, Room1_1E, Room1_1S, Room1_1W)
     FourRoomSecondChance(Room1_1N, Room1_1E, Room1_1S, Room1_1W)
 
@@ -242,7 +248,7 @@ def Room1_1E():
     # Health -2 unless knife (-1) or phaser (-0) in weapons
     # From here we can go to... RoomEngineBay, 1_1NE and 1_2E"
     P_S("\n-------------------------------------------\n", 3)
-    print("You are in room code 1.1E\n")
+    print("You are in Engineering sub-control.")
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -295,8 +301,13 @@ def Room1_1E():
     if UserStats["health"] <= 0:
         NoHealth()
     else:
-        print("ROOM AND PATH INFO HERE")
-        ThreeRoomChoice("Engine Bay", "1_1NE - Holodeck", "1_2E",
+        P_S("There are three potential exits from this room: the door to", 2)
+        P_S("the engine bay where you have been before, a door straight", 2)
+        P_S("ahead to go starboard, and a door to your left to go", 2)
+        P_S("towards the bow. Where would you like to go?", 2)
+        ThreeRoomChoice("To the Engine Bay",
+                        "Towards the bow",
+                        "Towards the starboard",
                         RoomEngineBay, Room1_1NE, Room1_2E)
         ThreeRoomSecondChance(RoomEngineBay, Room1_1NE, Room1_2E)
 
