@@ -518,7 +518,6 @@ def Room1_2N():
     # kill room
     # From here we can't go anywhere - we die!"
     P_S("\n-------------------------------------------\n", 3)
-    P_S("You are in room code: 1.2N (The Shuttle Bay).\n", 2)
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -532,19 +531,60 @@ def Room1_2N():
             █ = You are here.
         ''', 2)
         break
-    P_S("You died!\n", 1.5)
-    P_S('''
-         ___  ___ __ __ ___   ___ _ _ ___ ___
-        /  _>| . |  \  | __> | . | | | __| . |
-        | <_/|   |     | _>  | | | ' | _>|   /
-        `____|_|_|_|_|_|___> `___|__/|___|_\_|
-        \n''', 2)
-    P_S("Resetting time loop in...", 1)
-    P_S("3...", 1)
-    P_S("2...", 1)
-    P_S("1...", 1)
-    print("Press PLAY GAME to re-initialise time loop.")
-    exit()
+    if FirstVisits["1_2N"] is True:
+        P_S("You head through the meeting room covering your nose and", 2)
+        P_S("mouth with your sleeve\n", 2)
+        P_S("You're in the shuttle bay! This makes no sense... the", 2)
+        P_S("Shuttle bay shouldn't be in this area of the ship. You figure", 2)
+        P_S("that the passage of the ship through the Black Hole must have", 2)
+        P_S("not only affected the things within the ship, but the ship", 2)
+        P_S("itself! There is no way of knowing if where you think you're", 2)
+        P_S("going is actually going to be where you end up!", 2)
+    else:
+        P_S("You head through the meeting room covering your nose and", 2)
+        P_S("mouth with your sleeve\n", 2)
+        P_S("You've been here before! You're in the shuttle bay!", 2)
+    P_S("You look around for a little while and find a snack bar, you are", 2)
+    P_S("very hungry, so quickly un-wrap the snack and wolf it down. You", 2)
+    P_S("gain 1 health.", 2)
+    UserStats["health"] = UserStats["health"]+1
+    P_S("Your new health is:", 2)
+    P_S(UserStats["health"], 2)
+    print("Do you want to carry on looking around the Shuttle Bay? (Y/N)\n")
+    KeepLooking = input()
+    if KeepLooking.lower() == "y" or KeepLooking.lower() == "yes":
+        P_S("You head deeper into the Shuttle Bay and rumage through some", 2)
+        P_S("nearby sacks. You don't notice that on the opposite side of", 2)
+        P_S("sack there is a Hazardous Waste warning! You peer into the", 2)
+        P_S("bag and can't believe your eyes! It's Trilithium Resin! You", 2)
+        P_S("quickly turn and run from the bag and head towards the door", 2)
+        P_S("you came through...", 2)
+        P_S("The door starts to open, but just as it does you hear a", 2)
+        P_S("massive commotion behind you, the Trilithium Resin must have", 2)
+        P_S("exploded on the pressure change of the room when the door", 2)
+        P_S("opened. You feel your body break under the force of the", 2)
+        P_S("blast and you get slammed into the wall. You close your eyes", 2)
+        P_S("and lose conciousness.", 2)
+        P_S('''
+            ___  ___ __ __ ___   ___ _ _ ___ ___
+            /  _>| . |  \  | __> | . | | | __| . |
+            | <_/|   |     | _>  | | | ' | _>|   /
+            `____|_|_|_|_|_|___> `___|__/|___|_\_|
+            \n''', 2)
+        P_S("Resetting time loop in...", 1)
+        P_S("3...", 1)
+        P_S("2...", 1)
+        P_S("1...", 1)
+        print("Press PLAY GAME to re-initialise time loop.")
+        exit()
+    if KeepLooking.lower() == "n" or KeepLooking.lower() == "no":
+        P_S("You head back to the other side of the meeting room to the", 2)
+        P_S("corridor you were in before. Where would you like to go?", 2)
+        ThreeRoomChoice("The Observation deck",
+                        "To the Port Bow",
+                        "To the Starboard Bow",
+                        Room1_1NW, RoomNNW, RoomNNE)
+        ThreeRoomSecondChance(Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
 
 
 def Room1_2E():
