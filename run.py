@@ -217,7 +217,6 @@ def Room1_1N():
     # Health -3 cannot be changed by weapons
     # From here we can go to... 1_1NW, NNW, 1_2N and NNE
     P_S("\n-------------------------------------------\n", 3)
-    print("You are in room code 1.1N\n")
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -231,17 +230,49 @@ def Room1_1N():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]-3
-    P_S("You got hurt (Trilithium resin)! You lost 3 health. Your new", 2)
-    P_S("health is:", 2)
-    P_S(UserStats["health"], 2)
+    if FirstVisits["1_1N"] is True:
+        P_S("You head along a very long corridor and into the upper-mid", 2)
+        P_S('section of the ship. You go into the room directly in front', 2)
+        P_S("of you, which is a small meeting room containing an oval", 2)
+        P_S("table and eight chairs surrounding it.", 2)
+        P_S("You look around to see if there's anything useful for you", 2)
+        P_S("for your current endevours.", 2)
+        P_S("...", 2)
+        P_S("After a minute or so you feel yourself going lightheaded, you", 2)
+        P_S("can smell something strange, it's Neurazine Gas! You quickly", 2)
+        P_S("cover your nose and mouth with your sleeve and make a hasty", 2)
+        P_S("retreat from the room. You cough and splutter trying to rid", 2)
+        P_S("your lungs of the putrid gases. You lose 2 health.", 2)
+        FirstVisits["1_1N"] = False
+        UserStats["health"] = UserStats["health"]-2
+        P_S("Your new health is:", 2)
+        P_S(UserStats["health"], 2)
+    else:
+        P_S("You head along a long corridor and head into the room at the", 2)
+        P_S("end... You've been in here before! It's the small meeting", 2)
+        P_S("room with the Neurazine Gas! You quickly bid a hasty", 2)
+        P_S("retreat... even with a visit as fleeting as that, you can", 2)
+        P_S("still feel the effects the gas has had on your lungs. You", 2)
+        P_S("lose 1 health.", 2)
+        UserStats["health"] = UserStats["health"]-1
+        P_S("Your new health is:", 2)
+        P_S(UserStats["health"], 2)
     if UserStats["health"] <= 0:
         NoHealth()
-    else:
-        print("ROOM AND PATH INFO HERE")
-        FourRoomChoice("1_1NW - Observation Deck", "RoomNNW", "Room1_2N",
-                       "RoomNNE", Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
-        FourRoomSecondChance(Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
+    P_S("From where you stand on the corridor with the meeting room behind", 2)
+    P_S("you, there is the observation deck directly to your right", 2)
+    P_S("(heading to port) past the entrance to another corridor, and", 2)
+    P_S("there are corridors on either side of the meeting room, one", 2)
+    P_S("heading to the Port Bow, and the other to the Starboard Bow. You", 2)
+    P_S("also noticed a door on the oposite side of the meeting room which", 2)
+    P_S("you know you could get to safely if you cover your face. Where", 2)
+    P_S("would you like to go?", 2)
+    FourRoomChoice("The Observation deck",
+                   "To the Port Bow",
+                   "Through the meeting room",
+                   "To the Starboard Bow",
+                   Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
+    FourRoomSecondChance(Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
 
 
 def Room1_1E():
@@ -285,7 +316,7 @@ def Room1_1E():
         P_S("from the oncoming attack, but not without the RedJac first", 2)
         P_S("catching you with his knife. The possessed crew member runs", 2)
         P_S("out of the door clutching his arm where you caught him", 2)
-        P_S("with the KaBar Combat Knife. You lost 1 health (you would", 2)
+        P_S("with the KaBar Combat Knife. You lost 2 health (you would", 2)
         P_S("have lost 2 if you were undefended).", 2)
         UserStats["health"] = UserStats["health"]-1
         P_S("Your new health is:", 2)
@@ -331,7 +362,7 @@ def Room1_1S():
         ''', 2)
         break
     UserStats["health"] = UserStats["health"]-1
-    P_S("You got hurt (Neurocine Gas)! You lost 1 health. Your new", 2)
+    P_S("You got hurt (Trilithium resin)! You lost 2 health. Your new", 2)
     P_S("health is:", 2)
     P_S(UserStats["health"], 2)
     if UserStats["health"] <= 0:
