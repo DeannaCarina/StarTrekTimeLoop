@@ -239,9 +239,12 @@ button:hover {
 }
 
 .modal-music-content {
-    margin-top: 400px;
-    height: 250px;
-    width: 250px;
+    margin-top: 470px;
+    height: 200px;
+    width: 700px;
+    padding: 10px;
+    background-color: #000000;
+    border: solid 10px grey;
 }
 
 #modalHeading {
@@ -258,6 +261,7 @@ button:hover {
 
 iframe {
     margin: auto;
+    margin-right: 10px;
 }
 
 .close,
@@ -272,7 +276,10 @@ iframe {
 }
 
 .musicClose {
-    padding: 10px;
+    padding: 0px;
+    line-height: 20px;
+    width: 20px;
+    color: white;
 }
 
 .close:hover,
@@ -282,6 +289,11 @@ iframe {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.musicClose:focus,
+.musicClose:hover {
+    color: #888;
 }
 
 #copy {
