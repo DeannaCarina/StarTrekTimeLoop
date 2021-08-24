@@ -193,6 +193,14 @@ def RoomEngineBay():
         ''', 2)
         break
     global PreviousRoom
+    if PreviousRoom == "1_1W":
+        P_S("Travel text from 1_1W to EngineBay", 2)
+    elif PreviousRoom == "1_2W":
+        P_S("Travel text from 1_2W to EngineBay", 2)
+    elif PreviousRoom == "1_1E":
+        P_S("Travel text from 1_1E to EngineBay", 2)
+    elif PreviousRoom == "1_2E":
+        P_S("Travel text from 1_2E to EngineBay", 2)
     if FirstVisits["EngineBay"] is True:
         P_S("You tentatively feel your head, checking for any bumps or", 2)
         P_S("cuts and look at your hand for any traces of blood. You", 2)
@@ -254,10 +262,14 @@ def Room1_1N():
         break
     global PreviousRoom
     LastRoom()
-    if FirstVisits["1_1N"] is True:
+    if PreviousRoom == "EngineBay":
         P_S("You head along a very long corridor and into the upper-mid", 2)
         P_S('section of the ship. You go into the room directly in front', 2)
-        P_S("of you, which is a small meeting room containing an oval", 2)
+        P_S("of you...", 2)
+    elif PreviousRoom == "1_1NE":
+        P_S("Travel text from 1_1NE to 1_1N", 2)
+    if FirstVisits["1_1N"] is True:
+        P_S("You go into a small meeting room containing an oval", 2)
         P_S("table and eight chairs surrounding it.", 2)
         P_S("You look around to see if there's anything useful for you", 2)
         P_S("for your current endevours.", 2)
@@ -316,6 +328,14 @@ def Room1_1E():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "EngineBay":
+        P_S("Travel text from EngineBay to 1_1E", 2)
+    elif PreviousRoom == "1_1S":
+        P_S("Travel text from 1_1S to 1_1E", 2)
+    elif PreviousRoom == "1_1SE":
+        P_S("Travel text from 1_1SE to 1_1E", 2)
+    elif PreviousRoom == "ESE":
+        P_S("Travel text from ESE to 1_1E", 2)
     if FirstVisits["1_1E"] is True:
         P_S("You enter the room cautiously, there is a crew member in", 2)
         P_S("here! He is facing the wall and not moving. You move slowly", 2)
@@ -382,6 +402,10 @@ def Room1_1S():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "EngineBay":
+        P_S("Travel text from EngineBay to 1_1S", 2)
+    elif PreviousRoom == "1_1SW":
+        P_S("Travel text from 1_1SW to 1_1S", 2)
     P_S("You got hurt (Trilithium resin)! You lost 2 health.", 2)
     Stats(-2)
     CheckStats()
@@ -453,6 +477,10 @@ def Room1_1NE():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_1E":
+        P_S("Travel text from 1_1E to 1_1NE", 2)
+    elif PreviousRoom == "NNE":
+        P_S("Travel text from NNE to 1_1NE", 2)
     P_S("You found food! You gained 1 health.", 2)
     Stats(+1)
     PreviousRoom = "1_1NE"
@@ -482,6 +510,10 @@ def Room1_1SE():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_1S":
+        P_S("Travel text from 1_1S to 1_1SE", 2)
+    elif PreviousRoom == "SSE":
+        P_S("Travel text from SSE to 1_1SE", 2)
     P_S("You found food! You gained 1 health.", 2)
     Stats(+1)
     print("ROOM AND PATH INFO HERE")
@@ -511,6 +543,10 @@ def Room1_1SW():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_1W":
+        P_S("Travel text from 1_1W to 1_1SW", 2)
+    elif PreviousRoom == "SSW":
+        P_S("Travel text from SSW to 1_SW", 2)
     P_S("You found food! You gained 1 health.", 2)
     Stats(+1)
     print("ROOM AND PATH INFO HERE")
@@ -540,6 +576,10 @@ def Room1_1NW():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_1N":
+        P_S("Travel text from 1_1N to 1_1NW", 2)
+    elif PreviousRoom == "NNW":
+        P_S("Travel text from NNW to 1_1NW", 2)
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     Stats(+1)
     print("ROOM AND PATH INFO HERE")
@@ -569,10 +609,12 @@ def Room1_2N():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_1N":
+        P_S("You cover your mouth and nose with your sleeve and make", 2)
+        P_S("your way through the meeting room.\n", 2)
+    elif PreviousRoom == "NNW":
+        P_S("Travel text from NNW to 1_2N", 2)
     if FirstVisits["1_2N"] is True:
-        if PreviousRoom == "1_1N":
-            P_S("You cover your mouth and nose with your sleeve and make", 2)
-            P_S("your way through the meeting room.\n", 2)
         P_S("You're in the shuttle bay! This makes no sense... the", 2)
         P_S("Shuttle bay shouldn't be in this area of the ship. You", 2)
         P_S("figure that the passage of the ship through the Black", 2)
@@ -581,13 +623,10 @@ def Room1_2N():
         P_S("if where you think you're going is actually going to be", 2)
         P_S("where you end up!", 2)
     else:
-        if PreviousRoom == "1_1N":
-            P_S("You cover your mouth and nose with your sleeve and make", 2)
-            P_S("your way through the meeting room.\n", 2)
         P_S("You've been here before! You're in the shuttle bay!", 2)
-    P_S("You look around for a little while and find a snack bar, you", 2)
-    P_S("are very hungry, so quickly un-wrap the snack and wolf it", 2)
-    P_S("down. You gain 1 health.", 2)
+        P_S("You look around for a little while and find a snack bar, you", 2)
+        P_S("are very hungry, so quickly un-wrap the snack and wolf it", 2)
+        P_S("down. You gain 1 health.", 2)
     Stats(+1)
     KeepLooking = False
     while not KeepLooking:
@@ -622,7 +661,7 @@ def Room1_2N():
                 P_S("You head back to the other side of the meeting room", 2)
                 P_S("to the corridor you were in before. Where would you", 2)
                 P_S("like to go?", 2)
-                PreviousRoom = "1_2N"
+                PreviousRoom = "1_1N"
                 ThreeRoomChoice("The Observation deck",
                                 "To the Port Bow",
                                 "To the Starboard Bow",
@@ -662,6 +701,12 @@ def Room1_2E():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "ENE":
+        P_S("Travel text from ENE to 1_2E", 2)
+    elif PreviousRoom == "1_1E":
+        P_S("Travel text from 1_1E to 1_2E", 2)
+    elif PreviousRoom == "1_2SE":
+        P_S("Travel text from 1_2SE to 1_2E", 2)
     P_S("You got hurt (Dark Matter LifeForm)! You lost 1 health.", 2)
     Stats(-1)
     CheckStats()
@@ -692,6 +737,12 @@ def Room1_2S():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "SSE":
+        P_S("Travel text from SSE to 1_2S", 2)
+    elif PreviousRoom == "1_1S":
+        P_S("Travel text from 1_1S to 1_2S", 2)
+    elif PreviousRoom == "1_1SW":
+        P_S("Travel text from 1_1SW to 1_2S", 2)
     P_S("You got hurt (Dikironium Cloud)! You lost 3 health.", 2)
     Stats(-3)
     CheckStats()
@@ -722,6 +773,10 @@ def Room1_2W():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_1W":
+        P_S("Travel text from 1_1W to 1_2W", 2)
+    elif PreviousRoom == "1_2NW":
+        P_S("Travel text from 1_2NW to 1_2W", 2)
     P_S("You got hurt (Genesis Worms)! You lost 1 health.", 2)
     Stats(-1)
     CheckStats()
@@ -752,6 +807,10 @@ def Room1_2NE():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_2E":
+        P_S("Travel text from 1_2E to 1_2NE", 2)
+    elif PreviousRoom == "NNE":
+        P_S("Travel text from NNE to 1_2NE", 2)
     P_S("You died!\n", 1.5)
     P_S('''
          ___  ___ __ __ ___   ___ _ _ ___ ___
@@ -787,6 +846,10 @@ def Room1_2SE():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "ESE":
+        P_S("Travel text from ESE to 1_2SE", 2)
+    elif PreviousRoom == "1_2S":
+        P_S("Travel text from 1_2S to 1_2SE", 2)
     P_S("You found food! You gained 3 health.", 2)
     Stats(+3)
     print("ROOM AND PATH INFO HERE")
@@ -816,6 +879,10 @@ def Room1_2SW():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "SSW":
+        P_S("Travel text from SSW to 1_2SW", 2)
+    elif PreviousRoom == "1_2W":
+        P_S("Travel text from 1_2W to 1_2SW", 2)
     P_S("You found food! You gained 2 health.", 2)
     Stats(+2)
     print("ROOM AND PATH INFO HERE")
@@ -845,6 +912,8 @@ def Room1_2NW():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "WNW":
+        P_S("Travel text from WNW to 1.2NW", 2)
     P_S("You found food! You gained 2 health.", 2)
     Stats(+2)
     print("ROOM AND PATH INFO HERE")
@@ -874,6 +943,12 @@ def RoomNNE():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_1N":
+        P_S("Travel text from 1_1N to NNE", 2)
+    elif PreviousRoom == "1_1NE":
+        P_S("Travel text from 1_1NE to NNE", 2)
+    elif PreviousRoom == "ENE":
+        P_S("Travel text from ENE to NNE", 2)
     if UserStats["knife"] is False:
         print("You found a knife! You hook it into your belt.")
         UserStats["knife"] = True
@@ -909,6 +984,8 @@ def RoomENE():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_1NE":
+        P_S("Travel text from 1_1NE to ENE", 2)
     if UserStats["locator"] is False:
         P_S("You found a locator device!", 2)
         UserStats["locator"] = True
@@ -972,6 +1049,10 @@ def RoomSSE():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_1SE":
+        P_S("Travel text from 1_1SE to SSE", 2)
+    elif PreviousRoom == "1_2SE":
+        P_S("Travel text from 1_2SE to SSE", 2)
     if UserStats["batteries"] is False:
         P_S("You found some batteries!", 2)
         UserStats["batteries"] = True
@@ -1108,6 +1189,10 @@ def RoomSSW():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_2S":
+        P_S("Travel text from 1_2S to SSW", 2)
+    elif PreviousRoom == "1_1SW":
+        P_S("Travel text from 1_1SW to SSW", 2)
     if UserStats["key"] is False:
         P_S("You found a key! On close inspection its branded with the", 2)
         P_S("Starfleet logo. During the three years you have worked on", 2)
@@ -1150,6 +1235,10 @@ def RoomWSW():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_1SW":
+        P_S("Travel text from 1_1SW to WSW", 2)
+    elif PreviousRoom == "1_2SW":
+        P_S("Travel text from 1_2SW to WSW", 2)
     P_S("You died!\n", 1.5)
     P_S('''
          ___  ___ __ __ ___   ___ _ _ ___ ___
@@ -1185,6 +1274,10 @@ def RoomWNW():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_2W":
+        P_S("Travel text from 1_2W to WNW", 2)
+    elif PreviousRoom == "1_1NW":
+        P_S("Travel text from 1_1NW to WNW", 2)
     if UserStats["phaser"] is False:
         P_S("You found a phaser! This will help against corporeal threats", 2)
         P_S("and reduce if not eliminate any potential damage these", 2)
@@ -1222,6 +1315,14 @@ def RoomNNW():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_2NW":
+        P_S("Travel text from 1_2NW to NNW", 2)
+    elif PreviousRoom == "WNW":
+        P_S("Travel text from WNW to NNW", 2)
+    elif PreviousRoom == "1_1NW":
+        P_S("Travel text from 1_1NW to NNW", 2)
+    elif PreviousRoom == "1_1N":
+        P_S("Travel text from 1_1N to NNW", 2)
     if UserStats["comms"] is False:
         P_S("You found a comms device!", 2)
         UserStats["comms"] = True
@@ -1297,6 +1398,10 @@ def RoomESETransporterRoom():
         break
     global PreviousRoom
     LastRoom()
+    if PreviousRoom == "1_2E":
+        P_S("Travel text from 1_2E to ESE", 2)
+    elif PreviousRoom == "1_1SE":
+        P_S("Travel text from 1_1SE to ESE", 2)
     BeamOut = input("Would you like to beam out of the ship? (Y/N) \n")
     if BeamOut.lower() == "y" or BeamOut.lower() == "yes":
         P_S("\nInitialising beam...", 1)
