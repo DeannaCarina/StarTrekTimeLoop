@@ -48,6 +48,17 @@ FirstVisits = {
 }
 
 
+def Stats(healthNumber):
+    UserStats["health"] = UserStats["health"] + (healthNumber)
+    P_S("Your new health is:", 2)
+    P_S(UserStats["health"], 2)
+
+
+def CheckStats():
+    if UserStats["health"] <= 0:
+        NoHealth()
+
+
 def PlayGame():
     print('''
       ____ _______       _____    _______ _____  ______ _  __
@@ -83,7 +94,7 @@ o               .         ___---___                    .
                     /;  / `-'  __\    . \                   
     .      .       / ,--'     / .   .;   \        |
                   | .|       /       __   |      -O-       .
-                 |__/    __ |  . ;   \ | . |
+                 |__/    __ |  . ;   \     | .    |
                  |      /  \\_    . ;| \___|
     .    o       |      \  .~\\___,--'     |           .
                   |     | . ; ~~~~\_    __|
@@ -93,13 +104,10 @@ o               .         ___---___                    .
    .                   ~--___ ; ___--~
                   .          ---         .
                 ''', 3.5)
-        print("Do you want to see the introduction?")        
-        SeeIntro = input("(recommended for beginners) (Y/N): \n")
-        while (SeeIntro != "y" or SeeIntro != "yes"
-               or SeeIntro != "no" or SeeIntro != "n"):
-            print("That option does not compute, please try again - ")
-            SeeIntro = input("do you want to see the introduction?. (Y/N)\n")
-            if SeeIntro.lower() == "y" or SeeIntro.lower() == "yes":
+        SeeIntro = False
+        while not SeeIntro:
+            YesOrNo = input('Do you want to see the intro? (Y/N):\n')
+            if YesOrNo.lower() == 'yes' or YesOrNo.lower() == "y":
                 time.sleep(2)
                 P_S("\nYou have been on the ship for 3 years now, and have", 2)
                 P_S("steadily worked your way up the ranks to where you", 2)
@@ -139,8 +147,12 @@ o               .         ___---___                    .
                 P_S("encounter situations that will reduce your health.\n", 2)
                 P_S(f"Good luck {name}, live long... and prosper.", 2)
                 RoomEngineBay()
-            elif SeeIntro.lower() == "n" or SeeIntro.lower() == "no":
+            elif YesOrNo.lower() == 'no' or YesOrNo.lower() == "n":
                 RoomEngineBay()
+            else:
+                print("That response does not compute.")         
+        else:
+            print("An error occured, please restart your game.")    
     elif WantToPlay.lower() == "n" or WantToPlay.lower() == "no":
         P_S("*Beaming you out*", 1)
         P_S("Initialising shut down...", 1)
@@ -245,9 +257,8 @@ def Room1_1N():
         P_S("retreat from the room. You cough and splutter trying to rid", 2)
         P_S("your lungs of the putrid gases. You lose 2 health.", 2)
         FirstVisits["1_1N"] = False
-        UserStats["health"] = UserStats["health"]-2
-        P_S("Your new health is:", 2)
-        P_S(UserStats["health"], 2)
+        Stats(-2)
+        CheckStats()
     else:
         P_S("You head along a long corridor and head into the room at the", 2)
         P_S("end... You've been in here before! It's the small meeting", 2)
@@ -255,19 +266,16 @@ def Room1_1N():
         P_S("retreat... even with a visit as fleeting as that, you can", 2)
         P_S("still feel the effects the gas has had on your lungs. You", 2)
         P_S("lose 1 health.", 2)
-        UserStats["health"] = UserStats["health"]-1
-        P_S("Your new health is:", 2)
-        P_S(UserStats["health"], 2)
-    if UserStats["health"] <= 0:
-        NoHealth()
+        Stats(-1)
+        CheckStats()
     P_S("From where you stand on the corridor with the meeting room behind", 2)
     P_S("you, there is the observation deck directly to your right", 2)
     P_S("(heading to port) past the entrance to another corridor, and", 2)
     P_S("there are corridors on either side of the meeting room, one", 2)
     P_S("heading to the Port Bow, and the other to the Starboard Bow. You", 2)
-    P_S("also noticed a door on the oposite side of the meeting room which", 2)
-    P_S("you know you could get to safely if you cover your face. Where", 2)
-    P_S("would you like to go?", 2)
+    P_S("also noticed a door on the opposite side of the meeting room", 2)
+    P_S("which you know you could get to safely if you cover your face.", 2)
+    P_S("Where would you like to go?", 2)
     FourRoomChoice("The Observation deck",
                    "To the Port Bow",
                    "Through the meeting room",
@@ -317,31 +325,26 @@ def Room1_1E():
         P_S("from the oncoming attack, but not without the RedJac first", 2)
         P_S("catching you with his knife. The possessed crew member runs", 2)
         P_S("out of the door clutching his arm where you caught him", 2)
-        P_S("with the KaBar Combat Knife. You lost 2 health (you would", 2)
+        P_S("with the KaBar Combat Knife. You lost 1 health (you would", 2)
         P_S("have lost 2 if you were undefended).", 2)
-        UserStats["health"] = UserStats["health"]-1
-        P_S("Your new health is:", 2)
-        P_S(UserStats["health"], 2)
-    elif UserStats["fists"] is True:
+        Stats(-1)
+        CheckStats()
+    else:
         P_S("\nYou try your best to defend yourself from the possessed", 2)
         P_S("crew member. You punch and kick with all your might whenever", 2)
         P_S("he comes close. Eventually he runs away not wanting to face", 2)
         P_S("you any longer. You lost 2 health.", 2)
-        UserStats["health"] = UserStats["health"]-2
-        P_S("Your new health is:", 2)
-        P_S(UserStats["health"], 2)
-    if UserStats["health"] <= 0:
-        NoHealth()
-    else:
-        P_S("There are three potential exits from this room: the door to", 2)
-        P_S("the engine bay where you have been before, a door straight", 2)
-        P_S("ahead to go starboard, and a door to your left to go", 2)
-        P_S("towards the bow. Where would you like to go?", 2)
-        ThreeRoomChoice("To the Engine Bay",
-                        "Towards the bow",
-                        "Towards the starboard",
-                        RoomEngineBay, Room1_1NE, Room1_2E)
-        ThreeRoomSecondChance(RoomEngineBay, Room1_1NE, Room1_2E)
+        Stats(-2)
+        CheckStats()
+    P_S("There are three potential exits from this room: the door to", 2)
+    P_S("the engine bay where you have been before, a door straight", 2)
+    P_S("ahead to go starboard, and a door to your left to go", 2)
+    P_S("towards the bow. Where would you like to go?", 2)
+    ThreeRoomChoice("To the Engine Bay",
+                    "Towards the bow",
+                    "Towards the starboard",
+                    RoomEngineBay, Room1_1NE, Room1_2E)
+    ThreeRoomSecondChance(RoomEngineBay, Room1_1NE, Room1_2E)
 
 
 def Room1_1S():
@@ -362,17 +365,13 @@ def Room1_1S():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]-1
-    P_S("You got hurt (Trilithium resin)! You lost 2 health. Your new", 2)
-    P_S("health is:", 2)
-    P_S(UserStats["health"], 2)
-    if UserStats["health"] <= 0:
-        NoHealth()
-    else:
-        print("ROOM AND PATH INFO HERE")
-        FourRoomChoice("Room1_1W", "Room1_1E", "Room1_1SE", "Room1_2S",
-                       Room1_1W, Room1_1E, Room1_1SE, Room1_2S)
-        FourRoomSecondChance(Room1_1W, Room1_1E, Room1_1SE, Room1_2S)
+    P_S("You got hurt (Trilithium resin)! You lost 2 health.", 2)
+    Stats(-2)
+    CheckStats()
+    print("ROOM AND PATH INFO HERE")
+    FourRoomChoice("Room1_1W", "Room1_1E", "Room1_1SE", "Room1_2S",
+                   Room1_1W, Room1_1E, Room1_1SE, Room1_2S)
+    FourRoomSecondChance(Room1_1W, Room1_1E, Room1_1SE, Room1_2S)
 
 
 def Room1_1W():
@@ -393,17 +392,13 @@ def Room1_1W():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]-2
-    P_S("You got hurt (Neural Parasites)! You lost 2 health. Your new", 2)
-    P_S("health is:", 2)
-    P_S(UserStats["health"], 2)
-    if UserStats["health"] <= 0:
-        NoHealth()
-    else:
-        print("ROOM AND PATH INFO HERE")
-        ThreeRoomChoice("Engine Bay", "1_1SW", "1_2W",
-                        RoomEngineBay, Room1_1SW, Room1_2W)
-        ThreeRoomSecondChance(RoomEngineBay, Room1_1SW, Room1_2W)
+    P_S("You got hurt (Neural Parasites)! You lost 2 health.", 2)
+    Stats(-2)
+    CheckStats()
+    print("ROOM AND PATH INFO HERE")
+    ThreeRoomChoice("Engine Bay", "1_1SW", "1_2W",
+                    RoomEngineBay, Room1_1SW, Room1_2W)
+    ThreeRoomSecondChance(RoomEngineBay, Room1_1SW, Room1_2W)
 
 
 def Room1_1NE():
@@ -424,9 +419,8 @@ def Room1_1NE():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]+1
-    P_S("You found food! You gained 1 health. Your new health is:", 2)
-    P_S(UserStats["health"], 2)
+    P_S("You found food! You gained 1 health.", 2)
+    Stats(+1)
     print("ROOM AND PATH INFO HERE")
     ThreeRoomChoice("Room1_1N", "RoomNNE", "RoomENE",
                     Room1_1N, RoomNNE, RoomENE)
@@ -451,9 +445,8 @@ def Room1_1SE():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]+1
-    P_S("You found food! You gained 1 health. Your new health is:", 2)
-    P_S(UserStats["health"], 2)
+    P_S("You found food! You gained 1 health.", 2)
+    Stats(+1)
     print("ROOM AND PATH INFO HERE")
     ThreeRoomChoice("Room1_1E", "RoomESETransporterRoom", "RoomSSE",
                     Room1_1E, RoomESETransporterRoom, RoomSSE)
@@ -478,9 +471,8 @@ def Room1_1SW():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]+1
-    P_S("You found food! You gained 1 health. Your new health is:", 2)
-    P_S(UserStats["health"], 2)
+    P_S("You found food! You gained 1 health.", 2)
+    Stats(+1)
     print("ROOM AND PATH INFO HERE")
     ThreeRoomChoice("Room1_1S", "RoomSSW", "RoomWSW",
                     Room1_1S, RoomSSW, RoomWSW)
@@ -505,9 +497,8 @@ def Room1_1NW():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]+1
     P_S("You found food! You gained 1 health. Your new health is:", 2)
-    P_S(UserStats["health"], 2)
+    Stats(+1)
     print("ROOM AND PATH INFO HERE")
     ThreeRoomChoice("Room1_1W", "RoomWNW", "RoomNNW",
                     Room1_1W, RoomWNW, RoomNNW)
@@ -533,8 +524,6 @@ def Room1_2N():
         ''', 2)
         break
     if FirstVisits["1_2N"] is True:
-        P_S("You head through the meeting room covering your nose and", 2)
-        P_S("mouth with your sleeve\n", 2)
         P_S("You're in the shuttle bay! This makes no sense... the", 2)
         P_S("Shuttle bay shouldn't be in this area of the ship. You figure", 2)
         P_S("that the passage of the ship through the Black Hole must have", 2)
@@ -548,16 +537,11 @@ def Room1_2N():
     P_S("You look around for a little while and find a snack bar, you are", 2)
     P_S("very hungry, so quickly un-wrap the snack and wolf it down. You", 2)
     P_S("gain 1 health.", 2)
-    UserStats["health"] = UserStats["health"]+1
-    P_S("Your new health is:", 2)
-    P_S(UserStats["health"], 2)
-    print("\nDo you want to carry on looking around the shuttle bay?")
-    KeepLooking = input("(Y/N): \n")
-    while (KeepLooking != "y" or KeepLooking != "yes"
-           or KeepLooking != "no" or KeepLooking != "n"):
-        print("That option does not compute,")
-        KeepLooking = input("please try again. (Y/N)\n")
-        if KeepLooking.lower() == "y" or KeepLooking.lower() == "yes":
+    Stats(+1)
+    KeepLooking = False
+    while not KeepLooking:
+        YesOrNo = input('Do you want to keep searching this room? (Y/N): ')
+        if YesOrNo.lower() == 'yes' or YesOrNo.lower() == "y":
             P_S("You head deeper into the Shuttle Bay and rumage through", 2)
             P_S("some nearby sacks. You don't notice that on the opposite", 2)
             P_S("side of sack there is a Hazardous Waste warning! You peer", 2)
@@ -582,7 +566,7 @@ def Room1_2N():
             P_S("1...", 1)
             print("Press PLAY GAME to re-initialise time loop.")
             exit()
-        elif KeepLooking.lower() == "n" or KeepLooking.lower() == "no":
+        elif YesOrNo.lower() == 'no' or YesOrNo.lower() == "n":
             P_S("You head back to the other side of the meeting room to ", 2)
             P_S("the corridor you were in before. Where would you like", 2)
             P_S("to go?", 2)
@@ -591,6 +575,8 @@ def Room1_2N():
                             "To the Starboard Bow",
                             Room1_1NW, RoomNNW, RoomNNE)
             ThreeRoomSecondChance(Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
+        else:
+            print("That response does not compute.")    
 
 
 def Room1_2E():
@@ -612,17 +598,13 @@ def Room1_2E():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]-1
-    P_S("You got hurt (Dark Matter LifeForm)! You lost 1 health. Your new", 2)
-    P_S("health is:", 2)
-    P_S(UserStats["health"], 2)
-    if UserStats["health"] <= 0:
-        NoHealth()
-    else:
-        print("ROOM AND PATH INFO HERE")
-        ThreeRoomChoice("RoomEngineBay", "Room1_2NE", "RoomESETransporterRoom",
-                        RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
-        ThreeRoomSecondChance(RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
+    P_S("You got hurt (Dark Matter LifeForm)! You lost 1 health.", 2)
+    Stats(-1)
+    CheckStats()
+    print("ROOM AND PATH INFO HERE")
+    ThreeRoomChoice("RoomEngineBay", "Room1_2NE", "RoomESETransporterRoom",
+                    RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
+    ThreeRoomSecondChance(RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
 
 
 def Room1_2S():
@@ -643,17 +625,13 @@ def Room1_2S():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]-2
-    P_S("You got hurt (Dikironium Cloud)! You lost 3 health. Your new", 2)
-    P_S("health is:", 2)
-    P_S(UserStats["health"], 2)
-    if UserStats["health"] <= 0:
-        NoHealth()
-    else:
-        print("ROOM AND PATH INFO HERE")
-        TwoRoomChoice("Room1_2SE", "RoomSSW",
-                      Room1_2SE, RoomSSW)
-        TwoRoomSecondChance(Room1_2SE, RoomSSW)
+    P_S("You got hurt (Dikironium Cloud)! You lost 3 health.", 2)
+    Stats(-3)
+    CheckStats()
+    print("ROOM AND PATH INFO HERE")
+    TwoRoomChoice("Room1_2SE", "RoomSSW",
+                  Room1_2SE, RoomSSW)
+    TwoRoomSecondChance(Room1_2SE, RoomSSW)
 
 
 def Room1_2W():
@@ -674,17 +652,13 @@ def Room1_2W():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]-1
-    P_S("You got hurt (Genesis Worms)! You lost 1 health. Your new", 2)
-    P_S("health is:", 2)
-    P_S(UserStats["health"], 2)
-    if UserStats["health"] <= 0:
-        NoHealth()
-    else:
-        print("ROOM AND PATH INFO HERE")
-        ThreeRoomChoice("Room1_2SW", "RoomWNW", "RoomEngineBay",
-                        Room1_2SW, RoomWNW, RoomEngineBay)
-        ThreeRoomSecondChance(Room1_2SW, RoomWNW, RoomEngineBay)
+    P_S("You got hurt (Genesis Worms)! You lost 1 health.", 2)
+    Stats(-1)
+    CheckStats()
+    print("ROOM AND PATH INFO HERE")
+    ThreeRoomChoice("Room1_2SW", "RoomWNW", "RoomEngineBay",
+                    Room1_2SW, RoomWNW, RoomEngineBay)
+    ThreeRoomSecondChance(Room1_2SW, RoomWNW, RoomEngineBay)
 
 
 def Room1_2NE():
@@ -738,9 +712,8 @@ def Room1_2SE():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]+3
-    P_S("You found food! You gained 3 health. Your new health is:", 2)
-    P_S(UserStats["health"], 2)
+    P_S("You found food! You gained 3 health.", 2)
+    Stats(+3)
     print("ROOM AND PATH INFO HERE")
     TwoRoomChoice("Room1_2E", "RoomSSE",
                   Room1_2E, RoomSSE)
@@ -765,9 +738,8 @@ def Room1_2SW():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]+2
-    P_S("You found food! You gained 2 health. Your new health is:", 2)
-    P_S(UserStats["health"], 2)
+    P_S("You found food! You gained 2 health.", 2)
+    Stats(+2)
     print("ROOM AND PATH INFO HERE")
     TwoRoomChoice("Room1_2S", "RoomWSW",
                   Room1_2S, RoomWSW)
@@ -792,9 +764,8 @@ def Room1_2NW():
             █ = You are here.
         ''', 2)
         break
-    UserStats["health"] = UserStats["health"]+2
-    P_S("You found food! You gained 2 health. Your new health is:", 2)
-    P_S(UserStats["health"], 2)
+    P_S("You found food! You gained 2 health.", 2)
+    Stats(+2)
     print("ROOM AND PATH INFO HERE")
     TwoRoomChoice("RoomNNW", "Room1_2W",
                   RoomNNW, Room1_2W)
