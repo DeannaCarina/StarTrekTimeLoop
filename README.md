@@ -173,14 +173,34 @@ I have plotted the table above into a graph to easily visualise the features tha
     <li>The features in the turquoise section will not be implemented as it would be unwise to focus on these features until a later date</li>
 </ul>
 <img src="assets/images/readme-images/chart.png"><br>
-<img src="assets/images/readme-images/chartkey1.png" width="50%"><br>
+<img src="assets/images/readme-images/chartkey1.png" width="50%">
 
 ### Scope
 
+Due to the pitfalls of developing a website based on the MVP (Minimum Viable Product) model such as lack of user experience and enjoyment due to a lack of content, I have chosen instead to base the development of my game using the MMP (Minimum Marketable Product) as this allows a fully functional application to be used by the player and can solve user problems with the minimum amount of features while still being completely usable - this however does mean that more time must be spent developing and deploying the application without the guarantee of user satisfaction and possibly result in some 'rough edges' that need to be rectified and de-bugged at a later date. 
 
+By using this method, any feedback from customers will be based on a fully working game and result in fully qualitative data due to the product being in a finished state; rather than feedback based on a web-app that has intentionally been left incomplete resulting in feedback from customers who may believe the site to be inadaquate due to lack of content and intuitiveness. 
 
+I have been able to confidently use the MMP model due to being a Star Trek and Sci-Fi fan myself. I can base the functions needed for the game on my own needs and wants as a sci-fi and a self-proclamed 'gamer'. By incorporating into the game features that I would want to see, I hope that my wants and needs will translate to the wants and needs of the players who will interact with the Star Trek Time Loop game. The MMP model will:
 
+<ul>
+    <li>Create a clear website with enough content for the customers wants and needs to be fulfilled</li>
+    <li>Create a game with enough content for the user to have a fulfilling experience</li>
+    <li>Allow me to work within the scope of my abilitiy while also allowing me to challenge myself in areas that I may need to adapt for the needs of user</li>
+    <li>Result in a website with high levels of UX</li>
+</ul>
+    
+While following the MMP model, to meet the user and developer goals, my website/game will include:
 
+<ul>
+    <li>A favicon on the website tab to instantly show the player the theme of the game</li>
+    <li>Have easily identifiable internal links for the user to interact with to view game instructions and run the game</li>
+    <li>A large amount of game content for the story line and user interactions</li>
+    <li>Layout my code in the python, HTML and CSS files as per best practices</li>
+    <li>An option for the user to have background music while playing the game</li>
+    <li>Individual stories and interactions based on the users previous moves within the game</li>
+</ul>
+    
 ### Structure
 ### Skeleton
 <img src="assets/images/readme-images/sttlwire.png"><br>
