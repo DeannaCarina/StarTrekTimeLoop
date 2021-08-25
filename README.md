@@ -202,6 +202,17 @@ While following the MMP model, to meet the user and developer goals, my website/
 </ul>
     
 ### Structure
+As this project is only going to be on one page, there is not much in terms of structure that can be assessed or implemented. However, there will be a number of features on the single page that will be structured in a certain way to imporove usability and design:
+
+<ul>
+    <li>To make the website and game more user friendly, I will center the game terminal and other elements on the page, this way it is easier for the user to interact with and is more pleasing to the eye as there will be equal space around the terminal rather than it being off to one side which it is with the standard template.</li>
+    <li>The two most important buttons "play game" and "how to play" will be at the top of the page above the terminal. People naturally read from the top of the page down, so the liklihood is that these elements will be some of the first things the players see.</li>
+    <li>The button for background music will be below the terminal. It is less important for the player to notice this button as it is not imperative to gameplay.</li>
+</ul>
+
+
+
+
 ### Skeleton
 <img src="assets/images/readme-images/sttlwire.png"><br>
 
