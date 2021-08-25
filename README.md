@@ -173,7 +173,7 @@ I have plotted the table above into a graph to easily visualise the features tha
     <li>The features in the turquoise section will not be implemented as it would be unwise to focus on these features until a later date</li>
 </ul>
 <img src="assets/images/readme-images/chart.png"><br>
-<img src="assets/images/readme-images/chartkey.png"><br>
+<img src="assets/images/readme-images/chartkey.png" width="50%"><br>
 
 ### Scope
 
