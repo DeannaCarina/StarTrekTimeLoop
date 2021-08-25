@@ -210,10 +210,8 @@ As this project is only going to be on one page, there is not much in terms of s
     <li>The button for background music will be below the terminal. It is less important for the player to notice this button as it is not imperative to gameplay.</li>
 </ul>
 
-
-
-
 ### Skeleton
+The wireframe for the Star Trek Time Loop game was made with the Balsamiq Desktop Applictaion, it can be found by viewing the image below. Due to using the pre-made template provided by Code Institute, the page will automatically scale down depending on the screen size of the device the player is using. Therefore I haven't made a wireframe for any small-screen devices. There is also a high chance that the majority of players will choose to play on a desktop or laptop as these are the devices most used for 'gaming'. Although I haven't made a wireframe for smaller screen sizes, I will be testing the game on smaller devices such as phones and tablets to ensure cross-compatibility.
 <img src="assets/images/readme-images/sttlwire.png"><br>
 
 ### Surface
