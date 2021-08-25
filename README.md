@@ -222,8 +222,8 @@ As the font used in the terminal is a standard monospaced font, I have chosen to
 The main source of colour on the web page comes from the background which has very subtle hints of purple and blue. I didn't want to distract the player from the game by having other elements on the page being purple and blue, so instead I have stuck to using very neutral greys (for the border of the terminal), whites (for the instructions modal) and black (for the modal text).
 
 #### Icons
-The only icon used on the website is the Favicon - which I made myself using the drawing and shape tools on microsoft PowerPoint. An enlarged version of the favicon can be seen here:
-<img src="assets/images/readme-images/icon.png"><br>
+The only icon used on the website is the Favicon - which I made myself using the drawing and shape tools on microsoft PowerPoint. It is base off the standard communicator device shape used in the Star Trek franchise, but for the background I have used the same background as the webpage. An enlarged version of the favicon can be seen here:
+<img src="assets/images/readme-images/icon.png" width="50%"><br>
 
 
 #### Images
