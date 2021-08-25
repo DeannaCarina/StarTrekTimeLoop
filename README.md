@@ -216,8 +216,16 @@ The wireframe for the Star Trek Time Loop game was made with the Balsamiq Deskto
 
 ### Surface
 #### Typography
+As the font used in the terminal is a standard monospaced font, I have chosen to use a simlar font for any other features that are on the wep page (such as in the buttons). I really like these monospaced fonts as I feel they fit with the futuristic theme of the game.
+
 #### Color Scheme
+The main source of colour on the web page comes from the background which has very subtle hints of purple and blue. I didn't want to distract the player from the game by having other elements on the page being purple and blue, so instead I have stuck to using very neutral greys (for the border of the terminal), whites (for the instructions modal) and black (for the modal text).
+
 #### Icons
+The only icon used on the website is the Favicon - which I made myself using the drawing and shape tools on microsoft PowerPoint. An enlarged version of the favicon can be seen here:
+<img src="assets/images/readme-images/icon.png"><br>
+
+
 #### Images
 <a href="#top">Back to the top.</a>
 
