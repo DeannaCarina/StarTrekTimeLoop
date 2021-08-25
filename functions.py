@@ -108,11 +108,11 @@ def NoHealth():
     P_S("reached 0 or less). You can no longer carry on trying to reach", 2)
     P_S("Nova VII. You lay down and close your eyes, your body", 2)
     P_S("too broken to carry on.", 2)
-    P_S('''
-             ____ ___ __ __ ___   ___ _ _ ___ ___
-            /  _>| . |  \  | __> | . | | | __| . |
-            | <_/|   |     | _>  | | | ' | _>|   /
-            `____|_|_|_|_|_|___> `___|__/|___|_\_|
+    P_S('''                                                  
+     _____ _____ _____ _____    _____ _____ _____ _____ 
+    |   __|  _  |     |   __|  |     |  |  |   __| __  |
+    |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
+    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
             \n
             ''', 1)
     P_S("Resetting time loop in...", 1)
