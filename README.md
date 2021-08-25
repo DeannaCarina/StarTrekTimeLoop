@@ -56,10 +56,33 @@ Once I had a layout I was happy with, I then went on to decide the interactions 
 <img src="assets/images/readme-images/rooms.png"><br>
 
 #### Aims
+<ol>
+    <li>To supply instructions to the user on how to best play the game</li>
+    <li>For visitors to the website to have a positive user experience, in terms of website design and interactivity</li>
+    <li>For the game to be easily playable by the user (but not necessarily easy to win!)</li>
+    <li>To give the user the choice to have some background music to help with the visualisation and theme of the game</li>
+</ol>
+
 #### Target Audience
+The original series of Star Trek, which aired in the late 1960s, has since spawned nine successor series totalling 38 seasons/799 episodes and thirteen movies as of August 2020[1]. The total screen time is just under 652 hours[2]. Due to the huge amount of content produced over more than 60 years, the fan base for the Star Trek franchise is vast - men and women of all ages have been found to be fans of the franchise.
+Although the Star Trek Time Loop game is greatly influenced by Star Trek, I don't want it to be purely for the star trek fan-base, I want it to be appealing to anyone that has an interest in science fiction as Star Trek knowledge isn't needed to be able to play.
+
 #### User Stories
-##### As a new and returning user
-##### As the developer
+##### As a new and returning user I want to...
+<ul>
+    <li>Know the theme of the game as soon as I navigate to the landing page</li>
+    <li>Navigate the website quickly and effectively</li>
+    <li>Quickly find the relevant information I need to be able to play the game</li>
+    <li>Have an interesting and in-depth story line to make the game more interesting</li>
+</ul>
+
+##### As the developer I want to...
+<ul>
+    <li>Ensure the game is easily maintainable by software developers by having intutitive and neat code</li>
+    <li>Have any media content displayed in the website accessible at all times via a linked file system</li>
+    <li>Ensure all navigation links (internal or external) are always fully functional for ease of use</li>
+</ul>
+
 #### What's in and what's out?
 ### Scope
 ### Structure
@@ -123,6 +146,10 @@ Once I had a layout I was happy with, I then went on to decide the interactions 
 
 # References
 <a href="#top">Back to the top.</a>
+
+25/8 https://en.wikipedia.org/wiki/Lists_of_Star_Trek_episodes
+25/8 https://redshirtsalwaysdie.com/2021/01/22/take-far-longer-watch-star-trek-think/
+
 
 
 
