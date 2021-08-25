@@ -50,7 +50,7 @@ I have found the use of the five planes model to be highly useful in the develop
 <img src="assets/images/readme-images/moodboard.gif"><br>
 <img src="assets/images/readme-images/gameidea.png"><br>
 <img src="assets/images/readme-images/rooms.png"><br>
-<img src="assets/images/readme-images/solution.png"><br>
+<img src="assets/images/readme-images/solution1.png"><br>
 
 #### Aims
 #### Target Audience
