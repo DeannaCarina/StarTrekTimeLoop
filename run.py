@@ -13,12 +13,12 @@ PreviousRoom = ""
 UserStats = {
     "health": 10,
     "fists": True,
-    "knife": True,
-    "phaser": True,
+    "knife": False,
+    "phaser": False,
     "comms": False,
     "locator": False,
-    "key": True,
-    "batteries": True
+    "key": False,
+    "batteries": False
 }
 
 FirstVisits = {
