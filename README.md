@@ -311,7 +311,7 @@ Throughout the planning, design, testing and deployment of the website, I have u
 
 # Features
 ### Deciding what to implement
-Using the table from the Strategy Plane of the UX section (which I have included at the bottom of this page), I was able to determine what could be implemented and what would be better being left out by using a viability/importance chart. Those features that were plotted in the graph in the pink area were those that were determined to be both important AND viable enough to be implemented.<br>
+Using the table from the Strategy Plane of the UX section, I was able to determine what could be implemented and what would be better being left out by using a viability/importance chart. Those features that were plotted in the graph in the pink area were those that were determined to be both important AND viable enough to be implemented.<br>
 
 ### Implemented Features
 From the table, I was able to recognise which features were more likely to have a positive impact on the website and game and implement the following:
@@ -330,90 +330,10 @@ From the table, I was able to recognise which features were more likely to have 
 
 ### Features left to implement
 <ul>
-    <li><em>Have a way to make the game easier or harder before the player starts the game</em> - This feature meets aims ... and ... identified in the Strategy section of UX</li>
-    <li><em>To have an element of chance for each room to have a random interaction</em> - This feature meets aims ..., ..., ... and ... identified in the Strategy section of UX</li>
+    <li><em>Have a way to make the game easier or harder before the player starts the game</em></li>
+    <li><em>To have an element of chance for each room to have a random interaction</em></li>
 </ul>
 <a href="#top">Back to the top.</a>
-<table>
-    <tr>
-        <th>Opportunity/Feature</th>
-        <th>Feasibility/Viability (score out of 5)</th>
-        <th>Level of Importance (score out of 5)</th>
-        <th>In or out?</th>
-    </tr>
-    <tr>
-        <td>Obvious role of the website demonstrated theme image and game title text and favicon</td>
-        <td>5</td>
-        <td>5</td>
-        <td>In</td>
-    </tr>
-    <tr>
-        <td>Simple design with straightforward navigation to make it easier for the user to understand where to find information such as game instructions</td>
-        <td>5</td>
-        <td>4</td>
-        <td>In</td>
-    </tr>
-    <tr>
-        <td>A fully responsive website that works on a range of screen sizes and devices</td>
-        <td>4</td>
-        <td>3</td>
-        <td>In</td>
-    </tr>
-    <tr>
-        <td>For gameplay: A way of increasing/decreasing the player's health and a way to track this</td>
-        <td>3</td>
-        <td>4</td>
-        <td>In</td>
-    </tr>
-    <tr>
-        <td>For gameplay: Have a number of interactions that must be achieved before the player can 'win'</td>
-        <td>3</td>
-        <td>3</td>
-        <td>Maybe In</td>
-    </tr>
-    <tr>
-        <td>For gameplay: Have a way of conveying events such as time-loops by having the user go round in circles</td>
-        <td>4</td>
-        <td>5</td>
-        <td>In</td>
-    </tr>
-    <tr>
-        <td>For gameplay: Have interactions update depending on whether other interactions have taken place</td>
-        <td>5</td>
-        <td>3</td>
-        <td>In</td>
-    </tr>
-    <tr>
-        <td>For gameplay: Have a way to make the game easier or harder before the player starts the game</td>
-        <td>3</td>
-        <td>2</td>
-        <td>Out</td>
-    </tr>
-    <tr>
-        <td>For gameplay: To have an element of chance for each room to have a random interaction</td>
-        <td>2</td>
-        <td>2</td>
-        <td>Out</td>
-    </tr>
-    <tr>
-        <td>For gameplay: To have a different interaction per room</td>
-        <td>4</td>
-        <td>4</td>
-        <td>In</td>
-    </tr>
-    <tr>
-        <td>For gameplay: To have a different interaction depending on what path the user takes from one room to the next</td>
-        <td>4</td>
-        <td>3</td>
-        <td>In</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Average Viability x number of features:<br>42</td>
-        <td>Sum of Importance:<br>39</td>
-        <td></td>
-    </tr>
-</table><br>
 
 # Testing
 ### Functionality
