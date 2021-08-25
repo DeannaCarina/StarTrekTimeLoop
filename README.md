@@ -237,17 +237,183 @@ The other 'images' on the website are ASCII images taken from either <a href="ht
 <a href="#top">Back to the top.</a>
 
 # Technologies
+Throughout the planning, design, testing and deployment of the website, I have used a number of technologies:
+
 ### Languages
+<ol>
+    <li><a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">HTML</a>
+        <ul><li>The main structure of the website</li></ul>
+    </li>
+    <li><a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS</a>
+        <ul><li>For the design of the site</li></ul>
+    </li>
+    <li><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+        <ul><li>Within the template supplied by code institute</li>
+    </li>
+    <li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a>
+        <ul><li>For hosting a local server during for testing</li>
+        <li>For the gameplay logic</li></ul>
+    </li>
+    <li><a href="https://www.markdownguide.org/" target="_blank">Markdown</a>
+        <ul><li>For the content and structure of the README.md</li></ul>
+    </li>
+    <li><a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank">Bash</a>
+        <ul><li>For the CLI of gitpod.io environment and commands for depoloyment to GitHub</li></ul>
+    </li>
+</ol>   
+
 ### Version Control
-### Applications
-### Frameworks, Libraries & Programs
+<ol>
+    <li><a href="https://github.com/" target="_blank">Git & Github</a>
+        <ul><li>For the hosting and version control of the website as well as storage for media content on the website</li></ul>
+    </li>
+    <li><a href="https://www.gitpod.io/" target="_blank">Gitpod</a>
+        <ul><li>The development environment used for writing the code for the website</li></ul>
+    </li>
+</ol>
+
+
+### Applications    
+<ol>
+   <li><a href="https://balsamiq.com/" target="_blank">Balsamiq (Desktop)</a>
+        <ul><li>For the creation of wireframes</li></ul>
+    </li>
+    <li><a href="https://visualstudio.microsoft.com/" target="_blank">Visual Studio (Desktop)</a>
+        <ul><li>For testing out ideas without interfering with code for website</li></ul>
+    </li>
+    <li><a href="https://slack.com/intl/en-gb/" target="_blank">Slack (Desktop)</a>
+        <ul><li>For communicating with peers and troubleshooting problems with the different environments used during the course and coding.</li></ul>
+    </li>
+</ol>
+    
+### Frameworks, Libraries and Programs
+<ol>  
+    <li><a href="https://favicon.io/" target="_blank">Favicon.io</a>
+        <ul><li>Used to create the tab icon from an original PNG file</li></ul>
+    </li>
+    <li><a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a>
+        <ul><li>To test and search for errors in the HTML code</li></ul>
+    </li>
+    <li><a href="https://jigsaw.w3.org/css-validator/" target="_blank">Jigsaw W3C CSS Validation Service</a>
+        <ul><li>To test and search for errors in the CSS code</li></ul>
+    </li>
+    <li><a href="https://jshint.com/" target="_blank">JavaScript Code Quality Tool</a>
+        <ul><li>To test and search for errors in the JS code</li></ul>
+    </li>  
+    <li><a href="https://wave.webaim.org/" target="_blank">WAVE Web Accessibility Evaluation Tool</a>
+        <ul><li>To ensure compliance with accessibility</li></ul>
+    </li>
+    <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> Performance Tool
+        <ul><li>To ensure high performance and quick loading times of the website</li></ul>
+    </li>
+</ol><br>  
 <a href="#top">Back to the top.</a>
 
 # Features
 ### Deciding what to implement
+Using the table from the Strategy Plane of the UX section (which I have included at the bottom of this page), I was able to determine what could be implemented and what would be better being left out by using a viability/importance chart. Those features that were plotted in the graph in the pink area were those that were determined to be both important AND viable enough to be implemented.<br>
+
 ### Implemented Features
+From the table, I was able to recognise which features were more likely to have a positive impact on the website and game and implement the following:
+<ul>
+    <li><em>Obvious role of the website demonstrated theme image and game title text and favicon</em> - This feature meets aim 2 identified in the Strategy section of UX</li>
+    <li><em>Simple design with straightforward navigation to make it easier for the user to understand where to find information such as game instructions</em> - This feature meets aim 2 identified in the Strategy section of UX</li>
+    <li><em>A fully responsive website that works on a range of screen sizes and devices</em> - This feature meets aim 2 identified in the Strategy section of UX</li>
+    <li><em>A way of increasing/decreasing the player's health and a way to track this</em> - This feature meets aims 2 and 3 identified in the Strategy section of UX</li>
+    <li><em>Have a number of interactions that must be achieved before the player can 'win'</em> - This feature meets aims 2 and 3 identified in the Strategy section of UX</li>
+    <li><em>Have a way of conveying events such as time-loops by having the user go round in circles</em> - This feature meets aims 2 and 3 identified in the Strategy section of UX</li>
+    <li><em>Have interactions update depending on whether other interactions have taken place</em> - This feature meets aims 2 and 3 identified in the Strategy section of UX</li>
+    <li><em>To have a different interaction per room</em> - This feature meets aims 2 and 3 identified in the Strategy section of UX</li>
+    <li><em>To have a different interaction depending on what path the user takes from one room to the next</em> -  This feature meets aim 2 and 3 identified in the Strategy section of UX</li>
+    <li></em>Have a button for the user to have background music</em> - This feature meets aim 4 identified in the Strategy section of the UX</li>    
+</ul>   
+
 ### Features left to implement
+<ul>
+    <li><em>Have a way to make the game easier or harder before the player starts the game</em> - This feature meets aims ... and ... identified in the Strategy section of UX</li>
+    <li><em>To have an element of chance for each room to have a random interaction</em> - This feature meets aims ..., ..., ... and ... identified in the Strategy section of UX</li>
+</ul>
 <a href="#top">Back to the top.</a>
+<table>
+    <tr>
+        <th>Opportunity/Feature</th>
+        <th>Feasibility/Viability (score out of 5)</th>
+        <th>Level of Importance (score out of 5)</th>
+        <th>In or out?</th>
+    </tr>
+    <tr>
+        <td>Obvious role of the website demonstrated theme image and game title text and favicon</td>
+        <td>5</td>
+        <td>5</td>
+        <td>In</td>
+    </tr>
+    <tr>
+        <td>Simple design with straightforward navigation to make it easier for the user to understand where to find information such as game instructions</td>
+        <td>5</td>
+        <td>4</td>
+        <td>In</td>
+    </tr>
+    <tr>
+        <td>A fully responsive website that works on a range of screen sizes and devices</td>
+        <td>4</td>
+        <td>3</td>
+        <td>In</td>
+    </tr>
+    <tr>
+        <td>For gameplay: A way of increasing/decreasing the player's health and a way to track this</td>
+        <td>3</td>
+        <td>4</td>
+        <td>In</td>
+    </tr>
+    <tr>
+        <td>For gameplay: Have a number of interactions that must be achieved before the player can 'win'</td>
+        <td>3</td>
+        <td>3</td>
+        <td>Maybe In</td>
+    </tr>
+    <tr>
+        <td>For gameplay: Have a way of conveying events such as time-loops by having the user go round in circles</td>
+        <td>4</td>
+        <td>5</td>
+        <td>In</td>
+    </tr>
+    <tr>
+        <td>For gameplay: Have interactions update depending on whether other interactions have taken place</td>
+        <td>5</td>
+        <td>3</td>
+        <td>In</td>
+    </tr>
+    <tr>
+        <td>For gameplay: Have a way to make the game easier or harder before the player starts the game</td>
+        <td>3</td>
+        <td>2</td>
+        <td>Out</td>
+    </tr>
+    <tr>
+        <td>For gameplay: To have an element of chance for each room to have a random interaction</td>
+        <td>2</td>
+        <td>2</td>
+        <td>Out</td>
+    </tr>
+    <tr>
+        <td>For gameplay: To have a different interaction per room</td>
+        <td>4</td>
+        <td>4</td>
+        <td>In</td>
+    </tr>
+    <tr>
+        <td>For gameplay: To have a different interaction depending on what path the user takes from one room to the next</td>
+        <td>4</td>
+        <td>3</td>
+        <td>In</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Average Viability x number of features:<br>42</td>
+        <td>Sum of Importance:<br>39</td>
+        <td></td>
+    </tr>
+</table><br>
 
 # Testing
 ### Functionality
