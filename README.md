@@ -85,6 +85,8 @@ I have found the use of the five planes model to be highly useful in the develop
 
 # Testing
 ### Functionality
+<img src="assets/images/readme-images/testing.png"><br>
+
 ### Compatability
 ### User testing stories
 ### Code Validation
