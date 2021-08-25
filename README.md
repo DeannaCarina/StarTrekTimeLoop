@@ -225,8 +225,15 @@ The main source of colour on the web page comes from the background which has ve
 The only icon used on the website is the Favicon - which I made myself using the drawing and shape tools on microsoft PowerPoint. It is base off the standard communicator device shape used in the Star Trek franchise, but for the background I have used the same background as the webpage. An enlarged version of the favicon can be seen here:
 <img src="assets/images/readme-images/icon.png" width="50%"><br>
 
-
 #### Images
+The only true image I have used on the web page is the background image which was taken from <a href="https://unsplash.com/photos/KvgB81s4dF0"><strong>UNSPLASH</strong></a> by Nathan Anderson.
+
+The other 'images' on the website are ASCII images taken from either <a href="http://www.asciiartfarts.com/star_trek.html"><strong>HERE</strong></a> for the Star Trek themed images or generated <a href="https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20"><strong>HERE</strong></a> for the text ASCII 'images'.<br>
+<img src="assets/images/readme-images/TITLE.png"><br>
+<img src="assets/images/readme-images/PLANET.png"><br>
+<img src="assets/images/readme-images/SHIP.png"><br>
+<img src="assets/images/readme-images/GAMEOVER.png"><br>
+
 <a href="#top">Back to the top.</a>
 
 # Technologies
