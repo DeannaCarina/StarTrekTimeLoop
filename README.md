@@ -234,6 +234,19 @@ The other 'images' on the website are ASCII images taken from either <a href="ht
 <img src="assets/documents/readme-images/SHIP.png"><br>
 <img src="assets/documents/readme-images/GAMEOVER.png"><br>
 
+#### Videos/Music
+I had initially purchased the song "Enterprise" by Jerry Goldsmith and used the audio element in the web page for users to be able to play it as background music, however this would have gone against the Ts&Cs that I agreed to in the purchase of the song which stated "Except as set forth in the preceding sentence, you may not redistribute, transmit, assign, sell, broadcast, rent, share, lend, repurpose, modify, adapt, edit, license or otherwise transfer, or use Purchased Music or Music Service Content." Had I used this piece of music, I would have then been broadcasting, sharing and repurposing it, so to be on the safe side, I instead used YouTube's embed service to give the user the choice of three 'videos' to give background music while they are playing the game:
+<ol>
+    <li><a href="https://www.youtube.com/watch?v=ARcgqTx3NOg">Star Trek: The Motion Picture - The Enterprise</a> 
+    Uploaded by <a href="https://www.youtube.com/channel/UCRRtJojwuI4WEmBBw2W3X9A">jediking12</a></li>
+    <li><a href="https://www.youtube.com/watch?v=8rIWyybNb6c">Star Trek Mega Suite: Live Long and Prosper (Vulcan Suite)</a> 
+    Uploaded by <a href="https://www.youtube.com/channel/UCZqbxnrI1PHe6OPgvS5spVg">Tyrannicus</a></li>
+    <li><a href="https://www.youtube.com/watch?v=dASkOyQXlzw">Star Trek: Beyond (Full score)</a> 
+    Uploaded by <a href="https://www.youtube.com/channel/UCR5aSgzmBdOxchDfK7bzGEA"></a>B B</li>
+</ol>
+
+I feel these three tracks (two of which are made up of multiple pieces of music) lend themselves well to the theme of the game and add to the ambience while the user is playing.
+
 <a href="#top">Back to the top.</a>
 
 # Technologies
@@ -325,7 +338,8 @@ From the table, I was able to recognise which features were more likely to have 
     <li><em>Have interactions update depending on whether other interactions have taken place</em> - This feature meets aims 2 and 3 identified in the Strategy section of UX</li>
     <li><em>To have a different interaction per room</em> - This feature meets aims 2 and 3 identified in the Strategy section of UX</li>
     <li><em>To have a different interaction depending on what path the user takes from one room to the next</em> -  This feature meets aim 2 and 3 identified in the Strategy section of UX</li>
-    <li></em>Have a button for the user to have background music</em> - This feature meets aim 4 identified in the Strategy section of the UX</li>    
+    <li><em>Have a button for the user to have background music</em> - This feature meets aim 4 identified in the Strategy section of the UX</li>   
+    <li><em>Have a downloadable gameplay guide for users as a 'walkthrough' if needed</em> - This feature meets aim 1 identified in the Strategy secton of the UX</li> 
 </ul>   
 
 ### Features left to implement
