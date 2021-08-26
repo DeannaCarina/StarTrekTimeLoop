@@ -242,7 +242,7 @@ I had initially purchased the song "Enterprise" by Jerry Goldsmith and used the 
     <li><a href="https://www.youtube.com/watch?v=8rIWyybNb6c">Star Trek Mega Suite: Live Long and Prosper (Vulcan Suite)</a> 
     Uploaded by <a href="https://www.youtube.com/channel/UCZqbxnrI1PHe6OPgvS5spVg">Tyrannicus</a></li>
     <li><a href="https://www.youtube.com/watch?v=dASkOyQXlzw">Star Trek: Beyond (Full score)</a> 
-    Uploaded by <a href="https://www.youtube.com/channel/UCR5aSgzmBdOxchDfK7bzGEA"></a>B B</li>
+    Uploaded by <a href="https://www.youtube.com/channel/UCR5aSgzmBdOxchDfK7bzGEA">B B</a></li>
 </ol>
 
 I feel these three tracks (two of which are made up of multiple pieces of music) lend themselves well to the theme of the game and add to the ambience while the user is playing.
