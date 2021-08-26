@@ -356,6 +356,8 @@ From the table, I was able to recognise which features were more likely to have 
 
 ### Compatability
 ### User testing stories
+<img src="assets/documents/readme-images/gameguide.png"><br>
+
 ### Code Validation
 ### Peer Review
 ### Development Problems
