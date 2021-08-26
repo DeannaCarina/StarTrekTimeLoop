@@ -39,7 +39,7 @@ This is my submission for Code Institute's (5P) Portfolio Project Three. It will
 
 ### Demo
 A live of the website can be found <a href="https://startrek-timeloop.herokuapp.com/">**HERE**</a><br><br>
-<img src="assets/images/readme-images/demo.gif"><br><br>
+<img src="assets/documents/readme-images/demo.gif"><br><br>
 <a href="#top">Back to the top.</a>
 
 <h1 id="UX">UX - Five Planes</h1> 
@@ -49,11 +49,11 @@ I have found the use of the five planes model to be highly useful in the develop
 #### Vision
 
 Star Trek: Time Loop is an interactive game focusing on the users interactions with the space ship and the choices they make to determine which direction they go in. These choices will result in scenarios where the user will get an increase in their health, a decrease in their health, instant death, or an item pickup. The theme of the game is futuristic/space and is highly influenced by the Star Trek franchise. Although the user doesn't have to know anything about Star Trek - the users that are familier with it may find small snippets of information that they are familiar with such as some of the interactions that cause health depletions. I have a personal connection with the Star Trek franchise as I am named after Deanna Troi in Star Trek: The Next Generation, so creating this game will be an enjoyable process for me and I hope that will reflect in the quality of the code and the story line. Before I started writing any code I first used <a href="https://www.canva.com/create/mood-boards/"><strong>CANVA</strong></a> to create a mood board to get me thinking about space and give me some ideas about what I might want the user to visualise through the story line (and perhaps change the visual asthetics of the hosted website). This was the mood board I created:
-<img src="assets/images/readme-images/moodboard.gif"><br>
+<img src="assets/documents/readme-images/moodboard.gif"><br>
 From here, I then went on to think about the layout of the game. I don't want the user to be too restricted in their choices and as such I chose to have quite a few rooms in the whole map (25 to be exact). As you can see from the graphic below (made with <a href="https://www.lucidchart.com/pages/"><strong>LUCID CHART</strong></a> and then imported into PowerPoint for final alterations) the map is grid-based however the paths between rooms are not always linear. Certain paths will skip rooms, others will move diagonally and only a few paths will allow the user to back-track into the room they were in before. By not always having straightforward paths this allows me the creative freedom to implement features that would represent situations such as time-loops and space-time anomalies.
-<img src="assets/images/readme-images/gameidea.png"><br>
+<img src="assets/documents/readme-images/gameidea.png"><br>
 Once I had a layout I was happy with, I then went on to decide the interactions for each room. I wanted these to become predictable for the user so I have almost made a mirror image of the two halves of the map with the Engine Bay being the focal point. As the user moves from room to room, it is my hope that they will become familier with the various paths and learn from mistakes/achievements. The graphic below shows the room names as well as what will happen in these rooms.
-<img src="assets/images/readme-images/rooms.png"><br>
+<img src="assets/documents/readme-images/rooms.png"><br>
 
 #### Aims
 <ol>
@@ -172,8 +172,8 @@ I have plotted the table above into a graph to easily visualise the features tha
     <li>The features in the grey section could be implemented at a later date but aren't necessary right now</li>
     <li>The features in the turquoise section will not be implemented as it would be unwise to focus on these features until a later date</li>
 </ul>
-<img src="assets/images/readme-images/chart.png"><br>
-<img src="assets/images/readme-images/chartkey1.png" width="50%">
+<img src="assets/documents/readme-images/chart.png"><br>
+<img src="assets/documents/readme-images/chartkey1.png" width="50%">
 
 ### Scope
 
@@ -212,7 +212,7 @@ As this project is only going to be on one page, there is not much in terms of s
 
 ### Skeleton
 The wireframe for the Star Trek Time Loop game was made with the Balsamiq Desktop Applictaion, it can be found by viewing the image below. Due to using the pre-made template provided by Code Institute, the page will automatically scale down depending on the screen size of the device the player is using. Therefore I haven't made a wireframe for any small-screen devices. There is also a high chance that the majority of players will choose to play on a desktop or laptop as these are the devices most used for 'gaming'. Although I haven't made a wireframe for smaller screen sizes, I will be testing the game on smaller devices such as phones and tablets to ensure cross-compatibility.
-<img src="assets/images/readme-images/sttlwire.png"><br>
+<img src="assets/documents/readme-images/sttlwire.png"><br>
 
 ### Surface
 #### Typography
@@ -223,16 +223,16 @@ The main source of colour on the web page comes from the background which has ve
 
 #### Icons
 The only icon used on the website is the Favicon - which I made myself using the drawing and shape tools on microsoft PowerPoint. It is base off the standard communicator device shape used in the Star Trek franchise, but for the background I have used the same background as the webpage. An enlarged version of the favicon can be seen here:
-<img src="assets/images/readme-images/icon.png" width="50%"><br>
+<img src="assets/documents/readme-images/icon.png" width="50%"><br>
 
 #### Images
 The only true image I have used on the web page is the background image which was taken from <a href="https://unsplash.com/photos/KvgB81s4dF0"><strong>UNSPLASH</strong></a> by Nathan Anderson.
 
 The other 'images' on the website are ASCII images taken from either <a href="http://www.asciiartfarts.com/star_trek.html"><strong>HERE</strong></a> for the Star Trek themed images or generated <a href="https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20"><strong>HERE</strong></a> for the text ASCII 'images'.<br>
-<img src="assets/images/readme-images/TITLE.png"><br>
-<img src="assets/images/readme-images/PLANET.png"><br>
-<img src="assets/images/readme-images/SHIP.png"><br>
-<img src="assets/images/readme-images/GAMEOVER.png"><br>
+<img src="assets/documents/readme-images/TITLE.png"><br>
+<img src="assets/documents/readme-images/PLANET.png"><br>
+<img src="assets/documents/readme-images/SHIP.png"><br>
+<img src="assets/documents/readme-images/GAMEOVER.png"><br>
 
 <a href="#top">Back to the top.</a>
 
@@ -337,8 +337,8 @@ From the table, I was able to recognise which features were more likely to have 
 
 # Testing
 ### Functionality
-<img src="assets/images/readme-images/solution1.png"><br>
-<img src="assets/images/readme-images/testing.png"><br>
+<img src="assets/documents/readme-images/solution1.png"><br>
+<img src="assets/documents/readme-images/testing.png"><br>
 
 ### Compatability
 ### User testing stories
@@ -367,8 +367,8 @@ From the table, I was able to recognise which features were more likely to have 
 
 # Screenshots
 <a href="#top">Back to the top.</a>
-<img src="assets/images/readme-images/sttlscreen.png"><br>
-<img src="assets/images/readme-images/sttlscreen2.png">
+<img src="assets/documents/readme-images/sttlscreen.png"><br>
+<img src="assets/documents/readme-images/sttlscreen2.png">
 
 # References
 <a href="#top">Back to the top.</a>
