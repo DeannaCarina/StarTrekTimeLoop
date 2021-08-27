@@ -155,11 +155,11 @@ def Credits():
     P_S('''
                      Background Image
                       NATHAN ANDERSON
-            ''', 3)
+            ''', 1)
     P_S('''
                     Background Music (1)
                       JERRY GOLDSMITH
-            ''', 3)
+            ''', 1)
     P_S('''
                     Background Music (2)
                       JERRY GOLDSMITH
@@ -171,14 +171,13 @@ def Credits():
                       PAUL BAILLARGEON
                         GERALD FRIED
                       MICHAEL GIACCHINO
-            ''', 3)
+            ''', 1)
     P_S('''
                     Background Music (3)
                       MICHAEL GIACCHINO
-
-            ''', 3)
+            ''', 1)
     P_S('''
                         Peer Reviewers
                              TBC
-            ''', 3)
+            ''', 1)
     exit()
