@@ -253,7 +253,7 @@ button:hover {
     font-size: large;
 }
 
-#modal-text {
+.modal-text {
     text-align: justify;
     line-height: 15px;
     font-size: small;

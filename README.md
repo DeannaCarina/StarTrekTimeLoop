@@ -359,6 +359,20 @@ From the table, I was able to recognise which features were more likely to have 
 <img src="assets/documents/readme-images/gameguide.png"><br>
 
 ### Code Validation
+Although the majority of the HTML, CSS and JavaScript came from a pre-made template supplied by code institute, I still chose to run these files through their corresponding code validators: <a href="https://validator.w3.org/">W3C Markup Validation Service</a>, <a href="https://jigsaw.w3.org/css-validator/">Jigsaw</a> and <a href="https://jshint.com/">JSHint</a>.
+<ul>
+    <li>For the <strong>Python</strong> code I used an online Python PEP8 Linter <a href="http://pep8online.com/checkresult">PEP8 ONLINE</a> - there were no 'errors' with my code, however most of the ASCII images I used in the code had problems such as trailing whitespace and anomalous backslash - I was unable to find a way to get rid of these errors without destroying the visual integrity of the image. They caused no problems with the rest of the code and I believe they add more to the game so have taken the decision to leave these images in place and accept that these problems come with using ASCII images such as the ones I have used (that have lines ending with a backslash or have backslashes within them).
+    <img src="assets/documents/readme-images/validpy1.png"><br>
+    <img src="assets/documents/readme-images/validpy2.png"><br></li>
+    <li>For the <strong>HTML</strong>code file index.html (found in the static folder) - The only problems that came back were a lack of language specified in the HTML element (this was added), a duplication of an ID attribute (this was changed to a class) and the use of the iframe frameborder (this was removed). After re-running the HTML through the validator again, there were no errors or warnings. 
+    <img src="assets/documents/readme-images/validhtml.png"><br></li>
+    <li>For the <strong>CSS</strong>code file xterm.css (found in the static folder) - No errors were found with the CSS, however 2 warnings were brought up by the validator, these were centered around some of the pre-written code in the template so I have chosen not to fix them.
+    <img src="assets/documents/readme-images/validcss.png"><br></li>
+    <li>For the <strong>JavaScript</strong>code file modal.js (found in the static folder) - </li>The only errors that came back from JSHint were missing semicolons, these were added and the file re-run through the linter which then came back with 0 warnings or errors.
+    <li>The JavaScript file xterm.js came back with 50 warnings after being run through JSHint, however I have not made any alterations to this throughout the development process, it is 100% as it came via the template, so have not fixed any of these warnings.
+    <img src="assets/documents/readme-images/validjs.png"><br></li>
+</ul>
+
 ### Peer Review
 ### Development Problems
 ### Accessibility
