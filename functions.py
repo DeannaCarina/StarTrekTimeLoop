@@ -105,11 +105,11 @@ def TwoRoomSecondChance(Room1, Room2):
 
 def NoHealth():
     P_S("\nYou have become gravely injured (your health has", 2)
-    P_S("reached 0 or less). You can no longer carry on trying to reach", 2)
-    P_S("Nova VII. You lay down and close your eyes, your body", 2)
-    P_S("too broken to carry on.", 2)
-    P_S('''                                                  
-     _____ _____ _____ _____    _____ _____ _____ _____ 
+    P_S("reached a critical level of 0 or less). You can no", 2)
+    P_S("longer carry on trying to reach Nova VII. You lay down", 2)
+    P_S("and close your eyes, your body too broken to carry on.", 2)
+    P_S('''
+     _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
     |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
     |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
