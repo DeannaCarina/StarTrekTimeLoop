@@ -4,8 +4,8 @@
 # Program Name: "Star Trek: Time Loop"
 
 from functions import P_S, FourRoomChoice, FourRoomSecondChance, \
-    ThreeRoomChoice, ThreeRoomSecondChance, TwoRoomChoice, \
-    TwoRoomSecondChance, NoHealth
+     ThreeRoomChoice, ThreeRoomSecondChance, TwoRoomChoice, \
+     TwoRoomSecondChance, NoHealth, Credits
 import time
 
 PreviousRoom = ""
@@ -162,12 +162,13 @@ o               .         ___---___                    .
     elif WantToPlay.lower() == "n" or WantToPlay.lower() == "no":
         P_S("*Beaming you out*", 1)
         P_S("Initialising shut down...", 1)
-        print('''
+        P_S('''
                  ___ _ _ ___   ___ _ _ ___
                 |_ _| | | __> | __| \ | . |
                  | ||   | _>  | _>|   | | |
                  |_||_|_|___> |___|_\_|___/
-                ''')
+                ''', 2)
+        Credits()
         exit()
     else:
         print("That option does not compute, please try again.")
@@ -657,6 +658,7 @@ def Room1_2N():
     |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
     |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
             \n''', 2)
+            Credits()
             P_S("Resetting time loop in...", 1)
             P_S("3...", 1)
             P_S("2...", 1)
@@ -824,6 +826,7 @@ def Room1_2NE():
     |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
     |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
         \n''', 2)
+    Credits()
     P_S("Resetting time loop in...", 1)
     P_S("3...", 1)
     P_S("2...", 1)
@@ -1260,6 +1263,7 @@ def RoomWSW():
     |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
     |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
         \n''', 2)
+    Credits()
     P_S("Resetting time loop in...", 1)
     P_S("3...", 1)
     P_S("2...", 1)
@@ -1450,35 +1454,7 @@ def RoomESETransporterRoom():
                     | ||   | _>  | _>|   | | |
                     |_||_|_|___> |___|_\_|___/
                     \n\n\n\n''', 2)
-                P_S('''
-          _____ _____  ______ _____ _____ _______ _____
-         / ____|  __ \|  ____|  __ \_   _|__   __/ ____|
-        | |    | |__) | |__  | |  | || |    | | | (___
-        | |    |  _  /|  __| | |  | || |    | |  \___ |
-        | |____| | \ \| |____| |__| || |_   | |  ____) |
-         \_____|_|  \_\______|_____/_____|  |_| |_____/
-        \n''', 2)
-                P_S('''
-                            Developer
-                        DEANNA SALE
-                ''', 1)
-                P_S('''
-                            Theme
-                GENE RODDENBERRY (Star Trek Creator)
-                ''', 1)
-                P_S('''
-                            ASCII Text
-                https://patorjk.com/software/taag/
-                ''', 1)
-                P_S('''
-                        ASCII Images
-            http://www.asciiartfarts.com/star_trek.html
-                ''', 1)
-                P_S('''
-                            Story Line
-                        DEANNA SALE
-                ''', 3)
-                exit()
+                Credits()
         else:
             P_S("\nYou didn't have all the required equipment and", 2)
             P_S("items to successfully beam down to Nova VII. You", 2)
@@ -1492,6 +1468,7 @@ def RoomESETransporterRoom():
     |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
                     \n
                     ''', 1)
+            Credits()
             P_S("Resetting time loop in...", 1)
             P_S("3...", 1)
             P_S("2...", 1)

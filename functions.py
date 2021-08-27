@@ -121,3 +121,64 @@ def NoHealth():
     P_S("1...", 1)
     print("Press PLAY GAME to re-initialise time loop.")
     exit()
+
+
+def Credits():
+    P_S('''
+      _____ _____  ______ _____ _____ _______ _____
+     / ____|  __ \|  ____|  __ \_   _|__   __/ ____|
+    | |    | |__) | |__  | |  | || |    | | | (___
+    | |    |  _  /|  __| | |  | || |    | |  \___ |
+    | |____| | \ \| |____| |__| || |_   | |  ____) |
+     \_____|_|  \_\______|_____/_____|  |_| |_____/
+    \n''', 2)
+    P_S('''
+                        Developer
+                       DEANNA SALE
+            ''', 1)
+    P_S('''
+                          Theme
+            GENE RODDENBERRY (Star Trek Creator)
+            ''', 1)
+    P_S('''
+                        ASCII Text
+            https://patorjk.com/software/taag/
+            ''', 1)
+    P_S('''
+                       ASCII Images
+        http://www.asciiartfarts.com/star_trek.html
+            ''', 1)
+    P_S('''
+                        Story Line
+                       DEANNA SALE
+            ''', 1)
+    P_S('''
+                     Background Image
+                      NATHAN ANDERSON
+            ''', 3)
+    P_S('''
+                    Background Music (1)
+                      JERRY GOLDSMITH
+            ''', 3)
+    P_S('''
+                    Background Music (2)
+                      JERRY GOLDSMITH
+                        JAMES HORNER
+                      ALEXANDER COURAGE
+                        JAY CHATTAWAY
+                       CLIFF EIDELMAN
+                      LEONARD ROSENMAN
+                      PAUL BAILLARGEON
+                        GERALD FRIED
+                      MICHAEL GIACCHINO
+            ''', 3)
+    P_S('''
+                    Background Music (3)
+                      MICHAEL GIACCHINO
+
+            ''', 3)
+    P_S('''
+                        Peer Reviewers
+                             TBC
+            ''', 3)
+    exit()
