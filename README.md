@@ -313,6 +313,9 @@ Throughout the planning, design, testing and deployment of the website, I have u
     <li><a href="https://jshint.com/" target="_blank">JavaScript Code Quality Tool</a>
         <ul><li>To test and search for errors in the JS code</li></ul>
     </li>  
+    <li><a href="http://pep8online.com/checkresult" target="_blank">PEP8 ONLINE</a>
+        <ul><li>To test and search for errors in the Python code</li></ul>
+    </li>
     <li><a href="https://wave.webaim.org/" target="_blank">WAVE Web Accessibility Evaluation Tool</a>
         <ul><li>To ensure compliance with accessibility</li></ul>
     </li>
@@ -376,7 +379,11 @@ Although the majority of the HTML, CSS and JavaScript came from a pre-made templ
 ### Peer Review
 ### Development Problems
 ### Accessibility
+<img src="assets/documents/readme-images/wavereport.png"><br>
+
 ### Performance Testing
+<img src="assets/documents/readme-images/lighthouse.png"><br>
+
 ### Bugs & Fixes
 <a href="#top">Back to the top.</a>
 
