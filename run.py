@@ -256,11 +256,15 @@ def Room1_1N():
 
     global PreviousRoom
     if PreviousRoom == "EngineBay":
+        # Travel text from Engine Bay to Meeting Room
         P_S("You head along a very long corridor and into the upper-mid", 2)
         P_S('section of the ship. You go into the room directly in front', 2)
-        P_S("of you...", 2)
+        P_S("of you.", 2)
     elif PreviousRoom == "1_1NE":
-        P_S("Travel text from 1_1NE (Holodeck) to 1_1N (Meeting Room)", 2)
+        # Travel text from Engine Bay to Meeting Room
+        P_S("You head out of the automatic sliding doors of the Holodeck", 2)
+        P_S("and turn to your right, you walk for about 20 yards and head", 2)
+        P_S("into the next room on your right.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Meeting Room.")
     while UserStats["locator"] and UserStats["batteries"]:
@@ -277,22 +281,21 @@ def Room1_1N():
         ''', 2)
         break
     if FirstVisits["1_1N"] is True:
-        P_S("You head into the small meeting room containing an oval", 2)
+        P_S("You head into a small meeting room containing an oval", 2)
         P_S("table and eight chairs surrounding it.", 2)
         P_S("You look around to see if there's anything useful for you", 2)
-        P_S("for your current endevours.", 2)
+        P_S("that might help with your current endevours.", 2)
         P_S("...", 2)
-        P_S("After a minute or so you feel yourself going lightheaded, you", 2)
-        P_S("can smell something strange, it's Neurazine Gas! You quickly", 2)
-        P_S("cover your nose and mouth with your sleeve and make a hasty", 2)
-        P_S("retreat from the room. You cough and splutter trying to rid", 2)
-        P_S("your lungs of the putrid gases. You lose 2 health.", 2)
+        P_S("After about 20 seconds you feel yourself going lightheaded,", 2)
+        P_S("you can smell something strange, it's Neurazine Gas! You", 2)
+        P_S("quickly cover your nose and mouth with your sleeve and make a", 2)
+        P_S("hasty retreat from the room. You cough and splutter trying to", 2)
+        P_S("rid your lungs of the putrid gases. You lose 2 health.", 2)
         FirstVisits["1_1N"] = False
         Stats(-2)
         CheckStats()
     else:
-        P_S("You head along a long corridor and head into the room at the", 2)
-        P_S("end... You've been in here before! It's the small meeting", 2)
+        P_S("You've been in here before! It's the small meeting", 2)
         P_S("room with the Neurazine Gas! You quickly bid a hasty", 2)
         P_S("retreat... even with a visit as fleeting as that, you can", 2)
         P_S("still feel the effects the gas has had on your lungs. You", 2)
