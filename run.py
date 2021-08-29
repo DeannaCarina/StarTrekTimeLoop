@@ -324,13 +324,28 @@ def Room1_1E():
 
     global PreviousRoom
     if PreviousRoom == "EngineBay":
-        P_S("Travel text from EngineBay to 1_1E (Eng.Sub.Con)", 2)
+        # Travel text from EngineBay to 1_1E (Eng.Sub.Con)
+        P_S("You head away from the center of the ship along a very", 2)
+        P_S("official looking corridor with warnings and alarms all", 2)
+        P_S("over the walls and ceilings.", 2)
     elif PreviousRoom == "1_1S":
-        P_S("Text from 1_1S (Thrusters Control) to 1_1E (Eng.Sub.Con)", 2)
+        # Travel text from 1_1S (Thrusters Control) to 1_1E (Eng.Sub.Con)
+        P_S("You leave the Thrusters Control room and head in a starboard-", 2)
+        P_S("bow direction along a corridor filled with safety and warning", 2)
+        P_S("signs. Every empty space containing a computer screen or ship", 2)
+        P_S("information poster. You head into the next room on your left.", 2)
     elif PreviousRoom == "1_1SE":
-        P_S("Travel text from 1_1SE (SickBay) to 1_1E (Eng.Sub.Con)", 2)
+        # Travel text from 1_1SE (SickBay) to 1_1E (Eng.Sub.Con)
+        P_S("You leave sickbay and head towards the bow of the ship,", 2)
+        P_S("along a corridor filled with safety and warning signs.", 2)
+        P_S("Every empty space containing a computer screen or ship", 2)
+        P_S("information poster. You head into the room straight ahead.", 2)
     elif PreviousRoom == "ESE":
-        P_S("Travel text from ESE (Transporter Room) to 1_1E (Eng.Sub.Con)", 2)
+        # Travel text from ESE (Transporter Room) to 1_1E (Eng.Sub.Con)
+        P_S("You leave the Transporter room and head in a port-bow,", 2)
+        P_S("direction, along a corridor filled with safety and warning", 2)
+        P_S("signs. Every empty space containing a computer screen or ship", 2)
+        P_S("information poster. You head into the next room on the right.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Engineering sub-control.")
     while UserStats["locator"] and UserStats["batteries"]:
