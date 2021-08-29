@@ -181,13 +181,27 @@ def RoomEngineBay():
     global PreviousRoom
     LastRoom()
     if PreviousRoom == "1_1W":
-        P_S("Travel text from 1_1W (Science Bay) to EngineBay", 2)
+        # Travel text from 1_1W (Science Bay) to EngineBay
+        P_S("You head back into the center of the ship along a very", 2)
+        P_S("official looking corridor with warnings and alarms all", 2)
+        P_S("over the walls and ceilings.", 2)
     elif PreviousRoom == "1_2W":
-        P_S("Travel text from 1_2W (Science Store) to EngineBay", 2)
+        # Travel text from 1_2W (Science Store) to EngineBay
+        P_S("You make your way back to the center of the ship past the", 2)
+        P_S("outside of the Science Bay and along a very official looking", 2)
+        P_S("corridor with warnings and alarms all over the walls and", 2)
+        P_S("ceilings.", 2)
     elif PreviousRoom == "1_1E":
-        P_S("Travel text from 1_1E (Eng.Sub.Con) to EngineBay", 2)
+        # Travel text from 1_1E (Eng.Sub.Con) to EngineBay
+        P_S("You head back into the center of the ship along a very", 2)
+        P_S("official looking corridor with warnings and alarms all", 2)
+        P_S("over the walls and ceilings.", 2)
     elif PreviousRoom == "1_2E":
-        P_S("Travel text from 1_2E (Weapons Control) to EngineBay", 2)
+        # Travel text from 1_2E (Weapons Control) to EngineBay
+        P_S("You make your way back to the center of the ship past the", 2)
+        P_S("outside of Engineering Sub-Control and along a very official", 2)
+        P_S("looking corridor with warnings and alarms all over the walls", 2)
+        P_S("and ceilings.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Engine Bay.")
     while UserStats["locator"] and UserStats["batteries"]:
@@ -677,12 +691,13 @@ def Room1_2N():
                                 "To the Port Bow",
                                 "To the Starboard Bow",
                                 Room1_1NW, RoomNNW, RoomNNE)
-                ThreeRoomSecondChance(Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
+                ThreeRoomSecondChance(Room1_1NW, RoomNNW, RoomNNE)
             elif PreviousRoom == "NNW":
                 P_S("You head back into the Bridge", 2)
                 P_S("Where would you like to go from here?", 2)
                 PreviousRoom = "NNW"
-                TwoRoomChoice("Room1_1NW", "Room1_2N",
+                TwoRoomChoice("The Observation Deck",
+                              "Back into the Shuttle Bay",
                               Room1_1NW, Room1_2N)
                 TwoRoomSecondChance(Room1_1NW, Room1_2N)
             else:
