@@ -50,14 +50,9 @@ FirstVisits = {
 }
 
 
-def LastRoom():
-    print(f"The last room you were in was: {PreviousRoom}.")
-
-
 def Stats(healthNumber):
     UserStats["health"] = UserStats["health"] + (healthNumber)
-    P_S("Your new health is:", 2)
-    P_S(UserStats["health"], 2)
+    P_S('Your new health is: ' + str(UserStats['health']), 2)
 
 
 def CheckStats():
@@ -179,7 +174,6 @@ def RoomEngineBay():
     # ENGINE BAY---------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1W":
         # Travel text from 1_1W (Science Bay) to EngineBay
         P_S("You head back into the center of the ship along a very", 2)
@@ -238,7 +232,6 @@ def RoomEngineBay():
         P_S("with the Black Hole?", 2)
         FirstVisits["EngineBay"] = False
     else:
-        LastRoom()
         P_S("You enter the room... you've been here before! It's the", 2)
         P_S("Engine Bay! You subconciously look over to where the control", 2)
         P_S("panel once stood for the cooling systems and are startled", 2)
@@ -262,7 +255,6 @@ def Room1_1N():
     # MEETING ROOM-------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "EngineBay":
         P_S("You head along a very long corridor and into the upper-mid", 2)
         P_S('section of the ship. You go into the room directly in front', 2)
@@ -328,7 +320,6 @@ def Room1_1E():
     # ENGINEERING SUB CONTROL--------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "EngineBay":
         P_S("Travel text from EngineBay to 1_1E (Eng.Sub.Con)", 2)
     elif PreviousRoom == "1_1S":
@@ -402,7 +393,6 @@ def Room1_1S():
     # THRUSTERS CONTROL--------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "EngineBay":
         P_S("Travel text from EngineBay to 1_1S (Thrusters control)", 2)
     elif PreviousRoom == "1_1SW":
@@ -435,7 +425,6 @@ def Room1_1S():
 def Room1_1W():
     # SCIENCE BAY--------------------------------------------------------------
 
-    LastRoom()
     global PreviousRoom
     if PreviousRoom == "1_1NW":
         P_S("Text from 1_1NW (Observation Deck) to 1_1W (Science Bay)", 2)
@@ -485,7 +474,6 @@ def Room1_1NE():
     # HOLODECK-----------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1E":
         P_S("Travel text from 1_1E (Eng.Sub.Con) to 1_1NE (Holodeck)", 2)
     elif PreviousRoom == "NNE":
@@ -518,7 +506,6 @@ def Room1_1SE():
     # SICKBAY------------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1S":
         P_S("Travel text from 1_1S (Thrusters Control) to 1_1SE (Sickbay)", 2)
     elif PreviousRoom == "SSE":
@@ -551,7 +538,6 @@ def Room1_1SW():
     # CREW QUARTERS------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1W":
         P_S("Travel text from 1_1W (Science Bay) to 1_1SW (Crew Quarters)", 2)
     elif PreviousRoom == "SSW":
@@ -584,7 +570,6 @@ def Room1_1NW():
     # OBSERVATION DECK---------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1N":
         P_S("Text from 1_1N (Meeting Room) to 1_1NW (Observation Deck)", 2)
     elif PreviousRoom == "NNW":
@@ -618,7 +603,6 @@ def Room1_2N():
     # SHUTTLE BAY--------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1N":
         P_S("You cover your mouth and nose with your sleeve and make", 2)
         P_S("your way through the meeting room.\n", 2)
@@ -710,7 +694,6 @@ def Room1_2E():
     # WEAPONS CONTROL----------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "ENE":
         P_S("Travel text from ENE (Navigation) to 1_2E (Weapons Control)", 2)
     elif PreviousRoom == "1_1E":
@@ -746,7 +729,6 @@ def Room1_2S():
     # THE BRIG-----------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "SSE":
         P_S("Travel text from SSE (Maintenance) to 1_2S (The Brig)", 2)
     elif PreviousRoom == "1_1S":
@@ -782,7 +764,6 @@ def Room1_2W():
     # SCIENCE STORE------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1W":
         P_S("Travel text from 1_1W (Science Bay) to 1_2W (Science Store)", 2)
     elif PreviousRoom == "1_2NW":
@@ -816,7 +797,6 @@ def Room1_2NE():
     # STOREROOM----------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_2E":
         P_S("Travel text from 1_2E (Weapons Control) to 1_2NE (Storeroom)", 2)
     elif PreviousRoom == "NNE":
@@ -856,7 +836,6 @@ def Room1_2SE():
     # PERSONAL QUARTERS--------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "ESE":
         P_S("Text from ESE (Transporter Room) to 1_2SE (Personal Quarters)", 2)
     elif PreviousRoom == "1_2S":
@@ -889,7 +868,6 @@ def Room1_2SW():
     # MESS HALL----------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "SSW":
         P_S("Travel text from SSW (Security QUarters) to 1_2SW (Mess Hall)", 2)
     elif PreviousRoom == "1_2W":
@@ -922,7 +900,6 @@ def Room1_2NW():
     # MEDITATION ROOM----------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "WNW":
         P_S("Text from WNW (Conference Lounge) to 1_2NW (Meditation)", 2)
     P_S("\n-------------------------------------------\n", 3)
@@ -953,7 +930,6 @@ def RoomNNE():
     # CAPTAINS QUARTERS--------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1N":
         P_S("Text from 1_1N (Meeting Room) to NNE (Captain's Quarters)", 2)
     elif PreviousRoom == "1_1NE":
@@ -994,7 +970,6 @@ def RoomENE():
     # NAVIGATION---------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1NE":
         P_S("Travel text from 1_1NE (Holodeck) to ENE (Navigation)", 2)
     P_S("\n-------------------------------------------\n", 3)
@@ -1059,7 +1034,6 @@ def RoomSSE():
     # MAINTENANCE--------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1SE":
         P_S("Travel text from 1_1SE (Sickbay) to SSE (Maintenance)", 2)
     elif PreviousRoom == "1_2SE":
@@ -1207,7 +1181,6 @@ def RoomSSW():
     # SECURITY-----------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_2S":
         P_S("Travel text from 1_2S (The Brig) to SSW (Security)", 2)
     elif PreviousRoom == "1_1SW":
@@ -1253,7 +1226,6 @@ def RoomWSW():
     # RECREATION ROOM----------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_1SW":
         P_S("Travel text from 1_1SW (Crew Quarters) to WSW (Rec Room)", 2)
     elif PreviousRoom == "1_2SW":
@@ -1293,7 +1265,6 @@ def RoomWNW():
     # CONFERENCE LOUNGE--------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_2W":
         P_S("Text from 1_2W (Science Store) to WNW (Conference Lounge)", 2)
     elif PreviousRoom == "1_1NW":
@@ -1334,7 +1305,6 @@ def RoomNNW():
     # THE BRIDGE---------------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_2NW":
         P_S("Travel text from 1_2NW (Meditation)  to NNW (The Bridge)", 2)
     elif PreviousRoom == "WNW":
@@ -1422,7 +1392,6 @@ def RoomESETransporterRoom():
     # TRANSPORTER ROOM---------------------------------------------------------
 
     global PreviousRoom
-    LastRoom()
     if PreviousRoom == "1_2E":
         P_S("Text from 1_2E (Weapons Control) to ESE (Transporter Room)", 2)
     elif PreviousRoom == "1_1SE":
