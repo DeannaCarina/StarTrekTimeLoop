@@ -180,3 +180,14 @@ def Credits():
     P_S("1...", 1)
     print("Press PLAY GAME to re-initialise time loop.")
     exit()
+
+
+def Error():
+    print("AN ERROR OCCURRED.")
+    print("We appologise for the inconvenience.")
+    print("Please try restarting your game and trying again.")
+    print("In the event of further errors, please contact the developer:")
+    print("deannacarina@hotmail.com")
+    print("Please copy and paste the text from the last 2 rooms you were in.")
+    print("Thank you.")
+    exit()

@@ -5,7 +5,7 @@
 
 from functions import P_S, FourRoomChoice, FourRoomSecondChance, \
      ThreeRoomChoice, ThreeRoomSecondChance, TwoRoomChoice, \
-     TwoRoomSecondChance, NoHealth, Credits
+     TwoRoomSecondChance, NoHealth, Credits, Error
 import time
 
 PreviousRoom = "None"
@@ -153,7 +153,7 @@ o               .         ___---___                    .
             else:
                 print("That response does not compute.")
         else:
-            print("An error occured, please restart your game.")
+            Error()
     elif WantToPlay.lower() == "n" or WantToPlay.lower() == "no":
         P_S("*Beaming you out*", 1)
         P_S("Initialising shut down...", 1)
@@ -649,8 +649,11 @@ def Room1_1NW():
         P_S("Text from 1_1N (Meeting Room) to 1_1NW (Observation Deck)", 2)
     elif PreviousRoom == "NNW":
         P_S("Travel text from NNW (The Bridge) to 1_1NW (Observation Deck)", 2)
+        P_S("You go down in the elevator which stops a few floors down.", 2)
+        P_S("The doors open, and you head along an internal corridor, you", 2)
+        P_S("head into the next room.", 2)
     P_S("\n-------------------------------------------\n", 3)
-    print("You are in the Observation Deck.")
+    print("You are on the Observation Deck.")
     # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
@@ -691,7 +694,9 @@ def Room1_2N():
         P_S("You cover your mouth and nose with your sleeve and make", 2)
         P_S("your way through the meeting room.", 2)
     elif PreviousRoom == "NNW":
-        P_S("Travel text from NNW (The Bridge) to 1_2N (Shuttle Bay)", 2)
+        # Travel text from NNW (The Bridge) to 1_2N (Shuttle Bay)
+        P_S("You head through the door in The Bridge and are astonished", 2)
+        P_S("to find that...", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the shuttle bay.")
     # If user has the locator device and batteries, show the ship diagram
@@ -768,7 +773,7 @@ def Room1_2N():
                               Room1_1NW, Room1_2N)
                 TwoRoomSecondChance(Room1_1NW, Room1_2N)
             else:
-                print("An error occured, please restart your game.")
+                Error()
         else:
             print("That response does not compute.")
 
@@ -1094,8 +1099,7 @@ def RoomNNE():
         # Text for subsequent visits to this room
         print("This is where you found the knife.")
     else:
-        print("An error occured, please restart your game!")
-        exit()
+        Error()
     print("ROOM AND PATH INFO HERE")
     PreviousRoom = "NNE"
     TwoRoomChoice("Room1_2NE", "Room1_1NE",
@@ -1165,8 +1169,7 @@ def RoomENE():
         # Text for if the user has been here before
         print("This is where you found the Locator device.")
     else:
-        print("An error occured, please restart your game!")
-        exit()
+        Error()
     PreviousRoom = "ENE"
     print("ROOM AND PATH INFO HERE")
     TwoRoomChoice("RoomNNE", "Room1_2E",
@@ -1315,16 +1318,14 @@ def RoomSSE():
             P_S("on your way, holding the locator device out in front of", 2)
             P_S("you - filled with new hope.", 2)
         else:
-            print("An error occured, please restart your game!")
-            exit()
+            Error()
     elif UserStats["batteries"] is True:
         # Text for if user has been here before
         print("This is where you found the batteries.")
     else:
-        print("An error occured, please restart your game!")
-        exit()
+        Error()
     PreviousRoom = "SSE"
-    print("ROOM AND PATH INFO HERE")
+    print("PATH INFO HERE")
     TwoRoomChoice("Room1_1SE", "Room1_2S",
                   Room1_1SE, Room1_2S)
     TwoRoomSecondChance(Room1_1SE, Room1_2S)
@@ -1370,10 +1371,9 @@ def RoomSSW():
         # Text for if user has been here before
         print("This is where you found the override key for the Transporter.")
     else:
-        print("An error occured, please restart your game!")
-        exit()
+        Error()
     PreviousRoom = "SSW"
-    print("ROOM AND PATH INFO HERE")
+    print("PATH INFO HERE")
     TwoRoomChoice("Room1_1SW", "Room1_2SW",
                   Room1_1SW, Room1_2SW)
     TwoRoomSecondChance(Room1_1SW, Room1_2SW)
@@ -1449,9 +1449,8 @@ def RoomWNW():
         # Text for if the user has been here before
         print("This is where you found the phaser.")
     else:
-        print("An error occured, please restart your game!")
-        exit()
-    print("ROOM AND PATH INFO HERE")
+        Error()
+    print("PATH INFO HERE")
     PreviousRoom = "WNW"
     TwoRoomChoice("Room1_2NW", "RoomNNW",
                   Room1_2NW, RoomNNW)
@@ -1463,13 +1462,25 @@ def RoomNNW():
 
     global PreviousRoom
     if PreviousRoom == "1_2NW":
-        P_S("Travel text from 1_2NW (Meditation)  to NNW (The Bridge)", 2)
+        # Travel text from 1_2NW (Meditation)  to NNW (The Bridge)
+        P_S("Leaving the meditation room, feeling refreshed and relaxed,", 2)
+        P_S("you head along the front of the ship and up in the elevator", 2)
+        P_S("to the top level.", 2)
     elif PreviousRoom == "WNW":
-        P_S("Travel text from WNW (Conference Lounge) to NNW (The Bridge)", 2)
+        # Travel text from WNW (Conference Lounge) to NNW (The Bridge)
+        P_S("Leaving the Conference Lounge, and heading along an internal,", 2)
+        P_S("corridor, you come to the central elevator. You head up in", 2)
+        P_S("the elevator to the top level.", 2)
     elif PreviousRoom == "1_1NW":
-        P_S("Travel text from 1_1NW (Observation Deck) to NNW (The Bridge)", 2)
+        # Travel text from 1_1NW (Observation Deck) to NNW (The Bridge)
+        P_S("Leaving the Observation deck, and heading along an internal,", 2)
+        P_S("corridor, you come to the central elevator. You head up in", 2)
+        P_S("the elevator to the top level.", 2)
     elif PreviousRoom == "1_1N":
-        P_S("Travel text from 1_1N (Meeting Room) to NNW (The Bridge)", 2)
+        # Travel text from 1_1N (Meeting Room) to NNW (The Bridge)
+        P_S("Leaving the outside of the meeting room behind you, you head", 2)
+        P_S("in a port-bow direction along an internal, corridor. You come", 2)
+        P_S("to the elevator and head up in the elevator to the top level.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are on the Bridge.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1486,7 +1497,23 @@ def RoomNNW():
             █ = You are here.
         ''', 2)
         break
-    # Text for user's first visit to The Bridge
+    if FirstVisits["1_2NW"] is True:
+        # Text for user's first visit to The Bridge
+        P_S("You head onto the bridge. It's the first time you have ever", 2)
+        P_S("seen this spectaular room empty. You head over to the", 2)
+        P_S("captain's chair and run your hand over the smooth grey", 2)
+        P_S("leather... you look around the room again checking for anyone", 2)
+        P_S("else's presence. You smile to yourself... no one would know.", 2)
+        P_S("   You slowly lower yourself into the most important chair on", 2)
+        P_S("the ship and look at the viewscreen in front of you which is", 2)
+        P_S("set to show the outside. In all your years in Starfleet, you", 2)
+        P_S("never thought you'd find yourself sat here.", 2)
+        P_S("   Standing up again, you look around to see if there's", 2)
+        P_S("anything that might help you with your current plight.", 2)
+        FirstVisits["1_2NW"] = False
+    else:
+        P_S("You head onto the bridge and smile at the captain's chair,", 2)
+        P_S("almost going over to sit on it again.", 2)
     if UserStats["comms"] is False:
         P_S("You found a comms device!", 2)
         # Log that the user now has possession of the comms device
@@ -1545,11 +1572,18 @@ def RoomNNW():
             P_S("think to yourself.", 2)
     elif UserStats["comms"] is True:
         # Text for if user has been here before
-        print("This is where you found the comms device.")
+        P_S("This is where you found the comms device. There's nothing.", 2)
+        P_S("else here of interest.", 2)
     else:
-        print("An error occured, please restart your game!")
+        Error()
+    P_S("As you look around The Bridge, there is a door here that has", 2)
+    P_S("never been here before, you look at it uneasily, waiting for it", 2)
+    P_S("to dissappear as the cooling controls did in the Engine Bay, but", 2)
+    P_S("it seems permenant enough. You could go through this door, or you", 2)
+    P_S("could go down in the elevator, but you don't know where it would", 2)
+    P_S("stop. Where would you like to go?", 2)
     PreviousRoom = "NNW"
-    TwoRoomChoice("Room1_1NW", "Room1_2N",
+    TwoRoomChoice("Down the elevator", "Through the unusual door",
                   Room1_1NW, Room1_2N)
     TwoRoomSecondChance(Room1_1NW, Room1_2N)
 
@@ -1662,9 +1696,13 @@ def RoomESETransporterRoom():
             Credits()
     # If user doesn't want to beam out of the ship:
     elif BeamOut.lower() == "n" or BeamOut.lower() == "no":
-        print("\nYou continue on your journey...")
+        P_S("\nYou continue on your journey...", 2)
+        P_S("From the Transporter room you have two options of where to", 2)
+        P_S("go: Along an internal corridor towards the center of the ship", 2)
+        P_S("or an external corridor towards your personal quarters. Where", 2)
+        P_S("would you like to go?", 2)
         PreviousRoom = "ESE"
-        TwoRoomChoice("Room1_1E", "Room1_2SE",
+        TwoRoomChoice("Towards the center of the ship", "Personal Quarters",
                       Room1_1E, Room1_2SE)
         TwoRoomSecondChance(Room1_1E, Room1_2SE)
     else:
