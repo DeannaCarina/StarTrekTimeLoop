@@ -1559,9 +1559,18 @@ def RoomESETransporterRoom():
 
     global PreviousRoom
     if PreviousRoom == "1_2E":
-        P_S("Text from 1_2E (Weapons Control) to ESE (Transporter Room)", 2)
+        # Text from 1_2E (Weapons Control) to ESE (Transporter Room)
+        P_S("Leaving weapons control, you head long the outer starboard", 2)
+        P_S("corridor of the ship, looking out at the starry expanse as", 2)
+        P_S("you go. You head into the next room you come to.", 2)
     elif PreviousRoom == "1_1SE":
-        P_S("Travel text from 1_1SE (Sickbay) to ESE (Transporter Room)", 2)
+        # Travel text from 1_1SE (Sickbay) to ESE (Transporter Room)
+        P_S("Leaving sickbay, you head long a short internal corridor.", 2)
+        P_S("As you walk along, the multiple doors along this corridor", 2)
+        P_S("seem to be dissappearing and reappearing much the same as", 2)
+        P_S("the cooling controls in the Engine Bay. You keep walking", 2)
+        P_S("until you come to the only door that has some semblance of", 2)
+        P_S("permenance and head through it.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Transporter Room.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1583,7 +1592,7 @@ def RoomESETransporterRoom():
     P_S("the couple of steps onto the transporter platform. You never", 2)
     P_S("did like beaming much. You jog down the steps again and over", 2)
     P_S("to the tranporter controls, you notice all the screens are", 2)
-    P_S("flickering and the plant name 'Nova VII' keeps popping up on the", 2)
+    P_S("flickering and the planet name 'Nova VII' keeps popping up on the", 2)
     P_S("screen. You imagine that with the controls in this state it", 2)
     P_S("would probably be quite dangerous to try and beam out of the", 2)
     P_S("ship... but still possible.", 2)
