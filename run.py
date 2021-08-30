@@ -27,7 +27,7 @@ FirstVisits = {
     "1_1E": True,
     "1_1S": True,
     "1_1W": True,
-    "1_1NE": True,
+    # 1_1NE Will never be false as this is a kill room
     "1_1SE": True,
     "1_1SW": True,
     "1_1NW": True,
@@ -39,14 +39,14 @@ FirstVisits = {
     "1_2SE": True,
     "1_2SW": True,
     "1_2NW": True,
-    "NNE": True,
-    "ENE": True,
-    "TransporterRoom": True,
-    "SSE": True,
-    "SSW": True,
-    "WSW": True,
-    "WNW": True,
-    "NNW": True
+    # NNE uses knife variable to determine previous visits
+    # ENE uses locator variable to determine previous visits
+    # ESE (Transporter Room) true/false value not needed
+    # SSE uses batteries variable to determine previous visits
+    # SSW uses key variable to determine previous visits
+    # WSW Will never be false as this is a kill room
+    # WNW uses phaser variable to determine previous visits
+    # NNW uses comms variable to determine previous visits
 }
 
 
@@ -236,22 +236,27 @@ def RoomEngineBay():
                 █ = You are here.
             ''', 2)
             break
+        # Text for if user has been here before
         P_S("You enter the room... you've been here before! It's the", 2)
         P_S("Engine Bay! You subconciously look over to where the control", 2)
         P_S("panel once stood for the cooling systems and are startled", 2)
         P_S("to see that it is standing there as if nothing had happened!", 2)
         P_S("You walk slowly towards it and as you do, it once again", 2)
         P_S("shrinks and implodes, trapped in a perpetual time-loop.", 2)
+    # Path information    
     P_S("   There are four potential exits from this room, each one on", 2)
     P_S("one of the four walls. The one straight ahead of you will head", 2)
     P_S("to the bow of the ship, the one behind - to the stern, the left", 2)
     P_S("- to port, and right - to starboard. Where would you like to go?", 2)
+    # Log users presence in this room
     PreviousRoom = "EngineBay"
+    # Choice of where to go to
     FourRoomChoice("Towards the bow",
                    "Towards the starboard",
                    "Towards the stern",
                    "Towards the port",
                    Room1_1N, Room1_1E, Room1_1S, Room1_1W)
+    # If user inputs invalid value - re-ask question
     FourRoomSecondChance(Room1_1N, Room1_1E, Room1_1S, Room1_1W)
 
 
@@ -312,7 +317,7 @@ def Room1_1N():
         # Reduce user's health and show user's new health score
         Stats(-1)
         CheckStats()
-    # Text for visits to meeting room which end with leaving the shuttle bay
+    # Path information
     P_S("From where you stand on the corridor with the meeting room behind", 2)
     P_S("you, there is the observation deck directly to your right", 2)
     P_S("(heading to port) past the entrance to another corridor, and", 2)
@@ -386,17 +391,20 @@ def Room1_1E():
         # Log that user has now visited this room
         FirstVisits["1_1E"] = False
     else:
+        # Text for user's subsequent visits to this room
         P_S("You enter the room cautiously... You've been in here before!", 2)
         P_S("This is where you were attacked by the Crew Member. He's", 2)
         P_S("back! Almost as if he never left or never encountered you", 2)
         P_S("before, he turns to you with the same look of terror as", 2)
         P_S("before and stumbles towards you with his knife raised...", 2)
     if UserStats["phaser"] is True:
+        # If user has phaser this happens:
         P_S("\nThankfully as you have acquired the phaser, you managed to", 2)
         P_S("stun the crew member and knock him out without causing him", 2)
         P_S("harm. You recieved no damage. (You would have lost 2 if you", 2)
         P_S("were undefended).", 2)
     elif UserStats["knife"] is True:
+        # If user has knife this happens:
         P_S("\nAs you have acquired the knife, you managed to defend", 2)
         P_S("from the oncoming attack, but not without the RedJac first", 2)
         P_S("catching you with his knife. The possessed crew member runs", 2)
@@ -406,21 +414,26 @@ def Room1_1E():
         Stats(-1)
         CheckStats()
     else:
+        # If user doesn't have phaser or knife, this happens:
         P_S("\nYou try your best to defend yourself from the possessed", 2)
         P_S("crew member. You punch and kick with all your might whenever", 2)
         P_S("he comes close. Eventually he runs away not wanting to face", 2)
         P_S("you any longer. You lost 2 health.", 2)
         Stats(-2)
         CheckStats()
+    # Path information from this room
     P_S("There are three potential exits from this room: the door to", 2)
     P_S("the engine bay where you have been before, a door straight", 2)
     P_S("ahead to go starboard, and a door to your left to go", 2)
     P_S("towards the bow. Where would you like to go?", 2)
+    # Log users presence in this room
     PreviousRoom = "1_1E"
+    # Choice of where to go to
     ThreeRoomChoice("To the Engine Bay",
                     "Towards the bow",
                     "Towards the starboard",
                     RoomEngineBay, Room1_1NE, Room1_2E)
+    # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(RoomEngineBay, Room1_1NE, Room1_2E)
 
 
@@ -459,10 +472,14 @@ def Room1_1S():
     P_S("You got hurt (Cobalt Diselenide)! You lost 1 health.", 2)
     Stats(-1)
     CheckStats()
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "1_1S"
+    # Choice of where to go to
     FourRoomChoice("Room1_1W", "Room1_1E", "Room1_1SE", "Room1_2S",
                    Room1_1W, Room1_1E, Room1_1SE, Room1_2S)
+    # If user inputs invalid value - re-ask question
     FourRoomSecondChance(Room1_1W, Room1_1E, Room1_1SE, Room1_2S)
 
 
@@ -511,10 +528,14 @@ def Room1_1W():
         print("Neural Parasites + Fists")
         Stats(-2)
         CheckStats()
+    # Log users presence in this room
     PreviousRoom = "1_1W"
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Choice of where to go to
     ThreeRoomChoice("Engine Bay", "1_1SW", "1_2W",
                     RoomEngineBay, Room1_1SW, Room1_2W)
+    # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(RoomEngineBay, Room1_1SW, Room1_2W)
 
 
@@ -552,10 +573,14 @@ def Room1_1NE():
         print("Subsequent visit text here")
     P_S("You found food! You gained 1 health.", 2)
     Stats(+1)
+    # Log users presence in this room
     PreviousRoom = "1_1NE"
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Choice of where to go to
     ThreeRoomChoice("Room1_1N", "RoomNNE", "RoomENE",
                     Room1_1N, RoomNNE, RoomENE)
+    # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(Room1_1N, RoomNNE, RoomENE)
 
 
@@ -593,10 +618,14 @@ def Room1_1SE():
         print("Subsequent visit text here")
     P_S("You found food! You gained 1 health.", 2)
     Stats(+1)
+    # Path Information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "1_1SE"
+    # Choice of where to go to
     ThreeRoomChoice("Room1_1E", "RoomESETransporterRoom", "RoomSSE",
                     Room1_1E, RoomESETransporterRoom, RoomSSE)
+    # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(Room1_1E, RoomESETransporterRoom, RoomSSE)
 
 
@@ -634,10 +663,14 @@ def Room1_1SW():
         print("Subsequent visit text here")
     P_S("You found food! You gained 1 health.", 2)
     Stats(+1)
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "1_1SW"
+    # Choice of where to go to
     ThreeRoomChoice("Room1_1S", "RoomSSW", "RoomWSW",
                     Room1_1S, RoomSSW, RoomWSW)
+    # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(Room1_1S, RoomSSW, RoomWSW)
 
 
@@ -678,10 +711,14 @@ def Room1_1NW():
         print("Subsequent visit text here")
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     Stats(+1)
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "1_1NW"
+    # Choice of where to go to
     ThreeRoomChoice("Room1_1W", "RoomWNW", "RoomNNW",
                     Room1_1W, RoomWNW, RoomNNW)
+    # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(Room1_1W, RoomWNW, RoomNNW)
 
 
@@ -726,6 +763,7 @@ def Room1_2N():
     else:
         # Text for subsequent visits to this room
         P_S("You've been here before! You're in the shuttle bay!", 2)
+    # Text for every visit to this room    
     P_S("You look around for a little while and find a snack bar, you", 2)
     P_S("are very hungry, so quickly un-wrap the snack and wolf it", 2)
     P_S("down. You gain 1 health.", 2)
@@ -758,19 +796,25 @@ def Room1_2N():
                 P_S("You head back to the other side of the meeting room", 2)
                 P_S("to the corridor you were in before. Where would you", 2)
                 P_S("like to go?", 2)
+                # Log users presence in the meeting room NOT the shuttle bay
                 PreviousRoom = "1_1N"
+                # Choice of where to go to
                 ThreeRoomChoice("The Observation deck",
                                 "To the Port Bow",
                                 "To the Starboard Bow",
                                 Room1_1NW, RoomNNW, RoomNNE)
+                # If user inputs invalid value - re-ask question
                 ThreeRoomSecondChance(Room1_1NW, RoomNNW, RoomNNE)
             elif PreviousRoom == "NNW":
                 P_S("You head back into the Bridge", 2)
                 P_S("Where would you like to go from here?", 2)
+                # Log users presence on the bridge NOT the shuttle bay
                 PreviousRoom = "NNW"
+                # Choice of where to go to
                 TwoRoomChoice("The Observation Deck",
                               "Back into the Shuttle Bay",
                               Room1_1NW, Room1_2N)
+                # If user inputs invalid value - re-ask question
                 TwoRoomSecondChance(Room1_1NW, Room1_2N)
             else:
                 Error()
@@ -815,10 +859,14 @@ def Room1_2E():
     P_S("You got hurt (Dark Matter LifeForm)! You lost 1 health.", 2)
     Stats(-1)
     CheckStats()
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "1_2E"
+    # Choice of where to go to
     ThreeRoomChoice("RoomEngineBay", "Room1_2NE", "RoomESETransporterRoom",
                     RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
+    # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
 
 
@@ -859,10 +907,14 @@ def Room1_2S():
     P_S("You got hurt (Dikironium Cloud)! You lost 3 health.", 2)
     Stats(-3)
     CheckStats()
+    # Path Information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "1_2S"
+    # Choice of where to go to
     TwoRoomChoice("Room1_2SE", "RoomSSW",
                   Room1_2SE, RoomSSW)
+    # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_2SE, RoomSSW)
 
 
@@ -901,10 +953,14 @@ def Room1_2W():
     P_S("You got hurt (Genesis Worms)! You lost 1 health.", 2)
     Stats(-1)
     CheckStats()
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "1_2W"
+    # Choice of where to go to
     ThreeRoomChoice("Room1_2SW", "RoomWNW", "RoomEngineBay",
                     Room1_2SW, RoomWNW, RoomEngineBay)
+    # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(Room1_2SW, RoomWNW, RoomEngineBay)
 
 
@@ -977,10 +1033,14 @@ def Room1_2SE():
         print("Subsequent visit text here")
     P_S("You found food! You gained 3 health.", 2)
     Stats(+3)
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "1_2SE"
+    # Choice of where to go to
     TwoRoomChoice("Room1_2E", "RoomSSE",
                   Room1_2E, RoomSSE)
+    # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_2E, RoomSSE)
 
 
@@ -1018,10 +1078,14 @@ def Room1_2SW():
         print("Subsequent visit text here")
     P_S("You found food! You gained 2 health.", 2)
     Stats(+2)
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "1_2SW"
+    # Choice of where to go to
     TwoRoomChoice("Room1_2S", "RoomWSW",
                   Room1_2S, RoomWSW)
+    # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_2S, RoomWSW)
 
 
@@ -1057,10 +1121,14 @@ def Room1_2NW():
         print("Subsequent visit text here")
     P_S("You found food! You gained 2 health.", 2)
     Stats(+2)
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "1_2NW"
+    # Choice of where to go to
     TwoRoomChoice("RoomNNW", "Room1_2W",
                   RoomNNW, Room1_2W)
+    # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(RoomNNW, Room1_2W)
 
 
@@ -1100,10 +1168,14 @@ def RoomNNE():
         print("This is where you found the knife.")
     else:
         Error()
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "NNE"
+    # Choice of where to go to
     TwoRoomChoice("Room1_2NE", "Room1_1NE",
                   Room1_2NE, Room1_1NE)
+    # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_2NE, Room1_1NE)
 
 
@@ -1170,10 +1242,14 @@ def RoomENE():
         print("This is where you found the Locator device.")
     else:
         Error()
+    # Log users presence in this room
     PreviousRoom = "ENE"
+    # Path information
     print("ROOM AND PATH INFO HERE")
+    # Choice of where to go to
     TwoRoomChoice("RoomNNE", "Room1_2E",
                   RoomNNE, Room1_2E)
+    # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(RoomNNE, Room1_2E)
 
 
@@ -1324,10 +1400,14 @@ def RoomSSE():
         print("This is where you found the batteries.")
     else:
         Error()
+    # Log users presence in this room
     PreviousRoom = "SSE"
+    # Path information
     print("PATH INFO HERE")
+    # Choice of where to go to
     TwoRoomChoice("Room1_1SE", "Room1_2S",
                   Room1_1SE, Room1_2S)
+    # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_1SE, Room1_2S)
 
 
@@ -1372,10 +1452,14 @@ def RoomSSW():
         print("This is where you found the override key for the Transporter.")
     else:
         Error()
+    # Log users presence in this room    
     PreviousRoom = "SSW"
+    # Path information
     print("PATH INFO HERE")
+    # Choice of where to go to
     TwoRoomChoice("Room1_1SW", "Room1_2SW",
                   Room1_1SW, Room1_2SW)
+    # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_1SW, Room1_2SW)
 
 
@@ -1450,8 +1534,11 @@ def RoomWNW():
         print("This is where you found the phaser.")
     else:
         Error()
+    # Path information    
     print("PATH INFO HERE")
+    # Log users presence in this room
     PreviousRoom = "WNW"
+    # Choice of where to go to
     TwoRoomChoice("Room1_2NW", "RoomNNW",
                   Room1_2NW, RoomNNW)
     TwoRoomSecondChance(Room1_2NW, RoomNNW)
@@ -1497,8 +1584,8 @@ def RoomNNW():
             █ = You are here.
         ''', 2)
         break
-    if FirstVisits["1_2NW"] is True:
-        # Text for user's first visit to The Bridge
+    if UserStats["comms"] is False:
+        # Text for user's first visit to this room (if they don't have comms)
         P_S("You head onto the bridge. It's the first time you have ever", 2)
         P_S("seen this spectaular room empty. You head over to the", 2)
         P_S("captain's chair and run your hand over the smooth grey", 2)
@@ -1510,14 +1597,9 @@ def RoomNNW():
         P_S("never thought you'd find yourself sat here.", 2)
         P_S("   Standing up again, you look around to see if there's", 2)
         P_S("anything that might help you with your current plight.", 2)
-        FirstVisits["1_2NW"] = False
-    else:
-        P_S("You head onto the bridge and smile at the captain's chair,", 2)
-        P_S("almost going over to sit on it again.", 2)
-    if UserStats["comms"] is False:
+        P_S("", 2)
         P_S("You found a comms device!", 2)
         # Log that the user now has possession of the comms device
-        UserStats["comms"] = True
         if UserStats["batteries"] is True:
             # Text for if the user has possession of the batteries
             P_S("\nYou put two of the batteries you found inside of the,", 2)
@@ -1571,20 +1653,26 @@ def RoomNNW():
             P_S('should be some batteries on this ship somewhere!", you', 2)
             P_S("think to yourself.", 2)
     elif UserStats["comms"] is True:
-        # Text for if user has been here before
+        # Text for if user has been here before (has comms device)
+        P_S("You head onto the bridge and smile at the captain's chair,", 2)
+        P_S("almost going over to sit on it again.", 2)
         P_S("This is where you found the comms device. There's nothing.", 2)
         P_S("else here of interest.", 2)
     else:
         Error()
+    # Path information
     P_S("As you look around The Bridge, there is a door here that has", 2)
     P_S("never been here before, you look at it uneasily, waiting for it", 2)
     P_S("to dissappear as the cooling controls did in the Engine Bay, but", 2)
     P_S("it seems permenant enough. You could go through this door, or you", 2)
     P_S("could go down in the elevator, but you don't know where it would", 2)
     P_S("stop. Where would you like to go?", 2)
+    # Log users presence in this room
     PreviousRoom = "NNW"
+    # Choice of where to go to
     TwoRoomChoice("Down the elevator", "Through the unusual door",
                   Room1_1NW, Room1_2N)
+    # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_1NW, Room1_2N)
 
 
@@ -1594,7 +1682,7 @@ def RoomESETransporterRoom():
     global PreviousRoom
     if PreviousRoom == "1_2E":
         # Text from 1_2E (Weapons Control) to ESE (Transporter Room)
-        P_S("Leaving weapons control, you head long the outer starboard", 2)
+        P_S("Leaving weapons control, you head along the outer starboard", 2)
         P_S("corridor of the ship, looking out at the starry expanse as", 2)
         P_S("you go. You head into the next room you come to.", 2)
     elif PreviousRoom == "1_1SE":
@@ -1646,68 +1734,78 @@ def RoomESETransporterRoom():
         P_S('"Calculating your position, distance, mass... setting', 2)
         P_S(f'controls to manual. Okay {name}, here we go..."', 2)
     # Does the user want to attempt beaming out of the ship?
-    BeamOut = input("Would you like to beam out of the ship? (Y/N) \n")
-    if BeamOut.lower() == "y" or BeamOut.lower() == "yes":
-        P_S("\nInitialising beam...", 1)
-        P_S("Beaming down to planet surface in...", 1)
-        P_S("3...", 1)
-        P_S("2...", 1)
-        P_S("1...", 1)
-        if ((UserStats["key"]) is True and (UserStats["comms"]) is
+    BeamOut = False
+    while not BeamOut:
+        YesOrNo = input('Would you like to beam out of the ship? (Y/N):\n')
+        if YesOrNo.lower() == 'yes' or YesOrNo.lower() == "y":
+            P_S("\nInitialising beam...", 1)
+            P_S("Beaming down to planet surface in...", 1)
+            P_S("3...", 1)
+            P_S("2...", 1)
+            P_S("1...", 1)
+            if ((UserStats["key"]) is True and (UserStats["comms"]) is
                 True and (UserStats["locator"]) is True and
-                (UserStats["batteries"]) is True):
-            # Text for if user successfully completed the game
-            P_S("Congratulations! You beamed safely down to Nova VII", 2)
-            P_S("and escaped the time loop, you look up to the sky", 2)
-            P_S("just in time to see The Enterprise lose the last of", 2)
-            P_S("its structural integrity and scatter accross the", 2)
-            P_S("heavens, some small pieces break through the", 2)
-            P_S("atmosphere of Nova VII giving the planet a final ", 2)
-            P_S("farewell in a symbolic meteor shower.", 2)
-            P_S("You feel a hand settle on your shoulder...", 2)
-            P_S('"Glad you made it out." Clancy smiles at you.', 3)
-            PlayAgain = input("Would you like to play again? (Y/N) \n")
-            if PlayAgain.lower() == "y" or PlayAgain.lower() == "yes":
-                print("Press PLAY GAME to initialise time loop.")
-            elif PlayAgain.lower() == "n" or PlayAgain.lower() == "no":
-                P_S(f"Live long and prosper {name}", 2)
-                P_S("Initialising shut down...", 1.5)
-                P_S('''
+               (UserStats["batteries"]) is True):
+                # Text for if user successfully completed the game
+                P_S("Congratulations! You beamed safely down to Nova VII", 2)
+                P_S("and escaped the time loop, you look up to the sky", 2)
+                P_S("just in time to see The Enterprise lose the last of", 2)
+                P_S("its structural integrity and scatter accross the", 2)
+                P_S("heavens, some small pieces break through the", 2)
+                P_S("atmosphere of Nova VII giving the planet a final ", 2)
+                P_S("farewell in a symbolic meteor shower.", 2)
+                P_S("You feel a hand settle on your shoulder...", 2)
+                P_S('"Glad you made it out." Clancy smiles at you.', 3)
+                PlayAgain = False
+                while not PlayAgain:
+                    YesOrNo = input('Do you want play again? (Y/N):\n')
+                    if YesOrNo.lower() == 'yes' or YesOrNo.lower() == "y":
+                        print("Press PLAY GAME to initialise time loop.")
+                    elif YesOrNo.lower() == 'no' or YesOrNo.lower() == "n":
+                        P_S(f"Live long and prosper {name}", 2)
+                        P_S("Initialising shut down...", 2)
+                        P_S('''
                 ___ _ _ ___   ___ _ _ ___
                |_ _| | | __> | __| \ | . |
                 | ||   | _>  | _>|   | | |
                 |_||_|_|___> |___|_\_|___/
                     \n\n\n\n''', 2)
-                Credits()
-        else:
-            # Text for if user attempted to beam out without required items
-            P_S("\nYou didn't have all the required equipment and", 2)
-            P_S("items to successfully beam down to Nova VII. You", 2)
-            P_S("beamed half way down to the planet's surface but", 2)
-            P_S("appeared in space before you could reach your", 2)
-            P_S("desination.", 2)
-            P_S('''
+                        Credits()
+                    else:
+                        print("That response does not compute.")
+            else:
+                # Text for if user attempted to beam out without required items
+                P_S("\nYou didn't have all the required equipment and", 2)
+                P_S("items to successfully beam down to Nova VII. You", 2)
+                P_S("beamed half way down to the planet's surface but", 2)
+                P_S("appeared in space before you could reach your", 2)
+                P_S("desination.", 2)
+                P_S('''
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
     |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
     |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
                     \n
                     ''', 1)
-            Credits()
-    # If user doesn't want to beam out of the ship:
-    elif BeamOut.lower() == "n" or BeamOut.lower() == "no":
-        P_S("\nYou continue on your journey...", 2)
-        P_S("From the Transporter room you have two options of where to", 2)
-        P_S("go: Along an internal corridor towards the center of the ship", 2)
-        P_S("or an external corridor towards your personal quarters. Where", 2)
-        P_S("would you like to go?", 2)
-        PreviousRoom = "ESE"
-        TwoRoomChoice("Towards the center of the ship", "Personal Quarters",
-                      Room1_1E, Room1_2SE)
-        TwoRoomSecondChance(Room1_1E, Room1_2SE)
-    else:
-        print("That option does not compute, please try again.")
-        RoomESETransporterRoom()
+                Credits()
+        # If user doesn't want to beam out of the ship:
+        elif YesOrNo.lower() == 'no' or YesOrNo.lower() == "n":
+            P_S("\nYou continue on your journey...", 2)
+            # Path information
+            P_S("From the Transporter room you have two options of where", 2)
+            P_S("to go: Along an internal corridor towards the center of", 2)
+            P_S("the ship or an external corridor towards your personal", 2)
+            P_S("quarters. Where would you like to go?", 2)
+            # Log users presence in this room
+            PreviousRoom = "ESE"
+            # Choice of where to go to
+            TwoRoomChoice("Towards the center of the ship", 
+                          "Personal Quarters",
+                          Room1_1E, Room1_2SE)
+            # If user inputs invalid value - re-ask question
+            TwoRoomSecondChance(Room1_1E, Room1_2SE)
+        else:
+            print("That option does not compute, please try again.")
 
 
 PlayGame()
