@@ -115,12 +115,7 @@ def NoHealth():
     |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
             \n
             ''', 1)
-    P_S("Resetting time loop in...", 1)
-    P_S("3...", 1)
-    P_S("2...", 1)
-    P_S("1...", 1)
-    print("Press PLAY GAME to re-initialise time loop.")
-    exit()
+    Credits()
 
 
 def Credits():
@@ -180,4 +175,8 @@ def Credits():
                         Peer Reviewers
                              TBC
             ''', 1)
+    P_S("3...", 1)
+    P_S("2...", 1)
+    P_S("1...", 1)
+    print("Press PLAY GAME to re-initialise time loop.")
     exit()

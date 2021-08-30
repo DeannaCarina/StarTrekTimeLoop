@@ -15,10 +15,10 @@ UserStats = {
     "fists": True,
     "knife": False,
     "phaser": False,
-    "comms": False,
-    "locator": False,
-    "key": False,
-    "batteries": False
+    "comms": True,
+    "locator": True,
+    "key": True,
+    "batteries": True
 }
 
 FirstVisits = {
@@ -164,7 +164,6 @@ o               .         ___---___                    .
                  |_||_|_|___> |___|_\_|___/
                 ''', 2)
         Credits()
-        exit()
     else:
         print("That option does not compute, please try again.")
         PlayGame()
@@ -173,45 +172,10 @@ o               .         ___---___                    .
 def RoomEngineBay():
     # ENGINE BAY---------------------------------------------------------------
 
-    global PreviousRoom
-    if PreviousRoom == "1_1W":
-        # Travel text from 1_1W (Science Bay) to EngineBay
-        P_S("You head back into the center of the ship along a very", 2)
-        P_S("official looking corridor with warnings and alarms all", 2)
-        P_S("over the walls and ceilings.", 2)
-    elif PreviousRoom == "1_2W":
-        # Travel text from 1_2W (Science Store) to EngineBay
-        P_S("You make your way back to the center of the ship past the", 2)
-        P_S("outside of the Science Bay and along a very official looking", 2)
-        P_S("corridor with warnings and alarms all over the walls and", 2)
-        P_S("ceilings.", 2)
-    elif PreviousRoom == "1_1E":
-        # Travel text from 1_1E (Eng.Sub.Con) to EngineBay
-        P_S("You head back into the center of the ship along a very", 2)
-        P_S("official looking corridor with warnings and alarms all", 2)
-        P_S("over the walls and ceilings.", 2)
-    elif PreviousRoom == "1_2E":
-        # Travel text from 1_2E (Weapons Control) to EngineBay
-        P_S("You make your way back to the center of the ship past the", 2)
-        P_S("outside of Engineering Sub-Control and along a very official", 2)
-        P_S("looking corridor with warnings and alarms all over the walls", 2)
-        P_S("and ceilings.", 2)
-    P_S("\n-------------------------------------------\n", 3)
-    print("You are in the Engine Bay.")
-    while UserStats["locator"] and UserStats["batteries"]:
-        P_S('''
-    ___________________          _-_             _      _-_      _
-    \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
-                \_ \    \----._________.----/  \----._________.----/
-                  \ \   /  /    `-_-'              `.  `]-['  ,'
-              __,--` `-'..'-_                        `.'   `.
-             /____     █    ||                        | (█) |
-                  `--.____,-'                          `___'
-            \n
-            █ = You are here.
-        ''', 2)
-        break
     if FirstVisits["EngineBay"] is True:
+        # Text for user's first visit to the Engine Bay
+        P_S("\n-------------------------------------------\n", 3)
+        print("You are in the Engine Bay.")  
         P_S("You tentatively feel your head, checking for any bumps or", 2)
         P_S("cuts and look at your hand for any traces of blood. You", 2)
         P_S('must have really hit your head hard as the room seems to be', 2)
@@ -230,8 +194,48 @@ def RoomEngineBay():
         P_S("at the place the control panel once stood - transfixed.", 2)
         P_S("What on Earth is going on? Does this have something to do", 2)
         P_S("with the Black Hole?", 2)
+        # Log that user has now visited this room
         FirstVisits["EngineBay"] = False
     else:
+        global PreviousRoom
+        if PreviousRoom == "1_1W":
+            # Travel text from 1_1W (Science Bay) to EngineBay
+            P_S("You head back into the center of the ship along a very", 2)
+            P_S("official looking corridor with warnings and alarms all", 2)
+            P_S("over the walls and ceilings.", 2)
+        elif PreviousRoom == "1_2W":
+            # Travel text from 1_2W (Science Store) to EngineBay
+            P_S("You make your way back to the center of the ship past the", 2)
+            P_S("outside of the Science Bay and along a very official", 2)
+            P_S("looking corridor with warnings and alarms all over the", 2)
+            P_S("walls and ceilings.", 2)
+        elif PreviousRoom == "1_1E":
+            # Travel text from 1_1E (Eng.Sub.Con) to EngineBay
+            P_S("You head back into the center of the ship along a very", 2)
+            P_S("official looking corridor with warnings and alarms all", 2)
+            P_S("over the walls and ceilings.", 2)
+        elif PreviousRoom == "1_2E":
+            # Travel text from 1_2E (Weapons Control) to EngineBay
+            P_S("You make your way back to the center of the ship past the", 2)
+            P_S("outside of Engineering Sub-Control and along a very", 2)
+            P_S("official looking corridor with warnings and alarms all", 2)
+            P_S("over the walls and ceilings.", 2)
+        P_S("\n-------------------------------------------\n", 3)
+        print("You are in the Engine Bay.")
+        # If user has the locator device and batteries, show the ship diagram
+        while UserStats["locator"] and UserStats["batteries"]:
+            P_S('''
+        ___________________          _-_             _      _-_      _
+        \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
+                    \_ \    \----._________.----/  \----._________.----/
+                    \ \   /  /    `-_-'              `.  `]-['  ,'
+                __,--` `-'..'-_                        `.'   `.
+                /____     █    ||                        | (█) |
+                    `--.____,-'                          `___'
+                \n
+                █ = You are here.
+            ''', 2)
+            break
         P_S("You enter the room... you've been here before! It's the", 2)
         P_S("Engine Bay! You subconciously look over to where the control", 2)
         P_S("panel once stood for the cooling systems and are startled", 2)
@@ -267,6 +271,7 @@ def Room1_1N():
         P_S("into the next room on your right.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Meeting Room.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -281,6 +286,7 @@ def Room1_1N():
         ''', 2)
         break
     if FirstVisits["1_1N"] is True:
+        # Text for user's first visit to the meeting room
         P_S("You head into a small meeting room containing an oval", 2)
         P_S("table and eight chairs surrounding it.", 2)
         P_S("You look around to see if there's anything useful for you", 2)
@@ -291,17 +297,22 @@ def Room1_1N():
         P_S("quickly cover your nose and mouth with your sleeve and make a", 2)
         P_S("hasty retreat from the room. You cough and splutter trying to", 2)
         P_S("rid your lungs of the putrid gases. You lose 2 health.", 2)
+        # Log that user has now visited this room
         FirstVisits["1_1N"] = False
+        # Reduce user's health and show user's new health score
         Stats(-2)
         CheckStats()
     else:
+        # Text for user's subsequent visit to the meeting room
         P_S("You've been in here before! It's the small meeting", 2)
         P_S("room with the Neurazine Gas! You quickly bid a hasty", 2)
         P_S("retreat... even with a visit as fleeting as that, you can", 2)
         P_S("still feel the effects the gas has had on your lungs. You", 2)
         P_S("lose 1 health.", 2)
+        # Reduce user's health and show user's new health score
         Stats(-1)
         CheckStats()
+    # Text for visits to meeting room which end with leaving the shuttle bay
     P_S("From where you stand on the corridor with the meeting room behind", 2)
     P_S("you, there is the observation deck directly to your right", 2)
     P_S("(heading to port) past the entrance to another corridor, and", 2)
@@ -310,12 +321,15 @@ def Room1_1N():
     P_S("also noticed a door on the opposite side of the meeting room", 2)
     P_S("which you know you could get to safely if you cover your face.", 2)
     P_S("Where would you like to go?", 2)
+    # Log user's precence in the Meeting Room
     PreviousRoom = "1_1N"
+    # Choice of where to go to
     FourRoomChoice("The Observation deck",
                    "To the Port Bow",
                    "Through the meeting room",
                    "To the Starboard Bow",
                    Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
+    # If user inputs invalid value - re-ask question
     FourRoomSecondChance(Room1_1NW, RoomNNW, Room1_2N, RoomNNE)
 
 
@@ -348,6 +362,7 @@ def Room1_1E():
         P_S("information poster. You head into the next room on the right.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Engineering sub-control.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -362,11 +377,13 @@ def Room1_1E():
         ''', 2)
         break
     if FirstVisits["1_1E"] is True:
+        # Text for user's first visit to Engineering Sub-Control
         P_S("You enter the room cautiously, there is a crew member in", 2)
         P_S("here! He is facing the wall and not moving. You move slowly", 2)
         P_S('towards him. "Hello?" you say. He turns... his face looks', 2)
         P_S("full of terror as he stumbles towards you while raising his", 2)
         P_S("combat knife in offence. He is going to attack you!", 2)
+        # Log that user has now visited this room
         FirstVisits["1_1E"] = False
     else:
         P_S("You enter the room cautiously... You've been in here before!", 2)
@@ -417,6 +434,7 @@ def Room1_1S():
         P_S("Text from 1_1SW (Crew Quarters) to 1_1S (Thrusters control)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Thrusters Control Room.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -430,6 +448,14 @@ def Room1_1S():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_1S"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_1S"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You got hurt (Cobalt Diselenide)! You lost 1 health.", 2)
     Stats(-1)
     CheckStats()
@@ -452,6 +478,7 @@ def Room1_1W():
         P_S("Text from 1_1S (Thrusters Control) to 1_1W (Science Bay)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Science Bay.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -465,10 +492,13 @@ def Room1_1W():
             █ = You are here.
         ''', 2)
         break
+    # Text for user's first visit to the Science Bay
     if FirstVisits["1_1W"] is True:
         print("Text for first visit")
+        # Log that user has now visited this room
         FirstVisits["1_1W"] = False
     else:
+        # Text for users subsequent visits to this room
         print("Text for second visit")
     if UserStats["phaser"] is True:
         print("Neural Parasites + Phaser")
@@ -498,6 +528,7 @@ def Room1_1NE():
         P_S("Travel text from NNE (Captain's Quarters) to 1_1NE (Holodeck)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Holodeck.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -511,6 +542,14 @@ def Room1_1NE():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_1NE"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_NE"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You found food! You gained 1 health.", 2)
     Stats(+1)
     PreviousRoom = "1_1NE"
@@ -530,6 +569,7 @@ def Room1_1SE():
         P_S("Travel text from SSE (Maintenance) to 1_1SE (Sickbay)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Sickbay.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -543,6 +583,14 @@ def Room1_1SE():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_1SE"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_1SE"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You found food! You gained 1 health.", 2)
     Stats(+1)
     print("ROOM AND PATH INFO HERE")
@@ -562,6 +610,7 @@ def Room1_1SW():
         P_S("Travel text from SSW (Security) to 1_SW (Crew Quarters)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in someone's Crew Quarters.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -575,6 +624,14 @@ def Room1_1SW():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_1SW"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_1SW"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You found food! You gained 1 health.", 2)
     Stats(+1)
     print("ROOM AND PATH INFO HERE")
@@ -594,6 +651,7 @@ def Room1_1NW():
         P_S("Travel text from NNW (The Bridge) to 1_1NW (Observation Deck)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Observation Deck.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -607,6 +665,14 @@ def Room1_1NW():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_1NW"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_1NW"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You found food! You gained 1 health. Your new health is:", 2)
     Stats(+1)
     print("ROOM AND PATH INFO HERE")
@@ -623,11 +689,12 @@ def Room1_2N():
     global PreviousRoom
     if PreviousRoom == "1_1N":
         P_S("You cover your mouth and nose with your sleeve and make", 2)
-        P_S("your way through the meeting room.\n", 2)
+        P_S("your way through the meeting room.", 2)
     elif PreviousRoom == "NNW":
         P_S("Travel text from NNW (The Bridge) to 1_2N (Shuttle Bay)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the shuttle bay.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -641,6 +708,7 @@ def Room1_2N():
             █ = You are here.
         ''', 2)
         break
+    # Text for user's first visit to the Shuttle Bay
     if FirstVisits["1_2N"] is True:
         P_S("This makes no sense... the Shuttle bay shouldn't be in", 2)
         P_S("this area of the ship. You figure that the passage of the", 2)
@@ -648,7 +716,10 @@ def Room1_2N():
         P_S("things within the ship, but the ship itself! There is no way", 2)
         P_S("of knowing if where you think you're going is actually going", 2)
         P_S("to be where you end up!", 2)
+        # Log that user has now visited this room
+        FirstVisits["1_2N"] = False
     else:
+        # Text for subsequent visits to this room
         P_S("You've been here before! You're in the shuttle bay!", 2)
     P_S("You look around for a little while and find a snack bar, you", 2)
     P_S("are very hungry, so quickly un-wrap the snack and wolf it", 2)
@@ -656,7 +727,7 @@ def Room1_2N():
     Stats(+1)
     KeepLooking = False
     while not KeepLooking:
-        YesOrNo = input('Do you want to keep searching this room? (Y/N):\n ')
+        YesOrNo = input('Do you want to keep searching this room? (Y/N):\n')
         if YesOrNo.lower() == 'yes' or YesOrNo.lower() == "y":
             P_S("You head deeper into the Shuttle Bay and rumage through", 2)
             P_S("some nearby sacks. You don't notice that on the opposite", 2)
@@ -677,12 +748,6 @@ def Room1_2N():
     |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
             \n''', 2)
             Credits()
-            P_S("Resetting time loop in...", 1)
-            P_S("3...", 1)
-            P_S("2...", 1)
-            P_S("1...", 1)
-            print("Press PLAY GAME to re-initialise time loop.")
-            exit()
         elif YesOrNo.lower() == 'no' or YesOrNo.lower() == "n":
             if PreviousRoom == "1_1N":
                 P_S("You head back to the other side of the meeting room", 2)
@@ -720,6 +785,7 @@ def Room1_2E():
         P_S("Text from 1_2SE (Personal Quarters) to 1_2E (Weapons Control)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Weapons Control.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -733,6 +799,14 @@ def Room1_2E():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_2E"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_2E"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You got hurt (Dark Matter LifeForm)! You lost 1 health.", 2)
     Stats(-1)
     CheckStats()
@@ -755,6 +829,7 @@ def Room1_2S():
         P_S("Travel text from 1_2SW (Mess Hall) to 1_2S (The Brig)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in The Brig.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -768,6 +843,14 @@ def Room1_2S():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_2S"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_2S"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You got hurt (Dikironium Cloud)! You lost 3 health.", 2)
     Stats(-3)
     CheckStats()
@@ -788,6 +871,7 @@ def Room1_2W():
         P_S("Text from 1_2NW (Meditation Room) to 1_2W (Science Store)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Science Store Room.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -801,6 +885,14 @@ def Room1_2W():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_2W"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_2W"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You got hurt (Genesis Worms)! You lost 1 health.", 2)
     Stats(-1)
     CheckStats()
@@ -821,6 +913,7 @@ def Room1_2NE():
         P_S("Travel text from NNE (Captains Quarters) to 1_2NE (Storeroom)", 2)
     P_S("\n-------------------------------------------\n", 3)
     P_S("You are in the Ship Store Room.", 2)
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -834,6 +927,7 @@ def Room1_2NE():
             █ = You are here.
         ''', 2)
         break
+    # Text for user's ONLY visit to the Store Room
     P_S("You died!\n", 1.5)
     P_S('''
      _____ _____ _____ _____    _____ _____ _____ _____
@@ -842,12 +936,6 @@ def Room1_2NE():
     |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
         \n''', 2)
     Credits()
-    P_S("Resetting time loop in...", 1)
-    P_S("3...", 1)
-    P_S("2...", 1)
-    P_S("1...", 1)
-    print("Press PLAY GAME to re-initialise time loop.")
-    exit()
 
 
 def Room1_2SE():
@@ -860,6 +948,7 @@ def Room1_2SE():
         P_S("Travel text from 1_2S(The Brig) to 1_2SE (Personal Quarters)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in your Personal Quarters.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -873,6 +962,14 @@ def Room1_2SE():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_2SE"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_2SE"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You found food! You gained 3 health.", 2)
     Stats(+3)
     print("ROOM AND PATH INFO HERE")
@@ -892,6 +989,7 @@ def Room1_2SW():
         P_S("Travel text from 1_2W (Science Store) to 1_2SW (Mess Hall)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Mess Hall.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -905,6 +1003,14 @@ def Room1_2SW():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_2SW"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_2SW"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You found food! You gained 2 health.", 2)
     Stats(+2)
     print("ROOM AND PATH INFO HERE")
@@ -922,6 +1028,7 @@ def Room1_2NW():
         P_S("Text from WNW (Conference Lounge) to 1_2NW (Meditation)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Meditation Room.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -935,6 +1042,14 @@ def Room1_2NW():
             █ = You are here.
         ''', 2)
         break
+    if FirstVisits["1_2NW"] is True:
+        # Text for user's first visit to this room
+        print("First Visit text here")
+    # Log that user has now visited this room
+        FirstVisits["1_2NW"] = False
+    else:
+        # Text for user's subsequent visit to this room
+        print("Subsequent visit text here")
     P_S("You found food! You gained 2 health.", 2)
     Stats(+2)
     print("ROOM AND PATH INFO HERE")
@@ -956,6 +1071,7 @@ def RoomNNE():
         P_S("Travel text from ENE (Navigation) to NNE (Captain's Quarters)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Captain's Quarters.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -969,10 +1085,13 @@ def RoomNNE():
             █ = You are here.
         ''', 2)
         break
+    # Text for user's first visit to the Captains Quarters
     if UserStats["knife"] is False:
         print("You found a knife! You hook it into your belt.")
+        # Log that the user has been here before
         UserStats["knife"] = True
     elif UserStats["knife"] is True:
+        # Text for subsequent visits to this room
         print("This is where you found the knife.")
     else:
         print("An error occured, please restart your game!")
@@ -992,6 +1111,7 @@ def RoomENE():
         P_S("Travel text from 1_1NE (Holodeck) to ENE (Navigation)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Ship Navigation.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -1006,8 +1126,11 @@ def RoomENE():
         ''', 2)
         break
     if UserStats["locator"] is False:
+        # Text for user's first visit to Navigation
         P_S("You found a locator device!", 2)
+        # Log that the user now has possession of the locator device
         UserStats["locator"] = True
+        # Text for if the user has the batteries
         if UserStats["batteries"] is True:
             P_S("\nThe Locator device springs into life once you", 2)
             P_S("put the batteries inside and shows you a", 2)
@@ -1026,6 +1149,7 @@ def RoomENE():
             P_S("You will now get a visual representation of where you", 2)
             P_S("are in the Enterprise each time you enter a room.", 2)
             if UserStats["comms"] is True and UserStats["batteries"] is True:
+                # Text for if user has comms device and batteries
                 print("")
                 P_S("A voice comes out of your comms device:", 2)
                 P_S(f'"{name}! We can see you! Just make sure you have the', 2)
@@ -1033,10 +1157,12 @@ def RoomENE():
                 P_S(f'safely beam you down to Nova VII. Good look {name}', 2)
                 P_S('"hopefully we will see each other very soon."', 2)
         elif UserStats["batteries"] is False:
+            # Text for if the user doesn't have the batteries
             P_S('The locator device is completely out of batteries, "There', 2)
             P_S('should be some batteries on this ship somewhere!", you', 2)
             P_S("think to yourself.", 2)
     elif UserStats["locator"] is True:
+        # Text for if the user has been here before
         print("This is where you found the Locator device.")
     else:
         print("An error occured, please restart your game!")
@@ -1058,6 +1184,7 @@ def RoomSSE():
         P_S("Text from 1_2SE (Personal Quarters) to SSE (Maintenance)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Ship Maintenance.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -1071,12 +1198,16 @@ def RoomSSE():
             █ = You are here.
         ''', 2)
         break
+    # Text for user's first visit to Ship Maintenance
     if UserStats["batteries"] is False:
         P_S("You found some batteries!", 2)
+        # Log that the user now has possession of the batteries
         UserStats["batteries"] = True
         if UserStats["locator"] is False and UserStats["comms"] is False:
+            # Text for if comms and locator devices are false
             P_S("\nYou put the batteries into your pocket for safekeeping.", 2)
         elif UserStats["comms"] is True and UserStats["locator"] is False:
+            # Text for if comms device is true and locator device is false
             P_S("\nYou put two batteries inside of the comms device,", 2)
             P_S("and store the other two in your pocket for safekeeping.", 2)
             P_S("\nA voice comes out of your comms device:", 2)
@@ -1100,6 +1231,7 @@ def RoomSSE():
             P_S("I can pinpoint your location. You'll also need the", 2)
             P_S("Transporter override key so I can access it remotely.", 2)
             if UserStats["key"] is True:
+                # Text for if key is in users possession
                 P_S('\n"I already have the key!" you shout down the comms', 2)
                 P_S("device excitedly.\n", 2)
                 P_S('"Fantastic!" replies Clancy.', 2)
@@ -1111,6 +1243,7 @@ def RoomSSE():
             P_S("You stow the comms device into your pocket and continue", 2)
             P_S("on your way - filled with new hope.", 2)
         elif UserStats["locator"] is True and UserStats["comms"] is False:
+            # Text for if locator device is true and comms device is false
             P_S("\nYou put two batteries inside of the locator device,", 2)
             P_S("and store the other two in your pocket for safekeeping.", 2)
             P_S("\nThe Locator device springs into life once you", 2)
@@ -1130,6 +1263,7 @@ def RoomSSE():
             P_S("You will now get a visual representation of where you", 2)
             P_S("are in the Enterprise each time you enter a room.", 2)
         elif UserStats["locator"] is True and UserStats["comms"] is True:
+            # Text for if user has the comms and locator devices
             P_S("\nYou put two batteries inside of the comms device.", 2)
             P_S("\nA voice comes out of your comms device:", 2)
             P_S('"He... Hello? Can anyone hear me? Simister Clancy here', 2)
@@ -1184,6 +1318,7 @@ def RoomSSE():
             print("An error occured, please restart your game!")
             exit()
     elif UserStats["batteries"] is True:
+        # Text for if user has been here before
         print("This is where you found the batteries.")
     else:
         print("An error occured, please restart your game!")
@@ -1205,6 +1340,7 @@ def RoomSSW():
         P_S("Travel text from 1_1SW (Crew Quarters) to SSW (Security)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Security.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -1218,6 +1354,7 @@ def RoomSSW():
             █ = You are here.
         ''', 2)
         break
+    # Text for user's first visit to Security
     if UserStats["key"] is False:
         P_S("You found a key! On close inspection its branded with the", 2)
         P_S("Starfleet logo. During the three years you have worked on", 2)
@@ -1227,8 +1364,10 @@ def RoomSSW():
         P_S("full control over the ship's external beam capabilities -", 2)
         P_S("very helpful when they aren't very trusting!\n", 2)
         P_S("You put the key in your pocket for safekeeping.", 2)
+        # Log that the user now has possession of the Key
         UserStats["key"] = True
     elif UserStats["key"] is True:
+        # Text for if user has been here before
         print("This is where you found the override key for the Transporter.")
     else:
         print("An error occured, please restart your game!")
@@ -1250,6 +1389,7 @@ def RoomWSW():
         P_S("Travel text from 1_2SW (Mess Hall) to WSW (Rec Room)", 2)
     P_S("\n-------------------------------------------\n", 3)
     P_S("You are in the Recreation Room.", 2)
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -1263,6 +1403,7 @@ def RoomWSW():
             █ = You are here.
         ''', 2)
         break
+    # Text for user's ONLY visit to the Recreation Room
     P_S("You died!\n", 1.5)
     P_S('''
      _____ _____ _____ _____    _____ _____ _____ _____
@@ -1271,12 +1412,6 @@ def RoomWSW():
     |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
         \n''', 2)
     Credits()
-    P_S("Resetting time loop in...", 1)
-    P_S("3...", 1)
-    P_S("2...", 1)
-    P_S("1...", 1)
-    print("Press PLAY GAME to re-initialise time loop.")
-    exit()
 
 
 def RoomWNW():
@@ -1289,6 +1424,7 @@ def RoomWNW():
         P_S("Text from 1_1NW (Observation Deck) to WNW (Conference Lounge)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Conference Lounge.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -1302,12 +1438,15 @@ def RoomWNW():
             █ = You are here.
         ''', 2)
         break
+    # Text for user's first visit to the Conference Lounge
     if UserStats["phaser"] is False:
         P_S("You found a phaser! This will help against corporeal threats", 2)
         P_S("and reduce if not eliminate any potential damage these", 2)
         P_S("threats inflict upon you.", 2)
+        # Log that the user now has possession of the phaser
         UserStats["phaser"] = True
     elif UserStats["phaser"] is True:
+        # Text for if the user has been here before
         print("This is where you found the phaser.")
     else:
         print("An error occured, please restart your game!")
@@ -1333,6 +1472,7 @@ def RoomNNW():
         P_S("Travel text from 1_1N (Meeting Room) to NNW (The Bridge)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are on the Bridge.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _█_             _      _█_      _
@@ -1346,10 +1486,13 @@ def RoomNNW():
             █ = You are here.
         ''', 2)
         break
+    # Text for user's first visit to The Bridge
     if UserStats["comms"] is False:
         P_S("You found a comms device!", 2)
+        # Log that the user now has possession of the comms device
         UserStats["comms"] = True
         if UserStats["batteries"] is True:
+            # Text for if the user has possession of the batteries
             P_S("\nYou put two of the batteries you found inside of the,", 2)
             P_S("comms device...", 2)
             P_S("\nA voice comes out of your comms device:", 2)
@@ -1372,18 +1515,21 @@ def RoomNNW():
             P_S("out, but you'll need need the Transporter override key so", 2)
             P_S("I can access it remotely.", 2)
             if UserStats["key"] is True and UserStats["locator"] is True:
+                # Text for if user has the key and locator device
                 P_S('\n"I already have the key!" you shout down the comms', 2)
                 P_S("device excitedly.\n", 2)
                 P_S('"Fantastic!" replies Clancy. "I can also see your', 2)
                 P_S("location from your comms device, so I'll be able to", 2)
                 P_S('pinpoint your position for safe beam transportation."', 2)
             elif UserStats["key"] is True and UserStats["locator"] is False:
+                # Text for if user has the key but not the locator device
                 P_S('\n"I already have the key!" you shout down the comms', 2)
                 P_S("device excitedly.\n", 2)
                 P_S('"Fantastic!" replies Clancy. "You will also need to', 2)
                 P_S('find a locator device so I can pinpoint your exact', 2)
                 P_S('location once you are in the beam transport room."', 2)
             elif UserStats["key"] is False and UserStats["locator"] is False:
+                # Text for if the user doesnt have the key or locator device
                 P_S('"You will also need to find a locator device so I can', 2)
                 P_S('pinpoint your exact location once you are in the', 2)
                 P_S('beam transportation room."', 2)
@@ -1393,10 +1539,12 @@ def RoomNNW():
             P_S("You stow the comms device into your pocket and continue", 2)
             P_S("on your way - filled with new hope.", 2)
         elif UserStats["batteries"] is False:
+            # Text for if the user doesnt have the batteries
             P_S('The comms device is completely out of batteries, "There', 2)
             P_S('should be some batteries on this ship somewhere!", you', 2)
             P_S("think to yourself.", 2)
     elif UserStats["comms"] is True:
+        # Text for if user has been here before
         print("This is where you found the comms device.")
     else:
         print("An error occured, please restart your game!")
@@ -1416,6 +1564,7 @@ def RoomESETransporterRoom():
         P_S("Travel text from 1_1SE (Sickbay) to ESE (Transporter Room)", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Transporter Room.")
+    # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
     ___________________          _-_             _      _-_      _
@@ -1429,6 +1578,31 @@ def RoomESETransporterRoom():
             █ = You are here.
         ''', 2)
         break
+    # Text for every visit to the tranporter room
+    P_S("You head over to the tranporter chamber and make your way up", 2)
+    P_S("the couple of steps onto the transporter platform. You never", 2)
+    P_S("did like beaming much. You jog down the steps again and over", 2)
+    P_S("to the tranporter controls, you notice all the screens are", 2)
+    P_S("flickering and the plant name 'Nova VII' keeps popping up on the", 2)
+    P_S("screen. You imagine that with the controls in this state it", 2)
+    P_S("would probably be quite dangerous to try and beam out of the", 2)
+    P_S("ship... but still possible.", 2)
+    if ((UserStats["comms"]) is True and (UserStats["batteries"]) is
+            True and (UserStats["locator"]) is True and
+            (UserStats["key"]) is True):
+        # Text for if the user has all necessary equipment to leave the ship
+        P_S("You pull the comms device out of your pocket...", 2)
+        P_S('"Clancy, can you hear me?"', 2)
+        P_S(f'"Loud and clear {name}!"', 2)
+        P_S('"I have everything you said I need and I am in the', 2)
+        P_S('Transporter Room, ready to beam down!"', 2)
+        P_S('"Fantastic!" replies Clancy. "Put the override key in the', 2)
+        P_S('controls and hold the locator device to your chest while', 2)
+        P_S('you are stood on the transporter platform".', 2)
+        P_S('You head up onto the platform again. "Ready!" you shout.', 2)
+        P_S('"Calculating your position, distance, mass... setting', 2)
+        P_S(f'controls to manual. Okay {name}, here we go..."', 2)
+    # Does the user want to attempt beaming out of the ship?
     BeamOut = input("Would you like to beam out of the ship? (Y/N) \n")
     if BeamOut.lower() == "y" or BeamOut.lower() == "yes":
         P_S("\nInitialising beam...", 1)
@@ -1439,13 +1613,16 @@ def RoomESETransporterRoom():
         if ((UserStats["key"]) is True and (UserStats["comms"]) is
                 True and (UserStats["locator"]) is True and
                 (UserStats["batteries"]) is True):
+            # Text for if user successfully completed the game
             P_S("Congratulations! You beamed safely down to Nova VII", 2)
             P_S("and escaped the time loop, you look up to the sky", 2)
             P_S("just in time to see The Enterprise lose the last of", 2)
             P_S("its structural integrity and scatter accross the", 2)
             P_S("heavens, some small pieces break through the", 2)
             P_S("atmosphere of Nova VII giving the planet a final ", 2)
-            P_S("farewell in a symbolic meteor shower.", 3)
+            P_S("farewell in a symbolic meteor shower.", 2)
+            P_S("You feel a hand settle on your shoulder...", 2)
+            P_S('"Glad you made it out." Clancy smiles at you.', 3)
             PlayAgain = input("Would you like to play again? (Y/N) \n")
             if PlayAgain.lower() == "y" or PlayAgain.lower() == "yes":
                 print("Press PLAY GAME to initialise time loop.")
@@ -1453,13 +1630,14 @@ def RoomESETransporterRoom():
                 P_S(f"Live long and prosper {name}", 2)
                 P_S("Initialising shut down...", 1.5)
                 P_S('''
-                    ___ _ _ ___   ___ _ _ ___
-                   |_ _| | | __> | __| \ | . |
-                    | ||   | _>  | _>|   | | |
-                    |_||_|_|___> |___|_\_|___/
+                ___ _ _ ___   ___ _ _ ___
+               |_ _| | | __> | __| \ | . |
+                | ||   | _>  | _>|   | | |
+                |_||_|_|___> |___|_\_|___/
                     \n\n\n\n''', 2)
                 Credits()
         else:
+            # Text for if user attempted to beam out without required items
             P_S("\nYou didn't have all the required equipment and", 2)
             P_S("items to successfully beam down to Nova VII. You", 2)
             P_S("beamed half way down to the planet's surface but", 2)
@@ -1473,12 +1651,7 @@ def RoomESETransporterRoom():
                     \n
                     ''', 1)
             Credits()
-            P_S("Resetting time loop in...", 1)
-            P_S("3...", 1)
-            P_S("2...", 1)
-            P_S("1...", 1)
-            print("Press PLAY GAME to re-initialise time loop.")
-            exit()
+    # If user doesn't want to beam out of the ship:
     elif BeamOut.lower() == "n" or BeamOut.lower() == "no":
         print("\nYou continue on your journey...")
         PreviousRoom = "ESE"
