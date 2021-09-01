@@ -51,11 +51,21 @@ FirstVisits = {
 
 
 def Stats(healthNumber):
+    """
+    Increases or decreases the users health by a specified amount
+    then displays the users new health score.
+    """
     UserStats["health"] = UserStats["health"] + (healthNumber)
     P_S('Your new health is: ' + str(UserStats['health']), 2)
 
 
 def CheckStats():
+    """
+    At any point the users health is decreased using Stats(), the
+    Checkstats() function is called after it to ensure the user hasn't
+    got a health score of 0 or less. If they do then the NoHealth() function
+    is called (from the functions.py file) and it is game over for the user.
+    """
     if UserStats["health"] <= 0:
         NoHealth()
 

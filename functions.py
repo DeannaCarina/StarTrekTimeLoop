@@ -2,12 +2,22 @@ import time
 
 
 def P_S(text, delay):
+    """
+    To print a line of text and delay the next line for a certain amount
+    of time.
+    """
     print(text)
     time.sleep(delay)
 
 
 def FourRoomChoice(option1, option2, option3, option4, Room1, Room2, Room3,
                    Room4):
+    """
+    If the user is in a room that has four potential exits, this will populate
+    the options as a list, ask for the users choice, then take the user to the
+    room they have chosen by comparing their option number choice with the
+    option of where to go and take them there.
+    """
     print("")
     print(f"1. {option1}")
     print(f"2. {option2}")
@@ -28,6 +38,15 @@ def FourRoomChoice(option1, option2, option3, option4, Room1, Room2, Room3,
 
 
 def FourRoomSecondChance(Room1, Room2, Room3, Room4):
+    """
+    If the user gave an incorrect or invalid choice as a room option - this is
+    the function to re-ask the question but without the list of rooms (as they
+    will already be visible to the user.)
+    If the user is in a room that has four potential exits, this will ask for
+    the users choice, then take the user to the room they have chosen by
+    comparing their option number choice with the option of where to go and
+    take them there.
+    """
     print("\nWhere would you like to go?")
     UserChoice = ""
     UserChoice = str(input("Enter option number: \n"))
@@ -45,6 +64,12 @@ def FourRoomSecondChance(Room1, Room2, Room3, Room4):
 
 
 def ThreeRoomChoice(option1, option2, option3, Room1, Room2, Room3):
+    """
+    If the user is in a room that has three potential exits, this will populate
+    the options as a list, ask for the users choice, then take the user to the
+    room they have chosen by comparing their option number choice with the
+    option of where to go and take them there.
+    """
     print("")
     print(f"1. {option1}")
     print(f"2. {option2}")
@@ -62,6 +87,15 @@ def ThreeRoomChoice(option1, option2, option3, Room1, Room2, Room3):
 
 
 def ThreeRoomSecondChance(Room1, Room2, Room3):
+    """
+    If the user gave an incorrect or invalid choice as a room option - this is
+    the function to re-ask the question but without the list of rooms (as they
+    will already be visible to the user.)
+    If the user is in a room that has three potential exits, this will ask for
+    the users choice, then take the user to the room they have chosen by
+    comparing their option number choice with the option of where to go and
+    take them there.
+    """
     print("\nWhere would you like to go?")
     UserChoice = ""
     UserChoice = str(input("Enter option number: \n"))
@@ -77,6 +111,12 @@ def ThreeRoomSecondChance(Room1, Room2, Room3):
 
 
 def TwoRoomChoice(option1, option2, Room1, Room2):
+    """
+    If the user is in a room that has two potential exits, this will populate
+    the options as a list, ask for the users choice, then take the user to the
+    room they have chosen by comparing their option number choice with the
+    option of where to go and take them there.
+    """
     print("")
     print(f"1. {option1}")
     print(f"2. {option2}")
@@ -91,6 +131,15 @@ def TwoRoomChoice(option1, option2, Room1, Room2):
 
 
 def TwoRoomSecondChance(Room1, Room2):
+    """
+    If the user gave an incorrect or invalid choice as a room option - this is
+    the function to re-ask the question but without the list of rooms (as they
+    will already be visible to the user.)
+    If the user is in a room that has two potential exits, this will ask for
+    the users choice, then take the user to the room they have chosen by
+    comparing their option number choice with the option of where to go and
+    take them there.
+    """
     print("\nWhere would you like to go?")
     UserChoice = ""
     UserChoice = str(input("Enter option number: \n"))
@@ -104,6 +153,11 @@ def TwoRoomSecondChance(Room1, Room2):
 
 
 def NoHealth():
+    """
+    This function is called from within the CheckStats function in run.py.
+    If the user has a health of 0 or below, then the user will die and the
+    following text displayed.
+    """
     P_S("\nYou have become gravely injured (your health has", 2)
     P_S("reached a critical level of 0 or less). You can no", 2)
     P_S("longer carry on trying to reach Nova VII. You lay down", 2)
@@ -119,6 +173,10 @@ def NoHealth():
 
 
 def Credits():
+    """
+    Any time the game ends either via a user death or game completion,
+    the credits function will be called displaying the following text.
+    """
     P_S('''
       _____ _____  ______ _____ _____ _______ _____
      / ____|  __ \|  ____|  __ \_   _|__   __/ ____|
@@ -183,6 +241,12 @@ def Credits():
 
 
 def Error():
+    """
+    I have tried to call the following function in places within the code
+    that I feel could have a high chance of resulting in error due to user
+    choices. This function is to display the following text and encourage
+    the user to contact the developer so I can correct any coding errors.
+    """
     print("AN ERROR OCCURRED.")
     print("We appologise for the inconvenience.")
     print("Please try restarting your game and trying again.")
