@@ -243,8 +243,7 @@ def RoomEngineBay():
             ''', 2)
             break
         # Text for if user has been here before
-        P_S("You enter the room... you've been here before! It's the", 2)
-        P_S("Engine Bay! You subconciously look over to where the control", 2)
+        P_S("You subconciously look over to where the control", 2)
         P_S("panel once stood for the cooling systems and are startled", 2)
         P_S("to see that it is standing there as if nothing had happened!", 2)
         P_S("You walk slowly towards it and as you do, it once again", 2)
@@ -539,11 +538,21 @@ def Room1_1W():
 
     global PreviousRoom
     if PreviousRoom == "1_1NW":
-        P_S("Text from 1_1NW (Observation Deck) to 1_1W (Science Bay)", 2)
+        # Text from 1_1NW (Observation Deck) to 1_1W (Science Bay)
+        P_S("You make your way out of the Observation Deck and towards the", 2)
+        P_S("main ship elevator. You head down in the elevator and along a", 2)
+        P_S("short internal corridor. You head through the next door you", 2)
+        P_S("come to which is large and metal.", 2)
     elif PreviousRoom == "EngineBay":
-        P_S("Travel text from EngineBay to 1_1W (Science Bay)", 2)
+        # Travel text from EngineBay to 1_1W (Science Bay)
+        P_S("You head away from the center of the ship along a very", 2)
+        P_S("official looking corridor with warnings and alarms all", 2)
+        P_S("over the walls and ceilings.", 2)
     elif PreviousRoom == "1_1S":
-        P_S("Text from 1_1S (Thrusters Control) to 1_1W (Science Bay)", 2)
+        # Text from 1_1S (Thrusters Control) to 1_1W (Science Bay)
+        P_S("You head through the door in the port-bow direction, walk", 2)
+        P_S("along a short internal corridor to the door at the end and", 2)
+        P_S("go through.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Science Bay.")
     # If user has the locator device and batteries, show the ship diagram
@@ -562,29 +571,83 @@ def Room1_1W():
         break
     # Text for user's first visit to the Science Bay
     if FirstVisits["1_1W"] is True:
-        print("Text for first visit")
+        P_S("You head into the room and look around at all the strange", 2)
+        P_S("things on the shelves. You peer at some of the bottles'", 2)
+        P_S("labels and can't help but scrunch your nose at some of the", 2)
+        P_S("disgusting substances inside them. This is why you never", 2)
+        P_S("wanted to work in the Science Bay. Engineering is much", 2)
+        P_S("less... gooey.", 2)
+        P_S("   Around you there are guerneys with pristine white sheets", 2)
+        P_S("covering small mounds of things you dread to think of. You", 2)
+        P_S("keep searching the shelves for anything that might be of use", 2)
+        P_S("to you and bend down to search in the lower cupboards.", 2)
+        P_S("   As you bend down you didn't notice one of the white sheets", 2)
+        P_S("moving ever so slightly with a Neural Parasite underneath it!", 2)
         # Log that user has now visited this room
         FirstVisits["1_1W"] = False
     else:
         # Text for users subsequent visits to this room
-        print("Text for second visit")
+        P_S("You instinctively look over to the sheet-covered guerneys.", 2)
+        P_S("The Neural Parasite that you last encountered in here still", 2)
+        P_S("laying motionless on the floor. You shiver from the memory", 2)
+        P_S("and head into the room. This is the Science Bay... there must", 2)
+        P_S("be something in here of use! After a search in the desk", 2)
+        P_S("drawers you find a packet of pretzels which you can't help", 2)
+        P_S("but scavange and eat on the spot. Your health increases by 1.", 2)
+        Stats(+1)
+        P_S("   As you eat, you don't notice that the Neural Parasite you", 2)
+        P_S("killed last time has come back to life, and just as", 2)
+        P_S("ravenously as you ate the pretzels - the parasite attacks", 2)
+        P_S("you once more!", 2)
+    P_S("   It launches itself onto your back and attempts to form a", 2)
+    P_S("neural link to take over your body. You reach around your back", 2)
+    P_S("and grab handfulls of the slimy parasite, it latches onto your", 2)
+    P_S("hand not wanting to lose it's plentiful bounty and starts to wind", 2)
+    P_S("its tendrils around your arm. You hold it out in front of you...", 2)
     if UserStats["phaser"] is True:
-        print("Neural Parasites + Phaser")
-        print("No health deducted")
+        P_S("While you hold the parasite in front of you, you grab your", 2)
+        P_S("phaser with your other hand and shoot it multiple times. It", 2)
+        P_S("releases you from it's grasp and falls to the floor in a", 2)
+        P_S("slimy heap - scorch marks forming on it's amoeba-like body.", 2)
+        P_S("You didn't lose any health due to having the phaser.", 2)
     elif UserStats["knife"] is True and UserStats["phaser"] is False:
-        print("Neural Parasites + Knife")
+        P_S("While you hold the parasite in front of you, you grab your", 2)
+        P_S("knife with your other hand and start slashing at the", 2)
+        P_S("creature. On your first connection with the parasite, it", 2)
+        P_S("tightens its grasp on you causing the supply of blood to", 2)
+        P_S("your hand to be cut off. You grimace in pain and continue", 2)
+        P_S("your attack! Eventually the parasite releases you from", 2)
+        P_S("its grasp and falls to the floor in a gooey mound.", 2)
+        P_S("   In the commotion and due to the tight grip the Neural", 2)
+        P_S("Parasite had on you - you lost 1 health.", 2)
         Stats(-1)
         CheckStats()
     else:
-        print("Neural Parasites + Fists")
+        P_S("While you hold the parasite in front of you, you try and", 2)
+        P_S("punch it with your other hand, but on contact your hand just", 2)
+        P_S("seems to go straight through the creature. You try again and", 2)
+        P_S("again as the parasite's grip on you tightnens, squeezing the", 2)
+        P_S("life out of your hand. You bend over and place your parasite-", 2)
+        P_S("covered hand on the floor. You stamp on the creature with", 2)
+        P_S("your heavy work boots causing it to release you. You stamp on", 2)
+        P_S("it a few more times, not enjoying the fact you're killing", 2)
+        P_S("something but at the same time, glad you weren't taken over", 2)
+        P_S("by the parasite. You look down at the hand the parasite was", 2)
+        P_S("attached to and see thin trails of blood dripping down your", 2)
+        P_S("arm. You lost 2 health.", 2)
         Stats(-2)
         CheckStats()
     # Log users presence in this room
     PreviousRoom = "1_1W"
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("You look around the room and see three exits. One heading back", 2)
+    P_S("to the center of the ship, one on the other side of the room with", 2)
+    P_S("a sign above it saying 'Science Store' and one on the back wall", 2)
+    P_S("that you imagine leads to the stern of the ship. Where would you", 2)
+    P_S("like to go?", 2)
     # Choice of where to go to
-    ThreeRoomChoice("Engine Bay", "1_1SW", "1_2W",
+    ThreeRoomChoice("Back to the center of the ship", 
+                    "Science Store", "Towards the stern",
                     RoomEngineBay, Room1_1SW, Room1_2W)
     # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(RoomEngineBay, Room1_1SW, Room1_2W)
@@ -732,7 +795,7 @@ def Room1_1NW():
     if PreviousRoom == "1_1N":
         P_S("Text from 1_1N (Meeting Room) to 1_1NW (Observation Deck)", 2)
     elif PreviousRoom == "NNW":
-        P_S("Travel text from NNW (The Bridge) to 1_1NW (Observation Deck)", 2)
+        # Travel text from NNW (The Bridge) to 1_1NW (Observation Deck)
         P_S("You go down in the elevator which stops a few floors down.", 2)
         P_S("The doors open, and you head along an internal corridor, you", 2)
         P_S("head into the next room.", 2)
