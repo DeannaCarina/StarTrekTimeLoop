@@ -15,10 +15,10 @@ UserStats = {
     "fists": True,
     "knife": False,
     "phaser": False,
-    "comms": True,
-    "locator": True,
-    "key": True,
-    "batteries": True
+    "comms": False,
+    "locator": False,
+    "key": False,
+    "batteries": False
 }
 
 FirstVisits = {
@@ -27,7 +27,7 @@ FirstVisits = {
     "1_1E": True,
     "1_1S": True,
     "1_1W": True,
-    # 1_1NE Will never be false as this is a kill room
+    "1_1NE": True,
     "1_1SE": True,
     "1_1SW": True,
     "1_1NW": True,
@@ -35,7 +35,7 @@ FirstVisits = {
     "1_2E": True,
     "1_2S": True,
     "1_2W": True,
-    "1_2NE": True,
+    # 1_2NE Will never be false as this is a kill room
     "1_2SE": True,
     "1_2SW": True,
     "1_2NW": True,
@@ -646,7 +646,7 @@ def Room1_1W():
     P_S("that you imagine leads to the stern of the ship. Where would you", 2)
     P_S("like to go?", 2)
     # Choice of where to go to
-    ThreeRoomChoice("Back to the center of the ship", 
+    ThreeRoomChoice("Back to the center of the ship",
                     "Science Store", "Towards the stern",
                     RoomEngineBay, Room1_1SW, Room1_2W)
     # If user inputs invalid value - re-ask question
@@ -658,9 +658,17 @@ def Room1_1NE():
 
     global PreviousRoom
     if PreviousRoom == "1_1E":
-        P_S("Travel text from 1_1E (Eng.Sub.Con) to 1_1NE (Holodeck)", 2)
+        # Travel text from 1_1E (Eng.Sub.Con) to 1_1NE (Holodeck)
+        P_S("You head along a short internal corridor and up the main ship", 2)
+        P_S("elevator. You head along a wide corridor with windows", 2)
+        P_S("looking out into space. You notice a couple more pieces of", 2)
+        P_S("The Enterprise floating around outside. You think back to the", 2)
+        P_S("crew member that just attacked you wishing there was", 2)
+        P_S("something you could do to save him. You walk a little further", 2)
+        P_S("and notice the door to the next room is ajar... you go in.", 2)
     elif PreviousRoom == "NNE":
-        P_S("Travel text from NNE (Captain's Quarters) to 1_1NE (Holodeck)", 2)
+        # Travel text from NNE (Captain's Quarters) to 1_1NE (Holodeck)
+        P_S("You head directly across the corridor into the Holodeck.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Holodeck.")
     # If user has the locator device and batteries, show the ship diagram
@@ -679,20 +687,77 @@ def Room1_1NE():
         break
     if FirstVisits["1_1NE"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
-    # Log that user has now visited this room
+        P_S("You have never needed to use the Holodeck, but have heard", 2)
+        P_S("that it's an amazing room with infinite posibilities. You", 2)
+        P_S("ask the computer for what you'd like and the room gives it", 2)
+        P_S("to you... Would you like to:", 2)
+        # Log that user has now visited this room
         FirstVisits["1_NE"] = False
     else:
         # Text for user's subsequent visit to this room
-        print("Subsequent visit text here")
-    P_S("You found food! You gained 1 health.", 2)
-    Stats(+1)
+        P_S("You smile at the memory of your last visit to this room.", 2)
+        P_S("You have the same options as last time... what would you like", 2)
+        P_S("to do?", 2)
+    # Text for all visits to this room
+    print("1: Relax on a Caribbean beach for a moment to get your breath")
+    P_S("back from your adventure so far?", 4)
+    print("2: See your family back on Earth for a few mintutes as it")
+    P_S("could be the last time you ever see them?", 4)
+    P_S("3: Rest for a moment in a replica of the Captain's Quarters?", 3)
+    print("4: You don't have the time for this, you want to leave the")
+    P_S("Holodeck and keep trying to find a way off the ship.", 4)
+    WouldLike = False
+    while not WouldLike:
+        OTTF = input("What would you like to do? (1/2/3/4):\n")
+        if OTTF.lower() == "1" or OTTF.lower() == "one":
+            P_S("The Holodeck transports you to a virtual Caribbean", 2)
+            P_S("beach where you take a moment to scrunch your toes", 2)
+            P_S("in the sand.", 2)
+            P_S("   When you have had enough, you tell the computer to", 2)
+            P_S("shut down and open the door. You go and stand outside", 2)
+            P_S("on the corridor.", 2)
+            P_S("   You feel refreshed and ready for your adventure to", 2)
+            P_S("continue, you gain 1 health.", 2)
+            Stats(+1)
+            break
+        elif OTTF.lower() == "2" or OTTF.lower() == "two":
+            P_S("The Holodeck transports you to your home back on Earth", 2)
+            P_S("where all of your family are stood around you smiling.", 2)
+            P_S("You take a moment to smile at each one in turn.", 2)
+            P_S("   When you have had enough, you tell the computer to", 2)
+            P_S("shut down and open the door. You go and stand outside", 2)
+            P_S("on the corridor.", 2)
+            P_S("   You feel refreshed and ready for your adventure to", 2)
+            P_S("continue, you gain 1 health.", 2)
+            Stats(+1)
+            break
+        elif OTTF.lower() == "3" or OTTF.lower() == "three":
+            P_S("The Holodeck transports you to an exact replica of the", 2)
+            P_S("captain's cabin on board. You launch yourself on to the", 2)
+            P_S("extra large bed and rest for a moment with your head on", 2)
+            P_S("the feather pillows.", 2)
+            P_S("   When you have had enough, you tell the computer to", 2)
+            P_S("shut down and open the door. You go and stand outside", 2)
+            P_S("on the corridor.", 2)
+            P_S("   You feel refreshed and ready for your adventure to", 2)
+            P_S("continue, you gain 1 health.", 2)
+            Stats(+1)
+            break
+        elif OTTF.lower() == "4" or OTTF.lower() == "four":
+            P_S("You tell the computer to shut down and open the door.", 2)
+            P_S("You go and stand outside on the corridor.", 2)
+            break
+        else:
+            print("That response does not compute. Please try again.")
     # Log users presence in this room
     PreviousRoom = "1_1NE"
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("From where you are outside the Holodeck, you can go down the", 2)
+    P_S("corridor to the left towards port or the right towards starboard.", 2)
+    P_S("There is also a room directly in front of you which has the sign", 2)
+    P_S("'Captain's Quarters' above it. Where would you like to go?", 2)
     # Choice of where to go to
-    ThreeRoomChoice("Room1_1N", "RoomNNE", "RoomENE",
+    ThreeRoomChoice("To port", "Into the Captain's Quarters", "To starboard",
                     Room1_1N, RoomNNE, RoomENE)
     # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(Room1_1N, RoomNNE, RoomENE)
