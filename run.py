@@ -798,7 +798,8 @@ def Room1_1SE():
     if PreviousRoom == "SSE":
         P_S("You look behind you and you find that you have just stepped", 2)
         P_S("out of the Sickbay medical storeroom! This makes no sense -", 2)
-        P_S("you were just in maintenance!", 2)
+        P_S("you were just in maintenance! You head into sickbay and close", 2)
+        P_S("the door behind you.", 2)
     if FirstVisits["1_1SE"] is True:
         # Text for user's first visit to this room
         P_S("You look around Sickbay... You accidentaly knock over a tray", 2)
@@ -841,11 +842,20 @@ def Room1_1SW():
 
     global PreviousRoom
     if PreviousRoom == "1_1W":
-        P_S("Travel text from 1_1W (Science Bay) to 1_1SW (Crew Quarters)", 2)
+        # Travel text from 1_1W (Science Bay) to 1_1SW (Crew Quarters)
+        P_S("From the Science Bay you head towards the stern of the ship,", 2)
+        P_S("clutching your arm where the Neural Parasite attacked you.", 2)
+        P_S("You head around a long curved corridor and come to another", 2)
+        P_S("corridor labelled 'Crew Quarters' - you go down it, there", 2)
+        P_S("could be something usefull in one of the crews rooms.", 2)
     elif PreviousRoom == "SSW":
-        P_S("Travel text from SSW (Security) to 1_SW (Crew Quarters)", 2)
+        # Travel text from SSW (Security) to 1_SW (Crew Quarters)
+        P_S("You leave security through the door on the right and expect", 2)
+        P_S("to go into the Brig, but to add to the list of strange things", 2)
+        P_S("happening on this ship, you find youself somewhere completely", 2)
+        P_S("wrong for the layout of the ship...", 2)
     P_S("\n-------------------------------------------\n", 3)
-    print("You are in someone's Crew Quarters.")
+    print("You are in a Crew Member's Quarters area.")
     # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
@@ -862,20 +872,48 @@ def Room1_1SW():
         break
     if FirstVisits["1_1SW"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
-    # Log that user has now visited this room
+        P_S("You have never been to the crew quarters before - as you are", 2)
+        P_S("classed as an officer, you have your own private quarters", 2)
+        P_S("close to engineering in case of emergency call-outs.", 2)
+        P_S("   You head along the crew quarters corridor, testing doors", 2)
+        P_S("as you go and find that the majority of them are locked. You", 2)
+        P_S("eventually come to one that isn't locked and go inside.", 2)
+        P_S("Quickly, you search around looking for anything that might be", 2)
+        P_S("useful for you.", 2)
+        P_S("   You find a half-drunk cup of tea... as much as you are", 2)
+        P_S("tempted, you can't bring yourself to drink it, so you place", 2)
+        P_S("it back onto the window sill. As you do you notice a piece", 2)
+        P_S("of Moba Fruit wrapped in celophane on the shelf next to you.", 2)
+        P_S("The crew member who stayed in here must have been Bajoran.", 2)
+        P_S("You wolf down the Moba Fruit grateful for the ample fluid it", 2)
+        P_S("contains. You gained 1 health", 2)
+        Stats(+1)
+        P_S("Careful not to waste any more time, you head back", 2)
+        P_S("outside the room.", 2)
+        # Log that user has now visited this room
         FirstVisits["1_1SW"] = False
     else:
         # Text for user's subsequent visit to this room
-        print("Subsequent visit text here")
-    P_S("You found food! You gained 1 health.", 2)
-    Stats(+1)
+        P_S("You start to try the doors to the different crew members", 2)
+        P_S("rooms and find (like last time) that the majority of them", 2)
+        P_S("are locked. You jog forward and head into the one room you", 2)
+        P_S("are sure is open. You head straight for the Moba Fruit and", 2)
+        P_S("eat it as quickly as you can before heading back outside.", 2)
+        P_S("You gain 1 health.", 2)
+        Stats(+1)
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("From here, you know that if you go further into the crew quarters", 2)
+    P_S("area and further towards the port side of the ship there is the", 2)
+    P_S("Recreation Room (note this is where the asteroid hit!). Or you", 2)
+    P_S("can go back to the entrance of the crew area corridor and take", 2)
+    P_S("the corridor opposite to go towards the stern of the ship or turn", 2)
+    P_S("left to go starboard. Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_1SW"
     # Choice of where to go to
-    ThreeRoomChoice("Room1_1S", "RoomSSW", "RoomWSW",
+    ThreeRoomChoice("Towards the Starboard",
+                    "Down the opposite corridor towards the Stern",
+                    "Into the Recreation Room",
                     Room1_1S, RoomSSW, RoomWSW)
     # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(Room1_1S, RoomSSW, RoomWSW)
@@ -1446,7 +1484,8 @@ def RoomENE():
             P_S("think to yourself.", 2)
     elif UserStats["locator"] is True:
         # Text for if the user has been here before
-        print("This is where you found the Locator device.")
+        P_S("This is where you found the Locator device. There is nothing", 2)
+        P_S("else of interest in this room.", 2)
     else:
         Error()
     # Log users presence in this room
@@ -1894,7 +1933,9 @@ def RoomESETransporterRoom():
         P_S("you go. You head into the next room you come to.", 2)
     elif PreviousRoom == "1_1SE":
         # Travel text from 1_1SE (Sickbay) to ESE (Transporter Room)
-        P_S("Leaving sickbay, you head long a short internal corridor.", 2)
+        P_S("Leaving sickbay, you go through the door labelled 'Medical", 2)
+        P_S("Store' and once again are confronted with something", 2)
+        P_S("unexpected... You head along a short internal corridor.", 2)
         P_S("As you walk along, the multiple doors along this corridor", 2)
         P_S("seem to be dissappearing and reappearing much the same as", 2)
         P_S("the cooling controls in the Engine Bay. You keep walking", 2)
