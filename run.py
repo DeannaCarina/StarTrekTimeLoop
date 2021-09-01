@@ -934,7 +934,9 @@ def Room1_1NW():
 
     global PreviousRoom
     if PreviousRoom == "1_1N":
-        P_S("Text from 1_1N (Meeting Room) to 1_1NW (Observation Deck)", 2)
+        # Text from 1_1N (Meeting Room) to 1_1NW (Observation Deck)
+        P_S("You head past the open end of the corridor on your right and", 2)
+        P_S("into the observation deck.", 2)
     elif PreviousRoom == "NNW":
         # Travel text from NNW (The Bridge) to 1_1NW (Observation Deck)
         P_S("You go down in the elevator which stops a few floors down.", 2)
@@ -958,20 +960,34 @@ def Room1_1NW():
         break
     if FirstVisits["1_1NW"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
-    # Log that user has now visited this room
+        P_S("You head into the vast room. Straight ahead of you there is", 2)
+        P_S("the Observation window which spans across the whole width of", 2)
+        P_S("the room, at a guess you'd probably say about 20 meters.", 2)
+        P_S("   It is a very peaceful room and always so quiet no matter", 2)
+        P_S("how many people have been in here. You head over to the", 2)
+        P_S("window and sit on the plush seating behind you.", 2)
+        P_S("   You take a moment just to catch your breath and gather", 2)
+        P_S("your thoughts before continuing on your journey.", 2)
+        # Log that user has now visited this room
         FirstVisits["1_1NW"] = False
     else:
         # Text for user's subsequent visit to this room
-        print("Subsequent visit text here")
-    P_S("You found food! You gained 1 health. Your new health is:", 2)
+        P_S("You head onto the Observation Deck and take a moment to just", 2)
+        P_S("watch through the window at the great expanse of space, you", 2)
+        P_S("take a few deep breaths and gather your thoughts before", 2)
+        P_S("carrying on.", 2)
+    P_S("Feeling refreshed, you gain 1 health.", 2)
     Stats(+1)
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("From the Observation deck, you can go down the corridor just", 2)
+    P_S("outside and to the left which will head towards the port-bow.", 2)
+    P_S("You also have the option of going further to port or to stern.", 2)
+    P_S("Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_1NW"
     # Choice of where to go to
-    ThreeRoomChoice("Room1_1W", "RoomWNW", "RoomNNW",
+    ThreeRoomChoice("Towards the stern", "Towards the port",
+                    "Towards the port-bow",
                     Room1_1W, RoomWNW, RoomNNW)
     # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(Room1_1W, RoomWNW, RoomNNW)
