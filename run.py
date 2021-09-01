@@ -493,7 +493,7 @@ def Room1_1S():
         P_S("once again starts to bead and run down your face.", 2)
         P_S("   With a quick movement you take hold of the hatch handle", 2)
         P_S("and swing the door shut. You pull your hand away and look at", 2)
-        P_S("your palm which now is mostly covered in hot, andgry, red", 2)
+        P_S("your palm which now is mostly covered in hot, angry, red", 2)
         P_S("blisters. Unsure whether they are radiation or heat burns,", 2)
         P_S("you rush over to the nearby sink and run your hand under", 2)
         P_S("cold water for a few minutes.", 2)
@@ -768,9 +768,17 @@ def Room1_1SE():
 
     global PreviousRoom
     if PreviousRoom == "1_1S":
-        P_S("Travel text from 1_1S (Thrusters Control) to 1_1SE (Sickbay)", 2)
+        # Travel text from 1_1S (Thrusters Control) to 1_1SE (Sickbay)
+        P_S("You head along an internal corridor towards the starboard", 2)
+        P_S("quarter of the ship and notice there are lots of health", 2)
+        P_S("related posters down here. You stop and look at one... 'The", 2)
+        P_S("dangers of Cobalt Diselenide (if you're human)' You come to", 2)
+        P_S("a large pair of glass double sliding doors and go through.", 2)
     elif PreviousRoom == "SSE":
-        P_S("Travel text from SSE (Maintenance) to 1_1SE (Sickbay)", 2)
+        # Travel text from SSE (Maintenance) to 1_1SE (Sickbay)
+        P_S("You go through the door towards starboard and expect to find", 2)
+        P_S("the corridor that leads to your personal quarters... You are", 2)
+        P_S("stunned to realise that...", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Sickbay.")
     # If user has the locator device and batteries, show the ship diagram
@@ -787,22 +795,42 @@ def Room1_1SE():
             █ = You are here.
         ''', 2)
         break
+    if PreviousRoom == "SSE":
+        P_S("You look behind you and you find that you have just stepped", 2)
+        P_S("out of the Sickbay medical storeroom! This makes no sense -", 2)
+        P_S("you were just in maintenance!", 2)
     if FirstVisits["1_1SE"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
+        P_S("You look around Sickbay... You accidentaly knock over a tray", 2)
+        P_S("of operating tools in your haste to look around. You quickly", 2)
+        P_S("look through some of the cupboards. You find an energy bar", 2)
+        P_S("high in electrolytes and quickly eat it before continuing on", 2)
+        P_S("your way. You gained 1 health.", 2)
     # Log that user has now visited this room
         FirstVisits["1_1SE"] = False
     else:
         # Text for user's subsequent visit to this room
-        print("Subsequent visit text here")
-    P_S("You found food! You gained 1 health.", 2)
+        P_S("You head into sickbay and notice that the operating tools you", 2)
+        P_S("knocked over on your last visit are sat neatly in their", 2)
+        P_S("original positions on the sterile tray. You quickly head over", 2)
+        P_S("to the same cupboard you found the energy bar in before, but", 2)
+        P_S("in your haste knock the operating tools over again! You open", 2)
+        P_S("up the cupboard and find the energy bar sat there as if you", 2)
+        P_S("had never taken it in the first place. You eat it again,", 2)
+        P_S("grateful for any extra energy. You gained 1 health.", 2)
     Stats(+1)
     # Path Information
-    print("ROOM AND PATH INFO HERE")
+    P_S("From sickbay you have three options of where you can go: There is", 2)
+    P_S("a door directly across the corridor labelled 'Maintenance', there", 2)
+    P_S("is a door on the starboard wall labelled 'Medical Store' or you", 2)
+    P_S("can head towards the bow of the ship via the other exit from", 2)
+    P_S("Sickbay. Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_1SE"
     # Choice of where to go to
-    ThreeRoomChoice("Room1_1E", "RoomESETransporterRoom", "RoomSSE",
+    ThreeRoomChoice("Towards the Bow of the ship",
+                    "Through the door labelled 'Medical Store'",
+                    "Through the door labelled 'Maintenance'",
                     Room1_1E, RoomESETransporterRoom, RoomSSE)
     # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(Room1_1E, RoomESETransporterRoom, RoomSSE)
