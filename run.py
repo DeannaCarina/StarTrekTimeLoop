@@ -1043,6 +1043,7 @@ def Room1_2N():
     while not KeepLooking:
         YesOrNo = input('Do you want to keep searching this room? (Y/N):\n')
         if YesOrNo.lower() == 'yes' or YesOrNo.lower() == "y":
+            # If user chooses to keep looking around - game over!
             P_S("You head deeper into the Shuttle Bay and rumage through", 2)
             P_S("some nearby sacks. You don't notice that on the opposite", 2)
             P_S("side of sack there is a Hazardous Waste warning! You peer", 2)
@@ -1098,11 +1099,23 @@ def Room1_2E():
 
     global PreviousRoom
     if PreviousRoom == "ENE":
-        P_S("Travel text from ENE (Navigation) to 1_2E (Weapons Control)", 2)
+        # Travel text from ENE (Navigation) to 1_2E (Weapons Control)
+        P_S("You head down the external corridor and go into the next room", 2)
+        P_S("you come to.", 2)
     elif PreviousRoom == "1_1E":
-        P_S("Travel text from 1_1E (Eng.Sub.Con) to 1_2E (Weapons Control)", 2)
+        # Travel text from 1_1E (Eng.Sub.Con) to 1_2E (Weapons Control)
+        P_S("You go through the door straight ahead of you towards the", 2)
+        P_S("starboard side of the ship, you go down a corridor with", 2)
+        P_S("many warning signs and posters about the correct use of", 2)
+        P_S("photon torpedoes. You head into the next room you come to", 2)
+        P_S("straight ahead of you.", 2)
     elif PreviousRoom == "1_2SE":
-        P_S("Text from 1_2SE (Personal Quarters) to 1_2E (Weapons Control)", 2)
+        # Text from 1_2SE (Personal Quarters) to 1_2E (Weapons Control)
+        P_S("You head through your closet door which opens up onto an", 2)
+        P_S("outer corridor of the ship. With your personal quarters", 2)
+        P_S("behind you, you walk a little further and head into the next", 2)
+        P_S("room on your left. Given everything crazy going on in the", 2)
+        P_S("ship, you don't know which room you're going in to...", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Weapons Control.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1121,15 +1134,49 @@ def Room1_2E():
         break
     if FirstVisits["1_2E"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
-    # Log that user has now visited this room
+        P_S("You poke your head round the door, making sure the coast is", 2)
+        P_S("clear of anything untoward before you go in... Everything", 2)
+        P_S("seems fine to you, so you head into the room.", 2)
+        P_S("   Surely in weapons control there must be something to help", 2)
+        P_S("defend yourself? As you look around you find nothing but", 2)
+        P_S("safety booklets and instructions on correct sequence of", 2)
+        P_S("events needed to fire the photon torpedoes.", 2)
+        P_S("   You shake your head in frustration and keep on looking.", 2)
+        P_S("After a little while you start to feel a bit funny, your", 2)
+        P_S("hands start to shake and take on a life of their own grabbing", 2)
+        P_S("things of the shelves and throwing them across the room.", 2)
+        P_S("   Just as soon as this strange behaviour started, it stops", 2)
+        P_S("again. You rack your brain trying to figure out what could", 2)
+        P_S("have been the cause and can only think that with the black", 2)
+        P_S("hole interference and the space-time anomalies that are", 2)
+        P_S("occuring, it could have attracted a Dark Matter Lifeform.", 2)
+        P_S("Thankfully it didn't do too much damage to you and left", 2)
+        P_S("fairly soon. You lose 1 Health.", 2)
+        Stats(-1)
+        CheckStats()
+        # Log that user has now visited this room
         FirstVisits["1_2E"] = False
     else:
         # Text for user's subsequent visit to this room
-        print("Subsequent visit text here")
-    P_S("You got hurt (Dark Matter LifeForm)! You lost 1 health.", 2)
-    Stats(-1)
-    CheckStats()
+        P_S("You head inside the room and find you are in the Weapons", 2)
+        P_S("Control room again, before you can make a hasty retreat so", 2)
+        P_S("as to not have a repeat performance of the Dark Matter", 2)
+        P_S("Lifeform taking control of your body...", 2)
+        P_S("   You once again find yourself incapable of free will.", 2)
+        P_S("The creature directs you toward the photon torpedo controls.", 2)
+        P_S("You have no idea what buttons you are pressing, but the", 2)
+        P_S("creature certainly does. You see Nova VII appear on the", 2)
+        P_S("screen. You can't believe it! This thing that's possessing", 2)
+        P_S("you wants to target and destroy the only chance you have of", 2)
+        P_S("escaping this ship before it implodes!", 2)
+        P_S("   You gather all of you mental strength to not press the", 2)
+        P_S("'fire' button just as your hand hovers above it.", 2)
+        P_S("You nose starts to bleed with the intensity of your will", 2)
+        P_S("to not move your hand. Just as quick as it possessed you,", 2)
+        P_S("it leaves your body again. But not without taking it's toll", 2)
+        P_S("on your mind. You lose 2 health.", 2)
+        Stats(-2)
+        CheckStats()
     # Path information
     print("ROOM AND PATH INFO HERE")
     # Log users presence in this room
