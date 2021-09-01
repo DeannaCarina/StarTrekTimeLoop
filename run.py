@@ -61,6 +61,12 @@ def CheckStats():
 
 
 def PlayGame():
+    """
+    Function called at the end of the run.py file. Only function
+    called on a global scale, subsequent room functions all called
+    from within another function. This function allows the user to
+    play or exit the game as well as see or not see the introduction.
+    """
     print('''
    _____ _______       _____    _______ _____  ______ _  __
   / ____|__   __|/\   |  __ \  |__   __|  __ \|  ____| |/ /
@@ -175,7 +181,7 @@ def RoomEngineBay():
     if FirstVisits["EngineBay"] is True:
         # Text for user's first visit to the Engine Bay
         P_S("\n-------------------------------------------\n", 3)
-        print("You are in the Engine Bay.")  
+        print("You are in the Engine Bay.")
         P_S("You tentatively feel your head, checking for any bumps or", 2)
         P_S("cuts and look at your hand for any traces of blood. You", 2)
         P_S('must have really hit your head hard as the room seems to be', 2)
@@ -243,7 +249,7 @@ def RoomEngineBay():
         P_S("to see that it is standing there as if nothing had happened!", 2)
         P_S("You walk slowly towards it and as you do, it once again", 2)
         P_S("shrinks and implodes, trapped in a perpetual time-loop.", 2)
-    # Path information    
+    # Path information
     P_S("   There are four potential exits from this room, each one on", 2)
     P_S("one of the four walls. The one straight ahead of you will head", 2)
     P_S("to the bow of the ship, the one behind - to the stern, the left", 2)
@@ -442,9 +448,17 @@ def Room1_1S():
 
     global PreviousRoom
     if PreviousRoom == "EngineBay":
-        P_S("Travel text from EngineBay to 1_1S (Thrusters control)", 2)
+        # Travel text from EngineBay to 1_1S (Thrusters control)
+        P_S("You head through the door behind you and towards the rear", 2)
+        P_S("of the ship, along a very official-looking corridor covered", 2)
+        P_S("in posters and warnings about the ships engines.", 2)
     elif PreviousRoom == "1_1SW":
-        P_S("Text from 1_1SW (Crew Quarters) to 1_1S (Thrusters control)", 2)
+        # Text from 1_1SW (Crew Quarters) to 1_1S (Thrusters control)
+        P_S("You head along a short internal corridor from the crew", 2)
+        P_S("member's room towards what you think is the rear of the", 2)
+        P_S("ship... This makes no sense - the crew quarters shouldn't be", 2)
+        P_S("accessible from here!", 2)
+
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Thrusters Control Room.")
     # If user has the locator device and batteries, show the ship diagram
@@ -463,21 +477,58 @@ def Room1_1S():
         break
     if FirstVisits["1_1S"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
-    # Log that user has now visited this room
+        P_S("On entering the room the first thing you notice is how warm", 2)
+        P_S("and clammy the room is. You head over to the thrusters", 2)
+        P_S("control panel and see that every possible error and warning", 2)
+        P_S("light is visible and active. Sweat starts to bead on your", 2)
+        P_S("forehead, which you wipe off with the back of your sleeve.", 2)
+        P_S("   You look over to the warp core power diversion collumn and", 2)
+        P_S("notice that the radiation protection cover has been blown", 2)
+        P_S("open in the commotion! You must shut it otherwise the ship", 2)
+        P_S("will be flooded with leathal amounts of radiation... it could", 2)
+        P_S("already be too late.", 2)
+        P_S("   You pick up one of the lead thyroid shields and strap it", 2)
+        P_S("around your throat and put on some radiation safety goggles", 2)
+        P_S("then make your way to the open hatch. As you get closer the", 2)
+        P_S("heat you felt on entrance to the room intensifies and sweat", 2)
+        P_S("once again starts to bead and run down your face.", 2)
+        P_S("   With a quick movement you take hold of the hatch handle", 2)
+        P_S("and swing the door shut. You pull your hand away and look at", 2)
+        P_S("your palm which now is mostly covered in hot, andgry, red", 2)
+        P_S("blisters. Unsure whether they are radiation or heat burns,", 2)
+        P_S("you rush over to the nearby sink and run your hand under", 2)
+        P_S("cold water for a few minutes.", 2)
+        P_S("You got hurt from burns! You lost 1 health.", 2)
+        Stats(-1)
+        CheckStats()
+        # Log that user has now visited this room
         FirstVisits["1_1S"] = False
     else:
         # Text for user's subsequent visit to this room
-        print("Subsequent visit text here")
-    P_S("You got hurt (Cobalt Diselenide)! You lost 1 health.", 2)
-    Stats(-1)
-    CheckStats()
+        P_S("You enter the room and are met with a wave of heat as you", 2)
+        P_S("were the first time. Instinctively, you look at your palm and", 2)
+        P_S("are shocked to see that the blisters you sustained on your", 2)
+        P_S("last visit are no longer there.", 2)
+        P_S("   You look over to the radiation hatch - it's open again!", 2)
+        P_S("Once again you don the radiation protection and rush over to", 2)
+        P_S("the hatch to close it - not learning from your previous", 2)
+        P_S("mistakes, you once again pull your hand away after closing", 2)
+        P_S("the door to find your palm covered in burns.", 2)
+        P_S("You got hurt from burns! You lost 1 health.", 2)
+        Stats(-1)
+        CheckStats()
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("With nothing else of interest in this room you look around to see", 2)
+    P_S("your exit options. In this hexagonal room, there are two doors", 2)
+    P_S("that seem to be heading in port-bow and starboard-bow directions,", 2)
+    P_S("as well as a door on your right reading to starboard, and one", 2)
+    P_S("behind you heading to stern. Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_1S"
     # Choice of where to go to
-    FourRoomChoice("Room1_1W", "Room1_1E", "Room1_1SE", "Room1_2S",
+    FourRoomChoice("Towards the port-bow", "Towards the starboard-bow",
+                   "Through the door on your right",
+                   "Through the door behind you",
                    Room1_1W, Room1_1E, Room1_1SE, Room1_2S)
     # If user inputs invalid value - re-ask question
     FourRoomSecondChance(Room1_1W, Room1_1E, Room1_1SE, Room1_2S)
@@ -763,7 +814,7 @@ def Room1_2N():
     else:
         # Text for subsequent visits to this room
         P_S("You've been here before! You're in the shuttle bay!", 2)
-    # Text for every visit to this room    
+    # Text for every visit to this room
     P_S("You look around for a little while and find a snack bar, you", 2)
     P_S("are very hungry, so quickly un-wrap the snack and wolf it", 2)
     P_S("down. You gain 1 health.", 2)
@@ -1452,7 +1503,7 @@ def RoomSSW():
         print("This is where you found the override key for the Transporter.")
     else:
         Error()
-    # Log users presence in this room    
+    # Log users presence in this room
     PreviousRoom = "SSW"
     # Path information
     print("PATH INFO HERE")
@@ -1534,7 +1585,7 @@ def RoomWNW():
         print("This is where you found the phaser.")
     else:
         Error()
-    # Path information    
+    # Path information
     print("PATH INFO HERE")
     # Log users presence in this room
     PreviousRoom = "WNW"
@@ -1799,7 +1850,7 @@ def RoomESETransporterRoom():
             # Log users presence in this room
             PreviousRoom = "ESE"
             # Choice of where to go to
-            TwoRoomChoice("Towards the center of the ship", 
+            TwoRoomChoice("Towards the center of the ship",
                           "Personal Quarters",
                           Room1_1E, Room1_2SE)
             # If user inputs invalid value - re-ask question
