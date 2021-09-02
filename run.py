@@ -221,10 +221,16 @@ def RoomEngineBay():
             P_S("over the walls and ceilings.", 2)
         elif PreviousRoom == "1_2W":
             # Travel text from 1_2W (Science Store) to EngineBay
-            P_S("You make your way back to the center of the ship past the", 2)
-            P_S("outside of the Science Bay and along a very official", 2)
-            P_S("looking corridor with warnings and alarms all over the", 2)
-            P_S("walls and ceilings.", 2)
+            P_S("You run for the exit into the Science Bay and slam your", 2)
+            P_S("shoulder against the door, it swings open and crashes", 2)
+            P_S("into the wall behind it. You keep running as fast as", 2)
+            P_S("you can through the Science Bay, taking no notice of", 2)
+            P_S("the slightly wriggling mounds beneath the pristine white", 2)
+            P_S("sheets on the gurneys. Again, you run for the exit of the", 2)
+            P_S("Science Bay and the door opens for you automatically.", 2)
+            P_S("You head back into the centre of the ship along a very", 2)
+            P_S("official looking corridor with warnings and alarms all", 2)
+            P_S("over the walls and ceilings.", 2)
         elif PreviousRoom == "1_1E":
             # Travel text from 1_1E (Eng.Sub.Con) to EngineBay
             P_S("You head back into the center of the ship along a very", 2)
@@ -1325,9 +1331,17 @@ def Room1_2W():
 
     global PreviousRoom
     if PreviousRoom == "1_1W":
-        P_S("Travel text from 1_1W (Science Bay) to 1_2W (Science Store)", 2)
+        # Travel text from 1_1W (Science Bay) to 1_2W (Science Store)
+        P_S("You head towards the door labelled 'Science Store' and", 2)
+        P_S("turn the handle. You push the door open slowly just in case", 2)
+        P_S("theres something else in here that wants to attack you.", 2)
     elif PreviousRoom == "1_2NW":
-        P_S("Text from 1_2NW (Meditation Room) to 1_2W (Science Store)", 2)
+        # Text from 1_2NW (Meditation Room) to 1_2W (Science Store)
+        P_S("You leave the meditation room feeling refreshed and ready", 2)
+        P_S("for whatever this ship might throw at you. You head", 2)
+        P_S("along an external corridor and come to the next door", 2)
+        P_S("on your left, labelled 'Science Store', you pull down the", 2)
+        P_S("handle and push the door open to go inside.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Science Storeroom.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1346,21 +1360,76 @@ def Room1_2W():
         break
     if FirstVisits["1_2W"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
-    # Log that user has now visited this room
+        P_S("You head into the room which is a room about as big as the", 2)
+        P_S("Engine Bay! The shelves are filled will all manners of jars,", 2)
+        P_S("boxes, files and corpses of hundreds of Genesis Worms.", 2)
+        P_S("   You walk along the rows of shelves searching for anything", 2)
+        P_S("that could be of use. You move things around on the shelves,", 2)
+        P_S("pushing things to the sides to have a better look at other", 2)
+        P_S("things that are behind.", 2)
+        P_S("   Out of the corner of your eye you notice something moving.", 2)
+        P_S("You start to turn to head back towards the exit but find", 2)
+        P_S("you're surrounded by the things you thought were corpses of", 2)
+        P_S("creatures actually aren't dead. They're very much alive, and", 2)
+        P_S("seem very interested in you!", 2)
+        P_S("   The genesis worms slither towards you all wanting a taste", 2)
+        P_S("of your human flesh.", 2)
+        # Log that user has now visited this room
         FirstVisits["1_2W"] = False
     else:
         # Text for user's subsequent visit to this room
         print("Subsequent visit text here")
-    P_S("You got hurt (Genesis Worms)! You lost 1 health.", 2)
-    Stats(-1)
-    CheckStats()
+    if UserStats["phaser"] is True:
+        P_S("You pull out your phaser and start shooting the Genesis", 2)
+        P_S("Worms. As you back away from the horde of creatures, you", 2)
+        P_S("look around you for any potential exits. There are three...", 2)
+        P_S("one to your left heading towards the bow of the ship, one", 2)
+        P_S("behind you which is in the direction you're already going.", 2)
+        P_S("Or you can run back through the Science Bay and into the", 2)
+        P_S("Engine Bay. You keep shooting at the worms, holding them", 2)
+        P_S("back as you make your decision.", 2)
+    elif UserStats["knife"] is True and UserStats["phaser"] is False:
+        P_S("You pull your knife from your belt and start slashing at the", 2)
+        P_S("Genesis Worms. As you back away from the horde of creatures,", 2)
+        P_S("you look around you for any potential exits. There are", 2)
+        P_S("three... one to your left heading towards the bow of the", 2)
+        P_S("ship, one behind you which is in the direction you're", 2)
+        P_S("already going. Or you can run back through the Science Bay", 2)
+        P_S("and into the Engine Bay. You keep slashing at the worms,", 2)
+        P_S("attempting to hold them back. As you make your decision", 2)
+        P_S("the Genesis Worms lunge at you, catching your hands and", 2)
+        P_S("arms with their fangs, but recoil away when your knife", 2)
+        P_S("finds their fleshy bodies.", 2)
+        Stats(-1)
+        CheckStats()
+    else:
+        P_S("You raise your fists, you wish you had a weapon to help", 2)
+        P_S("defend yourself! You back away from the creatures with", 2)
+        P_S("your hands raised, but the Genesis Worms lunge at you,", 2)
+        P_S("attaching themselves to your flesh with their suckers and", 2)
+        P_S("fangs and begin to feed from you.", 2)
+        P_S("   You look around you for any potential exits. There are", 2)
+        P_S("three... one to your left heading towards the bow of the", 2)
+        P_S("ship, one behind you which is in the direction you're", 2)
+        P_S("already going. Or you can run back through the Science Bay", 2)
+        P_S("and into the Engine Bay. You pull at the creatures that,", 2)
+        P_S("are latched onto you, pulling them from your skin leaving", 2)
+        P_S("welts and bruises where they fed from you. You throw them", 2)
+        P_S("to the floor, punching and kicking with everything you have", 2)
+        P_S("attempting to hold them back. As you make your decision", 2)
+        P_S("the Genesis Worms lunge at you, catching your hands and", 2)
+        P_S("arms with their fangs, but recoil away when you flail your", 2)
+        P_S("limbs and catch their bodies with the force of your terror.", 2)
+        Stats(-2)
+        CheckStats()
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    print("Where would you like to go?")
     # Log users presence in this room
     PreviousRoom = "1_2W"
     # Choice of where to go to
-    ThreeRoomChoice("Room1_2SW", "RoomWNW", "RoomEngineBay",
+    ThreeRoomChoice("The direction you're already going",
+                    "Towards the bow of the ship",
+                    "Through the Science Bay and into the Engine Bay",
                     Room1_2SW, RoomWNW, RoomEngineBay)
     # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(Room1_2SW, RoomWNW, RoomEngineBay)
