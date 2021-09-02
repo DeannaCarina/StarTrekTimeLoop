@@ -1177,12 +1177,21 @@ def Room1_2E():
         P_S("on your mind. You lose 2 health.", 2)
         Stats(-2)
         CheckStats()
+    P_S("You take a moment to catch your breath before heading outside of", 2)
+    P_S("the room to think about your next path.", 2)
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("From where you are outside of weapons control on the large", 2)
+    P_S("external corridor, there is a sign for the main ship storeroom", 2)
+    P_S("at the starboard-bow of the ship, there is also an internal", 2)
+    P_S("corridor next to weapons control that will head back to the", 2)
+    P_S("center of the ship, or the next room heading to the stern of", 2)
+    P_S("the ship is the transporter room. Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_2E"
     # Choice of where to go to
-    ThreeRoomChoice("RoomEngineBay", "Room1_2NE", "RoomESETransporterRoom",
+    ThreeRoomChoice("Back to the center of the ship", 
+                    "The ship storeroom", 
+                    "The Transporter Room",
                     RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
     # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
