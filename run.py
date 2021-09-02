@@ -2060,9 +2060,15 @@ def RoomSSW():
 
     global PreviousRoom
     if PreviousRoom == "1_2S":
-        P_S("Travel text from 1_2S (The Brig) to SSW (Security)", 2)
+        # Travel text from 1_2S (The Brig) to SSW (Security)
+        P_S("You go through the door in the port direction and head", 2)
+        P_S("down an internal coridor the only door on thiscorridor", 2)
+        P_S("is security, so you push through the door and go inside.", 2)
     elif PreviousRoom == "1_1SW":
-        P_S("Travel text from 1_1SW (Crew Quarters) to SSW (Security)", 2)
+        # Travel text from 1_1SW (Crew Quarters) to SSW (Security)
+        P_S("You go down the corridor opposite and towards the stern", 2)
+        P_S("of the ship. The corridor is very plain and only has one", 2)
+        P_S("door at the end which you go through.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Security.")
     # If user has the locator device and batteries, show the ship diagram
@@ -2081,27 +2087,36 @@ def RoomSSW():
         break
     # Text for user's first visit to Security
     if UserStats["key"] is False:
+        P_S("The room is small and is taken up mainly by the large desk", 2)
+        P_S("in the middle. You head over to it and open the top drawer.", 2)
         P_S("You found a key! On close inspection its branded with the", 2)
         P_S("Starfleet logo. During the three years you have worked on", 2)
         P_S("The Enterprise, you have only seen this key a handful of", 2)
         P_S("times, when the residents of a planet want to be in control", 2)
         P_S("of who beams down to the surface and when - it allows them", 2)
         P_S("full control over the ship's external beam capabilities -", 2)
-        P_S("very helpful when they aren't very trusting!\n", 2)
-        P_S("You put the key in your pocket for safekeeping.", 2)
+        P_S("very helpful when they aren't very trusting!", 2)
+        P_S("   You put the key in your pocket for safekeeping.", 2)
+        P_S("There doesn't seem to be anyting else in this room of any", 2)
+        P_S("use. So you look around for your potential exits.", 2)
         # Log that the user now has possession of the Key
         UserStats["key"] = True
     elif UserStats["key"] is True:
         # Text for if user has been here before
-        print("This is where you found the override key for the Transporter.")
+        P_S("This is where you found the override key for the Transporter.", 2)
+        P_S("There's nothing else of interest in this room, so you look", 2)
+        P_S("around for your potential exits.", 2)
     else:
         Error()
     # Log users presence in this room
     PreviousRoom = "SSW"
     # Path information
-    print("PATH INFO HERE")
+    P_S("Standin in security, a door has appeard to your right, you assume", 2)
+    P_S("that if you go through it, it should take you to the brig as the", 2)
+    P_S("brig is in that direction. Or you can go onto the external", 2)
+    P_S("corridor and towards the Mess Hall. Where would you like to go?", 2)
     # Choice of where to go to
-    TwoRoomChoice("Room1_1SW", "Room1_2SW",
+    TwoRoomChoice("Through the door on the right", "Towards the Mess Hall",
                   Room1_1SW, Room1_2SW)
     # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_1SW, Room1_2SW)
