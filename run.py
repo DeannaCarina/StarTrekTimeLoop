@@ -1440,9 +1440,15 @@ def Room1_2NE():
 
     global PreviousRoom
     if PreviousRoom == "1_2E":
-        P_S("Travel text from 1_2E (Weapons Control) to 1_2NE (Storeroom)", 2)
+        # Travel text from 1_2E (Weapons Control) to 1_2NE (Storeroom)
+        P_S("You follow the signs for the Storeroom and head towards the", 2)
+        P_S("starboard bow. The storeroom is in front of you. You push", 2)
+        P_S("the door open and go inside.", 2)
     elif PreviousRoom == "NNE":
-        P_S("Travel text from NNE (Captains Quarters) to 1_2NE (Storeroom)", 2)
+        # Travel text from NNE (Captains Quarters) to 1_2NE (Storeroom)
+        P_S("Leaving the Captain's Quarters behind you, you turn to your", 2)
+        P_S("left and along a short internal corridor. The storeroom is on", 2)
+        P_S("your left. You push the door open and go inside.", 2)
     P_S("\n-------------------------------------------\n", 3)
     P_S("You are in the Ship Storeroom.", 2)
     # If user has the locator device and batteries, show the ship diagram
@@ -1460,7 +1466,22 @@ def Room1_2NE():
         ''', 2)
         break
     # Text for user's ONLY visit to the Storeroom
-    P_S("You died!\n", 1.5)
+    P_S("As you enter the storeroom, you feel uneasy. You quickly look", 2)
+    P_S("around to see if there's anything that might be of use to you.", 2)
+    P_S("...", 2)
+    P_S("You hear a faint rumbling. You look up as the rumbling seems to", 2)
+    P_S("be coming from the ceiling.", 2)
+    P_S("   You start to make your way back to the exit when your path is", 2)
+    P_S("blocked by an avalanche of fluffy round balls falling from the", 2)
+    P_S("now cracked open ceiling.", 2)
+    P_S("   There's nothing you can do as you are quickly and surely", 2)
+    P_S("surrounded by Tribbles. In a matter of seconds you are barely a", 2)
+    P_S("head above them as they continue to pour out of the now gaping", 2)
+    P_S("holes in the ceiling.", 2)
+    P_S("   Just before your eyes are covered by the masses of fur, you", 2)
+    P_S("can't help but think that of all the ways to die... suffocated", 2)
+    P_S("by Tribbles wasn't the way you thought you'd go.", 2)
+    P_S("   You close your eyes and sucomb to the fluffy onslaught.", 2)
     P_S('''
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
