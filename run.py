@@ -285,7 +285,7 @@ def Room1_1N():
         P_S('section of the ship. You go into the room directly in front', 2)
         P_S("of you.", 2)
     elif PreviousRoom == "1_1NE":
-        # Travel text from Engine Bay to Meeting Room
+        # Travel text from The Holodeck to Meeting Room
         P_S("You head out of the automatic sliding doors of the Holodeck", 2)
         P_S("and turn to your right, you walk for about 20 yards and head", 2)
         P_S("into the next room on your right.", 2)
@@ -999,6 +999,7 @@ def Room1_2N():
 
     global PreviousRoom
     if PreviousRoom == "1_1N":
+        # Travel text from 1_1N (Meeting Room) to 1_2N (Shuttle Bay)
         P_S("You cover your mouth and nose with your sleeve and make", 2)
         P_S("your way through the meeting room.", 2)
     elif PreviousRoom == "NNW":
@@ -1202,11 +1203,26 @@ def Room1_2S():
 
     global PreviousRoom
     if PreviousRoom == "SSE":
-        P_S("Travel text from SSE (Maintenance) to 1_2S (The Brig)", 2)
+        # Travel text from SSE (Maintenance) to 1_2S (The Brig)
+        P_S("You head along a short internal corridor and into the", 2)
+        P_S("next room on your right.", 2)
     elif PreviousRoom == "1_1S":
-        P_S("Travel text from 1_1S (Thrusters Control) to 1_2S (The Brig)", 2)
+        # Travel text from 1_1S (Thrusters Control) to 1_2S (The Brig)
+        P_S("You head through the door behind you on the rear wall of", 2)
+        P_S("Thrusters control. As you push the door open you know", 2)
+        P_S("instantly that this door has been affected by the black-", 2)
+        P_S("hole. As you open it, the door starts to ripple. You look", 2)
+        P_S("through the doorframe and almost as if there is a thin sheet", 2)
+        P_S("of water there, the room on the other side looks distorted.", 2)
+        P_S("You take a deep breath and step through the transparent", 2)
+        P_S("barrier and into the next room.", 2)
     elif PreviousRoom == "1_2SW":
-        P_S("Travel text from 1_2SW (Mess Hall) to 1_2S (The Brig)", 2)
+        # Travel text from 1_2SW (Mess Hall) to 1_2S (The Brig)
+        P_S("You head through the door in front of you and into a", 2)
+        P_S("corridor which seems to be pulsing with life. Objects", 2)
+        P_S("around you are disappearing and reappearing, there is only", 2)
+        P_S("one door at the end of this corridor, so you push your way", 2)
+        P_S("through it and into the next room.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in The Brig.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1225,21 +1241,80 @@ def Room1_2S():
         break
     if FirstVisits["1_2S"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
-    # Log that user has now visited this room
+        P_S("All around you in this huge almost circular room there", 2)
+        P_S("are cells made to detain prisoners. For the majority of", 2)
+        P_S("the cells, the forcefields made to close the cell off are", 2)
+        P_S("disappearing and reappearing much the same as you have seen", 2)
+        P_S("in other areas of the ship.", 2)
+        P_S("   You head over to the cell control station and have a look", 2)
+        P_S("in the drawers and cupboards surrounding it. As you search,", 2)
+        P_S("you begin to feel very tired, your body becomes deprived of", 2)
+        P_S("all energy and you slump to the floor with your back against", 2)
+        P_S("the desk.", 2)
+        P_S("   With what little energy you have left you open your eyes", 2)
+        P_S("to see the tail-end mist of a Dikironium Cloud floating", 2)
+        P_S("through the back wall of one of the cells.", 2)
+        P_S("   You close your eyes and pass out, not knowing if or when", 2)
+        P_S("you might wake up again... You lost 3 health.", 2)
+        Stats(-3)
+        CheckStats()
+        P_S("...", 2)
+        P_S("...", 2)
+        P_S("Not knowing how long you were out for, your eyes flutter", 2)
+        P_S("open. There is no sign of the Dikironium cloud. You slowly", 2)
+        P_S("push yourself into a kneeling position, and then use the desk", 2)
+        P_S("for support as you make your way to your feet. Feeling dizzy", 2)
+        P_S("but okay, you look around for your next path.", 2)
+        # Log that user has now visited this room
         FirstVisits["1_2S"] = False
     else:
         # Text for user's subsequent visit to this room
-        print("Subsequent visit text here")
-    P_S("You got hurt (Dikironium Cloud)! You lost 3 health.", 2)
-    Stats(-3)
-    CheckStats()
+        P_S("You head into the room, remembering with fear the encounter", 2)
+        P_S("you had with the Dikironium Cloud last time. Do you want to", 2)
+        StayHere = False
+        while not StayHere:
+            YesOrNo = input('stay in here and look around again? (Y/N):\n')
+            if YesOrNo.lower() == 'yes' or YesOrNo.lower() == "y":
+                P_S("You decide this time to stay away from the desk and", 2)
+                P_S("look around the cells instead. You head over to the,", 2)
+                P_S("cells and peer into each one when the forcefield is", 2)
+                P_S("non-existent.", 2)
+                P_S("   On peering into the 4th cell along, you notice a", 2)
+                P_S("small package under the bed in the corner. Your", 2)
+                P_S("curiosity gets the better of you and you head inside", 2)
+                P_S("the cell to see what it is.", 2)
+                P_S("   You unwrap the package and find two rolls of bread", 2)
+                P_S("they seem fresh, so you sit on the bed and rip them", 2)
+                P_S("apart, eating them bit-by-bit.", 2)
+                P_S("   Feeling full, you gain 1 health.", 2)
+                Stats(+1)
+                P_S("You step out of the cell and look for you next path.", 2)
+                break
+            if YesOrNo.lower() == 'no' or YesOrNo.lower() == "n":
+                P_S("You start to back out of the room onto the main", 2)
+                P_S("corridor, looking around you for any signs of attack.", 2)
+                P_S("   Just as you near the exit, you spot it! It's", 2)
+                P_S("heading straight for you! You turn quickly and run", 2)
+                P_S("for the exit while watching the cloud glide towards", 2)
+                P_S("you... not fully aware of your surroundings. You run", 2)
+                P_S("head first into the exit doorframe and knock yourself", 2)
+                P_S("out cold. You lost 2 health.", 2)
+                Stats(-2)
+                CheckStats()
+                P_S("   As you come round, thankfully the Dikironium cloud", 2)
+                P_S("is no longer here, so you pull yourself up using the", 2)
+                P_S("door handle and look around for your next path.", 2)
+                break
     # Path Information
-    print("ROOM AND PATH INFO HERE")
+    P_S("You look around the brig and plan your next move. There are four", 2)
+    P_S("doorways in this room, but two of them are distorting and ", 2)
+    P_S("shrinking so you rule them out as potential exits. The other two", 2)
+    P_S("doors are on opposite sides of the room - one heading to port,", 2)
+    P_S("and the other to starboard. Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_2S"
     # Choice of where to go to
-    TwoRoomChoice("Room1_2SE", "RoomSSW",
+    TwoRoomChoice("To starboard", "To port",
                   Room1_2SE, RoomSSW)
     # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_2SE, RoomSSW)
