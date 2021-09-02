@@ -1541,8 +1541,9 @@ def Room1_2SE():
         P_S("away. Remember how much we all love you, and as much as we", 2)
         P_S("are proud of who you are and what you have acheived, the", 2)
         P_S("most we could ever ask for is your safe return home.", 2)
+        print("")
         P_S("   Love always and forever,", 2)
-        P_S("   Your loving mother.\x1B[0m", 2)
+        P_S("       Your loving mother x.\x1B[0m", 2)
         print("")
         P_S("You fold up the letter and place it in your pocket as a", 2)
         P_S("solitary tear slides down your cheek.", 2)
@@ -1577,7 +1578,7 @@ def Room1_2SE():
     # Log users presence in this room
     PreviousRoom = "1_2SE"
     # Choice of where to go to
-    TwoRoomChoice("Past the Transporter Room towards the Bow", 
+    TwoRoomChoice("Past the Transporter Room towards the Bow",
                   "To maintenance",
                   Room1_2E, RoomSSE)
     # If user inputs invalid value - re-ask question
@@ -1589,9 +1590,21 @@ def Room1_2SW():
 
     global PreviousRoom
     if PreviousRoom == "SSW":
-        P_S("Travel text from SSW (Security Quarters) to 1_2SW (Mess Hall)", 2)
+        # Travel text from SSW (Security Quarters) to 1_2SW (Mess Hall)
+        P_S("With Security behind you, you head down the wide external", 2)
+        P_S("corridor towards the Mess Hall.You go through the sliding", 2)
+        P_S("double doors and are greeted with the recent smells of", 2)
+        P_S("freshly cooked dinner.", 2)
     elif PreviousRoom == "1_2W":
-        P_S("Travel text from 1_2W (Science Store) to 1_2SW (Mess Hall)", 2)
+        # Travel text from 1_2W (Science Store) to 1_2SW (Mess Hall)
+        P_S("You keep heading towards the door behind you while fending", 2)
+        P_S("off the Genesis Worms. You fumble for the door handle and", 2)
+        P_S("squeeze through the smallest gap you can in the door to stop", 2)
+        P_S("any of the creatures following you.", 2)
+        P_S("   You slam the door after you and fall to the ground not yet", 2)
+        P_S("knowing which room you have fallen into. You make your way to", 2)
+        P_S("your feet and are greeted with the beautiful smells of", 2)
+        P_S("cooked dinner.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Mess Hall.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1610,20 +1623,34 @@ def Room1_2SW():
         break
     if FirstVisits["1_2SW"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
-    # Log that user has now visited this room
+        P_S("The large room is completely empty of people but is full", 2)
+        P_S("of multiple sized tables, chairs and sofas, with an extra", 2)
+        P_S("long sofa running the full length of the room beneath the", 2)
+        P_S("window. You head over to the serving counter and grab a plate", 2)
+        P_S("of your favourite foods.", 2)
+        P_S("   You take a moment to sit down and have a few mouthfulls", 2)
+        P_S("before you continue on your journey. You gain 2 health.", 2)
+        Stats(+2)
+        # Log that user has now visited this room
         FirstVisits["1_2SW"] = False
     else:
         # Text for user's subsequent visit to this room
-        print("Subsequent visit text here")
-    P_S("You found food! You gained 2 health.", 2)
-    Stats(+2)
+        P_S("The Mess Hall is just as empty as it was the first time you", 2)
+        P_S("visited. You head over to the table you were sat at during", 2)
+        P_S("your first visit and grab a few more peices of food from the", 2)
+        P_S("plate you put together. You gain 1 health.", 2)
+        Stats(+1)
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("From the Mess Hall you have two potential exits: The door in the", 2)
+    P_S("corner that leads to the recreation room or the door in front of", 2)
+    P_S("you that you think will lead to the centre of the ship. As you", 2)
+    P_S("look at the door to the recreation room, it seems to pulsate and", 2)
+    P_S("ripple, but looks fairly permanent. Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_2SW"
     # Choice of where to go to
-    TwoRoomChoice("Room1_2S", "RoomWSW",
+    TwoRoomChoice("Towards the centre of the ship",
+                  "To the recreation room",
                   Room1_2S, RoomWSW)
     # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_2S, RoomWSW)
