@@ -1723,11 +1723,19 @@ def RoomNNE():
 
     global PreviousRoom
     if PreviousRoom == "1_1N":
-        P_S("Text from 1_1N (Meeting Room) to NNE (Captain's Quarters)", 2)
+        # Text from 1_1N (Meeting Room) to NNE (Captain's Quarters)
+        P_S("Leaving the outside of the meeting room behind you, you", 2)
+        P_S("head in a starboard bow direction along an internal corridor.", 2)
+        P_S("You go past the elevator and come to the captain’s quarters", 2)
+        P_S("on your left. You push the door open and go inside.", 2)
     elif PreviousRoom == "1_1NE":
-        P_S("Travel text from 1_1NE (Holodeck) to NNE (Captain's Quarters)", 2)
+        # Travel text from 1_1NE (Holodeck) to NNE (Captain's Quarters)
+        P_S("You head across the corridor and through the door opposite.", 2)
     elif PreviousRoom == "ENE":
-        P_S("Travel text from ENE (Navigation) to NNE (Captain's Quarters)", 2)
+        # Travel text from ENE (Navigation) to NNE (Captain's Quarters)
+        P_S("You head along a short corridor in a starboard bow direction", 2)
+        P_S("and come to the captain's quarters on your right, you", 2)
+        P_S("push through the door and close it behind you.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Captain's Quarters.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1746,20 +1754,35 @@ def RoomNNE():
         break
     # Text for user's first visit to the Captains Quarters
     if UserStats["knife"] is False:
-        print("You found a knife! You hook it into your belt.")
+        P_S("You have never needed to come into the captain's quarters", 2)
+        P_S("before so have no idea what you might find. As much as it", 2)
+        P_S("intruiges you to be in here, you want to make your visit", 2)
+        P_S("quick out of respect for the captain, whom you assume to be", 2)
+        P_S("dead. The room is large and comfortable with a large table", 2)
+        P_S("in the middle covered in files and charts.", 2)
+        P_S("   You head over to the captain's desk and open a few drawers", 2)
+        P_S("down the left hand side. In the third drawer you find a KaBar", 2)
+        P_S("Combat Knife! You hook it on to your belt and make your way", 2)
+        P_S("out of the room.", 2)
         # Log that the user has been here before
         UserStats["knife"] = True
     elif UserStats["knife"] is True:
         # Text for subsequent visits to this room
-        print("This is where you found the knife.")
+        P_S("You look around the room even quicker than you did last", 2)
+        P_S("time. This is where you found the knife. There's nothing else", 2)
+        P_S("of interest in here so you head back out onto the corridor.", 2)
     else:
         Error()
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("From where you are on the corridor you have two options, go on to", 2)
+    P_S("the Holodeck or towards the starboard side of the ship - you look", 2)
+    P_S("in that direction down the corridor and hear banging above you,", 2)
+    P_S("perhaps that way might not be a great idea.", 2)
     # Log users presence in this room
     PreviousRoom = "NNE"
     # Choice of where to go to
-    TwoRoomChoice("Room1_2NE", "Room1_1NE",
+    TwoRoomChoice("Towards the starboard side of the ship", 
+                  "On to the Holodeck",
                   Room1_2NE, Room1_1NE)
     # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_2NE, Room1_1NE)
