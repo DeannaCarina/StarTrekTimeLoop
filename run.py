@@ -1661,7 +1661,9 @@ def Room1_2NW():
 
     global PreviousRoom
     if PreviousRoom == "WNW":
-        P_S("Text from WNW (Conference Lounge) to 1_2NW (Meditation)", 2)
+        # Text from WNW (Conference Lounge) to 1_2NW (Meditation)
+        P_S("You make you way down the short internal corridor and into", 2)
+        P_S("the next room on your left.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Meditation Room.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1680,20 +1682,37 @@ def Room1_2NW():
         break
     if FirstVisits["1_2NW"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
-    # Log that user has now visited this room
+        P_S("You are in a small comfortable room with a plush chaise", 2)
+        P_S("lounge in the middle and a Chesterfield winged chair to its", 2)
+        P_S("side. A large wooden bookcase sits along the back wall with", 2)
+        P_S("a slection of bean bags in front of it.", 2)
+        P_S("   The room is set in dim lighting and has an aura of", 2)
+        P_S("calmness about it. You nod your head to the portrait of", 2)
+        P_S("Lieutenant Commander Deanna Troi that sits above the", 2)
+        P_S("fireplace and make your way to the chaise.", 2)
+        P_S("   You sit down and close your eyes, taking a moment to", 2)
+        P_S("catch your breath and gather your thoughts before you", 2)
+        P_S("continue on your journey, you gain 2 health.", 2)
+        Stats(+2)
+        # Log that user has now visited this room
         FirstVisits["1_2NW"] = False
     else:
         # Text for user's subsequent visit to this room
-        print("Subsequent visit text here")
-    P_S("You found food! You gained 2 health.", 2)
-    Stats(+2)
+        P_S("You head over to the chaise nodding at the portrait above", 2)
+        P_S("the fireplace as you go and take a moment to have a", 2)
+        P_S("few deep breaths and gather your thoughts before you", 2)
+        P_S("continue on your journey. You gain 1 health.", 2)
+        Stats(+1)
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("You stand up from the chaise and head out of the room. When", 2)
+    P_S("on the corridor you find yourself on a different corridor to", 2)
+    P_S("the one you used to enter. You could go left towards the bow of", 2)
+    P_S("the ship or go in the opposite direction towards the port side.", 2)
+    P_S("Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_2NW"
     # Choice of where to go to
-    TwoRoomChoice("RoomNNW", "Room1_2W",
+    TwoRoomChoice("Towards the bow", "Towards the port side",
                   RoomNNW, Room1_2W)
     # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(RoomNNW, Room1_2W)
