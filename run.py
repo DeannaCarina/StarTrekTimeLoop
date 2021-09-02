@@ -1496,9 +1496,17 @@ def Room1_2SE():
 
     global PreviousRoom
     if PreviousRoom == "ESE":
-        P_S("Text from ESE (Transporter Room) to 1_2SE (Personal Quarters)", 2)
+        # Text from ESE (Transporter Room) to 1_2SE (Personal Quarters)
+        P_S("You leave the transporter room and turn right. You head along", 2)
+        P_S("the wide external corridor for a short while and come to the", 2)
+        P_S("officers quarters corridor. You head down it and the third", 2)
+        P_S("door on the left is your personal quarters. You head inside.", 2)
     elif PreviousRoom == "1_2S":
-        P_S("Travel text from 1_2S(The Brig) to 1_2SE (Personal Quarters)", 2)
+        # Travel text from 1_2S(The Brig) to 1_2SE (Personal Quarters)
+        P_S("You take the door to starboard and find youself in the", 2)
+        P_S("engineers quarters. You look around for a second to get your", 2)
+        P_S("bearings and head into your personal quarters which are just", 2)
+        P_S("to your left.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in your Personal Quarters.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1517,20 +1525,60 @@ def Room1_2SE():
         break
     if FirstVisits["1_2SE"] is True:
         # Text for user's first visit to this room
-        print("First Visit text here")
-    # Log that user has now visited this room
+        P_S("You step inside the familiar room and take a moment to", 2)
+        P_S("catch your breath by just sitting on your bed for a moment.", 2)
+        P_S("   The family photos that you have sat on your bedside table", 2)
+        P_S("catch your eye. You pick one up to look at the happy faces", 2)
+        P_S("of your family surrounding you on your graduation day from", 2)
+        P_S("Starfleet Academy. It feels like a lifetime ago.", 2)
+        P_S("   You set the picture back down on the surface and pick up", 2)
+        P_S("the letter than was next to it. Your mother placed this in", 2)
+        P_S("your bag as you left for the Star Base on your first day.", 2)
+        print("")
+        P_S(f"\x1B[3mDear {name},", 2)
+        P_S("   That's what they'll be calling you in Starfleet now isn't", 2)
+        P_S("it? I'm going to miss you with all my heart while you are", 2)
+        P_S("away. Remember how much we all love you, and as much as we", 2)
+        P_S("are proud of who you are and what you have acheived, the", 2)
+        P_S("most we could ever ask for is your safe return home.", 2)
+        P_S("   Love always and forever,", 2)
+        P_S("   Your loving mother.\x1B[0m", 2)
+        print("")
+        P_S("You fold up the letter and place it in your pocket as a", 2)
+        P_S("solitary tear slides down your cheek.", 2)
+        P_S("   Reaching under your bed, you pull out a small package", 2)
+        P_S("wrapped in a linen sheet and carefully unfold it in your", 2)
+        P_S("lap. You look down at your knees and can't help but smile", 2)
+        P_S("at the small pile of cherry bakewells that your mother", 2)
+        P_S("somehow managed to send to you a couple of days ago when", 2)
+        P_S("the ship restocked at its last outpost.", 2)
+        P_S("   You pick one up and take the foil off before putting", 2)
+        P_S("the small tart into your mouth in one whole piece.", 2)
+        P_S("   Reminded of home and filled with new determination", 2)
+        P_S("to escape the crippled ship, you gain 3 health.", 2)
+        Stats(+3)
+        P_S("You neatly fold the package back up and place it back under", 2)
+        P_S("your bed.", 2)
+        # Log that user has now visited this room
         FirstVisits["1_2SE"] = False
     else:
         # Text for user's subsequent visit to this room
-        print("Subsequent visit text here")
-    P_S("You found food! You gained 3 health.", 2)
-    Stats(+3)
+        P_S("You head into your personal quarters and kneel on the floor", 2)
+        P_S("next to your bed. You pull out the folded package of cherry", 2)
+        P_S("bakewells and eat another one whole. You gain 2 health.", 2)
+        Stats(+2)
+        P_S("You neatly fold the package back up and place it back under", 2)
+        P_S("your bed.", 2)
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("From where you are in the engineer's quarters, you can head back", 2)
+    P_S("onto the external corridor and past the Transporter room towards", 2)
+    P_S("the bow of the ship. Or you can head along the stern of the ship", 2)
+    P_S("and into maintenance.", 2)
     # Log users presence in this room
     PreviousRoom = "1_2SE"
     # Choice of where to go to
-    TwoRoomChoice("Room1_2E", "RoomSSE",
+    TwoRoomChoice("Past the Transporter Room towards the Bow", 
+                  "To maintenance",
                   Room1_2E, RoomSSE)
     # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_2E, RoomSSE)
