@@ -1891,9 +1891,12 @@ def RoomSSE():
 
     global PreviousRoom
     if PreviousRoom == "1_1SE":
-        P_S("Travel text from 1_1SE (Sickbay) to SSE (Maintenance)", 2)
+        # Travel text from 1_1SE (Sickbay) to SSE (Maintenance)
+        P_S("You go through the door labelled 'Maintenance' directly", 2)
+        P_S("across the corridor.", 2)
     elif PreviousRoom == "1_2SE":
-        P_S("Text from 1_2SE (Personal Quarters) to SSE (Maintenance)", 2)
+        # Text from 1_2SE (Personal Quarters) to SSE (Maintenance)
+        P_S("You head along the stern of the ship and into maintenance.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Ship Maintenance.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1912,6 +1915,10 @@ def RoomSSE():
         break
     # Text for user's first visit to Ship Maintenance
     if UserStats["batteries"] is False:
+        P_S("The room is full of anything you can think of that", 2)
+        P_S("would help maintain the ship's machinery, devices,", 2)
+        P_S("and cleanliness. You have a look around to see if", 2)
+        P_S("there's anything that might come of use to you.", 2)
         P_S("You found some batteries!", 2)
         # Log that the user now has possession of the batteries
         UserStats["batteries"] = True
@@ -2030,15 +2037,19 @@ def RoomSSE():
             Error()
     elif UserStats["batteries"] is True:
         # Text for if user has been here before
-        print("This is where you found the batteries.")
+        P_S("This is where you found the batteries. There's nothing else", 2)
+        P_S("of interest in this room.", 2)
     else:
         Error()
     # Log users presence in this room
     PreviousRoom = "SSE"
     # Path information
-    print("PATH INFO HERE")
+    P_S("You have two options of where to go from here. You can head back", 2)
+    P_S("across the corridor and into Sickbay, or you can turn left to", 2)
+    P_S("head towards the stern of the ship. Where would you like to go?", 2)
     # Choice of where to go to
-    TwoRoomChoice("Room1_1SE", "Room1_2S",
+    TwoRoomChoice("Across the corridor and into Sickbay",
+                  "Towards the stern of the ship",
                   Room1_1SE, Room1_2S)
     # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(Room1_1SE, Room1_2S)
