@@ -261,7 +261,7 @@ Throughout the planning, design, testing and deployment of the website, I have u
         <ul><li>For the design of the site</li></ul>
     </li>
     <li><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-        <ul><li>Within the template supplied by code institute</li>
+        <ul><li>Within the template supplied by code institute</li></ul>
     </li>
     <li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a>
         <ul><li>For hosting a local server during for testing</li>
