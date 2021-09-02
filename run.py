@@ -144,7 +144,7 @@ o               .         ___---___                    .
                 P_S("lost your locator device.\n", 2)
                 P_S("Things don't seem as they should with the ship -", 2)
                 P_S("walls are rippling with life, and even as you watch,", 2)
-                P_S("things around you are dissapearing into nothingness", 2)
+                P_S("things around you are disappearing into nothingness", 2)
                 P_S("and imploding in on themselves.\n", 2)
                 P_S("There is a nearby planet which should be within beam", 2)
                 P_S("distance, but without your comms and locator devices", 2)
@@ -157,7 +157,7 @@ o               .         ___---___                    .
                 print("     1. Locator Device")
                 print("     2. Communication (Comms) Device")
                 print("     3. Batteries for Items 1 & 2")
-                P_S("     4. Power key for the transporter device\n", 4)
+                P_S("     4. Override key for the transporter device\n", 4)
                 P_S("On your exploration of the ship, you might also find", 2)
                 P_S("weapons and items that will help you with healing,", 2)
                 P_S("energy levels and defending yourself. As well as", 2)
@@ -216,7 +216,7 @@ def RoomEngineBay():
         global PreviousRoom
         if PreviousRoom == "1_1W":
             # Travel text from 1_1W (Science Bay) to EngineBay
-            P_S("You head back into the center of the ship along a very", 2)
+            P_S("You head back into the centre of the ship along a very", 2)
             P_S("official looking corridor with warnings and alarms all", 2)
             P_S("over the walls and ceilings.", 2)
         elif PreviousRoom == "1_2W":
@@ -310,7 +310,7 @@ def Room1_1N():
         P_S("You head into a small meeting room containing an oval", 2)
         P_S("table and eight chairs surrounding it.", 2)
         P_S("You look around to see if there's anything useful for you", 2)
-        P_S("that might help with your current endevours.", 2)
+        P_S("that might help with your current endeavours.", 2)
         P_S("...", 2)
         P_S("After about 20 seconds you feel yourself going lightheaded,", 2)
         P_S("you can smell something strange, it's Neurazine Gas! You", 2)
@@ -341,7 +341,7 @@ def Room1_1N():
     P_S("also noticed a door on the opposite side of the meeting room", 2)
     P_S("which you know you could get to safely if you cover your face.", 2)
     P_S("Where would you like to go?", 2)
-    # Log user's precence in the Meeting Room
+    # Log user's presence in the Meeting Room
     PreviousRoom = "1_1N"
     # Choice of where to go to
     FourRoomChoice("The Observation deck",
@@ -359,7 +359,7 @@ def Room1_1E():
     global PreviousRoom
     if PreviousRoom == "EngineBay":
         # Travel text from EngineBay to 1_1E (Eng.Sub.Con)
-        P_S("You head away from the center of the ship along a very", 2)
+        P_S("You head away from the centre of the ship along a very", 2)
         P_S("official looking corridor with warnings and alarms all", 2)
         P_S("over the walls and ceilings.", 2)
     elif PreviousRoom == "1_1S":
@@ -416,7 +416,7 @@ def Room1_1E():
         # If user has phaser this happens:
         P_S("\nThankfully as you have acquired the phaser, you managed to", 2)
         P_S("stun the crew member and knock him out without causing him", 2)
-        P_S("harm. You recieved no damage. (You would have lost 2 if you", 2)
+        P_S("harm. You received no damage. (You would have lost 2 if you", 2)
         P_S("were undefended).", 2)
     elif UserStats["knife"] is True:
         # If user has knife this happens:
@@ -491,10 +491,10 @@ def Room1_1S():
         P_S("control panel and see that every possible error and warning", 2)
         P_S("light is visible and active. Sweat starts to bead on your", 2)
         P_S("forehead, which you wipe off with the back of your sleeve.", 2)
-        P_S("   You look over to the warp core power diversion collumn and", 2)
+        P_S("   You look over to the warp core power diversion column and", 2)
         P_S("notice that the radiation protection cover has been blown", 2)
         P_S("open in the commotion! You must shut it otherwise the ship", 2)
-        P_S("will be flooded with leathal amounts of radiation... it could", 2)
+        P_S("will be flooded with lethal amounts of radiation... it could", 2)
         P_S("already be too late.", 2)
         P_S("   You pick up one of the lead thyroid shields and strap it", 2)
         P_S("around your throat and put on some radiation safety goggles", 2)
@@ -555,7 +555,7 @@ def Room1_1W():
         P_S("come to which is large and metal.", 2)
     elif PreviousRoom == "EngineBay":
         # Travel text from EngineBay to 1_1W (Science Bay)
-        P_S("You head away from the center of the ship along a very", 2)
+        P_S("You head away from the centre of the ship along a very", 2)
         P_S("official looking corridor with warnings and alarms all", 2)
         P_S("over the walls and ceilings.", 2)
     elif PreviousRoom == "1_1S":
@@ -587,7 +587,7 @@ def Room1_1W():
         P_S("disgusting substances inside them. This is why you never", 2)
         P_S("wanted to work in the Science Bay. Engineering is much", 2)
         P_S("less... gooey.", 2)
-        P_S("   Around you there are guerneys with pristine white sheets", 2)
+        P_S("   Around you there are gurneys with pristine white sheets", 2)
         P_S("covering small mounds of things you dread to think of. You", 2)
         P_S("keep searching the shelves for anything that might be of use", 2)
         P_S("to you and bend down to search in the lower cupboards.", 2)
@@ -597,13 +597,13 @@ def Room1_1W():
         FirstVisits["1_1W"] = False
     else:
         # Text for users subsequent visits to this room
-        P_S("You instinctively look over to the sheet-covered guerneys.", 2)
+        P_S("You instinctively look over to the sheet-covered gurneys.", 2)
         P_S("The Neural Parasite that you last encountered in here still", 2)
-        P_S("laying motionless on the floor. You shiver from the memory", 2)
+        P_S("lying motionless on the floor. You shiver from the memory", 2)
         P_S("and head into the room. This is the Science Bay... there must", 2)
         P_S("be something in here of use! After a search in the desk", 2)
         P_S("drawers you find a packet of pretzels which you can't help", 2)
-        P_S("but scavange and eat on the spot. Your health increases by 1.", 2)
+        P_S("but scavenge and eat on the spot. Your health increases by 1.", 2)
         Stats(+1)
         P_S("   As you eat, you don't notice that the Neural Parasite you", 2)
         P_S("killed last time has come back to life, and just as", 2)
@@ -611,14 +611,14 @@ def Room1_1W():
         P_S("you once more!", 2)
     P_S("   It launches itself onto your back and attempts to form a", 2)
     P_S("neural link to take over your body. You reach around your back", 2)
-    P_S("and grab handfulls of the slimy parasite, it latches onto your", 2)
-    P_S("hand not wanting to lose it's plentiful bounty and starts to wind", 2)
+    P_S("and grab handfuls of the slimy parasite, it latches onto your", 2)
+    P_S("hand not wanting to lose its plentiful bounty and starts to wind", 2)
     P_S("its tendrils around your arm. You hold it out in front of you...", 2)
     if UserStats["phaser"] is True:
         P_S("While you hold the parasite in front of you, you grab your", 2)
         P_S("phaser with your other hand and shoot it multiple times. It", 2)
-        P_S("releases you from it's grasp and falls to the floor in a", 2)
-        P_S("slimy heap - scorch marks forming on it's amoeba-like body.", 2)
+        P_S("releases you from its grasp and falls to the floor in a", 2)
+        P_S("slimy heap - scorch marks forming on its amoeba-like body.", 2)
         P_S("You didn't lose any health due to having the phaser.", 2)
     elif UserStats["knife"] is True and UserStats["phaser"] is False:
         P_S("While you hold the parasite in front of you, you grab your", 2)
@@ -636,7 +636,7 @@ def Room1_1W():
         P_S("While you hold the parasite in front of you, you try and", 2)
         P_S("punch it with your other hand, but on contact your hand just", 2)
         P_S("seems to go straight through the creature. You try again and", 2)
-        P_S("again as the parasite's grip on you tightnens, squeezing the", 2)
+        P_S("again as the parasite's grip on you tightens, squeezing the", 2)
         P_S("life out of your hand. You bend over and place your parasite-", 2)
         P_S("covered hand on the floor. You stamp on the creature with", 2)
         P_S("your heavy work boots causing it to release you. You stamp on", 2)
@@ -651,12 +651,12 @@ def Room1_1W():
     PreviousRoom = "1_1W"
     # Path information
     P_S("You look around the room and see three exits. One heading back", 2)
-    P_S("to the center of the ship, one on the other side of the room with", 2)
+    P_S("to the centre of the ship, one on the other side of the room with", 2)
     P_S("a sign above it saying 'Science Store' and one on the back wall", 2)
     P_S("that you imagine leads to the stern of the ship. Where would you", 2)
     P_S("like to go?", 2)
     # Choice of where to go to
-    ThreeRoomChoice("Back to the center of the ship",
+    ThreeRoomChoice("Back to the centre of the ship",
                     "Science Store", "Towards the stern",
                     RoomEngineBay, Room1_1SW, Room1_2W)
     # If user inputs invalid value - re-ask question
@@ -698,8 +698,8 @@ def Room1_1NE():
     if FirstVisits["1_1NE"] is True:
         # Text for user's first visit to this room
         P_S("You have never needed to use the Holodeck, but have heard", 2)
-        P_S("that it's an amazing room with infinite posibilities. You", 2)
-        P_S("ask the computer for what you'd like and the room gives it", 2)
+        P_S("that it's an amazing room with infinite possibilities. You", 2)
+        P_S("ask the computer for what you'd like, and the room gives it", 2)
         P_S("to you... Would you like to:", 2)
         # Log that user has now visited this room
         FirstVisits["1_NE"] = False
@@ -711,7 +711,7 @@ def Room1_1NE():
     # Text for all visits to this room
     print("1: Relax on a Caribbean beach for a moment to get your breath")
     P_S("back from your adventure so far?", 4)
-    print("2: See your family back on Earth for a few mintutes as it")
+    print("2: See your family back on Earth for a few minutes as it")
     P_S("could be the last time you ever see them?", 4)
     P_S("3: Rest for a moment in a replica of the Captain's Quarters?", 3)
     print("4: You don't have the time for this, you want to leave the")
@@ -744,7 +744,7 @@ def Room1_1NE():
         elif OTTF.lower() == "3" or OTTF.lower() == "three":
             P_S("The Holodeck transports you to an exact replica of the", 2)
             P_S("captain's cabin on board. You launch yourself on to the", 2)
-            P_S("extra large bed and rest for a moment with your head on", 2)
+            P_S("extra-large bed and rest for a moment with your head on", 2)
             P_S("the feather pillows.", 2)
             P_S("   When you have had enough, you tell the computer to", 2)
             P_S("shut down and open the door. You go and stand outside", 2)
@@ -812,7 +812,7 @@ def Room1_1SE():
         P_S("the door behind you.", 2)
     if FirstVisits["1_1SE"] is True:
         # Text for user's first visit to this room
-        P_S("You look around Sickbay... You accidentaly knock over a tray", 2)
+        P_S("You look around Sickbay... You accidentally knock over a tray", 2)
         P_S("of operating tools in your haste to look around. You quickly", 2)
         P_S("look through some of the cupboards. You find an energy bar", 2)
         P_S("high in electrolytes and quickly eat it before continuing on", 2)
@@ -857,13 +857,13 @@ def Room1_1SW():
         P_S("clutching your arm where the Neural Parasite attacked you.", 2)
         P_S("You head around a long curved corridor and come to another", 2)
         P_S("corridor labelled 'Crew Quarters' - you go down it, there", 2)
-        P_S("could be something usefull in one of the crews rooms.", 2)
+        P_S("could be something useful in one of the crews rooms.", 2)
     elif PreviousRoom == "SSW":
         # Travel text from SSW (Security) to 1_SW (Crew Quarters)
         P_S("You leave security through the door on the right and expect", 2)
         P_S("to go into the Brig, but to add to the list of strange things", 2)
-        P_S("happening on this ship, you find youself somewhere completely", 2)
-        P_S("wrong for the layout of the ship...", 2)
+        P_S("happening on this ship, you find yourself somewhere", 2)
+        P_S("completely wrong for the layout of the ship...", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in a Crew Member's Quarters area.")
     # If user has the locator device and batteries, show the ship diagram
@@ -892,8 +892,8 @@ def Room1_1SW():
         P_S("useful for you.", 2)
         P_S("   You find a half-drunk cup of tea... as much as you are", 2)
         P_S("tempted, you can't bring yourself to drink it, so you place", 2)
-        P_S("it back onto the window sill. As you do you notice a piece", 2)
-        P_S("of Moba Fruit wrapped in celophane on the shelf next to you.", 2)
+        P_S("it back onto the windowsill. As you do you notice a piece", 2)
+        P_S("of Moba Fruit wrapped in cellophane on the shelf next to you.", 2)
         P_S("The crew member who stayed in here must have been Bajoran.", 2)
         P_S("You wolf down the Moba Fruit grateful for the ample fluid it", 2)
         P_S("contains. You gained 1 health", 2)
@@ -1045,7 +1045,7 @@ def Room1_2N():
         YesOrNo = input('Do you want to keep searching this room? (Y/N):\n')
         if YesOrNo.lower() == 'yes' or YesOrNo.lower() == "y":
             # If user chooses to keep looking around - game over!
-            P_S("You head deeper into the Shuttle Bay and rumage through", 2)
+            P_S("You head deeper into the Shuttle Bay and rummage through", 2)
             P_S("some nearby sacks. You don't notice that on the opposite", 2)
             P_S("side of sack there is a Hazardous Waste warning! You peer", 2)
             P_S("into the bag and can't believe your eyes! It's Trilithium", 2)
@@ -1056,7 +1056,7 @@ def Room1_2N():
             P_S("have exploded on the pressure change of the room when the", 2)
             P_S("door opened. You feel your body break under the force of", 2)
             P_S("the blast and you get slammed into the wall. You close", 2)
-            P_S("your eyes and lose conciousness.", 2)
+            P_S("your eyes and lose consciousness.", 2)
             P_S('''
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
@@ -1150,7 +1150,7 @@ def Room1_2E():
         P_S("again. You rack your brain trying to figure out what could", 2)
         P_S("have been the cause and can only think that with the black", 2)
         P_S("hole interference and the space-time anomalies that are", 2)
-        P_S("occuring, it could have attracted a Dark Matter Lifeform.", 2)
+        P_S("occurring, it could have attracted a Dark Matter Lifeform.", 2)
         P_S("Thankfully it didn't do too much damage to you and left", 2)
         P_S("fairly soon. You lose 1 Health.", 2)
         Stats(-1)
@@ -1174,7 +1174,7 @@ def Room1_2E():
         P_S("'fire' button just as your hand hovers above it.", 2)
         P_S("You nose starts to bleed with the intensity of your will", 2)
         P_S("to not move your hand. Just as quick as it possessed you,", 2)
-        P_S("it leaves your body again. But not without taking it's toll", 2)
+        P_S("it leaves your body again. But not without taking its toll", 2)
         P_S("on your mind. You lose 2 health.", 2)
         Stats(-2)
         CheckStats()
@@ -1185,13 +1185,13 @@ def Room1_2E():
     P_S("external corridor, there is a sign for the main ship storeroom", 2)
     P_S("at the starboard-bow of the ship, there is also an internal", 2)
     P_S("corridor next to weapons control that will head back to the", 2)
-    P_S("center of the ship, or the next room heading to the stern of", 2)
+    P_S("centre of the ship, or the next room heading to the stern of", 2)
     P_S("the ship is the transporter room. Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_2E"
     # Choice of where to go to
-    ThreeRoomChoice("Back to the center of the ship", 
-                    "The ship storeroom", 
+    ThreeRoomChoice("Back to the centre of the ship",
+                    "The ship storeroom",
                     "The Transporter Room",
                     RoomEngineBay, Room1_2NE, RoomESETransporterRoom)
     # If user inputs invalid value - re-ask question
@@ -1276,7 +1276,7 @@ def Room1_2S():
             YesOrNo = input('stay in here and look around again? (Y/N):\n')
             if YesOrNo.lower() == 'yes' or YesOrNo.lower() == "y":
                 P_S("You decide this time to stay away from the desk and", 2)
-                P_S("look around the cells instead. You head over to the,", 2)
+                P_S("look around the cells instead. You head over to the", 2)
                 P_S("cells and peer into each one when the forcefield is", 2)
                 P_S("non-existent.", 2)
                 P_S("   On peering into the 4th cell along, you notice a", 2)
@@ -1297,7 +1297,7 @@ def Room1_2S():
                 P_S("heading straight for you! You turn quickly and run", 2)
                 P_S("for the exit while watching the cloud glide towards", 2)
                 P_S("you... not fully aware of your surroundings. You run", 2)
-                P_S("head first into the exit doorframe and knock yourself", 2)
+                P_S("headfirst into the exit doorframe and knock yourself", 2)
                 P_S("out cold. You lost 2 health.", 2)
                 Stats(-2)
                 CheckStats()
@@ -1329,7 +1329,7 @@ def Room1_2W():
     elif PreviousRoom == "1_2NW":
         P_S("Text from 1_2NW (Meditation Room) to 1_2W (Science Store)", 2)
     P_S("\n-------------------------------------------\n", 3)
-    print("You are in the Science Store Room.")
+    print("You are in the Science Storeroom.")
     # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
@@ -1375,7 +1375,7 @@ def Room1_2NE():
     elif PreviousRoom == "NNE":
         P_S("Travel text from NNE (Captains Quarters) to 1_2NE (Storeroom)", 2)
     P_S("\n-------------------------------------------\n", 3)
-    P_S("You are in the Ship Store Room.", 2)
+    P_S("You are in the Ship Storeroom.", 2)
     # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
@@ -1390,7 +1390,7 @@ def Room1_2NE():
             █ = You are here.
         ''', 2)
         break
-    # Text for user's ONLY visit to the Store Room
+    # Text for user's ONLY visit to the Storeroom
     P_S("You died!\n", 1.5)
     P_S('''
      _____ _____ _____ _____    _____ _____ _____ _____
@@ -1451,7 +1451,7 @@ def Room1_2SW():
 
     global PreviousRoom
     if PreviousRoom == "SSW":
-        P_S("Travel text from SSW (Security QUarters) to 1_2SW (Mess Hall)", 2)
+        P_S("Travel text from SSW (Security Quarters) to 1_2SW (Mess Hall)", 2)
     elif PreviousRoom == "1_2W":
         P_S("Travel text from 1_2W (Science Store) to 1_2SW (Mess Hall)", 2)
     P_S("\n-------------------------------------------\n", 3)
@@ -1703,15 +1703,15 @@ def RoomSSE():
             P_S("things are a bit crazy up here, we were struck by an", 2)
             P_S("asteroid and lost control of the ship, we ended up", 2)
             P_S("passing though a Black Hole. I must have been thrown", 2)
-            P_S("about in the comotion as I woke up on the floor and", 2)
+            P_S("about in the commotion as I woke up on the floor and", 2)
             P_S('things were all over the place!', 2)
             P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
             P_S('"Yes, I heard all about it! I managed to get some of your', 2)
-            P_S("crew to safety down here on Nova VII before your shipwide", 2)
-            P_S("comms and transporter went offline. I can help you get", 2)
-            P_S("out, but you'll need to find a locator device on board so", 2)
-            P_S("I can pinpoint your location. You'll also need the", 2)
-            P_S("Transporter override key so I can access it remotely.", 2)
+            P_S("crew to safety down here on Nova VII before your ship", 2)
+            P_S("wide comms and transporter went offline. I can help you", 2)
+            P_S("get out, but you'll need to find a locator device on", 2)
+            P_S("board so I can pinpoint your location. You'll also need", 2)
+            P_S("the Transporter override key so I can access it remotely.", 2)
             if UserStats["key"] is True:
                 # Text for if key is in users possession
                 P_S('\n"I already have the key!" you shout down the comms', 2)
@@ -1758,15 +1758,15 @@ def RoomSSE():
             P_S("things are a bit crazy up here, we were struck by an", 2)
             P_S("asteroid and lost control of the ship, we ended up", 2)
             P_S("passing though a Black Hole. I must have been thrown", 2)
-            P_S("about in the comotion as I woke up on the floor and", 2)
+            P_S("about in the commotion as I woke up on the floor and", 2)
             P_S('things were all over the place!', 2)
             P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
             P_S('"Yes, I heard all about it! I managed to get some of your', 2)
-            P_S("crew to safety down here on Nova VII before your shipwide", 2)
-            P_S("comms and transporter went offline. I can help you get", 2)
-            P_S("out, but you'll need to find a locator device on board so", 2)
-            P_S("I can pinpoint your location. You'll also need the", 2)
-            P_S("Transporter override key so I can access it remotely.", 2)
+            P_S("crew to safety down here on Nova VII before your ship", 2)
+            P_S("wide comms and transporter went offline. I can help you", 2)
+            P_S("get out, but you'll need to find a locator device on", 2)
+            P_S("board so I can pinpoint your location. You'll also need", 2)
+            P_S("the Transporter override key so I can access it remotely.", 2)
             if UserStats["key"] is True:
                 P_S('\n"I already have the key!" you shout down the comms', 2)
                 P_S("device excitedly.\n", 2)
@@ -1842,7 +1842,7 @@ def RoomSSW():
     if UserStats["key"] is False:
         P_S("You found a key! On close inspection its branded with the", 2)
         P_S("Starfleet logo. During the three years you have worked on", 2)
-        P_S("The Enterprise, you have only seen this key a handfull of", 2)
+        P_S("The Enterprise, you have only seen this key a handful of", 2)
         P_S("times, when the residents of a planet want to be in control", 2)
         P_S("of who beams down to the surface and when - it allows them", 2)
         P_S("full control over the ship's external beam capabilities -", 2)
@@ -1990,7 +1990,7 @@ def RoomNNW():
     if UserStats["comms"] is False:
         # Text for user's first visit to this room (if they don't have comms)
         P_S("You head onto the bridge. It's the first time you have ever", 2)
-        P_S("seen this spectaular room empty. You head over to the", 2)
+        P_S("seen this spectacular room empty. You head over to the", 2)
         P_S("captain's chair and run your hand over the smooth grey", 2)
         P_S("leather... you look around the room again checking for anyone", 2)
         P_S("else's presence. You smile to yourself... no one would know.", 2)
@@ -2018,14 +2018,14 @@ def RoomNNW():
             P_S("things are a bit crazy up here, we were struck by an", 2)
             P_S("asteroid and lost control of the ship, we ended up", 2)
             P_S("passing though a Black Hole. I must have been thrown", 2)
-            P_S("about in the comotion as I woke up on the floor and", 2)
+            P_S("about in the commotion as I woke up on the floor and", 2)
             P_S('things were all over the place!', 2)
             P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
             P_S('"Yes, I heard all about it! I managed to get some of your', 2)
-            P_S("crew to safety down here on Nova VII before your shipwide", 2)
-            P_S("comms and transporter went offline. I can help you get", 2)
-            P_S("out, but you'll need need the Transporter override key so", 2)
-            P_S("I can access it remotely.", 2)
+            P_S("crew to safety down here on Nova VII before your ship", 2)
+            P_S("wide comms and transporter went offline. I can help you", 2)
+            P_S("get out, but you'll need the Transporter override key", 2)
+            P_S("so I can access it remotely.", 2)
             if UserStats["key"] is True and UserStats["locator"] is True:
                 # Text for if user has the key and locator device
                 P_S('\n"I already have the key!" you shout down the comms', 2)
@@ -2041,7 +2041,7 @@ def RoomNNW():
                 P_S('find a locator device so I can pinpoint your exact', 2)
                 P_S('location once you are in the beam transport room."', 2)
             elif UserStats["key"] is False and UserStats["locator"] is False:
-                # Text for if the user doesnt have the key or locator device
+                # Text for if the user doesn't have the key or locator device
                 P_S('"You will also need to find a locator device so I can', 2)
                 P_S('pinpoint your exact location once you are in the', 2)
                 P_S('beam transportation room."', 2)
@@ -2051,7 +2051,7 @@ def RoomNNW():
             P_S("You stow the comms device into your pocket and continue", 2)
             P_S("on your way - filled with new hope.", 2)
         elif UserStats["batteries"] is False:
-            # Text for if the user doesnt have the batteries
+            # Text for if the user doesn't have the batteries
             P_S('The comms device is completely out of batteries, "There', 2)
             P_S('should be some batteries on this ship somewhere!", you', 2)
             P_S("think to yourself.", 2)
@@ -2066,8 +2066,8 @@ def RoomNNW():
     # Path information
     P_S("As you look around The Bridge, there is a door here that has", 2)
     P_S("never been here before, you look at it uneasily, waiting for it", 2)
-    P_S("to dissappear as the cooling controls did in the Engine Bay, but", 2)
-    P_S("it seems permenant enough. You could go through this door, or you", 2)
+    P_S("to disappear as the cooling controls did in the Engine Bay, but", 2)
+    P_S("it seems permanent enough. You could go through this door, or you", 2)
     P_S("could go down in the elevator, but you don't know where it would", 2)
     P_S("stop. Where would you like to go?", 2)
     # Log users presence in this room
@@ -2094,10 +2094,10 @@ def RoomESETransporterRoom():
         P_S("Store' and once again are confronted with something", 2)
         P_S("unexpected... You head along a short internal corridor.", 2)
         P_S("As you walk along, the multiple doors along this corridor", 2)
-        P_S("seem to be dissappearing and reappearing much the same as", 2)
+        P_S("seem to be disappearing and reappearing much the same as", 2)
         P_S("the cooling controls in the Engine Bay. You keep walking", 2)
         P_S("until you come to the only door that has some semblance of", 2)
-        P_S("permenance and head through it.", 2)
+        P_S("permanence and head through it.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Transporter Room.")
     # If user has the locator device and batteries, show the ship diagram
@@ -2114,11 +2114,11 @@ def RoomESETransporterRoom():
             █ = You are here.
         ''', 2)
         break
-    # Text for every visit to the tranporter room
-    P_S("You head over to the tranporter chamber and make your way up", 2)
+    # Text for every visit to the transporter room
+    P_S("You head over to the transporter chamber and make your way up", 2)
     P_S("the couple of steps onto the transporter platform. You never", 2)
     P_S("did like beaming much. You jog down the steps again and over", 2)
-    P_S("to the tranporter controls, you notice all the screens are", 2)
+    P_S("to the transporter controls, you notice all the screens are", 2)
     P_S("flickering and the planet name 'Nova VII' keeps popping up on the", 2)
     P_S("screen. You imagine that with the controls in this state it", 2)
     P_S("would probably be quite dangerous to try and beam out of the", 2)
@@ -2130,7 +2130,7 @@ def RoomESETransporterRoom():
         P_S("You pull the comms device out of your pocket...", 2)
         P_S('"Clancy, can you hear me?"', 2)
         P_S(f'"Loud and clear {name}!"', 2)
-        P_S('"I have everything you said I need and I am in the', 2)
+        P_S('"I have everything you said I need, and I am in the', 2)
         P_S('Transporter Room, ready to beam down!"', 2)
         P_S('"Fantastic!" replies Clancy. "Put the override key in the', 2)
         P_S('controls and hold the locator device to your chest while', 2)
@@ -2155,7 +2155,7 @@ def RoomESETransporterRoom():
                 P_S("Congratulations! You beamed safely down to Nova VII", 2)
                 P_S("and escaped the time loop, you look up to the sky", 2)
                 P_S("just in time to see The Enterprise lose the last of", 2)
-                P_S("its structural integrity and scatter accross the", 2)
+                P_S("its structural integrity and scatter across the", 2)
                 P_S("heavens, some small pieces break through the", 2)
                 P_S("atmosphere of Nova VII giving the planet a final ", 2)
                 P_S("farewell in a symbolic meteor shower.", 2)
@@ -2182,9 +2182,9 @@ def RoomESETransporterRoom():
                 # Text for if user attempted to beam out without required items
                 P_S("\nYou didn't have all the required equipment and", 2)
                 P_S("items to successfully beam down to Nova VII. You", 2)
-                P_S("beamed half way down to the planet's surface but", 2)
+                P_S("beamed halfway down to the planet's surface but", 2)
                 P_S("appeared in space before you could reach your", 2)
-                P_S("desination.", 2)
+                P_S("destination.", 2)
                 P_S('''
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
@@ -2198,13 +2198,13 @@ def RoomESETransporterRoom():
             P_S("\nYou continue on your journey...", 2)
             # Path information
             P_S("From the Transporter room you have two options of where", 2)
-            P_S("to go: Along an internal corridor towards the center of", 2)
+            P_S("to go: Along an internal corridor towards the centre of", 2)
             P_S("the ship or an external corridor towards your personal", 2)
             P_S("quarters. Where would you like to go?", 2)
             # Log users presence in this room
             PreviousRoom = "ESE"
             # Choice of where to go to
-            TwoRoomChoice("Towards the center of the ship",
+            TwoRoomChoice("Towards the centre of the ship",
                           "Personal Quarters",
                           Room1_1E, Room1_2SE)
             # If user inputs invalid value - re-ask question
