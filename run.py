@@ -1107,8 +1107,8 @@ def Room1_2E():
     global PreviousRoom
     if PreviousRoom == "ENE":
         # Travel text from ENE (Navigation) to 1_2E (Weapons Control)
-        P_S("You head down the external corridor and go into the next room", 2)
-        P_S("you come to.", 2)
+        P_S("You go through the newly appeared door and go down an ", 2)
+        P_S("external corridor. You go into the next room you come to.", 2)
     elif PreviousRoom == "1_1E":
         # Travel text from 1_1E (Eng.Sub.Con) to 1_2E (Weapons Control)
         P_S("You go through the door straight ahead of you towards the", 2)
@@ -1733,9 +1733,10 @@ def RoomNNE():
         P_S("You head across the corridor and through the door opposite.", 2)
     elif PreviousRoom == "ENE":
         # Travel text from ENE (Navigation) to NNE (Captain's Quarters)
-        P_S("You head along a short corridor in a starboard bow direction", 2)
-        P_S("and come to the captain's quarters on your right, you", 2)
-        P_S("push through the door and close it behind you.", 2)
+        P_S("You go through the newly formed door on the bow wall of the", 2)
+        P_S("room and head along a short corridor in a starboard bow", 2)
+        P_S("direction. You come to the captain's quarters on your right,", 2)
+        P_S("you push through the door and close it behind you.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Captain's Quarters.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1794,6 +1795,11 @@ def RoomENE():
     global PreviousRoom
     if PreviousRoom == "1_1NE":
         P_S("Travel text from 1_1NE (Holodeck) to ENE (Navigation)", 2)
+        P_S("You take the path to starboard - a short internal corridor,", 2)
+        P_S("the walls covered in star charts and paintings of planets you", 2)
+        P_S("have long since forgotten the name of since your navigation", 2)
+        P_S("training at Starfeel Academy. You head through the door at", 2)
+        P_S("the end of the corridor. The door opens automatically.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Ship Navigation.")
     # If user has the locator device and batteries, show the ship diagram
@@ -1812,14 +1818,25 @@ def RoomENE():
         break
     if UserStats["locator"] is False:
         # Text for user's first visit to Navigation
-        P_S("You found a locator device!", 2)
+        P_S("You head over to the desk in the middle of the room.", 2)
+        P_S("As the computers and screens beep around you, you", 2)
+        P_S("frantically search for anything that might be of use.", 2)
+        P_S("There's nothing in the desk.", 2)
+        P_S("   You head over to the computers along the edges of the", 2)
+        P_S("room - people left in a hurry, there's still cups of", 2)
+        P_S("tea and snacks next to their workstations.", 2)
+        P_S("   You bump into one of the computer chairs as you look", 2)
+        P_S("around which causes it to swivel towards you. You peer", 2)
+        P_S("down at the seat and can't believe your luck! You've", 2)
+        P_S("found a locator device!", 2)
         # Log that the user now has possession of the locator device
         UserStats["locator"] = True
         # Text for if the user has the batteries
         if UserStats["batteries"] is True:
-            P_S("\nThe Locator device springs into life once you", 2)
-            P_S("put the batteries inside and shows you a", 2)
-            P_S("small graphic of where you are in the ship...", 2)
+            P_S("\nThe locator device is completely out of battery", 2)
+            P_S("but springs into life once you put the batteries", 2)
+            P_S("inside and shows you a small graphic of where you", 2)
+            P_S("are in the ship...", 2)
             P_S('''
     ___________________          _-_             _      _-_      _
     \__(==========/_=_/ ____.---'---`---.____  _|_|.---'---`---.|_|_
@@ -1855,9 +1872,15 @@ def RoomENE():
     # Log users presence in this room
     PreviousRoom = "ENE"
     # Path information
-    print("ROOM AND PATH INFO HERE")
+    P_S("From where you are in the Navigation room you seem to have two", 2)
+    P_S("exit choices. The door you came through has since disappeared,", 2)
+    P_S("but there are doors on two of the walls that have appeared in", 2)
+    P_S("its place. From a quick look out of the window you can tell", 2)
+    P_S("that one is heading in a bow direction and the other to stern.", 2)
+    P_S("Where would you like to go?", 2)
     # Choice of where to go to
-    TwoRoomChoice("RoomNNE", "Room1_2E",
+    TwoRoomChoice("Through the door on the bow wall", 
+                  "Through the door on the stern wall",
                   RoomNNE, Room1_2E)
     # If user inputs invalid value - re-ask question
     TwoRoomSecondChance(RoomNNE, Room1_2E)
