@@ -254,12 +254,13 @@ button:hover {
 .modal-content,
 .modal-music-content {
     background-color: #fefefe;
-    margin-top: 400px;
+    margin-top: 0px;
     margin: auto;
     padding: 40px;
     border: 1px solid #888;
     width: 410px;
     height: 540px;
+    z-index: 999999;
 }
 
 .modal-music-content {
