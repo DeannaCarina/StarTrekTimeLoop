@@ -2111,10 +2111,11 @@ def RoomSSW():
     # Log users presence in this room
     PreviousRoom = "SSW"
     # Path information
-    P_S("Standing in security, a door has appeard to your right, you assume", 2)
-    P_S("that if you go through it, it should take you to the brig as the", 2)
-    P_S("brig is in that direction. Or you can go onto the external", 2)
-    P_S("corridor and towards the Mess Hall. Where would you like to go?", 2)
+    P_S("Standing in security, a door has appeard to your right, you", 2)
+    P_S("assume that if you go through it, it should take you to the", 2)
+    P_S("brig -  as the brig is in that direction. Or you can go onto", 2)
+    P_S("the external corridor and towards the Mess Hall. Where would", 2)
+    P_S("you like to go?", 2)
     # Choice of where to go to
     TwoRoomChoice("Through the door on the right", "Towards the Mess Hall",
                   Room1_1SW, Room1_2SW)
@@ -2129,10 +2130,11 @@ def RoomWSW():
     if PreviousRoom == "1_1SW":
         # Travel text from 1_1SW (Crew Quarters) to WSW (Rec Room)
         P_S("You head deeper into the crew quarters area and take a left", 2)
-        P_S("to go towards the Recreation room. ", 2)
-
+        P_S("to go towards the Recreation room. You go through the door.", 2)
     elif PreviousRoom == "1_2SW":
-        P_S("Travel text from 1_2SW (Mess Hall) to WSW (Rec Room)", 2)
+        # Travel text from 1_2SW (Mess Hall) to WSW (Rec Room)
+        P_S("You go towards the pulsating door in the corner of the Mess", 2)
+        P_S("Hall and go through it.", 2)
     P_S("\n-------------------------------------------\n", 3)
     P_S("You are in the Recreation Room.", 2)
     # If user has the locator device and batteries, show the ship diagram
@@ -2150,7 +2152,32 @@ def RoomWSW():
         ''', 2)
         break
     # Text for user's ONLY visit to the Recreation Room
-    P_S("You died!\n", 1.5)
+    P_S("You walk into the large room, and towards the window to look out", 2)
+    P_S("at Nova VII, noticing a solitary Tribble on the pool table as you", 2)
+    P_S("go, you give it a quick stroke and it purrs in response.", 2)
+    P_S("   As you look out of the window you notice some cracks in the", 2)
+    P_S("bottom corner. This isn't good. The slightest pressure change in", 2)
+    P_S("the room could cause the window to blow-out.", 2)
+    P_S("   You turn slowly away from the window and back towards the", 2)
+    P_S("exit, just as you near the door you hear a deafening screech and", 2)
+    P_S("spin back around. A large piece of the Enterprise's hull is", 2)
+    P_S("scraping along the window. Your eyes widen in terror. There's", 2)
+    P_S("nothing you can do as it nears the weak point in the corner.", 2)
+    P_S("   You hold your breath waiting for the inevitable, watching the", 2)
+    P_S("the window as it counts downs to your demise. The large piece of", 2)
+    P_S("metal on the outside scrapes over the cracks and then floats away", 2)
+    P_S("into space. You can't believe it, the window didn't give!", 2)
+    P_S("   Slowly, you turn back around and look towards your exit.", 2)
+    P_S("Suddenly you feel a great pull around your torso and you go", 2)
+    P_S("flying backwards through the room. In a matter of milliseconds", 2)
+    P_S("you find yourself outside of the ship floating away into outer", 2)
+    P_S("space. You look back at your home as you start to suffocate. You", 2)
+    P_S("notice the Tribble that was on the pool table drifting along next", 2)
+    P_S("to you. You slowly reach out for the little creature, as you pull", 2)
+    P_S("it into your chest it makes no sound, it's already gone.", 2)
+    P_S("   You drift away, at least satisfied that niether you nor the", 2)
+    P_S("Tribble will ever be alone on your journey through space. You", 2)
+    P_S("close your eyes for the last time.", 2)
     P_S('''
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
