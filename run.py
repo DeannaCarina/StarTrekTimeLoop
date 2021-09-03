@@ -1,5 +1,5 @@
 # Developer: Deanna Sale
-# Date of release: TBC
+# Date of release: 03/09/2021
 # Subject: Code Institute Portfolio Project 3 - Python
 # Program Name: "Star Trek: Time Loop"
 
