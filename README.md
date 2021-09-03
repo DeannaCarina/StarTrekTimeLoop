@@ -354,7 +354,7 @@ From the table, I was able to recognise which features were more likely to have 
 
 # Testing
 ### Functionality
-<img src="assets/documents/readme-images/solution1.png"><br>
+<img src="assets/documents/readme-images/solution.png"><br>
 <img src="assets/documents/readme-images/testing.png"><br>
 
 ### Compatability
