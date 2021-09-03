@@ -233,6 +233,7 @@ def Credits():
                         Peer Reviewers
                           MATT BODDEN
                            MARINA P
+                         STINA CAROLYIN
             ''', 1)
     P_S("3...", 1)
     P_S("2...", 1)
