@@ -663,7 +663,7 @@ def Room1_1W():
     P_S("like to go?", 2)
     # Choice of where to go to
     ThreeRoomChoice("Back to the centre of the ship",
-                    "Science Store", "Towards the stern",
+                    "Towards the stern", "Science Store",
                     RoomEngineBay, Room1_1SW, Room1_2W)
     # If user inputs invalid value - re-ask question
     ThreeRoomSecondChance(RoomEngineBay, Room1_1SW, Room1_2W)
