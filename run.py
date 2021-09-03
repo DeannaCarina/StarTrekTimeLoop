@@ -1782,7 +1782,7 @@ def RoomNNE():
     # Log users presence in this room
     PreviousRoom = "NNE"
     # Choice of where to go to
-    TwoRoomChoice("Towards the starboard side of the ship", 
+    TwoRoomChoice("Towards the starboard side of the ship",
                   "On to the Holodeck",
                   Room1_2NE, Room1_1NE)
     # If user inputs invalid value - re-ask question
@@ -1879,7 +1879,7 @@ def RoomENE():
     P_S("that one is heading in a bow direction and the other to stern.", 2)
     P_S("Where would you like to go?", 2)
     # Choice of where to go to
-    TwoRoomChoice("Through the door on the bow wall", 
+    TwoRoomChoice("Through the door on the bow wall",
                   "Through the door on the stern wall",
                   RoomNNE, Room1_2E)
     # If user inputs invalid value - re-ask question
