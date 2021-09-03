@@ -57,7 +57,9 @@
         </div>
     </div>
     <!-- The terminal box containing the game for user interaction and text display -->
-    <div id="terminal"></div>
+    <div id="terminalcontainer">
+        <div id="terminal"></div>
+    </div>
     <!-- button for user to bring up background music options -->
     <button id="myMusicBtn">Fancy some background music?</button><br>
     <!-- copyright text -->
@@ -123,8 +125,6 @@
 
                 term._initialized = true;
 
-                term.writeln('Running your file: run.py');
-                term.writeln('');
                 term_prompt(term);
 
                 term.onData(e => {
