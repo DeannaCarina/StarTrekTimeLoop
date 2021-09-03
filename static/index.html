@@ -14,22 +14,11 @@
 
 <body>
     <!-- button to refresh the page/game terminal -->
-    <button onclick="window.location.reload()">PLAY GAME</button>
+    <button id="playbtn" onclick="window.location.reload()">PLAY GAME</button>
     <!-- button to view the game instructions/hints&tips -->
     <button id="myBtn">HOW TO PLAY</button>
-    <!-- Tick list for user to keep track of their progress and which items they have -->
-    <div id="ticklist">
-        Item Tick List<br><br>
-        <div id="floatleft"><input type="checkbox" id="phaser" name="phaser"><label for="phaser">Phaser</label><br>
-            <input type="checkbox" id="knife" name="knife"><label for="knife">KaBar Combat Knife</label><br>
-            <input type="checkbox" id="batteries" name="batteries"><label for="batteries">Batteries</label><br>
-        </div>
-        <div id="floatright">
-            <label for="comms">Communication Device</label><input type="checkbox" id="comms" name="comms"><br>
-            <label for="locator">Locator Device</label><input type="checkbox" id="locator" name="locator"><br>
-            <label for="key">Transporter Override Key</label><input type="checkbox" id="key" name="key"><br>
-        </div>
-    </div>
+    <!-- button for user to bring up background music options -->
+    <button id="myMusicBtn">Fancy some background music?</button><br>
     <!-- modal containing the game instructions which is hidable/viewable via javascript -->
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -60,8 +49,24 @@
     <div id="terminalcontainer">
         <div id="terminal"></div>
     </div>
-    <!-- button for user to bring up background music options -->
-    <button id="myMusicBtn">Fancy some background music?</button><br>
+    <!-- Tick list for user to keep track of their progress and which items they have -->
+    <div id="ticklist">
+        <div id="farleftdiv" class="tickthird">
+            Tick List
+        </div>
+        <div id="leftdiv" class="tickthird">
+            <input type="checkbox" id="phaser" name="phaser"><label for="phaser">Phaser</label><br>
+            <input type="checkbox" id="batteries" name="batteries"><label for="batteries">Batteries</label><br>
+        </div>
+        <div id="middlediv" class="tickthird">
+            <input type="checkbox" id="knife" name="knife"><label for="knife">KaBar Combat Knife</label><br>
+            <input type="checkbox" id="locator" name="locator"><label for="locator">Locator Device</label><br>
+        </div>
+        <div id="rightdiv" class="tickthird">
+            <input type="checkbox" id="comms" name="comms"><label for="comms">Communication Device</label><br>
+            <input type="checkbox" id="key" name="key"><label for="key">Transporter Override Key</label><br>
+        </div>
+    </div>
     <!-- copyright text -->
     <div id="copy">
         &copy; DeannaCarina

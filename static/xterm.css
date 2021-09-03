@@ -188,6 +188,7 @@ body {
     width: 720px;
     margin: auto auto;
     padding-right: 10px;
+    text-align: left;
 }
 
 button {
@@ -204,28 +205,48 @@ button {
     font-weight: 900;
 }
 
+#playbtn {
+    background-color: rgb(13, 18, 49);
+}
+
+#playbtn:hover {
+    background-color: grey;
+}
+
 #ticklist {
     background-color: #00000083;
     color: white;
     border: solid 2px grey;
-    width: 400px;
-    height: 100px;
+    width: 650px;
+    height: 40px;
     padding: 10px;
-    margin: auto auto;
     text-align: center;
-    margin-top: 0px;
+    margin: auto auto;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-#floatleft {
-    float: left;
+.tickthird {
+    display: inline-block;
+    width: 190px;
+    margin: 0px;
     text-align: left;
 }
 
-#floatright {
-    float: right;
-    text-align: right;
+#farleftdiv {
+    width: 50px;
+    text-align: left;
 }
+
+#leftdiv {
+    display: inline-block;
+    width: 120px;
+}
+
+#rightdiv {
+    display: inline-block;
+}
+
 
 #myMusicBtn {
     width: 270px;
@@ -269,12 +290,12 @@ button:hover {
 }
 
 .modal-music-content {
-    margin-top: 400px;
+    margin-top: 100px;
     height: 200px;
-    width: 700px;
+    width: 705px;
     padding: 10px;
     background-color: #000000;
-    border: solid 10px grey;
+    border: solid 10px rgba(78, 78, 78, 0.63);
 }
 
 #modalHeading {
@@ -292,6 +313,7 @@ button:hover {
 iframe {
     margin: auto;
     margin-right: 10px;
+    border: 1px solid black;
 }
 
 .close,
