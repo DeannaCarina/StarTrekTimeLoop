@@ -241,7 +241,6 @@ button:hover {
 .musicModal {
     display: none;
     position: fixed;
-    z-index: 1;
     padding-top: 100px;
     left: 0;
     top: 0;
@@ -262,6 +261,7 @@ button:hover {
     width: 410px;
     height: 540px;
     z-index: 999;
+
 }
 
 .modal-music-content {
