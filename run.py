@@ -1385,7 +1385,7 @@ def Room1_2W():
         P_S("look around you for any potential exits. There are three...", 2)
         P_S("one to your left heading towards the bow of the ship, one", 2)
         P_S("behind you which is in the direction you're already going.", 2)
-        P_S("Or you can run back through the Science Bay and into the", 2)
+        P_S("Or you can run through the Science Bay and into the", 2)
         P_S("Engine Bay. You keep shooting at the worms, holding them", 2)
         P_S("back as you make your decision.", 2)
     elif UserStats["knife"] is True and UserStats["phaser"] is False:
@@ -1411,7 +1411,7 @@ def Room1_2W():
         P_S("   You look around you for any potential exits. There are", 2)
         P_S("three... one to your left heading towards the bow of the", 2)
         P_S("ship, one behind you which is in the direction you're", 2)
-        P_S("already going. Or you can run back through the Science Bay", 2)
+        P_S("already going. Or you can run through the Science Bay", 2)
         P_S("and into the Engine Bay. You pull at the creatures that,", 2)
         P_S("are latched onto you, pulling them from your skin leaving", 2)
         P_S("welts and bruises where they fed from you. You throw them", 2)
@@ -1794,7 +1794,7 @@ def RoomENE():
 
     global PreviousRoom
     if PreviousRoom == "1_1NE":
-        P_S("Travel text from 1_1NE (Holodeck) to ENE (Navigation)", 2)
+        # Travel text from 1_1NE (Holodeck) to ENE (Navigation)
         P_S("You take the path to starboard - a short internal corridor,", 2)
         P_S("the walls covered in star charts and paintings of planets you", 2)
         P_S("have long since forgotten the name of since your navigation", 2)
@@ -1941,7 +1941,7 @@ def RoomSSE():
             P_S("asteroid and lost control of the ship, we ended up", 2)
             P_S("passing through a Black Hole. I must have been thrown", 2)
             P_S("about in the commotion as I woke up on the floor and", 2)
-            P_S('things were all over the place!', 2)
+            P_S('things were all over the place!"', 2)
             P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
             P_S('"Yes, I heard all about it! I managed to get some of your', 2)
             P_S("crew to safety down here on Nova VII before your ship", 2)
@@ -1996,7 +1996,7 @@ def RoomSSE():
             P_S("asteroid and lost control of the ship, we ended up", 2)
             P_S("passing through a Black Hole. I must have been thrown", 2)
             P_S("about in the commotion as I woke up on the floor and", 2)
-            P_S('things were all over the place!', 2)
+            P_S('things were all over the place!"', 2)
             P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
             P_S('"Yes, I heard all about it! I managed to get some of your', 2)
             P_S("crew to safety down here on Nova VII before your ship", 2)
@@ -2044,11 +2044,12 @@ def RoomSSE():
     # Log users presence in this room
     PreviousRoom = "SSE"
     # Path information
-    P_S("You have two options of where to go from here. You can head back", 2)
-    P_S("across the corridor and into Sickbay, or you can turn left to", 2)
-    P_S("head towards the stern of the ship. Where would you like to go?", 2)
+    P_S("You have two options of where to go from here. You can head", 2)
+    P_S("across the corridor into what you think will be your personal", 2)
+    P_S("quarters, or you can turn left to head towards the stern of the", 2)
+    P_S("ship. Where would you like to go?", 2)
     # Choice of where to go to
-    TwoRoomChoice("Across the corridor and into Sickbay",
+    TwoRoomChoice("Across the corridor",
                   "Towards the stern of the ship",
                   Room1_1SE, Room1_2S)
     # If user inputs invalid value - re-ask question
@@ -2062,7 +2063,7 @@ def RoomSSW():
     if PreviousRoom == "1_2S":
         # Travel text from 1_2S (The Brig) to SSW (Security)
         P_S("You go through the door in the port direction and head", 2)
-        P_S("down an internal coridor the only door on thiscorridor", 2)
+        P_S("down an internal coridor the only door on this corridor", 2)
         P_S("is security, so you push through the door and go inside.", 2)
     elif PreviousRoom == "1_1SW":
         # Travel text from 1_1SW (Crew Quarters) to SSW (Security)
@@ -2249,11 +2250,11 @@ def RoomWNW():
         Error()
     # Path information
     P_S("From where you stand outside the conference lounge, there is only", 2)
-    P_S("direction to go in - towards the bow of the ship. After you go", 2)
-    P_S("past the bend in the corridor you notice that it splits into two,", 2)
-    P_S("with a fork going to the left and the far port-bow corner of the", 2)
-    P_S("ship and a fork going to the right more towards the centre of the", 2)
-    P_S("ship. Where would you like to go?", 2)
+    P_S("one direction to go in - towards the bow of the ship. After you", 2)
+    P_S("go past the bend in the corridor you notice that it splits into,", 2)
+    P_S("two with a fork going to the left and the far port-bow corner of", 2)
+    P_S("the ship and a fork going to the right more towards the centre of", 2)
+    P_S("the ship. Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "WNW"
     # Choice of where to go to
@@ -2316,7 +2317,7 @@ def RoomNNW():
         P_S("   Standing up again, you look around to see if there's", 2)
         P_S("anything that might help you with your current plight.", 2)
         P_S("You head over to the first officers chair and notice", 2)
-        P_S("lying on the floor underneath the seat...", 2)
+        P_S("something lying on the floor underneath the seat...", 2)
         P_S("You found a comms device!", 2)
         # Log that the user now has possession of the comms device
         UserStats["comms"] = True
@@ -2336,7 +2337,7 @@ def RoomNNW():
             P_S("asteroid and lost control of the ship, we ended up", 2)
             P_S("passing through a Black Hole. I must have been thrown", 2)
             P_S("about in the commotion as I woke up on the floor and", 2)
-            P_S('things were all over the place!', 2)
+            P_S('things were all over the place!"', 2)
             P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
             P_S('"Yes, I heard all about it! I managed to get some of your', 2)
             P_S("crew to safety down here on Nova VII before your ship", 2)
