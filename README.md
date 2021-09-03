@@ -465,13 +465,52 @@ I tested the usability and intuitiveness of the website using different focus gr
         </td>
     </tr>
 </table><br>
-<a href="#Contents">Back to the top.</a><br>
 
 <img src="assets/documents/readme-images/solution.png"><br>
 <img src="assets/documents/readme-images/testing.png"><br>
 
 ### Compatability
+The second phase of my testing regime for the website was to ensure that the website is compatible through a range of devices, screen sizes and internet browsers. Although it wasn't a requirement of this project to be responsive, I still think that a large proportion of people that end up playing the game will want to play it on mobile. Throughout the development process, the website was tested on a number of devices: A 17.3 inch windows laptop, a 15.3 inch windows laptop, a 16 inch MacBook Pro, an 8 inch Samsung Galaxy Tab A, a 10.2 inch iPad, A Samsung Galaxy S20 Ultra and A Huawei P30 Pro. It was also tested in Chrome, Firefox, Internet Explorer and Safari as well as Samsung's own internet browser. By also using Chrome Dev Tools, I was able to manually change the screen size to see when elements within the web pages 'break', by using this method, I could pinpoint the exact screen widths and heights to be defined in the CSS media screen queries and alter the stylings to fit accordingly. The majority of the elements on the webpage were resized automatically via the pre-written JavaScript in the Code Institute Python Template, so I needed to do very little in terms of making the page responsive, however I did need to alter the size of the modals at smaller screen sizes as for some reason this didn't resize with the rest of the content. Below is an image of how the web-page looks on a mobile device (Samsung S20 Ultra) and I am very happy with the way it looks.
+<img src="assets/documents/readme-images/phonescreen.png" width="30%"><br>
+
 ### User testing stories
+The third phase of my testing regime was to ensure that customer all user stories identified in the Strategy plane have been acknowledged and achieved.<br><br>
+
+<em>""</em><br>
+<img src="" alt=""><br>
+
+>Text of how this was achieved.<br>
+
+<em>""</em><br>
+<img src="" alt=""><br>
+
+>Text of how this was achieved.<br>
+
+<em>""</em><br>
+<img src="" alt=""><br>
+
+>Text of how this was achieved.<br>
+
+<em>""</em><br>
+<img src="" alt=""><br>
+
+>Text of how this was achieved.<br>
+
+<em>""</em><br>
+<img src="" alt=""><br>
+
+>Text of how this was achieved.<br>
+
+<em>""</em><br>
+<img src="" alt=""><br>
+
+>Text of how this was achieved.<br>
+
+<em>""</em><br>
+<img src="" alt=""><br>
+
+>Text of how this was achieved.<br>
+
 <img src="assets/documents/readme-images/gameguide.png"><br>
 
 ### Code Validation
@@ -496,12 +535,23 @@ As a students of Code Instutute we have Slack as a resource to help and complime
 The main 'problem' I found I had during the development process was trying to focus on the code rather than the content. I have found (not only with this project but with previous projects also) that I spend the majority of my project development time writing content. I don't think this is necessarily a bad thing as I always try to leave plentiful time to complete my projects, however this probably wouldn't be ideal in the workplace when there are strict time restraints to follow. I seemed to get 'sucked in' to the story line with this project, and if I had more time (even though the majority of my project was complete over 2 weeks in advance of my deadline), I would have implemented more story-line features such as more items to pick up, other player statistics such as 'luck', or perhaps another character on the ship which the user keeps running in to, as well as more random elements to the game such as the same random event that has (for example) a 10% chance of happening on entry to a new room. Due to going so in-depth with the story it's resulted in the main python file being over 2500 lines long - which is not ideal for maintainability as it makes it more difficult to find pieces of code that could contain a bug or error.
 
 ### Accessibility
+By making the website accessible, I am ensuring that all of my potential users, including people with disabilities, have a positive user experience and are able to easily access your information and play the game. By implementing accessibility best practices, I am also improving the usability of the site for all users.
+
+Due to the importance and necessity of accessibility on websites, I have chosen to the single webpage for the Star Trek Time Loop game through the <a href="https://wave.webaim.org/" target="_blank">Wave Accessibility</a> tool. I found from carrying out accessibility checks on my last projects that the Wave Accessibility tool is a very good all-round checker that looks at a range of aspects on a web page and shows which aspects need fixing or altering in line with accessibility best practices. The steps I took from first check to last check are as follows:
+<ol>
+    <li>Run the web page through the <a href="https://wave.webaim.org/" target="_blank">Wave Accessibility</a> tool</li>
+    <li>Rectify any errors that resulted from the <a href="https://wave.webaim.org/" target="_blank">Wave Accessibility</a> check regarding code errors and contrast errors</li>
+    <li>Re-run the web page through the <a href="https://wave.webaim.org/" target="_blank">Wave Accessibility</a> tool</li>
+</ol>
+No accessibility errors were found when running the webpage through the tool.
 <img src="assets/documents/readme-images/wavereport.png"><br>
 
 ### Performance Testing
+Below is the report generated from lighthouse via Chrome DevTools for the desktop website, I am happy that the performance and accesibility scores are high, however would have liked a higher score on performance. I'm not sure why this particular score was so low, but given that I used a pre-made template it could potentially have something to do with that. 
 <img src="assets/documents/readme-images/lighthouse.png"><br>
 
 ### Bugs & Fixes
+All bugs were fixed during the development process - these were mainly brought up by my own lack of observation and linking rooms up wrong. However all rooms were fixed and their paths rectified before the project was put in the Slack channel for Peer Review.
 <a href="#top">Back to the top.</a>
 
 # Deployment
