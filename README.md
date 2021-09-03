@@ -547,7 +547,7 @@ No accessibility errors were found when running the webpage through the tool.
 <img src="assets/documents/readme-images/wavereport.png"><br>
 
 ### Performance Testing
-Below is the report generated from lighthouse via Chrome DevTools for the desktop website, I am happy that the performance and accesibility scores are high, however would have liked a higher score on performance. I'm not sure why this particular score was so low, but given that I used a pre-made template it could potentially have something to do with that. 
+Below is the report generated from lighthouse via Chrome DevTools for the desktop website, I am happy that the performance and accesibility scores are high, however would have liked a higher score on performance. I'm not sure why this particular score was so low, but given that I used a pre-made template it could potentially have something to do with that. <br>
 <img src="assets/documents/readme-images/lighthouse.png"><br>
 
 ### Bugs & Fixes
