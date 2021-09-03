@@ -2315,7 +2315,8 @@ def RoomNNW():
         P_S("never thought you'd find yourself sat here.", 2)
         P_S("   Standing up again, you look around to see if there's", 2)
         P_S("anything that might help you with your current plight.", 2)
-        P_S("", 2)
+        P_S("You head over to the first officers chair and notice", 2)
+        P_S("lying on the floor underneat the seat...", 2)
         P_S("You found a comms device!", 2)
         # Log that the user now has possession of the comms device
         UserStats["comms"] = True
