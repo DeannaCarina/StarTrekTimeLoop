@@ -2192,9 +2192,20 @@ def RoomWNW():
 
     global PreviousRoom
     if PreviousRoom == "1_2W":
-        P_S("Text from 1_2W (Science Store) to WNW (Conference Lounge)", 2)
+        # Text from 1_2W (Science Store) to WNW (Conference Lounge)
+        P_S("You quickly turn and run to the door on your left,", 2)
+        P_S("leaving the horde of Genesis Worms behind you. You", 2)
+        P_S("pull down the handle rush through the door, slamming", 2)
+        P_S("it behind you. The moment the door is closed, it", 2)
+        P_S("contorts and disappears into nothingness. At least the", 2)
+        P_S("worms definitely won't be able to follow you! You take", 2)
+        P_S("some calming breaths and turn to look at the room you've", 2)
+        P_S("rushed into.", 2)
     elif PreviousRoom == "1_1NW":
-        P_S("Text from 1_1NW (Observation Deck) to WNW (Conference Lounge)", 2)
+        # Text from 1_1NW (Observation Deck) to WNW (Conference Lounge)
+        P_S("On the corridor outside of the Observation deck you turn and", 2)
+        P_S("head towards the port side of the ship. You go into the room", 2)
+        P_S("at the end of the corridor.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in the Conference Lounge.")
     # If user has the locator device and batteries, show the ship diagram
@@ -2213,22 +2224,40 @@ def RoomWNW():
         break
     # Text for user's first visit to the Conference Lounge
     if UserStats["phaser"] is False:
-        P_S("You found a phaser! This will help against corporeal threats", 2)
-        P_S("and reduce if not eliminate any potential damage these", 2)
-        P_S("threats inflict upon you.", 2)
+        P_S("You head inside the large room filled with a large oval table", 2)
+        P_S("and at least 30 chairs surrounding it. Apart from it's size", 2)
+        P_S("this room is almost identical to the smaller meeting rooms", 2)
+        P_S("dotted about the ship. You can't imagine finding much in this", 2)
+        P_S("room as there is no storage.", 2)
+        P_S("   You walk around the vast table and pull out the chairs as", 2)
+        P_S("you go around to make sure nothing has been left on the seats", 2)
+        P_S("in a rush to leave. Just as you're about to give up and leave", 2)
+        P_S("the room you have a quick look underneath the table and can't", 2)
+        P_S("believe your luck! You found a phaser! This will help against", 2)
+        P_S("corporeal threats and reduce if not eliminate any potential", 2)
+        P_S("damage these threats inflict upon you.", 2)
+        P_S("   You hook the phaser onto your belt and head back on to", 2)
+        P_S("the corridor outside of the room.", 2)
         # Log that the user now has possession of the phaser
         UserStats["phaser"] = True
     elif UserStats["phaser"] is True:
         # Text for if the user has been here before
-        print("This is where you found the phaser.")
+        P_S("You head inside the large room. This is where you found the", 2)
+        P_S("phaser. There's nothing else of interest or use in this room", 2)
+        P_S("so you head back out onto the corridor.", 2)
     else:
         Error()
     # Path information
-    print("PATH INFO HERE")
+    P_S("From where you stand outside the conference lounge, there is only", 2)
+    P_S("direction to go in - towards the bow of the ship. After you go", 2)
+    P_S("past the bend in the corridor you notice that it splits into two,", 2)
+    P_S("with a fork going to the left and the far port-bow corner of the", 2)
+    P_S("ship and a fork going to the right more towards the centre of the", 2)
+    P_S("ship. Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "WNW"
     # Choice of where to go to
-    TwoRoomChoice("Room1_2NW", "RoomNNW",
+    TwoRoomChoice("The far port-bow corner", "Towards the centre of the ship",
                   Room1_2NW, RoomNNW)
     TwoRoomSecondChance(Room1_2NW, RoomNNW)
 
@@ -2244,9 +2273,9 @@ def RoomNNW():
         P_S("to the top level.", 2)
     elif PreviousRoom == "WNW":
         # Travel text from WNW (Conference Lounge) to NNW (The Bridge)
-        P_S("Leaving the Conference Lounge, and heading along an internal,", 2)
-        P_S("corridor, you come to the central elevator. You head up in", 2)
-        P_S("the elevator to the top level.", 2)
+        P_S("Leaving the Conference Lounge, and taking the right fork, you", 2)
+        P_S("head along an internal corridor, you come to the central", 2)
+        P_S("elevator. You head up in the elevator to the top level.", 2)
     elif PreviousRoom == "1_1NW":
         # Travel text from 1_1NW (Observation Deck) to NNW (The Bridge)
         P_S("Leaving the Observation deck, and heading along an internal,", 2)
