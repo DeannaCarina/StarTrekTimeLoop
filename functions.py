@@ -231,7 +231,7 @@ def Credits():
             ''', 1)
     P_S('''
                         Peer Reviewers
-                             TBC
+                          MATT BODDEN
             ''', 1)
     P_S("3...", 1)
     P_S("2...", 1)

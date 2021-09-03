@@ -377,6 +377,8 @@ Although the majority of the HTML, CSS and JavaScript came from a pre-made templ
 </ul>
 
 ### Peer Review
+As a students of Code Instutute we have Slack as a resource to help and compliment our learning. We are able to post our web pages and GitHub repositories for other students to review. I would like to thank Matt Bodden for taking the time to look at my website and texting out the game.
+
 ### Development Problems
 ### Accessibility
 <img src="assets/documents/readme-images/wavereport.png"><br>
