@@ -650,7 +650,8 @@ If you want to make changes to the repo without affecting it, you can make a cop
 # Screenshots
 <a href="#top">Back to the top.</a>
 <img src="assets/documents/readme-images/sttlscreen.png"><br>
-<img src="assets/documents/readme-images/sttlscreen2.png">
+<img src="assets/documents/readme-images/sttlscreen2.png"><br>
+<img src="assets/documents/readme-images/sttlscreen3.png"><br>
 
 # References
 <a href="#top">Back to the top.</a>
