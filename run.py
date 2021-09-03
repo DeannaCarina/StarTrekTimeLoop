@@ -1481,7 +1481,7 @@ def Room1_2NE():
     P_S("   Just before your eyes are covered by the masses of fur, you", 2)
     P_S("can't help but think that of all the ways to die... suffocated", 2)
     P_S("by Tribbles wasn't the way you thought you'd go.", 2)
-    P_S("   You close your eyes and sucomb to the fluffy onslaught.", 2)
+    P_S("   You close your eyes and succumb to the fluffy onslaught.", 2)
     P_S('''
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
@@ -1499,11 +1499,11 @@ def Room1_2SE():
         # Text from ESE (Transporter Room) to 1_2SE (Personal Quarters)
         P_S("You leave the transporter room and turn right. You head along", 2)
         P_S("the wide external corridor for a short while and come to the", 2)
-        P_S("officers quarters corridor. You head down it and the third", 2)
+        P_S("officers' quarters corridor. You head down it and the third", 2)
         P_S("door on the left is your personal quarters. You head inside.", 2)
     elif PreviousRoom == "1_2S":
         # Travel text from 1_2S(The Brig) to 1_2SE (Personal Quarters)
-        P_S("You take the door to starboard and find youself in the", 2)
+        P_S("You take the door to starboard and find yourself in the", 2)
         P_S("engineers quarters. You look around for a second to get your", 2)
         P_S("bearings and head into your personal quarters which are just", 2)
         P_S("to your left.", 2)
@@ -1539,7 +1539,7 @@ def Room1_2SE():
         P_S("   That's what they'll be calling you in Starfleet now isn't", 2)
         P_S("it? I'm going to miss you with all my heart while you are", 2)
         P_S("away. Remember how much we all love you, and as much as we", 2)
-        P_S("are proud of who you are and what you have acheived, the", 2)
+        P_S("are proud of who you are and what you have achieved, the", 2)
         P_S("most we could ever ask for is your safe return home.", 2)
         print("")
         P_S("   Love always and forever,", 2)
@@ -1550,7 +1550,7 @@ def Room1_2SE():
         P_S("   Reaching under your bed, you pull out a small package", 2)
         P_S("wrapped in a linen sheet and carefully unfold it in your", 2)
         P_S("lap. You look down at your knees and can't help but smile", 2)
-        P_S("at the small pile of cherry bakewells that your mother", 2)
+        P_S("at the small pile of Cherry Bakewells that your mother", 2)
         P_S("somehow managed to send to you a couple of days ago when", 2)
         P_S("the ship restocked at its last outpost.", 2)
         P_S("   You pick one up and take the foil off before putting", 2)
@@ -1565,8 +1565,8 @@ def Room1_2SE():
     else:
         # Text for user's subsequent visit to this room
         P_S("You head into your personal quarters and kneel on the floor", 2)
-        P_S("next to your bed. You pull out the folded package of cherry", 2)
-        P_S("bakewells and eat another one whole. You gain 2 health.", 2)
+        P_S("next to your bed. You pull out the folded package of Cherry", 2)
+        P_S("Bakewells and eat another one whole. You gain 2 health.", 2)
         Stats(+2)
         P_S("You neatly fold the package back up and place it back under", 2)
         P_S("your bed.", 2)
@@ -1592,7 +1592,7 @@ def Room1_2SW():
     if PreviousRoom == "SSW":
         # Travel text from SSW (Security Quarters) to 1_2SW (Mess Hall)
         P_S("With Security behind you, you head down the wide external", 2)
-        P_S("corridor towards the Mess Hall.You go through the sliding", 2)
+        P_S("corridor towards the Mess Hall. You go through the sliding", 2)
         P_S("double doors and are greeted with the recent smells of", 2)
         P_S("freshly cooked dinner.", 2)
     elif PreviousRoom == "1_2W":
@@ -1628,7 +1628,7 @@ def Room1_2SW():
         P_S("long sofa running the full length of the room beneath the", 2)
         P_S("window. You head over to the serving counter and grab a plate", 2)
         P_S("of your favourite foods.", 2)
-        P_S("   You take a moment to sit down and have a few mouthfulls", 2)
+        P_S("   You take a moment to sit down and have a few mouthfuls", 2)
         P_S("before you continue on your journey. You gain 2 health.", 2)
         Stats(+2)
         # Log that user has now visited this room
@@ -1637,7 +1637,7 @@ def Room1_2SW():
         # Text for user's subsequent visit to this room
         P_S("The Mess Hall is just as empty as it was the first time you", 2)
         P_S("visited. You head over to the table you were sat at during", 2)
-        P_S("your first visit and grab a few more peices of food from the", 2)
+        P_S("your first visit and grab a few more pieces of food from the", 2)
         P_S("plate you put together. You gain 1 health.", 2)
         Stats(+1)
     # Path information
@@ -1685,7 +1685,7 @@ def Room1_2NW():
         P_S("You are in a small comfortable room with a plush chaise", 2)
         P_S("lounge in the middle and a Chesterfield winged chair to its", 2)
         P_S("side. A large wooden bookcase sits along the back wall with", 2)
-        P_S("a slection of bean bags in front of it.", 2)
+        P_S("a selection of bean bags in front of it.", 2)
         P_S("   The room is set in dim lighting and has an aura of", 2)
         P_S("calmness about it. You nod your head to the portrait of", 2)
         P_S("Lieutenant Commander Deanna Troi that sits above the", 2)
@@ -1757,7 +1757,7 @@ def RoomNNE():
     if UserStats["knife"] is False:
         P_S("You have never needed to come into the captain's quarters", 2)
         P_S("before so have no idea what you might find. As much as it", 2)
-        P_S("intruiges you to be in here, you want to make your visit", 2)
+        P_S("intrigues you to be in here, you want to make your visit", 2)
         P_S("quick out of respect for the captain, whom you assume to be", 2)
         P_S("dead. The room is large and comfortable with a large table", 2)
         P_S("in the middle covered in files and charts.", 2)
@@ -1798,7 +1798,7 @@ def RoomENE():
         P_S("You take the path to starboard - a short internal corridor,", 2)
         P_S("the walls covered in star charts and paintings of planets you", 2)
         P_S("have long since forgotten the name of since your navigation", 2)
-        P_S("training at Starfeel Academy. You head through the door at", 2)
+        P_S("training at Starfleet Academy. You head through the door at", 2)
         P_S("the end of the corridor. The door opens automatically.", 2)
     P_S("\n-------------------------------------------\n", 3)
     print("You are in Ship Navigation.")
@@ -1939,7 +1939,7 @@ def RoomSSE():
             P_S("USS Enterprise NCC-1703, it's so good to hear your voice!", 2)
             P_S("things are a bit crazy up here, we were struck by an", 2)
             P_S("asteroid and lost control of the ship, we ended up", 2)
-            P_S("passing though a Black Hole. I must have been thrown", 2)
+            P_S("passing through a Black Hole. I must have been thrown", 2)
             P_S("about in the commotion as I woke up on the floor and", 2)
             P_S('things were all over the place!', 2)
             P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
@@ -1994,7 +1994,7 @@ def RoomSSE():
             P_S("USS Enterprise NCC-1703, it's so good to hear your voice!", 2)
             P_S("things are a bit crazy up here, we were struck by an", 2)
             P_S("asteroid and lost control of the ship, we ended up", 2)
-            P_S("passing though a Black Hole. I must have been thrown", 2)
+            P_S("passing through a Black Hole. I must have been thrown", 2)
             P_S("about in the commotion as I woke up on the floor and", 2)
             P_S('things were all over the place!', 2)
             P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
@@ -2097,7 +2097,7 @@ def RoomSSW():
         P_S("full control over the ship's external beam capabilities -", 2)
         P_S("very helpful when they aren't very trusting!", 2)
         P_S("   You put the key in your pocket for safekeeping.", 2)
-        P_S("There doesn't seem to be anyting else in this room of any", 2)
+        P_S("There doesn't seem to be anything else in this room of any", 2)
         P_S("use, so you look around for your potential exits.", 2)
         # Log that the user now has possession of the Key
         UserStats["key"] = True
@@ -2111,7 +2111,7 @@ def RoomSSW():
     # Log users presence in this room
     PreviousRoom = "SSW"
     # Path information
-    P_S("Standing in security, a door has appeard to your right, you", 2)
+    P_S("Standing in security, a door has appeared to your right, you", 2)
     P_S("assume that if you go through it, it should take you to the", 2)
     P_S("brig -  as the brig is in that direction. Or you can go onto", 2)
     P_S("the external corridor and towards the Mess Hall. Where would", 2)
@@ -2175,7 +2175,7 @@ def RoomWSW():
     P_S("notice the Tribble that was on the pool table drifting along next", 2)
     P_S("to you. You slowly reach out for the little creature, as you pull", 2)
     P_S("it into your chest it makes no sound, it's already gone.", 2)
-    P_S("   You drift away, at least satisfied that niether you nor the", 2)
+    P_S("   You drift away, at least satisfied that neither you nor the", 2)
     P_S("Tribble will ever be alone on your journey through space. You", 2)
     P_S("close your eyes for the last time.", 2)
     P_S('''
@@ -2225,7 +2225,7 @@ def RoomWNW():
     # Text for user's first visit to the Conference Lounge
     if UserStats["phaser"] is False:
         P_S("You head inside the large room filled with a large oval table", 2)
-        P_S("and at least 30 chairs surrounding it. Apart from it's size", 2)
+        P_S("and at least 30 chairs surrounding it. Apart from its size", 2)
         P_S("this room is almost identical to the smaller meeting rooms", 2)
         P_S("dotted about the ship. You can't imagine finding much in this", 2)
         P_S("room as there is no storage.", 2)
@@ -2316,7 +2316,7 @@ def RoomNNW():
         P_S("   Standing up again, you look around to see if there's", 2)
         P_S("anything that might help you with your current plight.", 2)
         P_S("You head over to the first officers chair and notice", 2)
-        P_S("lying on the floor underneat the seat...", 2)
+        P_S("lying on the floor underneath the seat...", 2)
         P_S("You found a comms device!", 2)
         # Log that the user now has possession of the comms device
         UserStats["comms"] = True
@@ -2334,7 +2334,7 @@ def RoomNNW():
             P_S("USS Enterprise NCC-1703, it's so good to hear your voice!", 2)
             P_S("things are a bit crazy up here, we were struck by an", 2)
             P_S("asteroid and lost control of the ship, we ended up", 2)
-            P_S("passing though a Black Hole. I must have been thrown", 2)
+            P_S("passing through a Black Hole. I must have been thrown", 2)
             P_S("about in the commotion as I woke up on the floor and", 2)
             P_S('things were all over the place!', 2)
             P_S("\nYou wait anxiously for Clancy to respond.\n", 2)
