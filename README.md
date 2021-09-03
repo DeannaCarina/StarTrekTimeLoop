@@ -354,6 +354,119 @@ From the table, I was able to recognise which features were more likely to have 
 
 # Testing
 ### Functionality
+The first phase of my testing regime for the website was to look at the functionality of the website and make sure that it meets the needs of the user on the most basic levels and also to ensure that all the interactive aspects of the website all worked with no problems.
+<ul>
+    <li>All internal links on the website need to be usable, and open in the same window.
+        <ul>
+           <li>All 'internal links' found on the main game page are in the form of modal windows. When a button is pressed, the modal appears and when the user presses the close icon or clicks outside of the modal, it disappears.</li>
+        </ul>    
+    </li>       
+    <li>All external links on the website need to be usable, and open in a new window.
+        <ul>
+            <li>The only external link I have on the game page is the link to the game guide within the 'How to Play' modal. This opens in an external window to ensure the user isn't navigated away from the page which in turn would lose their game progress.</li>
+        </ul>    
+    </li>  
+    <li>All elements with an associated psuedo class work when the action is carried out (e.g. Hover).
+        <ul>
+            <li>All buttons will change colour when the user hovers over them</li>
+        </ul>    
+    </li>     
+</ul><br>
+
+I tested the usability and intuitiveness of the website using different focus groups divided by age: <br>
+<table>
+    <tr>
+        <th>Age Group</th>
+        <th>Quantity</th>
+        <th>Comments</th>
+    </tr>
+    <tr>
+        <td><strong>16-25</strong></td>
+        <td>TBC</td>
+        <td>
+            <ul>
+                <li>User knew the reason for the webpage straight away?</li>
+                <li>Website easily navigable?</li>
+                <li>Visually appealing?</li>
+                <li>Enjoyed the content?</li>
+                <li>Found game easy/hard?</li>
+                <li>Phone/Tablet/PC?</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>26-35</strong></td>
+        <td>TBC</td>
+        <td>
+            <ul>
+                <li>User knew the reason for the webpage straight away?</li>
+                <li>Website easily navigable?</li>
+                <li>Visually appealing?</li>
+                <li>Enjoyed the content?</li>
+                <li>Found game easy/hard?</li>
+                <li>Phone/Tablet/PC?</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>36-45</strong></td>
+        <td>TBC</td>
+        <td>
+            <ul>
+                <li>User knew the reason for the webpage straight away?</li>
+                <li>Website easily navigable?</li>
+                <li>Visually appealing?</li>
+                <li>Enjoyed the content?</li>
+                <li>Found game easy/hard?</li>
+                <li>Phone/Tablet/PC?</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>46-55</strong></td>
+        <td>TBC</td>
+        <td>
+            <ul>
+                <li>User knew the reason for the webpage straight away?</li>
+                <li>Website easily navigable?</li>
+                <li>Visually appealing?</li>
+                <li>Enjoyed the content?</li>
+                <li>Found game easy/hard?</li>
+                <li>Phone/Tablet/PC?</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>56-65</strong></td>
+        <td>TBC</td>
+        <td>
+            <ul>
+                <li>User knew the reason for the webpage straight away?</li>
+                <li>Website easily navigable?</li>
+                <li>Visually appealing?</li>
+                <li>Enjoyed the content?</li>
+                <li>Found game easy/hard?</li>
+                <li>Phone/Tablet/PC?</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>66+</strong></td>
+        <td>TBC</td>
+        <td>
+            <ul>
+                <li>User knew the reason for the webpage straight away?</li>
+                <li>Website easily navigable?</li>
+                <li>Visually appealing?</li>
+                <li>Enjoyed the content?</li>
+                <li>Found game easy/hard?</li>
+                <li>Phone/Tablet/PC?</li>
+            </ul>
+        </td>
+    </tr>
+</table><br>
+<a href="#Contents">Back to the top.</a><br>
+
 <img src="assets/documents/readme-images/solution.png"><br>
 <img src="assets/documents/readme-images/testing.png"><br>
 
@@ -377,9 +490,11 @@ Although the majority of the HTML, CSS and JavaScript came from a pre-made templ
 </ul>
 
 ### Peer Review
-As a students of Code Instutute we have Slack as a resource to help and compliment our learning. We are able to post our web pages and GitHub repositories for other students to review. I would like to thank Matt Bodden for taking the time to look at my website and texting out the game.
+As a students of Code Instutute we have Slack as a resource to help and compliment our learning. We are able to post our web pages and GitHub repositories for other students to review. I would like to thank Matt Bodden for taking the time to look at my website and testing out the game.
 
 ### Development Problems
+The main 'problem' I found I had during the development process was trying to focus on the code rather than the content. I have found (not only with this project but with previous projects also) that I spend the majority of my project development time writing content. I don't think this is necessarily a bad thing as I always try to leave plentiful time to complete my projects, however this probably wouldn't be ideal in the workplace when there are strict time restraints to follow. I seemed to get 'sucked in' to the story line with this project, and if I had more time (even though the majority of my project was complete over 2 weeks in advance of my deadline), I would have implemented more story-line features such as more items to pick up, other player statistics such as 'luck', or perhaps another character on the ship which the user keeps running in to, as well as more random elements to the game such as the same random event that has (for example) a 10% chance of happening on entry to a new room. Due to going so in-depth with the story it's resulted in the main python file being over 2500 lines long - which is not ideal for maintainability as it makes it more difficult to find pieces of code that could contain a bug or error.
+
 ### Accessibility
 <img src="assets/documents/readme-images/wavereport.png"><br>
 
