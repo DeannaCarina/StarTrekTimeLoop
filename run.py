@@ -536,7 +536,7 @@ def Room1_1S():
     P_S("With nothing else of interest in this room you look around to see", 2)
     P_S("your exit options. In this hexagonal room, there are two doors", 2)
     P_S("that seem to be heading in port-bow and starboard-bow directions,", 2)
-    P_S("as well as a door on your right reading to starboard, and one", 2)
+    P_S("as well as a door on your right heading to starboard, and one", 2)
     P_S("behind you heading to stern. Where would you like to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_1S"
@@ -871,7 +871,7 @@ def Room1_1SW():
         P_S("happening on this ship, you find yourself somewhere", 2)
         P_S("completely wrong for the layout of the ship...", 2)
     P_S("\n-------------------------------------------\n", 3)
-    print("You are in a Crew Member's Quarters area.")
+    print("You are in the Crew Quarters area.")
     # If user has the locator device and batteries, show the ship diagram
     while UserStats["locator"] and UserStats["batteries"]:
         P_S('''
@@ -1151,7 +1151,7 @@ def Room1_2E():
         P_S("   You shake your head in frustration and keep on looking.", 2)
         P_S("After a little while you start to feel a bit funny, your", 2)
         P_S("hands start to shake and take on a life of their own grabbing", 2)
-        P_S("things of the shelves and throwing them across the room.", 2)
+        P_S("things off the shelves and throwing them across the room.", 2)
         P_S("   Just as soon as this strange behaviour started, it stops", 2)
         P_S("again. You rack your brain trying to figure out what could", 2)
         P_S("have been the cause and can only think that with the black", 2)
@@ -1312,11 +1312,11 @@ def Room1_2S():
                 P_S("door handle and look around for your next path.", 2)
                 break
     # Path Information
-    P_S("You look around the brig and plan your next move. There are four", 2)
-    P_S("doorways in this room, but two of them are distorting and ", 2)
-    P_S("shrinking so you rule them out as potential exits. The other two", 2)
-    P_S("doors are on opposite sides of the room - one heading to port,", 2)
-    P_S("and the other to starboard. Where would you like to go?", 2)
+    P_S("There are four doorways in this room, but two of them are", 2)
+    P_S("distorting and shrinking so you rule them out as potential exits.", 2)
+    P_S("The other two doors are on opposite sides of the room - one", 2)
+    P_S("heading to port, and the other to starboard. Where would you like", 2)
+    P_S("to go?", 2)
     # Log users presence in this room
     PreviousRoom = "1_2S"
     # Choice of where to go to
@@ -2098,7 +2098,7 @@ def RoomSSW():
         P_S("very helpful when they aren't very trusting!", 2)
         P_S("   You put the key in your pocket for safekeeping.", 2)
         P_S("There doesn't seem to be anyting else in this room of any", 2)
-        P_S("use. So you look around for your potential exits.", 2)
+        P_S("use, so you look around for your potential exits.", 2)
         # Log that the user now has possession of the Key
         UserStats["key"] = True
     elif UserStats["key"] is True:
@@ -2111,7 +2111,7 @@ def RoomSSW():
     # Log users presence in this room
     PreviousRoom = "SSW"
     # Path information
-    P_S("Standin in security, a door has appeard to your right, you assume", 2)
+    P_S("Standing in security, a door has appeard to your right, you assume", 2)
     P_S("that if you go through it, it should take you to the brig as the", 2)
     P_S("brig is in that direction. Or you can go onto the external", 2)
     P_S("corridor and towards the Mess Hall. Where would you like to go?", 2)
@@ -2127,7 +2127,10 @@ def RoomWSW():
 
     global PreviousRoom
     if PreviousRoom == "1_1SW":
-        P_S("Travel text from 1_1SW (Crew Quarters) to WSW (Rec Room)", 2)
+        # Travel text from 1_1SW (Crew Quarters) to WSW (Rec Room)
+        P_S("You head deeper into the crew quarters area and take a left", 2)
+        P_S("to go towards the Recreation room. ", 2)
+
     elif PreviousRoom == "1_2SW":
         P_S("Travel text from 1_2SW (Mess Hall) to WSW (Rec Room)", 2)
     P_S("\n-------------------------------------------\n", 3)
@@ -2259,6 +2262,7 @@ def RoomNNW():
         P_S("", 2)
         P_S("You found a comms device!", 2)
         # Log that the user now has possession of the comms device
+        UserStats["comms"] = True
         if UserStats["batteries"] is True:
             # Text for if the user has possession of the batteries
             P_S("\nYou put two of the batteries you found inside of the,", 2)
