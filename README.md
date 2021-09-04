@@ -492,37 +492,37 @@ The third phase of my testing regime was to ensure that all user stories identif
 <em>"Know the theme of the game as soon as I navigate to the landing page"</em><br>
 <img src="assets/documents/readme-images/featterm.png"><br>
 
->Text of how this was achieved.<br>
+>With the use of the background image from Unsplash, the title being quickly visible by users, as well as the more subtle features such as the monospaced font, it would be clear to most people visiting the page that it is something to do with space or something futuristic. Even for users that have no knowledge of Star Trek (which would be a rare thing anyway) should have some vague idea of the theme of the game. <br>
 
 <em>"Navigate the website quickly and effectively"</em><br>
 <img src="assets/documents/readme-images/featbuttons.png"><br>
 
->Text of how this was achieved.<br>
+>The buttons used for starting the game, showing the 'how to play' modal and showing the modal containing the music options are all at the top of the page and easily visible to all users. I wanted these to be easily noticable for anyone visiting the page and so it made most sense to have them at the top as the majority of people visiting the site will read from top-to-bottom and so will see these first.<br>
 
 <em>"Quickly find the relevant information I need to be able to play the game"</em><br>
 <img src="assets/documents/readme-images/feathow.png"><br>
 
->Text of how this was achieved.<br>
+>All of the relevant information needed to start and play the game are within the 'how to play' module which is visible via the button at the top of the page. This is accessible at any time while the user is playing the game so they can reference back to it whenever they need.<br>
 
 <em>"Have an interesting and in-depth story line to make the game more interesting"</em><br>
 <img src="assets/documents/readme-images/intro.gif"><br>
 
->Text of how this was achieved.<br>
+>Most of my time developing this game was spent on creating the story content. I feel that I have done a fairly good job with this as everyone I have shown the game to has commented on how well the story flows and that there is a good balance of drama and humour.<br>
 
 <em>"Have features that will enable me to make the game easier or harder"</em><br>
 <img src="assets/documents/readme-images/gameguide.png"><br>
 
->Text of how this was achieved.<br>
+>None of the people I showed the game to were able to win on their first try. Even myself as the one who made the game didn't win until my 4th try and I made it! So I felt it would be a good idea to allow the user access to a walkthrough of sorts. The game guide I have made is accessible via the how to play button and is a downloadable PDF file. I have included a number of 'walkthroughs' with varying degrees of helpfullness. One of them for example only shows the layout of the map with no other information, whereas another one shows a full solution. I thought it would be a good idea for the user to choose how much help they would like when playing the game. <br>
 
 <em>"Have the option of background music to add to the overall feel of the game"</em><br>
 <img src="assets/documents/readme-images/featmusic.png"><br>
 
->Text of how this was achieved.<br>
+>I have included three youtube videos in the modal '"Fancy some background music?' to allow the user the option of extra ambience while playing the game. They are all Star Trek themed and I feel they add much more to the game play and atmosphere when they are used.<br>
 
 <em>"Have a way to track the progress of gameplay"</em><br>
 <img src="assets/documents/readme-images/feattick.png"><br>
 
->Text of how this was achieved.<br>
+>Underneath the game terminal I have included a tick list for the user to fill in as they play the game as a way to keep track of their progress. I found a few times while I was playing the game (and this wan't a feature) that I had forgotten which items I had collected and either had to spend time scrolling up through the terminal to check or to go back to previous rooms to see if I already had the item. I feel this tick list is such a simple feature but adds so much more to the game and reduces the chance of user frustration.<br>
 
 
 ### Code Validation
