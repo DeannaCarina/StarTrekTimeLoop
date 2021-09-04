@@ -303,7 +303,10 @@ Throughout the planning, design, testing and deployment of the website, I have u
 </ol>
     
 ### Frameworks, Libraries and Programs
-<ol>  
+<ol> 
+    <li><a href="https://docs.python.org/3/library/time.html">Python time library</a>
+        <ul>Used to delay the next line of text in the python terminal</ul>
+    </li>
     <li><a href="https://favicon.io/" target="_blank">Favicon.io</a>
         <ul><li>Used to create the tab icon from an original PNG file</li></ul>
     </li>
@@ -638,12 +641,29 @@ If you want to make changes to the repo without affecting it, you can make a cop
 
 # Credits
 ### Code
+<ul>
+    <li>Python Essentials Module from Code Institute</li>
+    <li><a href="https://stackoverflow.com/questions/287871/how-to-print-colored-text-to-the-terminal">Code for coloured text in the python terminal</a></li>
+    <li><a href="https://docs.python.org/3/library/time.html">Imported library from Python Docs</a></li>
+</ul>
+
 ### Content
+The main theme of the game is based on Gene Roddenberry's Star Trek. However the main story line has been made by myself. Some names of creatures and details were taken from the Star Trek fan wiki <a href="https://memory-alpha.fandom.com/wiki/Portal:Main"><strong>HERE</strong></a>
 #### Images
+The only image on the site is taken from Unsplash and was taken by Nathan Anderson.
 #### Audio/Video
+<ol>
+    <li><a href="https://www.youtube.com/watch?v=ARcgqTx3NOg">Star Trek: The Motion Picture - The Enterprise</a> 
+    Uploaded by <a href="https://www.youtube.com/channel/UCRRtJojwuI4WEmBBw2W3X9A">jediking12</a></li>
+    <li><a href="https://www.youtube.com/watch?v=8rIWyybNb6c">Star Trek Mega Suite: Live Long and Prosper (Vulcan Suite)</a> 
+    Uploaded by <a href="https://www.youtube.com/channel/UCZqbxnrI1PHe6OPgvS5spVg">Tyrannicus</a></li>
+    <li><a href="https://www.youtube.com/watch?v=dASkOyQXlzw">Star Trek: Beyond (Full score)</a> 
+    Uploaded by <a href="https://www.youtube.com/channel/UCR5aSgzmBdOxchDfK7bzGEA">B B</a></li>
+</ol>
+Overall the composers and writers for the above peices of music are: JERRY GOLDSMITH, JAMES HORNER, ALEXANDER COURAGE, JAY CHATTAWAY, CLIFF EIDELMAN, LEONARD ROSENMAN, PAUL BAILLARGEON, GERALD FRIED and MICHAEL GIACCHINO.
 
 ### Acknowledgements
-<a href="#top">Back to the top.</a>
+To my amazing other half Tom - You kept me calm through yet another project and made me think of the problems logically. You also tested the game multiple times when I couldn't bring myself to do it!
 
 # Screenshots
 <a href="#top">Back to the top.</a>
@@ -652,13 +672,12 @@ If you want to make changes to the repo without affecting it, you can make a cop
 <img src="assets/documents/readme-images/sttlscreen3.png"><br>
 
 # References
+
+[1]"Lists of Star Trek episodes - Wikipedia", En.wikipedia.org, 2021. [Online]. Available: https://en.wikipedia.org/wiki/Lists_of_Star_Trek_episodes. [Accessed: 25- Aug- 2021].
+
+[2]"It would take far longer to watch all of Star Trek than you think", Redshirts Always Die, 2021. [Online]. Available: https://redshirtsalwaysdie.com/2021/01/22/take-far-longer-watch-star-trek-think/. [Accessed: 25- Aug- 2021].
+
 <a href="#top">Back to the top.</a>
-
-25/8 https://en.wikipedia.org/wiki/Lists_of_Star_Trek_episodes
-25/8 https://redshirtsalwaysdie.com/2021/01/22/take-far-longer-watch-star-trek-think/
-
-
-
 
 
 
