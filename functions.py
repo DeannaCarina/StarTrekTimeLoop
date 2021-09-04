@@ -162,11 +162,11 @@ def NoHealth():
     P_S("reached a critical level of 0 or less). You can no", 2)
     P_S("longer carry on trying to reach Nova VII. You lay down", 2)
     P_S("and close your eyes, your body too broken to carry on.", 2)
-    P_S('''
+    P_S('''\x1b[1;31m
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
     |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
-    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
+    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|\033[0m
             \n
             ''', 1)
     Credits()
@@ -177,13 +177,13 @@ def Credits():
     Any time the game ends either via a user death or game completion,
     the credits function will be called displaying the following text.
     """
-    P_S('''
+    P_S('''\033[94m
       _____ _____  ______ _____ _____ _______ _____
      / ____|  __ \|  ____|  __ \_   _|__   __/ ____|
     | |    | |__) | |__  | |  | || |    | | | (___
     | |    |  _  /|  __| | |  | || |    | |  \___ |
     | |____| | \ \| |____| |__| || |_   | |  ____) |
-     \_____|_|  \_\______|_____/_____|  |_| |_____/
+     \_____|_|  \_\______|_____/_____|  |_| |_____/\033[0m
     \n''', 2)
     P_S('''
                         Developer

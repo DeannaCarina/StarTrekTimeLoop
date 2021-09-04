@@ -77,19 +77,19 @@ def PlayGame():
     from within another function. This function allows the user to
     play or exit the game as well as see or not see the introduction.
     """
-    print('''
+    print('''\033[94m
    _____ _______       _____    _______ _____  ______ _  __
   / ____|__   __|/\   |  __ \  |__   __|  __ \|  ____| |/ /
  | (___    | |  /  \  | |__) |    | |  | |__) | |__  | ' /
   \___ \   | | / /\ \ |  _  /     | |  |  _  /|  __| |  <
   ____) |  | |/ ____ \| | \ \     | |  | | \ \| |____| . \ 
- |_______ _____/__  __|______\  _ |_|  ____ \_____________\.
+ |_______ _____/__  __|______\  _ |_|  ____ \_____________\.\033[96m
  |__   __|_   _|  \/  |  ____| | |    / __ \ / __ \|  __ \ 
     | |    | | | \  / | |__    | |   | |  | | |  | | |__) |
     | |    | | | |\/| |  __|   | |   | |  | | |  | |  ___/
     | |   _| |_| |  | | |____  | |___| |__| | |__| | |
     |_|  |_____|_|  |_|______| |______\____/ \____/|_|
-    \n''')
+    \033[0m\n''')
     WantToPlay = input("Would you like to play? (Y/N): \n")
     if WantToPlay.lower() == "y" or WantToPlay.lower() == "yes":
         P_S("Commencing time loop in...", 1.5)
@@ -153,11 +153,11 @@ o               .         ___---___                    .
                 P_S("equipment before you can safely leave via the", 2)
                 P_S("transporter room. \n", 2)
                 P_S("You will need the following items to safely beam ", 2)
-                P_S("down to Nova VII:", 2)
+                P_S("down to Nova VII:\x1b[1;33m", 2)
                 print("     1. Locator Device")
                 print("     2. Communication (Comms) Device")
                 print("     3. Batteries for Items 1 & 2")
-                P_S("     4. Override key for the transporter device\n", 4)
+                P_S("     4. Override key for the transporter\033[0m\n", 4)
                 P_S("On your exploration of the ship, you might also find", 2)
                 P_S("weapons and items that will help you with healing,", 2)
                 P_S("energy levels and defending yourself. As well as", 2)
@@ -173,11 +173,11 @@ o               .         ___---___                    .
     elif WantToPlay.lower() == "n" or WantToPlay.lower() == "no":
         P_S("*Beaming you out*", 1)
         P_S("Initialising shut down...", 1)
-        P_S('''
+        P_S('''\033[96m
                  ___ _ _ ___   ___ _ _ ___
                 |_ _| | | __> | __| \ | . |
                  | ||   | _>  | _>|   | | |
-                 |_||_|_|___> |___|_\_|___/
+                 |_||_|_|___> |___|_\_|___/\033[0m
                 ''', 2)
         Credits()
     else:
@@ -322,7 +322,8 @@ def Room1_1N():
         P_S("you can smell something strange, it's Neurazine Gas! You", 2)
         P_S("quickly cover your nose and mouth with your sleeve and make a", 2)
         P_S("hasty retreat from the room. You cough and splutter trying to", 2)
-        P_S("rid your lungs of the putrid gases. You lose 2 health.", 2)
+        P_S("rid your lungs of the putrid gases.", 2)
+        P_S("\x1b[1;31mYou lose 2 health.\033[0m", 2)
         # Log that user has now visited this room
         FirstVisits["1_1N"] = False
         # Reduce user's health and show user's new health score
@@ -333,8 +334,8 @@ def Room1_1N():
         P_S("You've been in here before! It's the small meeting", 2)
         P_S("room with the Neurazine Gas! You quickly bid a hasty", 2)
         P_S("retreat... even with a visit as fleeting as that, you can", 2)
-        P_S("still feel the effects the gas has had on your lungs. You", 2)
-        P_S("lose 1 health.", 2)
+        P_S("still feel the effects the gas has had on your lungs.", 2)
+        P_S("\x1b[1;31mYou lose 1 health.\033[0m", 2)
         # Reduce user's health and show user's new health score
         Stats(-1)
         CheckStats()
@@ -430,8 +431,8 @@ def Room1_1E():
         P_S("from the oncoming attack, but not without the RedJac first", 2)
         P_S("catching you with his knife. The possessed crew member runs", 2)
         P_S("out of the door clutching his arm where you caught him", 2)
-        P_S("with the KaBar Combat Knife. You lost 1 health (you would", 2)
-        P_S("have lost 2 if you were undefended).", 2)
+        P_S("with the KaBar Combat Knife. \x1b[1;31mYou lost 1 health", 2)
+        P_S("\033[0m(you would have lost 2 if you were undefended).", 2)
         Stats(-1)
         CheckStats()
     else:
@@ -439,7 +440,7 @@ def Room1_1E():
         P_S("\nYou try your best to defend yourself from the possessed", 2)
         P_S("crew member. You punch and kick with all your might whenever", 2)
         P_S("he comes close. Eventually he runs away not wanting to face", 2)
-        P_S("you any longer. You lost 2 health.", 2)
+        P_S("you any longer. \x1b[1;31mYou lost 2 health.\033[0m", 2)
         Stats(-2)
         CheckStats()
     # Path information from this room
@@ -513,7 +514,7 @@ def Room1_1S():
         P_S("blisters. Unsure whether they are radiation or heat burns,", 2)
         P_S("you rush over to the nearby sink and run your hand under", 2)
         P_S("cold water for a few minutes.", 2)
-        P_S("You got hurt from burns! You lost 1 health.", 2)
+        P_S("You got hurt from burns! \x1b[1;31mYou lost 1 health.\033[0m", 2)
         Stats(-1)
         CheckStats()
         # Log that user has now visited this room
@@ -529,7 +530,7 @@ def Room1_1S():
         P_S("the hatch to close it - not learning from your previous", 2)
         P_S("mistakes, you once again pull your hand away after closing", 2)
         P_S("the door to find your palm covered in burns.", 2)
-        P_S("You got hurt from burns! You lost 1 health.", 2)
+        P_S("You got hurt from burns! \x1b[1;31mYou lost 1 health.\033[0m", 2)
         Stats(-1)
         CheckStats()
     # Path information
@@ -609,7 +610,8 @@ def Room1_1W():
         P_S("and head into the room. This is the Science Bay... there must", 2)
         P_S("be something in here of use! After a search in the desk", 2)
         P_S("drawers you find a packet of pretzels which you can't help", 2)
-        P_S("but scavenge and eat on the spot. Your health increases by 1.", 2)
+        P_S("but scavenge and eat on the spot.", 2)
+        P_S("\x1b[1;32mYour health increases by 1.\033[0m", 2)
         Stats(+1)
         P_S("   As you eat, you don't notice that the Neural Parasite you", 2)
         P_S("killed last time has come back to life, and just as", 2)
@@ -635,7 +637,7 @@ def Room1_1W():
         P_S("your attack! Eventually the parasite releases you from", 2)
         P_S("its grasp and falls to the floor in a gooey mound.", 2)
         P_S("   In the commotion and due to the tight grip the Neural", 2)
-        P_S("Parasite had on you - you lost 1 health.", 2)
+        P_S("Parasite had on you. \x1b[1;31mYou lost 1 health.\033[0m", 2)
         Stats(-1)
         CheckStats()
     else:
@@ -650,7 +652,7 @@ def Room1_1W():
         P_S("something but at the same time, glad you weren't taken over", 2)
         P_S("by the parasite. You look down at the hand the parasite was", 2)
         P_S("attached to and see thin trails of blood dripping down your", 2)
-        P_S("arm. You lost 2 health.", 2)
+        P_S("arm. \x1b[1;31mYou lost 2 health.\033[0m", 2)
         Stats(-2)
         CheckStats()
     # Log users presence in this room
@@ -733,7 +735,7 @@ def Room1_1NE():
             P_S("shut down and open the door. You go and stand outside", 2)
             P_S("on the corridor.", 2)
             P_S("   You feel refreshed and ready for your adventure to", 2)
-            P_S("continue, you gain 1 health.", 2)
+            P_S("continue, \x1b[1;32myou gain 1 health.\033[0m", 2)
             Stats(+1)
             break
         elif OTTF.lower() == "2" or OTTF.lower() == "two":
@@ -744,7 +746,7 @@ def Room1_1NE():
             P_S("shut down and open the door. You go and stand outside", 2)
             P_S("on the corridor.", 2)
             P_S("   You feel refreshed and ready for your adventure to", 2)
-            P_S("continue, you gain 1 health.", 2)
+            P_S("continue, \x1b[1;32myou gain 1 health.\033[0m", 2)
             Stats(+1)
             break
         elif OTTF.lower() == "3" or OTTF.lower() == "three":
@@ -756,7 +758,7 @@ def Room1_1NE():
             P_S("shut down and open the door. You go and stand outside", 2)
             P_S("on the corridor.", 2)
             P_S("   You feel refreshed and ready for your adventure to", 2)
-            P_S("continue, you gain 1 health.", 2)
+            P_S("continue, \x1b[1;32myou gain 1 health.\033[0m", 2)
             Stats(+1)
             break
         elif OTTF.lower() == "4" or OTTF.lower() == "four":
@@ -822,7 +824,7 @@ def Room1_1SE():
         P_S("of operating tools in your haste to look around. You quickly", 2)
         P_S("look through some of the cupboards. You find an energy bar", 2)
         P_S("high in electrolytes and quickly eat it before continuing on", 2)
-        P_S("your way. You gained 1 health.", 2)
+        P_S("your way. \x1b[1;32mYou gained 1 health.\033[0m", 2)
     # Log that user has now visited this room
         FirstVisits["1_1SE"] = False
     else:
@@ -832,9 +834,9 @@ def Room1_1SE():
         P_S("original positions on the sterile tray. You quickly head over", 2)
         P_S("to the same cupboard you found the energy bar in before, but", 2)
         P_S("in your haste knock the operating tools over again! You open", 2)
-        P_S("up the cupboard and find the energy bar sat there as if you", 2)
-        P_S("had never taken it in the first place. You eat it again,", 2)
-        P_S("grateful for any extra energy. You gained 1 health.", 2)
+        P_S("the cupboard and find the energy bar sat there as if you had", 2)
+        P_S("never taken it in the first place. You eat it again, grateful", 2)
+        P_S("for any extra energy. \x1b[1;32mYou gained 1 health.\033[0m", 2)
     Stats(+1)
     # Path Information
     P_S("From sickbay you have three options of where you can go: There is", 2)
@@ -902,7 +904,7 @@ def Room1_1SW():
         P_S("of Moba Fruit wrapped in cellophane on the shelf next to you.", 2)
         P_S("The crew member who stayed in here must have been Bajoran.", 2)
         P_S("You wolf down the Moba Fruit grateful for the ample fluid it", 2)
-        P_S("contains. You gained 1 health", 2)
+        P_S("contains. \x1b[1;32mYou gained 1 health.\033[0m", 2)
         Stats(+1)
         P_S("Careful not to waste any more time, you head back", 2)
         P_S("outside the room.", 2)
@@ -915,7 +917,7 @@ def Room1_1SW():
         P_S("are locked. You jog forward and head into the one room you", 2)
         P_S("are sure is open. You head straight for the Moba Fruit and", 2)
         P_S("eat it as quickly as you can before heading back outside.", 2)
-        P_S("You gain 1 health.", 2)
+        P_S("\x1b[1;32mYou gain 1 health.\033[0m", 2)
         Stats(+1)
     # Path information
     P_S("From here, you know that if you go further into the crew quarters", 2)
@@ -982,7 +984,7 @@ def Room1_1NW():
         P_S("watch through the window at the great expanse of space, you", 2)
         P_S("take a few deep breaths and gather your thoughts before", 2)
         P_S("carrying on.", 2)
-    P_S("Feeling refreshed, you gain 1 health.", 2)
+    P_S("Feeling refreshed, \x1b[1;32myou gain 1 health.\033[0m", 2)
     Stats(+1)
     # Path information
     P_S("From the Observation deck, you can go down the corridor just", 2)
@@ -1044,7 +1046,7 @@ def Room1_2N():
     # Text for every visit to this room
     P_S("You look around for a little while and find a snack bar, you", 2)
     P_S("are very hungry, so quickly un-wrap the snack and wolf it", 2)
-    P_S("down. You gain 1 health.", 2)
+    P_S("down. \x1b[1;32mYou gain 1 health.\033[0m", 2)
     Stats(+1)
     KeepLooking = False
     while not KeepLooking:
@@ -1063,11 +1065,11 @@ def Room1_2N():
             P_S("door opened. You feel your body break under the force of", 2)
             P_S("the blast and you get slammed into the wall. You close", 2)
             P_S("your eyes and lose consciousness.", 2)
-            P_S('''
+            P_S('''\x1b[1;31m
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
     |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
-    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
+    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|\033[0m
             \n''', 2)
             Credits()
         elif YesOrNo.lower() == 'no' or YesOrNo.lower() == "n":
@@ -1158,7 +1160,7 @@ def Room1_2E():
         P_S("hole interference and the space-time anomalies that are", 2)
         P_S("occurring, it could have attracted a Dark Matter Lifeform.", 2)
         P_S("Thankfully it didn't do too much damage to you and left", 2)
-        P_S("fairly soon. You lose 1 Health.", 2)
+        P_S("fairly soon. \x1b[1;31mYou lose 1 Health.\033[0m", 2)
         Stats(-1)
         CheckStats()
         # Log that user has now visited this room
@@ -1181,7 +1183,7 @@ def Room1_2E():
         P_S("You nose starts to bleed with the intensity of your will", 2)
         P_S("to not move your hand. Just as quick as it possessed you,", 2)
         P_S("it leaves your body again. But not without taking its toll", 2)
-        P_S("on your mind. You lose 2 health.", 2)
+        P_S("on your mind. \x1b[1;31mYou lose 2 health.\033[0m", 2)
         Stats(-2)
         CheckStats()
     P_S("You take a moment to catch your breath before heading outside of", 2)
@@ -1261,7 +1263,7 @@ def Room1_2S():
         P_S("to see the tail-end mist of a Dikironium Cloud floating", 2)
         P_S("through the back wall of one of the cells.", 2)
         P_S("   You close your eyes and pass out, not knowing if or when", 2)
-        P_S("you might wake up again... You lost 3 health.", 2)
+        P_S("you might wake up again. \x1b[1;31mYou lost 3 health.\033[0m", 2)
         Stats(-3)
         CheckStats()
         P_S("...", 2)
@@ -1292,7 +1294,7 @@ def Room1_2S():
                 P_S("   You unwrap the package and find two rolls of bread", 2)
                 P_S("they seem fresh, so you sit on the bed and rip them", 2)
                 P_S("apart, eating them bit-by-bit.", 2)
-                P_S("   Feeling full, you gain 1 health.", 2)
+                P_S("   Feeling full, \x1b[1;32myou gain 1 health.\033[0m", 2)
                 Stats(+1)
                 P_S("You step out of the cell and look for you next path.", 2)
                 break
@@ -1304,7 +1306,7 @@ def Room1_2S():
                 P_S("for the exit while watching the cloud glide towards", 2)
                 P_S("you... not fully aware of your surroundings. You run", 2)
                 P_S("headfirst into the exit doorframe and knock yourself", 2)
-                P_S("out cold. You lost 2 health.", 2)
+                P_S("out cold. \x1b[1;31mYou lost 2 health.\033[0m", 2)
                 Stats(-2)
                 CheckStats()
                 P_S("   As you come round, thankfully the Dikironium cloud", 2)
@@ -1389,17 +1391,17 @@ def Room1_2W():
         P_S("Engine Bay. You keep shooting at the worms, holding them", 2)
         P_S("back as you make your decision.", 2)
     elif UserStats["knife"] is True and UserStats["phaser"] is False:
-        P_S("You pull your knife from your belt and start slashing at the", 2)
-        P_S("Genesis Worms. As you back away from the horde of creatures,", 2)
-        P_S("you look around you for any potential exits. There are", 2)
-        P_S("three... one to your left heading towards the bow of the", 2)
-        P_S("ship, one behind you which is in the direction you're", 2)
-        P_S("already going. Or you can run back through the Science Bay", 2)
-        P_S("and into the Engine Bay. You keep slashing at the worms,", 2)
-        P_S("attempting to hold them back. As you make your decision", 2)
-        P_S("the Genesis Worms lunge at you, catching your hands and", 2)
-        P_S("arms with their fangs, but recoil away when your knife", 2)
-        P_S("finds their fleshy bodies.", 2)
+        P_S("You pull your knife from your belt and slash at the Genesis", 2)
+        P_S("Worms. As you back away from the horde of creatures, you look", 2)
+        P_S("around you for any potential exits. There are three. One to", 2)
+        P_S("your left heading towards the bow of the ship, one behind you", 2)
+        P_S("which is in the direction you're already going. Or you can", 2)
+        P_S("run through the Science Bay and into the Engine Bay. You keep", 2)
+        P_S("slashing at the worms, attempting to hold them back. As you", 2)
+        P_S("make your decision the Genesis Worms lunge at you, catching", 2)
+        P_S("your hands andarms with their fangs, but recoil away when", 2)
+        P_S("your knife finds their fleshy bodies.", 2)
+        P_S("\x1b[1;31mYou lose 1 Health.\033[0m", 2)
         Stats(-1)
         CheckStats()
     else:
@@ -1420,6 +1422,7 @@ def Room1_2W():
         P_S("the Genesis Worms lunge at you, catching your hands and", 2)
         P_S("arms with their fangs, but recoil away when you flail your", 2)
         P_S("limbs and catch their bodies with the force of your terror.", 2)
+        P_S("In the commotion, \x1b[1;31myou lose 2 health.\033[0m", 2)
         Stats(-2)
         CheckStats()
     # Path information
@@ -1482,11 +1485,11 @@ def Room1_2NE():
     P_S("can't help but think that of all the ways to die... suffocated", 2)
     P_S("by Tribbles wasn't the way you thought you'd go.", 2)
     P_S("   You close your eyes and succumb to the fluffy onslaught.", 2)
-    P_S('''
+    P_S('''\x1b[1;31m
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
     |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
-    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
+    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|\033[0m
         \n''', 2)
     Credits()
 
@@ -1556,7 +1559,7 @@ def Room1_2SE():
         P_S("   You pick one up and take the foil off before putting", 2)
         P_S("the small tart into your mouth in one whole piece.", 2)
         P_S("   Reminded of home and filled with new determination", 2)
-        P_S("to escape the crippled ship, you gain 3 health.", 2)
+        P_S("to escape the ship, \x1b[1;32myou gain 3 health.\033[0m", 2)
         Stats(+3)
         P_S("You neatly fold the package back up and place it back under", 2)
         P_S("your bed.", 2)
@@ -1566,7 +1569,8 @@ def Room1_2SE():
         # Text for user's subsequent visit to this room
         P_S("You head into your personal quarters and kneel on the floor", 2)
         P_S("next to your bed. You pull out the folded package of Cherry", 2)
-        P_S("Bakewells and eat another one whole. You gain 2 health.", 2)
+        P_S("Bakewells and eat another one whole.", 2)
+        P_S("\x1b[1;32mYou gain 2 health.\033[0m", 2)
         Stats(+2)
         P_S("You neatly fold the package back up and place it back under", 2)
         P_S("your bed.", 2)
@@ -1629,7 +1633,7 @@ def Room1_2SW():
         P_S("window. You head over to the serving counter and grab a plate", 2)
         P_S("of your favourite foods.", 2)
         P_S("   You take a moment to sit down and have a few mouthfuls", 2)
-        P_S("before you continue on your journey. You gain 2 health.", 2)
+        P_S("before you continue. \x1b[1;32mYou gain 2 health.\033[0m", 2)
         Stats(+2)
         # Log that user has now visited this room
         FirstVisits["1_2SW"] = False
@@ -1638,7 +1642,7 @@ def Room1_2SW():
         P_S("The Mess Hall is just as empty as it was the first time you", 2)
         P_S("visited. You head over to the table you were sat at during", 2)
         P_S("your first visit and grab a few more pieces of food from the", 2)
-        P_S("plate you put together. You gain 1 health.", 2)
+        P_S("plate you put together. \x1b[1;32mYou gain 1 health.\033[0m", 2)
         Stats(+1)
     # Path information
     P_S("From the Mess Hall you have two potential exits: The door in the", 2)
@@ -1692,7 +1696,7 @@ def Room1_2NW():
         P_S("fireplace and make your way to the chaise.", 2)
         P_S("   You sit down and close your eyes, taking a moment to", 2)
         P_S("catch your breath and gather your thoughts before you", 2)
-        P_S("continue on your journey, you gain 2 health.", 2)
+        P_S("continue onwards, \x1b[1;32myou gain 2 health.\033[0m", 2)
         Stats(+2)
         # Log that user has now visited this room
         FirstVisits["1_2NW"] = False
@@ -1701,7 +1705,7 @@ def Room1_2NW():
         P_S("You head over to the chaise nodding at the portrait above", 2)
         P_S("the fireplace as you go and take a moment to have a", 2)
         P_S("few deep breaths and gather your thoughts before you", 2)
-        P_S("continue on your journey. You gain 1 health.", 2)
+        P_S("continue onwards. \x1b[1;32mYou gain 1 health.\033[0m", 2)
         Stats(+1)
     # Path information
     P_S("You stand up from the chaise and head out of the room. When", 2)
@@ -1762,9 +1766,9 @@ def RoomNNE():
         P_S("dead. The room is large and comfortable with a large table", 2)
         P_S("in the middle covered in files and charts.", 2)
         P_S("   You head over to the captain's desk and open a few drawers", 2)
-        P_S("down the left hand side. In the third drawer you find a KaBar", 2)
-        P_S("Combat Knife! You hook it on to your belt and make your way", 2)
-        P_S("out of the room.", 2)
+        P_S("down the left hand side. In the third drawer you find a", 2)
+        P_S("\x1b[1;33mKaBar Combat Knife\033[0m! You hook it on to your", 2)
+        P_S("belt and make your way out of the room.", 2)
         # Log that the user has been here before
         UserStats["knife"] = True
     elif UserStats["knife"] is True:
@@ -1828,7 +1832,7 @@ def RoomENE():
         P_S("   You bump into one of the computer chairs as you look", 2)
         P_S("around which causes it to swivel towards you. You peer", 2)
         P_S("down at the seat and can't believe your luck! You've", 2)
-        P_S("found a locator device!", 2)
+        P_S("found a \x1b[1;33mlocator device\033[0m!", 2)
         # Log that the user now has possession of the locator device
         UserStats["locator"] = True
         # Text for if the user has the batteries
@@ -1919,7 +1923,7 @@ def RoomSSE():
         P_S("would help maintain the ship's machinery, devices,", 2)
         P_S("and cleanliness. You have a look around to see if", 2)
         P_S("there's anything that might come of use to you.", 2)
-        P_S("You found some batteries!", 2)
+        P_S("You found some \x1b[1;33mbatteries\033[0m!", 2)
         # Log that the user now has possession of the batteries
         UserStats["batteries"] = True
         if UserStats["locator"] is False and UserStats["comms"] is False:
@@ -2090,13 +2094,13 @@ def RoomSSW():
     if UserStats["key"] is False:
         P_S("The room is small and is taken up mainly by the large desk", 2)
         P_S("in the middle. You head over to it and open the top drawer.", 2)
-        P_S("You found a key! On close inspection its branded with the", 2)
-        P_S("Starfleet logo. During the three years you have worked on", 2)
-        P_S("The Enterprise, you have only seen this key a handful of", 2)
-        P_S("times, when the residents of a planet want to be in control", 2)
-        P_S("of who beams down to the surface and when - it allows them", 2)
-        P_S("full control over the ship's external beam capabilities -", 2)
-        P_S("very helpful when they aren't very trusting!", 2)
+        P_S("You found a \x1b[1;33mkey\033[0m! On close inspection its", 2)
+        P_S("branded with the Starfleet logo. During the three years you", 2)
+        P_S("have worked on The Enterprise, you have only seen this key a", 2)
+        P_S("handful of times, when the residents of a planet want to be", 2)
+        P_S("in control of who beams down to the surface and when - it", 2)
+        P_S("allows them full control over the ship's external beam", 2)
+        P_S("capabilities - very helpful when they aren't very trusting!", 2)
         P_S("   You put the key in your pocket for safekeeping.", 2)
         P_S("There doesn't seem to be anything else in this room of any", 2)
         P_S("use, so you look around for your potential exits.", 2)
@@ -2179,11 +2183,11 @@ def RoomWSW():
     P_S("   You drift away, at least satisfied that neither you nor the", 2)
     P_S("Tribble will ever be alone on your journey through space. You", 2)
     P_S("close your eyes for the last time.", 2)
-    P_S('''
+    P_S('''\x1b[1;31m
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
     |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
-    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
+    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|\033[0m
         \n''', 2)
     Credits()
 
@@ -2234,9 +2238,9 @@ def RoomWNW():
         P_S("you go around to make sure nothing has been left on the seats", 2)
         P_S("in a rush to leave. Just as you're about to give up and leave", 2)
         P_S("the room you have a quick look underneath the table and can't", 2)
-        P_S("believe your luck! You found a phaser! This will help against", 2)
-        P_S("corporeal threats and reduce if not eliminate any potential", 2)
-        P_S("damage these threats inflict upon you.", 2)
+        P_S("believe your luck! You found a \x1b[1;33mphaser\033[0m! This", 2)
+        P_S("will help against corporeal threats and reduce if not", 2)
+        P_S("eliminate potential damage these threats inflict upon you.", 2)
         P_S("   You hook the phaser onto your belt and head back on to", 2)
         P_S("the corridor outside of the room.", 2)
         # Log that the user now has possession of the phaser
@@ -2318,7 +2322,7 @@ def RoomNNW():
         P_S("anything that might help you with your current plight.", 2)
         P_S("You head over to the first officers chair and notice", 2)
         P_S("something lying on the floor underneath the seat...", 2)
-        P_S("You found a comms device!", 2)
+        P_S("You found a \x1b[1;33mCommunications Device\033[0m!", 2)
         # Log that the user now has possession of the comms device
         UserStats["comms"] = True
         if UserStats["batteries"] is True:
@@ -2487,11 +2491,11 @@ def RoomESETransporterRoom():
                     elif YesOrNo.lower() == 'no' or YesOrNo.lower() == "n":
                         P_S(f"Live long and prosper {name}", 2)
                         P_S("Initialising shut down...", 2)
-                        P_S('''
+                        P_S('''\033[96m
                 ___ _ _ ___   ___ _ _ ___
                |_ _| | | __> | __| \ | . |
                 | ||   | _>  | _>|   | | |
-                |_||_|_|___> |___|_\_|___/
+                |_||_|_|___> |___|_\_|___/\033[0m
                     \n\n\n\n''', 2)
                         Credits()
                     else:
@@ -2503,11 +2507,11 @@ def RoomESETransporterRoom():
                 P_S("beamed halfway down to the planet's surface but", 2)
                 P_S("appeared in space before you could reach your", 2)
                 P_S("destination.", 2)
-                P_S('''
+                P_S('''\x1b[1;31m
      _____ _____ _____ _____    _____ _____ _____ _____
     |   __|  _  |     |   __|  |     |  |  |   __| __  |
     |  |  |     | | | |   __|  |  |  |  |  |   __|    -|
-    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|
+    |_____|__|__|_|_|_|_____|  |_____|\___/|_____|__|__|\033[0m
                     \n
                     ''', 1)
                 Credits()
