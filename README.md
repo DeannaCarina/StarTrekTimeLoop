@@ -74,6 +74,9 @@ Although the Star Trek Time Loop game is greatly influenced by Star Trek, I don'
     <li>Navigate the website quickly and effectively</li>
     <li>Quickly find the relevant information I need to be able to play the game</li>
     <li>Have an interesting and in-depth story line to make the game more interesting</li>
+    <li>Have features that will enable me to make the game easier or harder</li>
+    <li>Have the option of background music to add to the overall feel of the game</li>
+    <li>Have a way to track the progress of gameplay</li>
 </ul>
 
 ##### As the developer I want to...
@@ -369,7 +372,20 @@ The first phase of my testing regime for the website was to look at the function
     <li>All elements with an associated psuedo class work when the action is carried out (e.g. Hover).
         <ul>
             <li>All buttons will change colour when the user hovers over them</li>
+            <li><img src="assets/documents/readme-images/buttongif.gif" width="80%"></li>
         </ul>    
+    </li>
+    <li>All game play elements work as intented.
+        <ul>
+            <li>All paths between gameplay rooms work as intended and all intended travel text between certain rooms is shown. To test this I had to play through the game myself, testing every possible path there is (of which there are 55).</li>
+            <li><img src="assets/documents/readme-images/testing.png" width="80%"></li>
+        </ul>
+    </li>
+    <li>The game itself is winnable.
+        <ul>
+            <li>The game is winnable in a number of ways depending on which path the player takes. They must acquire three items (key, comms device and locator device) before making their way to the transport room to win the game. I carried out a number of different paths to make sure there was no bugs depending on the different paths and found one of the most optimal routes:</li>
+            <li><img src="assets/documents/readme-images/solution.png" width="80%"></li>
+        </ul>
     </li>     
 </ul><br>
 
@@ -466,52 +482,48 @@ I tested the usability and intuitiveness of the website using different focus gr
     </tr>
 </table><br>
 
-<img src="assets/documents/readme-images/solution.png"><br>
-<img src="assets/documents/readme-images/testing.png"><br>
-
 ### Compatability
 The second phase of my testing regime for the website was to ensure that the website is compatible through a range of devices, screen sizes and internet browsers. Although it wasn't a requirement of this project to be responsive, I still think that a large proportion of people that end up playing the game will want to play it on mobile. Throughout the development process, the website was tested on a number of devices: A 17.3 inch windows laptop, a 15.3 inch windows laptop, a 16 inch MacBook Pro, an 8 inch Samsung Galaxy Tab A, a 10.2 inch iPad, A Samsung Galaxy S20 Ultra and A Huawei P30 Pro. It was also tested in Chrome, Firefox, Internet Explorer and Safari as well as Samsung's own internet browser. By also using Chrome Dev Tools, I was able to manually change the screen size to see when elements within the web pages 'break', by using this method, I could pinpoint the exact screen widths and heights to be defined in the CSS media screen queries and alter the stylings to fit accordingly. The majority of the elements on the webpage were resized automatically via the pre-written JavaScript in the Code Institute Python Template, so I needed to do very little in terms of making the page responsive, however I did need to alter the size of the modals at smaller screen sizes as for some reason this didn't resize with the rest of the content. Below is an image of how the web-page looks on a mobile device (Samsung S20 Ultra) and I am very happy with the way it looks.
 <img src="assets/documents/readme-images/phonescreen.png" width="30%"><br>
 
 ### User testing stories
-The third phase of my testing regime was to ensure that customer all user stories identified in the Strategy plane have been acknowledged and achieved.<br><br>
+The third phase of my testing regime was to ensure that all user stories identified in the Strategy plane have been acknowledged and achieved.<br><br>
 
-<em>""</em><br>
-<img src="" alt=""><br>
-
->Text of how this was achieved.<br>
-
-<em>""</em><br>
-<img src="" alt=""><br>
+<em>"Know the theme of the game as soon as I navigate to the landing page"</em><br>
+<img src="assets/documents/readme-images/featterm.png"><br>
 
 >Text of how this was achieved.<br>
 
-<em>""</em><br>
-<img src="" alt=""><br>
+<em>"Navigate the website quickly and effectively"</em><br>
+<img src="assets/documents/readme-images/featbuttons.png"><br>
 
 >Text of how this was achieved.<br>
 
-<em>""</em><br>
-<img src="" alt=""><br>
+<em>"Quickly find the relevant information I need to be able to play the game"</em><br>
+<img src="assets/documents/readme-images/feathow.png"><br>
 
 >Text of how this was achieved.<br>
 
-<em>""</em><br>
-<img src="" alt=""><br>
+<em>"Have an interesting and in-depth story line to make the game more interesting"</em><br>
+<img src="assets/documents/readme-images/intro.gif"><br>
 
 >Text of how this was achieved.<br>
 
-<em>""</em><br>
-<img src="" alt=""><br>
-
->Text of how this was achieved.<br>
-
-<em>""</em><br>
-<img src="" alt=""><br>
-
->Text of how this was achieved.<br>
-
+<em>"Have features that will enable me to make the game easier or harder"</em><br>
 <img src="assets/documents/readme-images/gameguide.png"><br>
+
+>Text of how this was achieved.<br>
+
+<em>"Have the option of background music to add to the overall feel of the game"</em><br>
+<img src="assets/documents/readme-images/featmusic.png"><br>
+
+>Text of how this was achieved.<br>
+
+<em>"Have a way to track the progress of gameplay"</em><br>
+<img src="assets/documents/readme-images/feattick.png"><br>
+
+>Text of how this was achieved.<br>
+
 
 ### Code Validation
 Although the majority of the HTML, CSS and JavaScript came from a pre-made template supplied by code institute, I still chose to run these files through their corresponding code validators: <a href="https://validator.w3.org/">W3C Markup Validation Service</a>, <a href="https://jigsaw.w3.org/css-validator/">Jigsaw</a> and <a href="https://jshint.com/">JSHint</a>.
