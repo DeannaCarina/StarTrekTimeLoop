@@ -378,7 +378,7 @@ The first phase of my testing regime for the website was to look at the function
             <li><img src="assets/documents/readme-images/buttongif.gif" width="80%"></li>
         </ul>    
     </li>
-    <li>All game play elements work as intented.
+    <li>All game play elements work as intended.
         <ul>
             <li>All paths between gameplay rooms work as intended and all intended travel text between certain rooms is shown. To test this I had to play through the game myself, testing every possible path there is (of which there are 55).</li>
             <li><img src="assets/documents/readme-images/testing.png" width="80%"></li>
@@ -471,7 +471,7 @@ I tested the usability and intuitiveness of the website using different focus gr
     </tr>
 </table><br>
 
-### Compatability
+### Compatibility
 The second phase of my testing regime for the website was to ensure that the website is compatible through a range of devices, screen sizes and internet browsers. Although it wasn't a requirement of this project to be responsive, I still think that a large proportion of people that end up playing the game will want to play it on mobile. Throughout the development process, the website was tested on a number of devices: A 17.3 inch windows laptop, a 15.3 inch windows laptop, a 16 inch MacBook Pro, an 8 inch Samsung Galaxy Tab A, a 10.2 inch iPad, A Samsung Galaxy S20 Ultra and A Huawei P30 Pro. It was also tested in Chrome, Firefox, Internet Explorer and Safari as well as Samsung's own internet browser. By also using Chrome Dev Tools, I was able to manually change the screen size to see when elements within the web pages 'break', by using this method, I could pinpoint the exact screen widths and heights to be defined in the CSS media screen queries and alter the stylings to fit accordingly. The majority of the elements on the webpage were resized automatically via the pre-written JavaScript in the Code Institute Python Template, so I needed to do very little in terms of making the page responsive, however I did need to alter the size of the modals at smaller screen sizes as for some reason this didn't resize with the rest of the content. Below is an image of how the web-page looks on a mobile device (Samsung S20 Ultra) and I am very happy with the way it looks.
 <img src="assets/documents/readme-images/phonescreen.jpg" width="30%"><br>
 
@@ -678,8 +678,3 @@ To my amazing other half Tom - You kept me calm through yet another project and 
 [2]"It would take far longer to watch all of Star Trek than you think", Redshirts Always Die, 2021. [Online]. Available: https://redshirtsalwaysdie.com/2021/01/22/take-far-longer-watch-star-trek-think/. [Accessed: 25- Aug- 2021].
 
 <a href="#top">Back to the top.</a>
-
-
-
-
-
