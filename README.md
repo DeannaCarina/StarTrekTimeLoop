@@ -398,85 +398,71 @@ I tested the usability and intuitiveness of the website using different focus gr
     </tr>
     <tr>
         <td><strong>16-25</strong></td>
-        <td>TBC</td>
+        <td>3</td>
         <td>
             <ul>
-                <li>User knew the reason for the webpage straight away?</li>
-                <li>Website easily navigable?</li>
-                <li>Visually appealing?</li>
-                <li>Enjoyed the content?</li>
-                <li>Found game easy/hard?</li>
-                <li>Phone/Tablet/PC?</li>
+                <li>All users knew the theme of the game on first visit without prompting.</li>
+                <li>All users found the website easy to navigate and knew where to look for help and music.</li>
+                <li>All users found the website well-styled and pleasant to look at.</li>
+                <li>All the users enjoyed the content and story line of the game.</li>
+                <li>No users won the game on their first try. One user tried 3 times and then used the page 4 walkthrough which then allowed them to win on their 5th try. One user used the page 8 walkthrough on their 2nd try which allowed them to win. The final user tried 6 times while making their own notes and eventually won without using the walkthrough.</li>
+                <li>One user used their phone, and the other two used their laptops.</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td><strong>26-35</strong></td>
-        <td>TBC</td>
+        <td>3</td>
         <td>
             <ul>
-                <li>User knew the reason for the webpage straight away?</li>
-                <li>Website easily navigable?</li>
-                <li>Visually appealing?</li>
-                <li>Enjoyed the content?</li>
-                <li>Found game easy/hard?</li>
-                <li>Phone/Tablet/PC?</li>
+                <li>All users knew the theme of the game on first visit without prompting.</li>
+                <li>All users found the website easy to navigate and knew where to look for help and music.</li>
+                <li>All users found the website well-styled and pleasant to look at.</li>
+                <li>All the users enjoyed the content and story line of the game.</li>
+                <li>No users won the game on their first try. ALl users used the page 4 walkthrough. One won on their 2nd try, and the other two on their third.</li>
+                <li>Two users used their phones and the other used my laptop.</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td><strong>36-45</strong></td>
-        <td>TBC</td>
+        <td>2</td>
         <td>
             <ul>
-                <li>User knew the reason for the webpage straight away?</li>
-                <li>Website easily navigable?</li>
-                <li>Visually appealing?</li>
-                <li>Enjoyed the content?</li>
-                <li>Found game easy/hard?</li>
-                <li>Phone/Tablet/PC?</li>
+                <li>Both users knew the theme of the game on first visit without prompting.</li>
+                <li>Both users found the website easy to navigate and knew where to look for help and music.</li>
+                <li>Both users found the website well-styled and pleasant to look at.</li>
+                <li>Noth the users enjoyed the content and story line of the game.</li>
+                <li>Neither user won the game on their first try. One used the page 4 walkthrough and won on their third try. The other used the page 8 walkthrough and won on their 2nd try.</li>
+                <li>One user used my phone, and the other used their phone.</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td><strong>46-55</strong></td>
-        <td>TBC</td>
+        <td>1</td>
         <td>
             <ul>
-                <li>User knew the reason for the webpage straight away?</li>
-                <li>Website easily navigable?</li>
-                <li>Visually appealing?</li>
-                <li>Enjoyed the content?</li>
-                <li>Found game easy/hard?</li>
-                <li>Phone/Tablet/PC?</li>
+                <li>The user knew the theme of the game on first visit without prompting.</li>
+                <li>The user found the website easy to navigate and knew where to look for help and music.</li>
+                <li>The user found the website well-styled and pleasant to look at, but found the contrast between the black terminal background and the white text hurt their eyes after a while, but still continued to play.</li>
+                <li>The user enjoyed the content and story line of the game.</li>
+                <li>The user didn't win the game on their first try. The user used the page 4 walkthrough and won on their 4th try.</li>
+                <li>The user used my laptop.</li>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><strong>56-65</strong></td>
-        <td>TBC</td>
+        <td><strong>56+</strong></td>
+        <td>1</td>
         <td>
             <ul>
-                <li>User knew the reason for the webpage straight away?</li>
-                <li>Website easily navigable?</li>
-                <li>Visually appealing?</li>
-                <li>Enjoyed the content?</li>
-                <li>Found game easy/hard?</li>
-                <li>Phone/Tablet/PC?</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>66+</strong></td>
-        <td>TBC</td>
-        <td>
-            <ul>
-                <li>User knew the reason for the webpage straight away?</li>
-                <li>Website easily navigable?</li>
-                <li>Visually appealing?</li>
-                <li>Enjoyed the content?</li>
-                <li>Found game easy/hard?</li>
-                <li>Phone/Tablet/PC?</li>
+                <li>The user knew the theme of the game on first visit without prompting.</li>
+                <li>The user found the website easy to navigate and knew where to look for help and music.</li>
+                <li>The user found the website well-styled and pleasant to look at, but found the contrast between the black terminal background and the white text hurt their eyes after a while, but still continued to play.</li>
+                <li>The user enjoyed the content and story line of the game.</li>
+                <li>The user didn't win the game on their first try. The user used the page 6 walkthrough and won on their third try.</li>
+                <li>The user used my laptop.</li>
             </ul>
         </td>
     </tr>
