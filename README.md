@@ -383,7 +383,7 @@ The first phase of my testing regime for the website was to look at the function
     </li>
     <li>The game itself is winnable.
         <ul>
-            <li>The game is winnable in a number of ways depending on which path the player takes. They must acquire three items (key, comms device and locator device) before making their way to the transport room to win the game. I carried out a number of different paths to make sure there was no bugs depending on the different paths and found one of the most optimal routes:</li>
+            <li>The game is winnable in a number of ways depending on which path the player takes. They must acquire four items (key, comms device, batteries and locator device) before making their way to the transport room to win the game. I carried out a number of different paths to make sure there was no bugs depending on the different paths and found one of the most optimal routes:</li>
             <li><img src="assets/documents/readme-images/solution.png" width="80%"></li>
         </ul>
     </li>     
