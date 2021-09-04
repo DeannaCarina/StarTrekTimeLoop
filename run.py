@@ -710,7 +710,7 @@ def Room1_1NE():
         P_S("ask the computer for what you'd like, and the room gives it", 2)
         P_S("to you... Would you like to:", 2)
         # Log that user has now visited this room
-        FirstVisits["1_NE"] = False
+        FirstVisits["1_1NE"] = False
     else:
         # Text for user's subsequent visit to this room
         P_S("You smile at the memory of your last visit to this room.", 2)
