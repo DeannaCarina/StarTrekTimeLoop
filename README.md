@@ -1,4 +1,4 @@
-<h1 id="top"><a href="https://startrek-timeloop.herokuapp.com/">Star Trek: Time Loop</a></h1>
+<h1 id="top"><a href="https://startrektimeloop.onrender.com/">Star Trek: Time Loop</a></h1>
 
 ## Contents
 <ul>
